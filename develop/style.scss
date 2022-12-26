@@ -1192,3 +1192,157 @@ body {
         }
     }
 }
+
+/* MODAL PAGE PURCHASE */
+.modal-shadow {
+    display: block;
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: all 0.5s ease-in;
+    background-color: rgba(0, 0, 0, 0.4);
+} 
+
+.modal-shadow.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-purchase-wrapper {
+    display: none;
+    // position: fixed;
+    width: 50%;
+    margin: 0 auto;
+    background: linear-gradient(177.09deg, #FFFFFF 6.15%, #85c38d 202.69%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    // float: right;
+    // border: 1px solid red;
+}
+
+.modal-purchase-wrapper.open {
+    z-index: 2;
+}
+
+.modal-content {
+    width: 100%;
+    padding: 0 20px;
+    // border: 1px solid red;
+}
+
+.modal__close {
+    padding: 0 10px;
+    text-align: end;
+    cursor: pointer;
+    transition: 0.5s;
+    // border: 1px solid red;
+    .btn-close {
+        width: 50px;
+        font-size: 22px;
+        font-weight: 600;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+.modal-window {
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.form-group {
+    // position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 45px 25px;
+    align-items: center;
+    transition: top 0.5s ease 0s;
+    // border: 1px solid blue;
+    .blok-personal,
+    .blok-payment {
+        padding: 0.9375rem;
+        margin: 0 0 30px;
+        max-width: 400px;
+        width: 100%;
+        // border: 1px solid green;
+        .personal-title,
+        .payment-title {
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+            color: #232323;
+        }
+    }
+}
+
+.customer-name-item,
+.payment-card-item,
+.payment-card-item-wrap {
+    display: flex;
+    width: 90%;
+    font-size: 14px;
+    padding-bottom: 5px;
+    justify-content: space-between;
+    input {
+        border-radius: 5px;
+    }
+}
+
+.payment-card-item-wrap {
+    width: 100%;
+    padding-bottom: 0px;
+}
+
+.btn-payment-submit {
+    width: 90px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+    background-color: #85c38d;
+}
+
+.payment-card-wrap {
+    display: flex;
+    flex-direction: column;
+}
+.logo-bank {
+    display: flex;
+}
+
+.bank__item1 {
+    width: 50px;
+    height: 30px;
+    background-image: url('./assets/svg/visa-card.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    // border: 1px solid green;
+}
+
+.bank__item2 {
+    width: 50px;
+    height: 30px;
+    background-image: url('./assets/svg/master-card.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    // border: 1px solid green;
+}
+
+.bank__item3 {
+    width: 50px;
+    height: 30px;
+    background-image: url('./assets/svg/maestro.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    opacity: 0.5;
+    // border: 1px solid green;
+}
