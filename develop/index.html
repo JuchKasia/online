@@ -1,12 +1,168 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Webpack App</title>
-    </head>
-    <body>
-        <h1>Hello world!</h1>
-        <h2>Tip: Check your console</h2>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <title>Online-Store</title>
+</head>
+<body>
+    <header class="header header-main" id="header-main">
+        <div class="container header-container">
+            <div class="logo" id="logo">
+                <!-- <h1 class="online-story visibility-hidden">Online Store</h1> -->
+                <a href="#home" class="logo-link">
+                    <!-- <img src="./assets/png/clothing_logo.png" class="logo-icon" alt="logo-icon"> -->
+                </a>
+            </div>
+            <nav class="nav nav-menu" id="nav-menu">
+                <ul class="nav-list list">
+                    <li class="list__item item">
+                        <a href="#clothing" class="item__link link">Clothing</a>
+                    </li>
+                    <li class="list__item item">
+                        <a href="#contact" class="item__link link">Contact</a>
+                    </li>
+                    <li class="list__item item">
+                        <a href="#blog" class="item__link link">Blog</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search-shipping">
+                <div class="search-bar" id="search-bar">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button type="submit" class="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="header-cart">
+                    <div class="container-cart">
+                        <div class="shopping-icon"></div>
+                        <div class="shopping-desc">
+                            <span class="cart-products-count">0</span>
+                            <span class="cart-products-count-value">0</span>
+                            <span class="cart-products-value">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        <div class="modal-shadow"></div>
+        <!-- окно на весь экран -->
+        <div class="modal-purchase-wrapper">
+            <!-- окно модальное контейнет -->
+            <div class="modal-content">
+                <div class="modal__close">
+                    <button class="btn-close">&#120;</button>
+                </div>
+                <!-- внутренний блок  -->
+                <div class="modal-window">
+                    <div class="modal-content">
+                        <form action="#" class="customer-form" id="customer-form" method="post">
+                            <div class="form-group">
+                                <div class="blok-personal personal">
+                                    <h3 class="personal-title" id="personal-title">PERSONAL INFORMATION</h3>
+                                    <div class="customer-name">
+                                        <div class="customer-name-item">
+                                            <label for="personal-name" class="name">Name</label>
+                                            <input class="personal-name" type="text" name="name" id="personal-name" minlength="3" required placeholder="name">
+                                        </div>
+                                    </div>
+                                    <div class="customer-phone">
+                                        <div class="customer-name-item">
+                                            <label for="phone">Phone number</label>
+                                            <input class="phone" type="text" name="phone" id="phone" pattern="[0-9]{13,19}" minlength="9" required placeholder="phone number">
+                                        </div>
+                                    </div>
+                                    <div class="customer-adress">
+                                        <div class="customer-name-item">
+                                            <label for="adress">Adress delivery</label>
+                                            <input class="adress" type="text" name="adress" id="adress" minlength="5" required placeholder="adress delivery">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="customer-email">
+                                        <div class="customer-name-item">
+                                            <label for="email">E-mail</label>
+                                             <input class="personal-email" type="email" name="email" id="email" required placeholder="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="blok-payment payment">
+                                    <h3 class="payment-title" id="payment-title">BANK CARD DETAILS</h3>
+                                    <div class="payment-card-bank">
+                                        <div class="payment-card-item">
+                                            <div class="payment-card-wrap">
+                                                <div class="card-number-wrapper">
+                                                    <label for="cart-number">Card number</label>
+                                                    <input class="cart-number" type="text" name="cart-number" id="cart-number" pattern="[0-9]{13,19}" maxlength="16" required placeholder="cart-number">
+                                                </div>
+                                                <div class="logo-bank bank">
+                                                    <div class="bank__item bank__item1 item">
+                                                        <!-- <input class="card-details__card-input" type="radio" name="cardType" id="visa" data-card-type="visa" checked> -->
+                                                        <!-- <label class="item-card-label">Visa</label> -->
+                                                        <!-- <img class="item-card-image" src="https://svgshare.com/i/7h2.svg" alt="Visa Card" aria-hidden="true"> -->
+                                                    </div>
+                                                    <div class="bank__item bank__item2 item">
+                                                        <!-- <label class="item-card-label">MasterCard</label> -->
+                                                        <!-- <img class="item-card-image" src="https://svgshare.com/i/7fu.svg" alt="MasterCard" aria-hidden="true"> -->
+                                                    </div>
+                                                    <div class="bank__item bank__item3 item">
+                                                        <!-- <label class="item-card-label">MasterCard</label> -->
+                                                        <!-- <img class="item-card-image" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Maestro" aria-hidden="true">
+                                                    </div> -->
+                                                    </div>
+                                                <!-- логотипы банков и валидацию, мин 3 платежные системы -->
+                                                <!-- автоматическая смена логотипа платежной системы. 
+                                                Например, если номер карты начинает с 4, устанавливается логотип Visa, 
+                                                если 5 - MasterCard.card-type
+                                                 Реализовать не менее 3 платежных систем -->
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="payment-card-bank">
+                                        <div class="payment-card-item">
+                                            <label for="card-owner">Name</label>
+                                            <input class="card-owner" type="text" name="card-owner" id="card-owner" required placeholder="name">
+                                        </div>
+                                    </div>
+                                    <div class="payment-card-bank">
+                                        <div class="payment-card-item">
+                                            <label for="expiration-date">Expiration date</label>
+                                            <input class="expiration-date" type="text" name="expiration-date" id="expiration-date" maxlength="7" value="MM / YY" required placeholder="MM / YY">
+                                        </div>
+                                    </div>
+                                    <div class="payment-card-bank">
+                                        <div class="payment-card-item">
+                                            <label class="card-cvv" aria-hidden="true">CVV</label>
+                                            <input class="card-cvv" type="text" minlength="3" maxlength="3" placeholder="000" id="card-cvv" required data-input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn-payment-submit" type="submit" data-submit-button>Confirm</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     
+    <footer class="footer" id="footer">
+        
+    </footer>
+    <script src="./index.js"></script>
+    <script src="./src/index.ts"></script>
+</body>
 </html>
