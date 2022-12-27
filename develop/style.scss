@@ -1586,3 +1586,319 @@ body {
     left: auto;
     right: 0;
 }
+
+
+  /* start basket page  --------------------------------------------------------------- */
+
+  .basket-page {
+    display: none;
+  }
+  .container {
+    max-width: 1400px;
+      width: 100%;
+  }
+  .border-card {
+    border: 1px solid #a1a1a1;
+    border-radius: 2px;
+  }
+  .basket-page {
+    width: 100%;
+  }
+  
+  .basket-columns {
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+  }
+  .basket-column-card {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  }
+  .basket-column-title {
+    padding-left: 20px;
+  }
+  .strikethrough {
+    text-decoration:line-through;
+    font-size: large;
+  }
+  .goodPrice {
+    color:#85c38d;
+    font-size: larger;
+  }
+  .basket-column-card__bask {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 30px 0;
+  }
+  .bask-image {
+    justify-content: center;
+    align-items: center;
+  }
+  .bask-inf {
+    padding-bottom: 15px;
+    /* description */
+  }
+  .bask-inf div {
+    padding-bottom: 5px;
+  }
+  .bask-price {
+    display: flex;
+    align-items: center;
+  }
+  .bask-price-disc {
+    background-color: #85c38d;
+    color: #ffffff;
+    margin-left: 20px;
+    padding: 5px;
+  }
+  .back-home a{
+  text-decoration: none;
+  }
+  .bask-count-base {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .bask-base-value {
+    padding-left: 20%;
+  }
+  .bask-base-button {
+    display: flex;
+    flex-direction: column;
+  }
+  /* .bask-up {
+    arrow up 
+  }
+  .bask-down {
+     arrow down
+  }
+  .bask-block-value {
+  }
+  .bask-dell {
+    image basket of dell
+  } */
+  .basket-column-total {
+    width: 30%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .basket-total {
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+  }
+  .bask-tot-text{
+    padding-bottom: 5px;
+  }
+  .basket-total-all {
+    display: flex;
+    justify-content: space-between;
+  }
+  .bask-total-quest {
+    padding-top: 20px;
+  }
+  .basket-total-footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  .basket-checkout {
+    height: 35px;
+    background-color: #000;
+    color: #efefef;
+    padding: 5px 10px;
+  }
+  
+  
+  /* finish basket page -----------------------------------------------  */
+  
+  
+  /* start description page -------------------------------------------- */
+  /* #main {
+    display: none;
+  } */
+  .pageDescription {
+    display: none;
+  }
+  
+  .description {
+    width: 100%;
+  }
+  
+  .desc-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  
+  .desk-block-image {
+    width: 40%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .desk-main-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .desk-main-im {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .main-im-first {
+    width: 45%;
+  }
+  
+  .main-im-second {
+    width: 45%;
+  }
+  
+  .desk-block-inf {
+    width: 55%;
+  }
+  
+  .desk-block-inf > div {
+    margin-bottom: 15px;
+  }
+  
+  /* .block-inf-way {
+     
+    }
+    .block-inf-category {
+    }
+    .block-inf-price {
+    }
+    .block-inf-size {
+    } */
+  .block-inf-quantity {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .block-inf-quantity .bask-block-count {
+    margin: 0 20px;
+  }
+  
+  /* .bask-count-base {
+    }
+    .bask-base-value {
+    }
+    .bask-base-button {
+    }
+    .bask-up {
+    }
+    .bask-down {
+    }
+    .bask-block-button {
+    }
+    .button-add {
+    } */
+  .description-button {
+    background-color: #000;
+    color: #efefef;
+    padding: 5px;
+  }
+  
+  .description-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    /* justify-content: center; */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  
+  .descrip-title {
+    width: 30%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-bottom: 10px;
+  }
+  
+  /* .descrip-descrip {
+    }
+    .descrip-detal {
+    } */
+  .descrip-inf {
+    background: #f7f7f7;
+    margin-bottom: 50px;
+  }
+  
+  .descript-sellers {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 50px;
+  }
+  
+  .descript-sell-title {
+    margin-bottom: 30px;
+  }
+  
+  .descript-sell-images {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  
+  .desc-sell-img {
+    width: 20%;
+  }
+  
+  .desc-sell-im {
+    height: 200px;
+    margin-bottom: 5px;
+  }
+  
+  /* .desc-sell-text {
+    }
+    .desc-sell-txt {
+    }
+    .desc-sell-price {
+    } */
+  /* finish description page -------------------------------------------- */
+  
+  /*# sourceMappingURL=style.css.map */
