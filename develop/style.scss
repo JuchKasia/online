@@ -1902,3 +1902,28 @@ body {
   /* finish description page -------------------------------------------- */
   
 
+/* PAGE404 */
+.page404 {
+    display: none;
+    // display: flex;
+    width: 100%;
+    min-height: 75vh;
+    margin: 0 auto;
+    justify-content: center;
+    .page404-container {
+        display: flex;
+        width: 50%;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        .page404-title {
+            color: #a1a1a1;
+            padding: 10px;
+            font-size: 250%;
+            word-wrap: break-word;
+            border: 2px solid #f7f7f765;
+            border-radius: 10px;
+            background-color: hsla(0, 3%, 14%, 0.123);
+        }
+    }
+}
