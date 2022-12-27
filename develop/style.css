@@ -2327,4 +2327,38 @@ body {
     .desc-sell-price {
     } */
 /* finish description page -------------------------------------------- */
+/* PAGE404 */
+.page404 {
+  display: none;
+  width: 100%;
+  min-height: 75vh;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.page404 .page404-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page404 .page404-container .page404-title {
+  color: #a1a1a1;
+  padding: 10px;
+  font-size: 250%;
+  word-wrap: break-word;
+  border: 2px solid #f7f7f765;
+  border-radius: 10px;
+  background-color: rgba(37, 35, 35, 0.123);
+}
 /*# sourceMappingURL=style.css.map */
