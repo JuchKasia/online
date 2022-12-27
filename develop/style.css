@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 ::before,
 ::after {
@@ -1811,4 +1812,135 @@ body {
   .desc-sell-price {
   } */
 /* finish description page -------------------------------------------- */
+/*HOME PAGE */
+.homePage {
+  display: none;
+  max-width: 1400px;
+  width: 100%;
+  height: 200px;
+  /* поправить данные */
+}
+
+.home-wrapper {
+  display: block;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  height: 200px;
+  /* поправить данные */
+  border: 1px solid blue;
+}
+
+.carousel-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 200px;
+  /* поправить данные */
+  margin: 0 auto;
+  -webkit-transform: translateX(-50%, -50%);
+          transform: translateX(-50%, -50%);
+  max-width: 1400px;
+  width: 100%;
+  height: 200px;
+  /* поправить данные */
+  overflow: hidden;
+}
+
+.carousel-wrapper .carousel {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  left: -640px;
+  /* ???  200 20 200 20 200 */
+}
+
+.item {
+  display: none;
+  position: relative;
+  margin: 0 auto;
+  -webkit-animation: 0.5s ease-in-out;
+          animation: 0.5s ease-in-out;
+}
+
+.active,
+.next {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@-webkit-keyframes move-right {
+  from {
+    left: -640px;
+  }
+  to {
+    left: -1280px;
+  }
+}
+
+@keyframes move-right {
+  from {
+    left: -640px;
+  }
+  to {
+    left: -1280px;
+  }
+}
+
+.transition-right {
+  -webkit-animation-name: move-right;
+          animation-name: move-right;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+@-webkit-keyframes move-left {
+  from {
+    left: -640px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes move-left {
+  from {
+    left: -640px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+.transition-left {
+  -webkit-animation-name: move-left;
+          animation-name: move-left;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+}
+
+.btn-carousel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 15%;
+  cursor: pointer;
+}
+
+.btn-carousel.left {
+  left: 0;
+  right: auto;
+}
+
+.btn-carousel.right {
+  left: auto;
+  right: 0;
+}
 /*# sourceMappingURL=style.css.map */
