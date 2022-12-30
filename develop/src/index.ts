@@ -44,3 +44,24 @@ for(let i = 0;i<productDetailText.length;i++){
     priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + "" + list[arrayForCards[i]].price;
     productTitle[i].innerHTML = list[arrayForCards[i]].title;
 }
+
+
+//  function getRandomArrayBest -------------------------------------------------
+
+let randomArrayBest: number[] = [];
+function getRandomArrayBest(m: number, max: number) {
+  for(let i = 0; i < m; i++) {
+    const num: number = Math.floor(Math.random() * max);
+    if(!randomArrayBest.includes(num)) {
+      randomArrayBest.push(num);
+    } else {
+      m--;
+    }
+  }
+return randomArrayBest;
+}
+let arrayForCardsBest: Array<number> = [];
+arrayForCardsBest = getRandomArrayBest(20, 99);
+console.log(arrayForCardsBest);
+
+// function buildBestsellerCards -----------------------------------------
