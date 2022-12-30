@@ -863,6 +863,8 @@ body {
         text-overflow: ellipsis;
         font-weight: 400;
         color: #000000;
+        cursor: pointer;
+        transition: 0.5s;
         .product-page {
             font-size: 14px;
             font-weight: 400;
@@ -873,6 +875,9 @@ body {
             list-style: none;
             text-transform: none;
         }
+    }
+    .product-title:hover {
+            color: #737373;
     }
     .product-price {
         font-size: 14px;
