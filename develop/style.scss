@@ -882,6 +882,9 @@ body {
     }
     .product-detail {
         .product-detail-text {
+            // text-overflow: ellipsis;
+            overflow: hidden;
+            // text: overflow;
             color: #737373;
             font-weight: 400;
         }
