@@ -48,7 +48,7 @@ for(let i = 0;i<productDetailText.length;i++){
 
 //  function getRandomArrayBest -------------------------------------------------
 
-let randomArrayBest: number[] = [];
+const randomArrayBest: number[] = [];
 function getRandomArrayBest(m: number, max: number) {
   for(let i = 0; i < m; i++) {
     const num: number = Math.floor(Math.random() * max);
@@ -61,7 +61,12 @@ function getRandomArrayBest(m: number, max: number) {
 return randomArrayBest;
 }
 let arrayForCardsBest: Array<number> = [];
-arrayForCardsBest = getRandomArrayBest(20, 99);
+arrayForCardsBest = getRandomArrayBest(3, 99);
 console.log(arrayForCardsBest);
 
 // function buildBestsellerCards -----------------------------------------
+const productTitleBest = document.querySelectorAll('.product-title-aside');
+
+for (let j = 0; j < productTitleBest.length; j++) {
+    productTitleBest[j].innerHTML = list[arrayForCardsBest[j]].title;
+}
