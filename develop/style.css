@@ -627,13 +627,13 @@ body {
   padding: 10px 0 0;
 }
 
-.block-special .block-content .special-item .right-part .product-description .product-title-aside {
+.block-special .block-content .special-item .right-part .product-description .product-title-spec {
   font-size: 18px;
   text-transform: uppercase;
   color: #232323;
 }
 
-.block-special .block-content .special-item .right-part .product-description .product-title-aside .product-special-link {
+.block-special .block-content .special-item .right-part .product-description .product-title-spec .product-special-link {
   text-align: center;
   font-size: 14px;
   font-weight: 400;

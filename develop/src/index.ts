@@ -72,3 +72,21 @@ for (let j = 0; j < productTitleBest.length; j++) {
     productTitleBest[j].innerHTML = list[arrayForCardsBest[j]].title;
     priceProductBest[j].innerHTML = priceProductBest[j].innerHTML[0] + " " + list[arrayForCardsBest[j]].price;
 }
+
+
+//  function getRandomArraySpec -------------------------------------------------
+const randomArraySpec: number[] = [];
+function getRandomArraySpec(m: number, max: number) {
+  for(let k = 0; k < m; k++) {
+    const num: number = Math.floor(Math.random() * max);
+    if(!randomArraySpec.includes(num)) {
+      randomArraySpec.push(num);
+    } else {
+      m--;
+    }
+  }
+return randomArraySpec;
+}
+let arrayForCardsSpec: Array<number> = [];
+arrayForCardsBest = getRandomArraySpec(3, 99);
+console.log(arrayForCardsSpec);
