@@ -449,7 +449,7 @@ body {
                 overflow: hidden;
                 .product-description {
                     padding: 10px 0 0;
-                    .product-title {
+                    .product-title-best {
                         font-size: 18px;
                         text-transform: uppercase;
                         color: #232323;
@@ -518,7 +518,7 @@ body {
                 overflow: hidden;
                 .product-description {
                     padding: 10px 0 0;
-                    .product-title {
+                    .product-title-spec {
                         font-size: 18px;
                         text-transform: uppercase;
                         color: #232323;
@@ -545,7 +545,7 @@ body {
                             color: #a1a1a1;
                             text-decoration: line-through;
                         }
-                        .discount {
+                        .discount-spec {
                             font-weight: 300;
                         }
                     }
@@ -863,6 +863,8 @@ body {
         text-overflow: ellipsis;
         font-weight: 400;
         color: #000000;
+        cursor: pointer;
+        transition: 0.5s;
         .product-page {
             font-size: 14px;
             font-weight: 400;
@@ -874,6 +876,9 @@ body {
             text-transform: none;
         }
     }
+    .product-title:hover {
+            color: #737373;
+    }
     .product-price {
         font-size: 14px;
         font-weight: 600;
@@ -882,6 +887,9 @@ body {
     }
     .product-detail {
         .product-detail-text {
+            // text-overflow: ellipsis;
+            overflow: hidden;
+            // text: overflow;
             color: #737373;
             font-weight: 400;
         }
