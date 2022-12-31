@@ -547,13 +547,13 @@ body {
   padding: 10px 0 0;
 }
 
-.block-bestseller .block-content .product-item .right-part .product-description .product-title {
+.block-bestseller .block-content .product-item .right-part .product-description .product-title-best {
   font-size: 18px;
   text-transform: uppercase;
   color: #232323;
 }
 
-.block-bestseller .block-content .product-item .right-part .product-description .product-title .product-bestseller-link {
+.block-bestseller .block-content .product-item .right-part .product-description .product-title-best .product-bestseller-link {
   text-align: center;
   font-size: 14px;
   font-weight: 400;
@@ -627,13 +627,13 @@ body {
   padding: 10px 0 0;
 }
 
-.block-special .block-content .special-item .right-part .product-description .product-title {
+.block-special .block-content .special-item .right-part .product-description .product-title-spec {
   font-size: 18px;
   text-transform: uppercase;
   color: #232323;
 }
 
-.block-special .block-content .special-item .right-part .product-description .product-title .product-special-link {
+.block-special .block-content .special-item .right-part .product-description .product-title-spec .product-special-link {
   text-align: center;
   font-size: 14px;
   font-weight: 400;
@@ -665,7 +665,7 @@ body {
   text-decoration: line-through;
 }
 
-.block-special .block-content .special-item .right-part .product-description .product-price .discount {
+.block-special .block-content .special-item .right-part .product-description .product-price .discount-spec {
   font-weight: 300;
 }
 
@@ -1036,6 +1036,9 @@ body {
   text-overflow: ellipsis;
   font-weight: 400;
   color: #000000;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .cart-description .product-title .product-page {
@@ -1049,6 +1052,10 @@ body {
   text-transform: none;
 }
 
+.cart-description .product-title:hover {
+  color: #737373;
+}
+
 .cart-description .product-price {
   font-size: 14px;
   font-weight: 600;
@@ -1057,6 +1064,7 @@ body {
 }
 
 .cart-description .product-detail .product-detail-text {
+  overflow: hidden;
   color: #737373;
   font-weight: 400;
 }
