@@ -41,7 +41,7 @@ const productTitle = document.querySelectorAll('.product-title');
 for(let i = 0;i<productDetailText.length;i++){
     productDetailText[i].innerHTML = list[arrayForCards[i]].description;
     cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+list[arrayForCards[i]].stock;
-    priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + "" + list[arrayForCards[i]].price;
+    priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + list[arrayForCards[i]].price;
     productTitle[i].innerHTML = list[arrayForCards[i]].title;
 }
 
@@ -65,8 +65,10 @@ arrayForCardsBest = getRandomArrayBest(3, 99);
 console.log(arrayForCardsBest);
 
 // function buildBestsellerCards -----------------------------------------
-const productTitleBest = document.querySelectorAll('.product-title-aside');
+const productTitleBest = document.querySelectorAll('.product-title-best');
+const priceProductBest = document.querySelectorAll('.price-best');
 
 for (let j = 0; j < productTitleBest.length; j++) {
     productTitleBest[j].innerHTML = list[arrayForCardsBest[j]].title;
+    priceProductBest[j].innerHTML = priceProductBest[j].innerHTML[0] + " " + list[arrayForCardsBest[j]].price;
 }

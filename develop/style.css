@@ -547,13 +547,13 @@ body {
   padding: 10px 0 0;
 }
 
-.block-bestseller .block-content .product-item .right-part .product-description .product-title-aside {
+.block-bestseller .block-content .product-item .right-part .product-description .product-title-best {
   font-size: 18px;
   text-transform: uppercase;
   color: #232323;
 }
 
-.block-bestseller .block-content .product-item .right-part .product-description .product-title-aside .product-bestseller-link {
+.block-bestseller .block-content .product-item .right-part .product-description .product-title-best .product-bestseller-link {
   text-align: center;
   font-size: 14px;
   font-weight: 400;
@@ -627,13 +627,13 @@ body {
   padding: 10px 0 0;
 }
 
-.block-special .block-content .special-item .right-part .product-description .product-title {
+.block-special .block-content .special-item .right-part .product-description .product-title-aside {
   font-size: 18px;
   text-transform: uppercase;
   color: #232323;
 }
 
-.block-special .block-content .special-item .right-part .product-description .product-title .product-special-link {
+.block-special .block-content .special-item .right-part .product-description .product-title-aside .product-special-link {
   text-align: center;
   font-size: 14px;
   font-weight: 400;
