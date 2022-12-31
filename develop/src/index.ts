@@ -88,5 +88,17 @@ function getRandomArraySpec(m: number, max: number) {
 return randomArraySpec;
 }
 let arrayForCardsSpec: Array<number> = [];
-arrayForCardsBest = getRandomArraySpec(3, 99);
+arrayForCardsSpec = getRandomArraySpec(3, 99);
 console.log(arrayForCardsSpec);
+
+// function buildSpecialCards -----------------------------------------
+const productTitleSpec = document.querySelectorAll('.product-title-spec');
+const priceProductSpec = document.querySelectorAll('.regular-price');
+const discountProductSpec = document.querySelectorAll('.discount-spec');
+
+
+for (let k = 0; k < productTitleSpec.length; k++) {
+    productTitleSpec[k].innerHTML = list[arrayForCardsSpec[k]].title;
+    priceProductSpec[k].innerHTML = priceProductSpec[k].innerHTML[0] + " " + list[arrayForCardsSpec[k]].price;
+    discountProductSpec[k].innerHTML = priceProductSpec[k].innerHTML[0] + " " + list[arrayForCardsSpec[k]].discount;
+}
