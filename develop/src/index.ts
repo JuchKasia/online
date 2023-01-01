@@ -136,3 +136,18 @@ const way = document.querySelector('.way');
    });
  }
 
+
+// size filter left-aside ----------------------------------------------------------
+let count:number;
+const sizeLabel = document.querySelectorAll('.size-label');
+console.log(list[1].size);
+
+for (let i=0; i < sizeLabel.length; i++) {
+ count = 0;
+  for (let j = 0; j < list.length; j++) {
+    if (sizeLabel[i].innerHTML == list[j].size) {
+      count++;
+    }
+  }
+  sizeLabel[i].innerHTML = sizeLabel[i].innerHTML.slice(0, 2) + ` (` + `${count}` + ')';
+}
