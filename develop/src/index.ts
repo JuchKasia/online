@@ -34,7 +34,8 @@ const productDetailText = document.querySelectorAll('.product-detail-text');
 const cardsStock = document.querySelectorAll('.stock');
 const priceProduct = document.querySelectorAll('.price');
 const productTitle = document.querySelectorAll('.product-title');
-const mainCardImg = document.querySelectorAll('.main-img');
+const mainCardImg = document.querySelectorAll('.img-prod1');
+const secondCardImg = document.querySelectorAll('.img-prod2');
 
 // console.log("card " +priceProduct.length);
 // console.log("card " +cardsStock.length);
@@ -45,7 +46,8 @@ for(let i = 0;i<productDetailText.length;i++){
     cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+list[arrayForCards[i]].stock;
     priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + list[arrayForCards[i]].price;
     productTitle[i].innerHTML = list[arrayForCards[i]].title;
-    mainCardImg[i].innerHTML = list[arrayForCards[i]].images[0];
+    mainCardImg[i].setAttribute('src',`${list[arrayForCards[i]].images[0]}`);
+    secondCardImg[i].classList.add("non");
 }
 
 
@@ -96,13 +98,16 @@ console.log(arrayForCardsSpec);
 
 // function buildSpecialCards -----------------------------------------
 const productTitleSpec = document.querySelectorAll('.product-title-spec');
+const productWithDisc = document.querySelectorAll('.price-spec');
 const priceProductSpec = document.querySelectorAll('.regular-price');
 const discountProductSpec = document.querySelectorAll('.discount-spec');
+// const 
 
 
 for (let k = 0; k < productTitleSpec.length; k++) {
     productTitleSpec[k].innerHTML = list[arrayForCardsSpec[k]].title;
+    productWithDisc[k].innerHTML =productWithDisc[k].innerHTML[0]+" "+(list[arrayForCardsSpec[k]].price - list[arrayForCardsSpec[k]].price/100*list[arrayForCardsSpec[k]].discount);
     priceProductSpec[k].innerHTML = priceProductSpec[k].innerHTML[0] + " " + list[arrayForCardsSpec[k]].price;
-    discountProductSpec[k].innerHTML = priceProductSpec[k].innerHTML[0] + " " + list[arrayForCardsSpec[k]].discount;
+    discountProductSpec[k].innerHTML ="% " + list[arrayForCardsSpec[k]].discount;
 }
 
