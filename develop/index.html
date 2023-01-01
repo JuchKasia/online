@@ -373,14 +373,13 @@
                     <div class="container-left-aside">
                         <div class="block-categories">
                             <h6 class="block-title">Categories</h6>
-                            <ul class="category-menu-list list">
-                                <li class="list__item item">
-                                    <a href="#" class="item__link link category">Men</a>
-                                    <div class="bar-toggle">
+                            <div class="category-list">
+                                <div class="category-item category">Men
+                                    <div class="bar-toggle non">
                                         <span class="material-icon add">&#43;</span>
                                         <span class="material-icon remove">&#45;</span>
                                     </div>
-                                    <ul class="category-submenu-list list">
+                                    <ul class="category-submenu-list list non">
                                         <li class="list__item item">
                                             <a href="#" class="item__link link name1">name1</a>
                                         </li>
@@ -391,14 +390,13 @@
                                             <a href="#" class="item__link link name3">name3</a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li class="list__item item">
-                                    <a href="#" class="item__link link category">Women</a>
-                                    <div class="bar-toggle">
+                                </div>
+                                <div class="category-item category">Women
+                                    <div class="bar-toggle non">
                                         <span class="material-icon add">&#43;</span>
                                         <span class="material-icon remove">&#45;</span>
                                     </div>
-                                    <ul class="category-submenu-list list">
+                                    <ul class="category-submenu-list list non">
                                         <li class="list__item item">
                                             <a href="#" class="item__link link name1">name1</a>
                                         </li>
@@ -409,8 +407,8 @@
                                             <a href="#" class="item__link link name3">name3</a>
                                         </li>
                                     </ul>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                         <div class="search-filters-wrapper">
                             <h6 class="filter-title">FILTER BY</h6>
@@ -442,13 +440,67 @@
                                     <div class="slider"></div> -->
                                 </div>
                             </div>
+                            <div class="size-filter">
+                                <p class="filter-subtitle">Size</p>
+                                <div class="size-item">
+                                    <input type="checkbox" name="size-box" id="s">
+                                    <label class="size-label" for="s">s</label>
+                                </div>
+                                <div class="size-item">
+                                    <input type="checkbox" name="size-box" id="m">
+                                    <label class="size-label" for="s">m</label>
+                                </div>
+                                <div class="size-item">
+                                    <input type="checkbox" name="size-box" id="l">
+                                    <label class="size-label" for="s">l</label>
+                                </div>
+                                <div class="size-item">
+                                    <input type="checkbox" name="size-box" id="xl">
+                                    <label class="size-label" for="s">xl</label>
+                                </div>
+                            </div>
+                            <div class="color-filter">
+                                <p class="filter-subtitle">Color</p>
+                                <div class="color-item">
+                                    <input type="checkbox" name="color-box" id="beige">
+                                    <label for="beige">Beige</label>
+                                </div>
+                                <div class="color-item">
+                                    <input type="checkbox" name="color-box" id="white">
+                                    <label for="white">White</label>
+                                </div>
+                                <div class="color-item">
+                                    <input type="checkbox" name="color-box" id="red">
+                                    <label for="red">Red</label>
+                                </div>
+                                <div class="color-item">
+                                    <input type="checkbox" name="color-box" id="black">
+                                    <label for="black">Black</label>
+                                </div>
+                                <div class="color-item">
+                                    <input type="checkbox" name="color-box" id="green">
+                                    <label for="green">Green</label>
+                                </div>
+                                <div class="color-item">
+                                    <input type="checkbox" name="color-box" id="yellow">
+                                    <label for="yellow">Yellow</label>
+                                </div>
+                                <div class="color-item">
+                                    <input type="checkbox" name="color-box" id="brown">
+                                    <label for="brown">Brown</label>
+                                </div>
+                                <div class="pink">
+                                    <input type="checkbox" name="color-box" id="pink">
+                                    <label for="pink">Pink</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="block-bestseller">
                             <h4 class="block-bestseller-title">Best Sellers</h4>
                             <div class="block-content" id="block-bestseller">
                                 <div class="product-item">
                                     <div class="left-part">
-                                        <a href="#" class="product-bestseller-img">Ссылка на img</a>
+                                        <img class="product-bestseller-img" alt="product-bestseller-img"></img>
                                     </div>
                                     <div class="right-part">
                                         <div class="product-description">
@@ -462,7 +514,7 @@
                                 </div>
                                 <div class="product-item">
                                     <div class="left-part">
-                                        <a href="#" class="product-bestseller-img">Ссылка на img</a>
+                                        <img class="product-bestseller-img" alt="product-bestseller-img"></img>
                                     </div>
                                     <div class="right-part">
                                         <div class="product-description">
@@ -476,7 +528,7 @@
                                 </div>
                                 <div class="product-item">
                                     <div class="left-part">
-                                        <a href="#" class="product-bestseller-img">Ссылка на img</a>
+                                        <img class="product-bestseller-img" alt="product-bestseller-img"></img>
                                     </div>
                                     <div class="right-part">
                                         <div class="product-description">
@@ -498,7 +550,7 @@
                             <div class="block-content" id="block-special">
                                 <div class="special-item">
                                     <div class="left-part">
-                                        <a href="#" class="product-special-img">Ссылка на img</a>
+                                        <img class="product-special-img" alt="product-special-img"></img>
                                     </div>
                                     <div class="right-part">
                                         <div class="product-description">
@@ -514,7 +566,7 @@
                                 </div>
                                 <div class="special-item">
                                     <div class="left-part">
-                                        <a href="#" class="product-special-img">Ссылка на img</a>
+                                        <img class="product-special-img" alt="product-special-img"></img>
                                     </div>
                                     <div class="right-part">
                                         <div class="product-description">
@@ -530,7 +582,7 @@
                                 </div>
                                 <div class="special-item">
                                     <div class="left-part">
-                                        <a href="#" class="product-special-img">Ссылка на img</a>
+                                        <img class="product-special-img" alt="product-special-img"></img>
                                     </div>
                                     <div class="right-part">
                                         <div class="product-description">
@@ -594,687 +646,470 @@
                         <div class="product-container" id="#clothing">
                             <div class="product-wrapper">
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page"></a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>
                                 <article class="product-miniature">
-                                    <div class="cart-container">
-                                        <div class="cart-img">
-                                            <a href="#" class="product-img">
-                                                <span class="main-img">
-                                                    <img src="#" class="img-prod1" alt="img-prod1">
-                                                </span>
-                                                <span class="second-img">
-                                                    <img src="#" class="img-prod2" alt="img-prod2">
-                                                </span>
-                                            </a>
-                                            <div class="product-add-to-cart">
-                                                <form action="#" method="post" class="add-to-cart">
-                                                    <button class="btn btn-add-to-cart" type="submit"></button>
-                                                    <!-- <div class="cart">
-                                                        <i class="material-icons">
-                                                          shopping_cart
-                                                        </i>
-                                                        <span class="count">1</span>
-                                                    </div> -->
-                                                </form>
-                                            </div>
+                                    <div class="cart-img">
+                                        <a href="#" class="product-img">
+                                                <img src="#" class="img-prod1" alt="img-prod1">
+                                                <img src="#" class="img-prod2" alt="img-prod2">
+                                        </a>
+                                        <div class="product-add-to-cart">
+                                            <form action="#" method="post" class="add-to-cart">
+                                                <button class="btn btn-add-to-cart" type="submit"></button>
+                                            </form>
                                         </div>
-                                        <div class="cart-description">
-                                            <h2 class="product-title">
-                                                <a href="#" class="product-page">Название продукта со ссылкой на него</a>
-                                            </h2>
-                                            <div class="product-price">
-                                                <span class="price">$19.2</span>
-                                                <span>/</span>
-                                                <span class="stock">pcs.50</span>
-                                            </div>
-                                            <div class="product-detail">
-                                                <p class="product-detail-text">Описание товара</p>
-                                            </div>
+                                    </div>
+                                    <div class="cart-description">
+                                        <h2 class="product-title">
+                                            <a href="#" class="product-page"></a>
+                                        </h2>
+                                        <div class="product-price">
+                                            <span class="price">$19.2</span>
+                                            <span>/</span>
+                                            <span class="stock">pcs.50</span>
+                                        </div>
+                                        <div class="product-detail">
+                                            <p class="product-detail-text">Описание товара</p>
                                         </div>
                                     </div>
                                 </article>

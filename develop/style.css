@@ -396,7 +396,7 @@ body {
   color: #ffffff;
 }
 
-.container-left-aside .block-categories .category-menu-list {
+.container-left-aside .block-categories .category-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -404,7 +404,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 20px;
   padding: 10px 15px;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
@@ -415,23 +414,15 @@ body {
   list-style: none;
 }
 
-.container-left-aside .block-categories .category-menu-list .list__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: #000;
-  list-style: none;
-  text-decoration: none;
-  gap: 30px;
-}
-
-.container-left-aside .block-categories .category-menu-list .list__item .item__link {
+.container-left-aside .block-categories .category-list .category-list-list {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 25px;
   letter-spacing: 0.26px;
+  text-align: left;
+  justify-items: flex-start;
   text-transform: capitalize;
   color: black;
   text-decoration: none;
@@ -492,6 +483,14 @@ body {
   color: #131313;
 }
 
+.size-filter {
+  margin-bottom: 50px;
+}
+
+.size-filter .size-item .size-label {
+  text-transform: uppercase;
+}
+
 .block-bestseller {
   margin-bottom: 50px;
   background-color: #f7f7f7;
@@ -523,19 +522,22 @@ body {
 
 .block-bestseller .block-content .product-item {
   margin-bottom: 20px;
-  border: 1px solid green;
 }
 
 .block-bestseller .block-content .product-item .left-part {
   float: left;
+  width: 50%;
   margin: 0 15px 0 0;
-  border: 1px solid #dedede;
   overflow: hidden;
 }
 
 .block-bestseller .block-content .product-item .left-part .product-bestseller-img {
+  width: 100%;
+  height: 100%;
   color: #000000;
   background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
   text-decoration: none;
 }
 
@@ -603,19 +605,22 @@ body {
 
 .block-special .block-content .special-item {
   margin-bottom: 20px;
-  border: 1px solid green;
 }
 
 .block-special .block-content .special-item .left-part {
   float: left;
+  width: 50%;
   margin: 0 15px 0 0;
-  border: 1px solid #dedede;
   overflow: hidden;
 }
 
 .block-special .block-content .special-item .left-part .product-special-img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
   color: #000000;
   background-color: transparent;
+  background-size: cover;
   text-decoration: none;
 }
 
@@ -949,14 +954,19 @@ body {
   overflow: hidden;
   -webkit-transition: all 500ms ease 0s;
   transition: all 500ms ease 0s;
+  border: solid 5px violet;
 }
 
 .product-miniature .cart-container .cart-img .product-img .main-img {
   width: 100%;
 }
 
-.main-img img {
+.img-prod1 {
   width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border: solid 2px blue;
 }
 
 .second-img {
@@ -2368,5 +2378,9 @@ body {
   border: 2px solid #f7f7f765;
   border-radius: 10px;
   background-color: rgba(37, 35, 35, 0.123);
+}
+
+.non {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
