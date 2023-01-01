@@ -68,6 +68,9 @@ for(let i = 0;i<productDetailText.length; i++){
 }
 buildCards();
 function buildCardsCategory(){
+  // const way = document.querySelector('.way');
+  // console.log('way.innerHTML '+way.innerHTML);
+  // console.log('forLocal '+forLocal.category)
   for(let i = 0;i<listCategory.length;i++){
     productDetailText[i].innerHTML = listCategory[i].description;
     cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i].stock;
@@ -76,7 +79,7 @@ function buildCardsCategory(){
     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
     secondCardImg[i].classList.add("non");
   }
-  
+  // way.innerHTML = forLocal.category;
 }
 //  function getRandomArrayBest -------------------------------------------------
 let arrayForCardsBest: Array<number> = [];
@@ -116,9 +119,12 @@ for (let k = 0; k < productTitleSpec.length; k++) {
 const mainCategory = document.querySelectorAll('.category');
 
  for(let i = 0;i<mainCategory.length;i++){
+const way = document.querySelector('.way');
    mainCategory[i].addEventListener('click', function(){
   (i==0) ? forLocal.category = 'men' : forLocal.category='women';
+  way.innerHTML="Category : "+ forLocal.category;
   console.log(forLocal.category);
+
   getCategoryArray();
   buildCardsCategory()
    });
