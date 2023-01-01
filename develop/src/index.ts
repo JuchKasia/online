@@ -151,3 +151,18 @@ for (let i=0; i < sizeLabel.length; i++) {
   }
   sizeLabel[i].innerHTML = sizeLabel[i].innerHTML.slice(0, 2) + ` (` + `${count}` + ')';
 }
+
+
+// color filter left-aside ----------------------------------------------------------
+let countColor: number;
+const colorLabel = document.querySelectorAll('.color-label');
+
+for (let i=0; i < colorLabel.length; i++) {
+  countColor = 0;
+  for (let j = 0; j < list.length; j++) {
+    if (colorLabel[i].innerHTML == list[j].color) {
+      countColor++;
+    }
+  }
+  colorLabel[i].innerHTML = colorLabel[i].innerHTML.slice(0, 7) + ` (` + `${countColor}` + ')';
+}
