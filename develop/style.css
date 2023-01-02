@@ -784,6 +784,10 @@ body {
   text-transform: capitalize;
 }
 
+.product-list-header .product-list-wrapper .text-main-category {
+  margin-bottom: 20px;
+}
+
 .products {
   display: -webkit-box;
   display: -ms-flexbox;

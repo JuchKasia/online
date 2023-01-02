@@ -96,7 +96,7 @@ for (let j = 0; j < productTitleBest.length; j++) {
   // let img = document.createAttribute('img')
     productTitleBest[j].innerHTML = list[arrayForCardsBest[j]].title;
     priceProductBest[j].innerHTML = priceProductBest[j].innerHTML[0] + " " + list[arrayForCardsBest[j]].price;
-    imgBest[j].setAttribute('src', `${listCategory[j].images[0]}`);
+    imgBest[j].setAttribute('src', `${list[arrayForCardsBest[j]].images[0]}`);
 }
 
 
@@ -118,16 +118,27 @@ for (let k = 0; k < productTitleSpec.length; k++) {
     productWithDisc[k].innerHTML =productWithDisc[k].innerHTML[0]+" "+(list[arrayForCardsSpec[k]].price - list[arrayForCardsSpec[k]].price/100*list[arrayForCardsSpec[k]].discount);
     priceProductSpec[k].innerHTML = priceProductSpec[k].innerHTML[0] + " " + list[arrayForCardsSpec[k]].price;
     discountProductSpec[k].innerHTML ="% " + list[arrayForCardsSpec[k]].discount;
-    imgSpec[k].setAttribute('src', `${listCategory[k].images[0]}`);
+    imgSpec[k].setAttribute('src', `${list[arrayForCardsSpec[k]].images[0]}`);
 }
 
 // category selection  ------------------------------------------------------------
 const mainCategory = document.querySelectorAll('.category');
+const textCategoryMen = document.querySelector('.text-main-category-men');
+const textCategoryWomen = document.querySelector('.text-main-category-women');
 
  for(let i = 0;i<mainCategory.length;i++){
 const way = document.querySelector('.way');
    mainCategory[i].addEventListener('click', function(){
-  (i==0) ? forLocal.category = 'men' : forLocal.category='women';
+  // (i==0) ? forLocal.category = 'men' : forLocal.category='women';
+  if(i==0){
+    forLocal.category = 'men';
+    textCategoryWomen.classList.add('non');
+    textCategoryMen.classList.remove('non');
+  }else if(i==1) {
+    forLocal.category = 'women';
+    textCategoryWomen.classList.remove('non');
+    textCategoryMen.classList.add('non');
+  }
   way.innerHTML="Category : "+ forLocal.category;
   console.log(forLocal.category);
 
