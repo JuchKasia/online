@@ -68,7 +68,7 @@ for(let i = 0;i<productDetailText.length; i++){
     secondCardImg[i].classList.add("non");
 }
 }
-// !JSON.parse(localStorage.getItem('listCategory')))?buildCardsCategory:
+(!JSON.parse(localStorage.getItem('listCategory')))?buildCardsCategory:
 buildCards();
 function buildCardsCategory(){
   for(let i = 0;i<listCategory.length;i++){
