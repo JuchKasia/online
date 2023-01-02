@@ -89,10 +89,14 @@ arrayForCardsBest = getRandomArray(3, 99);
 // function buildBestsellerCards -----------------------------------------
 const productTitleBest = document.querySelectorAll('.product-title-best');
 const priceProductBest = document.querySelectorAll('.price-best');
+const imgBest = document.querySelectorAll('.product-bestseller-img');
+
 
 for (let j = 0; j < productTitleBest.length; j++) {
+  // let img = document.createAttribute('img')
     productTitleBest[j].innerHTML = list[arrayForCardsBest[j]].title;
     priceProductBest[j].innerHTML = priceProductBest[j].innerHTML[0] + " " + list[arrayForCardsBest[j]].price;
+    imgBest[j].setAttribute('src', `${listCategory[j].images[0]}`);
 }
 
 
@@ -106,6 +110,7 @@ const productTitleSpec = document.querySelectorAll('.product-title-spec');
 const productWithDisc = document.querySelectorAll('.price-spec');
 const priceProductSpec = document.querySelectorAll('.regular-price');
 const discountProductSpec = document.querySelectorAll('.discount-spec');
+const imgSpec = document.querySelectorAll('.product-special-img');
 
 
 for (let k = 0; k < productTitleSpec.length; k++) {
@@ -113,6 +118,7 @@ for (let k = 0; k < productTitleSpec.length; k++) {
     productWithDisc[k].innerHTML =productWithDisc[k].innerHTML[0]+" "+(list[arrayForCardsSpec[k]].price - list[arrayForCardsSpec[k]].price/100*list[arrayForCardsSpec[k]].discount);
     priceProductSpec[k].innerHTML = priceProductSpec[k].innerHTML[0] + " " + list[arrayForCardsSpec[k]].price;
     discountProductSpec[k].innerHTML ="% " + list[arrayForCardsSpec[k]].discount;
+    imgSpec[k].setAttribute('src', `${listCategory[k].images[0]}`);
 }
 
 // category selection  ------------------------------------------------------------
@@ -130,6 +136,37 @@ const way = document.querySelector('.way');
    });
  }
 
+
 //  finish category selection ----------------------------------------------------
 
-// start localstorage ------------------------------------------------------------
+// start localstorage --------------------------------------------------------
+
+// size filter left-aside ----------------------------------------------------------
+let count:number;
+const sizeLabel = document.querySelectorAll('.size-label');
+console.log(list[1].size);
+
+for (let i=0; i < sizeLabel.length; i++) {
+ count = 0;
+  for (let j = 0; j < list.length; j++) {
+    if (sizeLabel[i].innerHTML == list[j].size) {
+      count++;
+    }
+  }
+  sizeLabel[i].innerHTML = sizeLabel[i].innerHTML.slice(0, 2) + ` (` + `${count}` + ')';
+}
+
+
+// color filter left-aside ----------------------------------------------------------
+let countColor: number;
+const colorLabel = document.querySelectorAll('.color-label');
+
+for (let i=0; i < colorLabel.length; i++) {
+  countColor = 0;
+  for (let j = 0; j < list.length; j++) {
+    if (colorLabel[i].innerHTML == list[j].color) {
+      countColor++;
+    }
+  }
+  colorLabel[i].innerHTML = colorLabel[i].innerHTML.slice(0, 7) + ` (` + `${countColor}` + ')';
+}
