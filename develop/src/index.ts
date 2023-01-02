@@ -128,6 +128,8 @@ for (let k = 0; k < productTitleSpec.length; k++) {
 
 // category selection  ------------------------------------------------------------
 const mainCategory = document.querySelectorAll('.category');
+const textCategoryMen = document.querySelector('.text-main-category-men');
+const textCategoryWomen = document.querySelector('.text-main-category-women');
 
 
  for(let i = 0;i<mainCategory.length;i++){
@@ -136,8 +138,13 @@ const way = document.querySelector('.way');
   // (i==0) ? forLocal.category = 'men' : forLocal.category='women';
   if(i==0){
     forLocal.category = 'men';
-  }else {
+
+    textCategoryWomen.classList.add('non');
+    textCategoryMen.classList.remove('non');
+  }else if(i==1) {
     forLocal.category = 'women';
+    textCategoryWomen.classList.remove('non');
+    textCategoryMen.classList.add('non');
   }
   way.innerHTML="Category : "+ forLocal.category;
   console.log(forLocal.category);
@@ -155,6 +162,10 @@ let count:number;
 const sizeLabel = document.querySelectorAll('.size-label');
 const sizeInput = document.querySelectorAll('.size-input');
 
+// const sizeInputItem = document.querySelector('.size-input');
+// console.log(list[1].size);
+// sizeInputItem.addEventListener('click', (e) => sizeInputItem.chec)
+
 for (let i=0; i < sizeLabel.length; i++) {
   // console.log(sizeLabel[i])
   sizeInput[i].addEventListener('click', function(){
@@ -162,6 +173,9 @@ for (let i=0; i < sizeLabel.length; i++) {
     console.log(sizeInput[i])
   })
  count = 0;
+ sizeInput[i].addEventListener('click', () => {
+  sizeLabel[i].classList.toggle('checked');
+ })
   for (let j = 0; j < list.length; j++) {
     if (sizeLabel[i].innerHTML == list[j].size) {
       count++;
@@ -170,13 +184,21 @@ for (let i=0; i < sizeLabel.length; i++) {
   sizeLabel[i].innerHTML = sizeLabel[i].innerHTML.slice(0, 2) + ` (` + `${count}` + ')';
 }
 
+// for (let i = 0; i < sizeInput.length; i++) {
+//   console.log(sizeInput[i]);
+// }
+
 
 // color filter left-aside ----------------------------------------------------------
 let countColor: number;
 const colorLabel = document.querySelectorAll('.color-label');
+const colorInput = document.querySelectorAll('.color-input');
 
 for (let i=0; i < colorLabel.length; i++) {
   countColor = 0;
+  colorInput[i].addEventListener('click', () => {
+    colorLabel[i].classList.toggle('checked');
+  })
   for (let j = 0; j < list.length; j++) {
     if (colorLabel[i].innerHTML == list[j].color) {
       countColor++;
