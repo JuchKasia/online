@@ -8,7 +8,8 @@ import "../normalize.css";
 
 import {list} from '../list';
 
-const forLocal = {"category": ""}; 
+const forLocal = {"category": "",
+"size":[""]}; 
 let listCategory = list;
 // function getCategoryArray start ------------------------------------------
 function getCategoryArray(){
@@ -28,8 +29,13 @@ console.log('listCategory '+listCategory.length);
 //  function getRandomArray -------------------------------------------------
 // eslint-disable-next-line prefer-const
 let randomArray: number[] = [];
+let arrayForCardsSpec: Array<number> = [];
+let arrayForCardsBest: Array<number> = [];
+
 function getRandomArray(m:number,max:number) {
   randomArray = [];
+  // arrayForCardsSpec = [];
+  // arrayForCardsBest = [];
   for(let i = 0;i<m;i++){
     const num:number = Math.floor(Math.random() * max);
     if(!randomArray.includes(num)){
@@ -41,9 +47,13 @@ function getRandomArray(m:number,max:number) {
 return randomArray;
 }
 let arrayForCards:Array<number>=[];
-arrayForCards= getRandomArray(18,99);
-console.log(arrayForCards);
 
+arrayForCards= getRandomArray(18,99);
+arrayForCardsSpec = getRandomArray(3, 99);
+arrayForCardsBest = getRandomArray(3, 99);
+console.log(arrayForCards);
+console.log(arrayForCardsBest);
+console.log(arrayForCardsSpec);
 // function getRandomArray finish -----------------------------------------
 
 
@@ -82,8 +92,7 @@ function buildCardsCategory(){
 }
 
 //  function getRandomArrayBest -------------------------------------------------
-let arrayForCardsBest: Array<number> = [];
-arrayForCardsBest = getRandomArray(3, 99);
+
 // console.log('arrayForCardsBest '+arrayForCardsBest);
 
 // function buildBestsellerCards -----------------------------------------
@@ -96,14 +105,11 @@ for (let j = 0; j < productTitleBest.length; j++) {
   // let img = document.createAttribute('img')
     productTitleBest[j].innerHTML = list[arrayForCardsBest[j]].title;
     priceProductBest[j].innerHTML = priceProductBest[j].innerHTML[0] + " " + list[arrayForCardsBest[j]].price;
-    imgBest[j].setAttribute('src', `${listCategory[j].images[0]}`);
+    imgBest[j].setAttribute('src', `${list[arrayForCardsBest[j]].images[0]}`);
 }
 
 
 //  function getRandomArraySpec -------------------------------------------------
-let arrayForCardsSpec: Array<number> = [];
-arrayForCardsSpec = getRandomArray(3, 99);
-// console.log('arrayForCardsSpec '+arrayForCardsSpec);
 
 // function buildSpecialCards -----------------------------------------
 const productTitleSpec = document.querySelectorAll('.product-title-spec');
@@ -112,41 +118,49 @@ const priceProductSpec = document.querySelectorAll('.regular-price');
 const discountProductSpec = document.querySelectorAll('.discount-spec');
 const imgSpec = document.querySelectorAll('.product-special-img');
 
-
 for (let k = 0; k < productTitleSpec.length; k++) {
     productTitleSpec[k].innerHTML = list[arrayForCardsSpec[k]].title;
     productWithDisc[k].innerHTML =productWithDisc[k].innerHTML[0]+" "+(list[arrayForCardsSpec[k]].price - list[arrayForCardsSpec[k]].price/100*list[arrayForCardsSpec[k]].discount);
     priceProductSpec[k].innerHTML = priceProductSpec[k].innerHTML[0] + " " + list[arrayForCardsSpec[k]].price;
     discountProductSpec[k].innerHTML ="% " + list[arrayForCardsSpec[k]].discount;
-    imgSpec[k].setAttribute('src', `${listCategory[k].images[0]}`);
+    imgSpec[k].setAttribute('src', `${list[arrayForCardsSpec[k]].images[0]}`);
 }
 
 // category selection  ------------------------------------------------------------
 const mainCategory = document.querySelectorAll('.category');
 
+
  for(let i = 0;i<mainCategory.length;i++){
 const way = document.querySelector('.way');
    mainCategory[i].addEventListener('click', function(){
-  (i==0) ? forLocal.category = 'men' : forLocal.category='women';
+  // (i==0) ? forLocal.category = 'men' : forLocal.category='women';
+  if(i==0){
+    forLocal.category = 'men';
+  }else {
+    forLocal.category = 'women';
+  }
   way.innerHTML="Category : "+ forLocal.category;
   console.log(forLocal.category);
   localStorage.setItem('category',forLocal.category);
   getCategoryArray();
-  buildCardsCategory()
+  buildCardsCategory();
    });
  }
 
-
 //  finish category selection ----------------------------------------------------
 
-// start localstorage --------------------------------------------------------
 
 // size filter left-aside ----------------------------------------------------------
 let count:number;
 const sizeLabel = document.querySelectorAll('.size-label');
-console.log(list[1].size);
+const sizeInput = document.querySelectorAll('.size-input');
 
 for (let i=0; i < sizeLabel.length; i++) {
+  // console.log(sizeLabel[i])
+  sizeInput[i].addEventListener('click', function(){
+    sizeLabel[i].classList.toggle('checked');
+    console.log(sizeInput[i])
+  })
  count = 0;
   for (let j = 0; j < list.length; j++) {
     if (sizeLabel[i].innerHTML == list[j].size) {
