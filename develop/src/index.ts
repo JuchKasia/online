@@ -151,10 +151,16 @@ const way = document.querySelector('.way');
 // size filter left-aside ----------------------------------------------------------
 let count:number;
 const sizeLabel = document.querySelectorAll('.size-label');
-console.log(list[1].size);
+const sizeInput = document.querySelectorAll('.size-input');
+// const sizeInputItem = document.querySelector('.size-input');
+// console.log(list[1].size);
+// sizeInputItem.addEventListener('click', (e) => sizeInputItem.chec)
 
 for (let i=0; i < sizeLabel.length; i++) {
  count = 0;
+ sizeInput[i].addEventListener('click', () => {
+  sizeLabel[i].classList.toggle('checked');
+ })
   for (let j = 0; j < list.length; j++) {
     if (sizeLabel[i].innerHTML == list[j].size) {
       count++;
@@ -163,13 +169,21 @@ for (let i=0; i < sizeLabel.length; i++) {
   sizeLabel[i].innerHTML = sizeLabel[i].innerHTML.slice(0, 2) + ` (` + `${count}` + ')';
 }
 
+// for (let i = 0; i < sizeInput.length; i++) {
+//   console.log(sizeInput[i]);
+// }
+
 
 // color filter left-aside ----------------------------------------------------------
 let countColor: number;
 const colorLabel = document.querySelectorAll('.color-label');
+const colorInput = document.querySelectorAll('.color-input');
 
 for (let i=0; i < colorLabel.length; i++) {
   countColor = 0;
+  colorInput[i].addEventListener('click', () => {
+    colorLabel[i].classList.toggle('checked');
+  })
   for (let j = 0; j < list.length; j++) {
     if (colorLabel[i].innerHTML == list[j].color) {
       countColor++;

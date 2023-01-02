@@ -2406,4 +2406,8 @@ body {
 .non {
   display: none;
 }
+
+.checked {
+  color: #85c38d;
+}
 /*# sourceMappingURL=style.css.map */
