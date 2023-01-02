@@ -432,6 +432,10 @@ body {
   cursor: pointer;
 }
 
+.container-left-aside .block-categories .category-list .category-item:hover {
+  color: #85c38d;
+}
+
 .center-wrapper {
   width: 75%;
   border: 1px solid green;

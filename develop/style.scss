@@ -360,6 +360,10 @@ body {
                 transition: 0.5s;
                 cursor: pointer;
             }
+            .category-item:hover {
+                color: #85c38d;
+
+            }
         }
     }
 }
