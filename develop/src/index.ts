@@ -20,6 +20,8 @@ for(let i = 0;i<list.length;i++){
   }
   
 }
+localStorage.setItem('listCategory',JSON.stringify(listCategory));
+// let poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
 console.log('listCategory '+listCategory.length);
 }
 
@@ -66,11 +68,9 @@ for(let i = 0;i<productDetailText.length; i++){
     secondCardImg[i].classList.add("non");
 }
 }
+// !JSON.parse(localStorage.getItem('listCategory')))?buildCardsCategory:
 buildCards();
 function buildCardsCategory(){
-  // const way = document.querySelector('.way');
-  // console.log('way.innerHTML '+way.innerHTML);
-  // console.log('forLocal '+forLocal.category)
   for(let i = 0;i<listCategory.length;i++){
     productDetailText[i].innerHTML = listCategory[i].description;
     cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i].stock;
@@ -79,8 +79,8 @@ function buildCardsCategory(){
     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
     secondCardImg[i].classList.add("non");
   }
-  // way.innerHTML = forLocal.category;
 }
+
 //  function getRandomArrayBest -------------------------------------------------
 let arrayForCardsBest: Array<number> = [];
 arrayForCardsBest = getRandomArray(3, 99);
@@ -124,8 +124,12 @@ const way = document.querySelector('.way');
   (i==0) ? forLocal.category = 'men' : forLocal.category='women';
   way.innerHTML="Category : "+ forLocal.category;
   console.log(forLocal.category);
-
+  localStorage.setItem('category',forLocal.category);
   getCategoryArray();
   buildCardsCategory()
    });
  }
+
+//  finish category selection ----------------------------------------------------
+
+// start localstorage ------------------------------------------------------------
