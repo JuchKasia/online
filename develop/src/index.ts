@@ -7,8 +7,8 @@ import "../normalize.css";
 
 
 import {list} from '../list';
-
-const forLocal = {"category": ""}; 
+// const size = new Set();
+const forLocal = {"category": "", size: "s "}; 
 let listCategory = list;
 // function getCategoryArray start ------------------------------------------
 function getCategoryArray(){
@@ -160,13 +160,24 @@ for (let i=0; i < sizeLabel.length; i++) {
  count = 0;
  sizeInput[i].addEventListener('click', () => {
   sizeLabel[i].classList.toggle('checked');
- })
+  // forLocal.size.has('s ')
+  console.log(forLocal.size);
+  // let sic:string = sizeLabel[i].innerHTML.slice(0, 2);
+  // console.log(forLocal.size.find(item=>item==sizeLabel[i].innerHTML.slice(0, 2)));
+  // if(forLocal.size.find(item=>item==sizeLabel[i].innerHTML.slice(0, 2))){
+  //  console.log( forLocal.size[]);
+    // `${sizeLabel[i].innerHTML.slice(0, 2)}`
+  
+  // console.log(sizeLabel[i].innerHTML.slice(0, 2));
+ });
   for (let j = 0; j < list.length; j++) {
     if (sizeLabel[i].innerHTML == list[j].size) {
       count++;
     }
   }
   sizeLabel[i].innerHTML = sizeLabel[i].innerHTML.slice(0, 2) + ` (` + `${count}` + ')';
+  
+
 }
 
 // for (let i = 0; i < sizeInput.length; i++) {
@@ -211,3 +222,19 @@ showList.addEventListener('click', () => {
   productWrapper.classList.add('product-wrapper-list');
 })
 
+// sort product by price in main menu-----------------------------------------------------
+const dropMenuBtn = document.querySelector('.btn-sort-col');
+const dropMenu = document.querySelector('.drop-down-menu');
+const sortPriceMenu = document.querySelectorAll('.sort-price-menu');
+
+ dropMenuBtn.addEventListener('click', () => {
+ dropMenu.classList.remove('non');
+})
+
+for (let i = 0; i < sortPriceMenu.length; i++) {
+  sortPriceMenu[0].addEventListener('click',()=>{
+    listCategory[i].price.sort((a, b) => b - a, 0)
+  });
+  
+
+}

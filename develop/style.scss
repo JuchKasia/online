@@ -829,6 +829,7 @@ input[type=number]::-webkit-outer-spin-button {
             .sort-col{
                 display: flex;
                 width: 250px;
+                // border: 1px solid green;
                 .btn-sort-col {
                     display: inline-block;
                     width: 100%;
@@ -856,7 +857,16 @@ input[type=number]::-webkit-outer-spin-button {
                     }
                 }
                 .drop-down-menu {
-                    display: none;
+                    // display: none;
+                    // display: flex;
+                    flex-direction: column;
+                    width: 250px;
+                    // background-color: transparent;
+                    .sort-price-menu {
+                        background-color: #fff;
+                        border: none;
+
+                    }
                 }
             }
         }
@@ -1705,10 +1715,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .item {
-    display: none;
-    position: relative;
-    margin: 0 auto;
-    animation: 0.5s ease-in-out;
+    // display: none;
+    // position: relative;
+    // margin: 0 auto;
+    // animation: 0.5s ease-in-out;
 }
 
 .active,

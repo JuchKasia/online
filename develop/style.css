@@ -978,7 +978,16 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .sort-filter .sort-wrapper .sort-row .sort-col .drop-down-menu {
-  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 250px;
+}
+
+.sort-filter .sort-wrapper .sort-row .sort-col .drop-down-menu .sort-price-menu {
+  background-color: #fff;
+  border: none;
 }
 
 /* product-container */
@@ -1972,14 +1981,6 @@ input[type=number]::-webkit-outer-spin-button {
   overflow: hidden;
   left: -640px;
   /* ???  200 20 200 20 200 */
-}
-
-.item {
-  display: none;
-  position: relative;
-  margin: 0 auto;
-  -webkit-animation: 0.5s ease-in-out;
-          animation: 0.5s ease-in-out;
 }
 
 .active,
