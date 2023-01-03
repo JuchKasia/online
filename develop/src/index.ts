@@ -7,17 +7,15 @@ import "../normalize.css";
 
 
 import {list} from '../list';
-// const size = new Set();
 
-// const iterator = size.values();
-// console.log(iterator.next().value)
-// const forLocal = {"category": "",
-// size:[""]}; 
+const size = new Set<string>([]);
 
-
-const forLocal = {"category": "", size: "s "}; 
+const forLocal = {
+  "category": "",
+  size
+} 
 let listCategory = list;
-
+console.log(forLocal.size.size)
 console.log(listCategory[0].price)
 
 // function getCategoryArray start ------------------------------------------
@@ -26,7 +24,19 @@ function getCategoryArray(){
 for(let i = 0;i<list.length;i++){
 // console.log('list[i].category ' +list[i].category+" : "+" forLocal.category " +forLocal.category);
   if (list[i].category == forLocal.category){
+    
+    // если размер какой-нибудь активирован -------------------------------------
+if(forLocal.size.size>0){
+  
+  if(forLocal.size.has(list[i].size)){
     listCategory.push(list[i]);
+    }
+    //  добавляем эти карточки в listCategory -------------------------------------
+} else {
+   listCategory.push(list[i]);
+}
+    
+   
   }
   
 }
@@ -90,6 +100,7 @@ for(let i = 0;i<productDetailText.length; i++){
 (!JSON.parse(localStorage.getItem('listCategory')))?buildCardsCategory:
 buildCards();
 function buildCardsCategory(){
+  clearCards();
   for(let i = 0;i<listCategory.length;i++){
     productDetailText[i].innerHTML = listCategory[i].description;
     cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i].stock;
@@ -99,7 +110,17 @@ function buildCardsCategory(){
     secondCardImg[i].classList.add("non");
   }
 }
-
+function clearCards(){
+  for(let i = 0;i<productDetailText.length;i++){
+   productDetailText[i].innerHTML="";
+   cardsStock[i].innerHTML="";
+   priceProduct[i].innerHTML = "";
+   productTitle[i].innerHTML="";
+   mainCardImg[i].innerHTML = "";
+   secondCardImg[i].innerHTML=""; 
+  }
+  
+}
 //  function getRandomArrayBest -------------------------------------------------
 
 // console.log('arrayForCardsBest '+arrayForCardsBest);
@@ -175,28 +196,22 @@ let count:number;
 const sizeLabel = document.querySelectorAll('.size-label');
 const sizeInput = document.querySelectorAll('.size-input');
 
-// const sizeInputItem = document.querySelector('.size-input');
-// console.log(list[1].size);
-// sizeInputItem.addEventListener('click', (e) => sizeInputItem.chec)
-
 for (let i=0; i < sizeLabel.length; i++) {
-  // console.log(sizeLabel[i])
-  sizeInput[i].addEventListener('click', function(){
-    sizeLabel[i].classList.toggle('checked');
-    // console.log(sizeInput[i]);
-  })
  count = 0;
+
  sizeInput[i].addEventListener('click', () => {
   sizeLabel[i].classList.toggle('checked');
-  // forLocal.size.has('s ')
-  console.log(forLocal.size);
-  // let sic:string = sizeLabel[i].innerHTML.slice(0, 2);
-  // console.log(forLocal.size.find(item=>item==sizeLabel[i].innerHTML.slice(0, 2)));
-  // if(forLocal.size.find(item=>item==sizeLabel[i].innerHTML.slice(0, 2))){
-  //  console.log( forLocal.size[]);
-    // `${sizeLabel[i].innerHTML.slice(0, 2)}`
-  
-  // console.log(sizeLabel[i].innerHTML.slice(0, 2));
+    if(!forLocal.size.has(sizeLabel[i].innerHTML.split(' ')[0])){
+    forLocal.size.add(sizeLabel[i].innerHTML.split(' ')[0])
+  } else 
+  if(forLocal.size.has(sizeLabel[i].innerHTML.split(' ')[0])){
+    forLocal.size.delete(sizeLabel[i].innerHTML.split(' ')[0])
+  }
+  console.log(forLocal.size)
+// здесь надо запускать обновление карточек
+getCategoryArray();
+buildCardsCategory();
+console.log(listCategory);
  });
   for (let j = 0; j < list.length; j++) {
     if (sizeLabel[i].innerHTML == list[j].size) {
@@ -205,13 +220,7 @@ for (let i=0; i < sizeLabel.length; i++) {
   }
   sizeLabel[i].innerHTML = sizeLabel[i].innerHTML.slice(0, 2) + ` (` + `${count}` + ')';
   
-
 }
-
-// for (let i = 0; i < sizeInput.length; i++) {
-//   console.log(sizeInput[i]);
-// }
-
 
 // color filter left-aside ----------------------------------------------------------
 let countColor: number;
@@ -222,7 +231,9 @@ for (let i=0; i < colorLabel.length; i++) {
   countColor = 0;
   colorInput[i].addEventListener('click', () => {
     colorLabel[i].classList.toggle('checked');
-  })
+    console.log('zahodit');
+    console.log(colorLabel[i].innerHTML)
+  });
   for (let j = 0; j < list.length; j++) {
     if (colorLabel[i].innerHTML == list[j].color) {
       countColor++;
