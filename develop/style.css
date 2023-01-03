@@ -942,52 +942,14 @@ input[type=number]::-webkit-outer-spin-button {
   vertical-align: top;
 }
 
-.sort-filter .sort-wrapper .sort-row .sort-col {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 250px;
+.sort-filter .sort-wrapper .sort-row .drop-down-menu {
+  font-size: 14px;
+  font-weight: 400;
 }
 
-.sort-filter .sort-wrapper .sort-row .sort-col .btn-sort-col {
-  display: inline-block;
-  width: 100%;
-  padding: 4px 10px;
+.sort-filter .sort-wrapper .sort-row .drop-down-menu .drop {
+  font-size: 14px;
   color: #232323;
-  background: #fff;
-  text-align: left;
-  cursor: pointer;
-  border: 1px solid #f5f5f5;
-  font-weight: 400;
-}
-
-.sort-filter .sort-wrapper .sort-row .sort-col .btn-sort-col .material-icon {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  font-size: 18px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  vertical-align: middle;
-  text-transform: none;
-  word-wrap: normal;
-  white-space: nowrap;
-  float: right;
-}
-
-.sort-filter .sort-wrapper .sort-row .sort-col .drop-down-menu {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 250px;
-}
-
-.sort-filter .sort-wrapper .sort-row .sort-col .drop-down-menu .sort-price-menu {
-  background-color: #fff;
-  border: none;
 }
 
 /* product-container */
