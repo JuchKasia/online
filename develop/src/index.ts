@@ -8,11 +8,14 @@ import "../normalize.css";
 
 import {list} from '../list';
 // const size = new Set();
+
 // const iterator = size.values();
 // console.log(iterator.next().value)
-const forLocal = {"category": "",
-size:[""]}; 
+// const forLocal = {"category": "",
+// size:[""]}; 
 
+
+const forLocal = {"category": "", size: "s "}; 
 let listCategory = list;
 
 console.log(listCategory[0].price)
@@ -185,13 +188,24 @@ for (let i=0; i < sizeLabel.length; i++) {
  count = 0;
  sizeInput[i].addEventListener('click', () => {
   sizeLabel[i].classList.toggle('checked');
- })
+  // forLocal.size.has('s ')
+  console.log(forLocal.size);
+  // let sic:string = sizeLabel[i].innerHTML.slice(0, 2);
+  // console.log(forLocal.size.find(item=>item==sizeLabel[i].innerHTML.slice(0, 2)));
+  // if(forLocal.size.find(item=>item==sizeLabel[i].innerHTML.slice(0, 2))){
+  //  console.log( forLocal.size[]);
+    // `${sizeLabel[i].innerHTML.slice(0, 2)}`
+  
+  // console.log(sizeLabel[i].innerHTML.slice(0, 2));
+ });
   for (let j = 0; j < list.length; j++) {
     if (sizeLabel[i].innerHTML == list[j].size) {
       count++;
     }
   }
   sizeLabel[i].innerHTML = sizeLabel[i].innerHTML.slice(0, 2) + ` (` + `${count}` + ')';
+  
+
 }
 
 // for (let i = 0; i < sizeInput.length; i++) {
@@ -215,5 +229,40 @@ for (let i=0; i < colorLabel.length; i++) {
     }
   }
   colorLabel[i].innerHTML = colorLabel[i].innerHTML.slice(0, 7) + ` (` + `${countColor}` + ')';
+}
+
+// dual range slider for search filter ----------------------------------------------------------
+
+
+// sort product by grid and list----------------------------------------------------------
+const showGrid = document.querySelector('.show-grid');
+const showList = document.querySelector('.show-list');
+const productWrapper = document.querySelector('.product-wrapper');
+
+showGrid.addEventListener('click', () => {
+  productWrapper.classList.add('product-wrapper-grid');
+  productWrapper.classList.remove('product-wrapper-list');
+})
+
+showList.addEventListener('click', () => {
+  productWrapper.classList.remove('product-wrapper-grid');
+  productWrapper.classList.add('product-wrapper-list');
+})
+
+// sort product by price in main menu-----------------------------------------------------
+const dropMenuBtn = document.querySelector('.btn-sort-col');
+const dropMenu = document.querySelector('.drop-down-menu');
+const sortPriceMenu = document.querySelectorAll('.sort-price-menu');
+
+ dropMenuBtn.addEventListener('click', () => {
+ dropMenu.classList.remove('non');
+})
+
+for (let i = 0; i < sortPriceMenu.length; i++) {
+  sortPriceMenu[0].addEventListener('click',()=>{
+    // listCategory[i].price.sort((a, b) => b - a, 0)
+  });
+  
+
 }
 
