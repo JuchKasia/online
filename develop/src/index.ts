@@ -194,3 +194,20 @@ for (let i=0; i < colorLabel.length; i++) {
 
 
 // dual range slider for search filter ----------------------------------------------------------
+
+
+// sort product by grid and list----------------------------------------------------------
+const showGrid = document.querySelector('.show-grid');
+const showList = document.querySelector('.show-list');
+const productWrapper = document.querySelector('.product-wrapper');
+
+showGrid.addEventListener('click', () => {
+  productWrapper.classList.add('product-wrapper-grid');
+  productWrapper.classList.remove('product-wrapper-list');
+})
+
+showList.addEventListener('click', () => {
+  productWrapper.classList.remove('product-wrapper-grid');
+  productWrapper.classList.add('product-wrapper-list');
+})
+

@@ -784,7 +784,8 @@ input[type=number]::-webkit-outer-spin-button {
                 background-repeat: no-repeat;
                 opacity: 1.0;
                 vertical-align: top;
-                cursor: pointer;                
+                cursor: pointer;
+                // pointer-events: none;
             }
             .show-list {
                 display: inline-block;
@@ -796,6 +797,7 @@ input[type=number]::-webkit-outer-spin-button {
                 opacity: 1.0;
                 vertical-align: top;
                 cursor: pointer;
+                // pointer-events: none;
             }
             .sort-text {
                 display: inline-block;
@@ -866,10 +868,20 @@ input[type=number]::-webkit-outer-spin-button {
     .product-wrapper {
         display: flex;
         flex-wrap: wrap;
+        width: 100%;
         margin-bottom: 30px;
-        justify-content: flex-start;
         color: #7a7a7a;
         gap: 10px;
+    }
+    .product-wrapper-list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .product-wrapper-grid {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
     }
 }
 
@@ -878,7 +890,6 @@ input[type=number]::-webkit-outer-spin-button {
     flex-direction: column;
     width: calc((100% - 20px) / 3);
     // height: 300px;
-    // padding: 0 15px;
     gap: 10px;
     border: 1px solid red;
     .cart-img {
