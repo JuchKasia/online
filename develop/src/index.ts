@@ -223,18 +223,18 @@ showList.addEventListener('click', () => {
 })
 
 // sort product by price in main menu-----------------------------------------------------
-const dropMenuBtn = document.querySelector('.btn-sort-col');
-const dropMenu = document.querySelector('.drop-down-menu');
-const sortPriceMenu = document.querySelectorAll('.sort-price-menu');
+// const dropMenuBtn = document.querySelector('.btn-sort-col');
+// const dropMenu = document.querySelector('.drop-down-menu');
+// const sortPriceMenu = document.querySelectorAll('.sort-price-menu');
 
- dropMenuBtn.addEventListener('click', () => {
- dropMenu.classList.remove('non');
-})
+//  dropMenuBtn.addEventListener('click', () => {
+//  dropMenu.classList.remove('non');
+// })
 
-for (let i = 0; i < sortPriceMenu.length; i++) {
-  sortPriceMenu[0].addEventListener('click',()=>{
-    listCategory[i].price.sort((a, b) => b - a, 0)
-  });
+// for (let i = 0; i < sortPriceMenu.length; i++) {
+//   sortPriceMenu[0].addEventListener('click',()=>{
+//     listCategory[i].price.sort((a, b) => b - a, 0)
+//   });
   
 
-}
+// }
