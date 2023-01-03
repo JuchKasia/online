@@ -490,8 +490,55 @@ body {
   color: #131313;
 }
 
-.size-filter .size-item .size-label {
-  text-transform: uppercase;
+.price-container .slider-line,
+.stock-container .slider-line {
+  margin: 15px 20px 0px 20px;
+  height: 2px;
+  background-color: #72828e;
+  z-index: 1;
+}
+
+.price-container .square-input-left,
+.price-container .square-input-right,
+.stock-container .square-input-left,
+.stock-container .square-input-right {
+  position: absolute;
+  width: 10px;
+  height: 25px;
+  font-size: 14px;
+  color: #fff;
+  border: 2px solid #72828e;
+  border-radius: 35%;
+  text-align: center;
+}
+
+.price-container .square-input-left,
+.stock-container .square-input-left {
+  margin-left: 10px;
+}
+
+.price-container .square-input-right,
+.stock-container .square-input-right {
+  margin-left: 150px;
+}
+
+.price-line,
+.stock-line {
+  margin: 15px 20px 0px 20px;
+  height: 2px;
+  background-color: #72828e;
+  z-index: 1;
+}
+
+.value-from {
+  width: 10px;
+  height: 25px;
+  margin-top: -12px;
+  font-size: 14px;
+  color: #fff;
+  border: 2px solid #72828e;
+  border-radius: 35%;
+  text-align: center;
 }
 
 .block-bestseller {
@@ -689,53 +736,6 @@ body {
   text-transform: capitalize;
   letter-spacing: 0.56px;
   text-decoration: underline;
-}
-
-.price-container .price-line,
-.stock-container .price-line {
-  margin: 15px 20px 0px 20px;
-  height: 2px;
-  background-color: #72828e;
-  z-index: 1;
-}
-
-.price-container .squares,
-.stock-container .squares {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.price-container .squares .square-left,
-.price-container .squares .square-right,
-.stock-container .squares .square-left,
-.stock-container .squares .square-right {
-  width: 10px;
-  height: 25px;
-  margin-top: -12px;
-  font-size: 14px;
-  color: #fff;
-  border: 2px solid #72828e;
-  border-radius: 35%;
-  text-align: center;
-}
-
-.price-container .squares .square-left,
-.stock-container .squares .square-left {
-  float: left;
-}
-
-.price-container .squares .square-right,
-.stock-container .squares .square-right {
-  float: right;
-}
-
-.price-line,
-.stock-line {
-  margin: 15px 20px 0px 20px;
-  height: 2px;
-  background-color: #72828e;
-  z-index: 1;
 }
 
 /* CONTAINER CENTER */

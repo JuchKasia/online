@@ -191,3 +191,6 @@ for (let i=0; i < colorLabel.length; i++) {
   }
   colorLabel[i].innerHTML = colorLabel[i].innerHTML.slice(0, 7) + ` (` + `${countColor}` + ')';
 }
+
+
+// dual range slider for search filter ----------------------------------------------------------

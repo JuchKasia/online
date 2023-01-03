@@ -414,27 +414,58 @@
                             <h6 class="filter-title">FILTER BY</h6>
                             <div class="search-filter">
                                 <p class="filter-subtitle">Price</p>
-                                <p class="price-interval">$7.00 - $36.00</p>
+                                <!-- <p class="price-interval">$7.00 - $36.00</p> -->
                                 <div class="price-container">
-                                    <div class="price-line"></div>
-                                    <div class="squares">
+                                    <!-- <div class="squares">
                                         <div class="square-left"></div>
                                         <div class="square-right"></div>
+                                    </div> -->
+                                    <div class="slider-wrapper">
+                                        <input type="range" class="fromSlider fromSliderPrice" id="fromSlider" value="10" min="0" max="200"/>
+                                        <input type="range" class="toSlider toSliderPrice" id="toSlider" value="30" min="0" max="200"/>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <div class="form_control_container">
+                                            <!-- <div class="form_control_container__time">Min</div> -->
+                                            <input class="form_control_container__time__input form-control-price" type="number" id="fromInput" value="10" min="0" max="100"/>
+                                        </div>
+                                        <!-- <div class="form_control_container__time">Min</div> -->
+                                        <div class="form_control_container">
+                                            <!-- <div class="form_control_container__time">Max</div> -->
+                                            <input class="form_control_container__time__input form-control-price" type="number" id="toInput" value="30" min="0" max="100"/>
+                                        </div>
+
                                     </div>
                                     <!-- <input type="text" class="square-input-left"/>
                                     <input type="text" class="square-input-right"/>
-                                    <div class="slider"></div> -->
+                                    <div class="slider-line"></div> -->
                                 </div>
                             </div>
                             <div class="stock-filter">
                                 <p class="filter-subtitle">Stock</p>
-                                <p class="stock-interval">pcs.1 - pcs.300</p>
+                                <!-- <p class="stock-interval">pcs.1 - pcs.300</p> -->
                                 <div class="stock-container">
-                                    <div class="stock-line"></div>
-                                    <div class="squares">
+                                    <div class="slider-wrapper">
+                                        <input type="range" class="fromSlider fromSliderStock" id="fromSlider" value="10" min="0" max="200"/>
+                                        <input type="range" class="toSlider toSliderStock" id="toSlider" value="30" min="0" max="200"/>
+                                    </div>
+                                    <div class="control-wrapper">
+                                        <div class="form_control_container">
+                                            <!-- <div class="form_control_container__time">Min</div> -->
+                                            <input class="form_control_container__time__input form-control-stock" type="number" id="fromInput" value="10" min="0" max="100"/>
+                                        </div>
+                                        <!-- <div class="form_control_container__time">Min</div> -->
+                                        <div class="form_control_container">
+                                            <!-- <div class="form_control_container__time">Max</div> -->
+                                            <input class="form_control_container__time__input form-control-stock" type="number" id="toInput" value="30" min="0" max="100"/>
+                                        </div>
+
+                                    </div>
+                                    <!-- <div class="stock-line"></div> -->
+                                    <!-- <div class="squares">
                                         <div class="square-left"></div>
                                         <div class="square-right"></div>
-                                    </div>
+                                    </div> -->
                                     <!-- <input type="text" class="square-input-left"/>
                                     <input type="text" class="square-input-right"/>
                                     <div class="slider"></div> -->
