@@ -7,10 +7,16 @@ import "../normalize.css";
 
 
 import {list} from '../list';
-
+// const size = new Set();
+// const iterator = size.values();
+// console.log(iterator.next().value)
 const forLocal = {"category": "",
-"size":[""]}; 
+size:[""]}; 
+
 let listCategory = list;
+
+console.log(listCategory[0].price)
+
 // function getCategoryArray start ------------------------------------------
 function getCategoryArray(){
   listCategory = [];
@@ -140,11 +146,15 @@ const way = document.querySelector('.way');
     forLocal.category = 'men';
 
     textCategoryWomen.classList.add('non');
+    mainCategory[0].classList.add('checked');
     textCategoryMen.classList.remove('non');
+    mainCategory[1].classList.remove('checked');
   }else if(i==1) {
     forLocal.category = 'women';
     textCategoryWomen.classList.remove('non');
+    mainCategory[0].classList.remove('checked');
     textCategoryMen.classList.add('non');
+    mainCategory[1].classList.add('checked');
   }
   way.innerHTML="Category : "+ forLocal.category;
   console.log(forLocal.category);
@@ -170,7 +180,7 @@ for (let i=0; i < sizeLabel.length; i++) {
   // console.log(sizeLabel[i])
   sizeInput[i].addEventListener('click', function(){
     sizeLabel[i].classList.toggle('checked');
-    console.log(sizeInput[i])
+    // console.log(sizeInput[i]);
   })
  count = 0;
  sizeInput[i].addEventListener('click', () => {
@@ -206,3 +216,4 @@ for (let i=0; i < colorLabel.length; i++) {
   }
   colorLabel[i].innerHTML = colorLabel[i].innerHTML.slice(0, 7) + ` (` + `${countColor}` + ')';
 }
+
