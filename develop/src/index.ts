@@ -238,3 +238,27 @@ showList.addEventListener('click', () => {
   
 
 // }
+
+const dropLowToHigh = document.querySelector('.drop-low-to-high');
+const dropHighToLow = document.querySelector('.drop-low-to-high');
+const dropAZ = document.querySelector('.drop-AZ');
+const dropZA = document.querySelector('.drop-ZA');
+const sortPriceMenu = document.querySelectorAll('.sort-price-menu');
+
+dropLowToHigh.addEventListener('click', () => {
+  listCategory[i].sort((a, b) => b.price - a.price, 0);
+
+})
+
+dropHighToLow.addEventListener('click', () => {
+  
+})
+
+dropAZ.addEventListener('click', () => {
+  
+})
+
+dropZA.addEventListener('click', () => {
+  
+})
+
