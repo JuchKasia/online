@@ -9,31 +9,51 @@ import "../normalize.css";
 import {list} from '../list';
 
 const size = new Set<string>([]);
+const color = new Set<string>([]);
 
 const forLocal = {
   "category": "",
-  size
+  size,
+  color
 } 
 let listCategory = list;
 console.log(forLocal.size.size)
 console.log(listCategory[0].price)
 
 // function getCategoryArray start ------------------------------------------
+// аналитика доступных карточек на основе выбранных пунктов
 function getCategoryArray(){
   listCategory = [];
 for(let i = 0;i<list.length;i++){
-// console.log('list[i].category ' +list[i].category+" : "+" forLocal.category " +forLocal.category);
+// здесь выбор по men \ women
   if (list[i].category == forLocal.category){
     
     // если размер какой-нибудь активирован -------------------------------------
 if(forLocal.size.size>0){
-  
-  if(forLocal.size.has(list[i].size)){
+  if(forLocal.color.size>0){
+    if(forLocal.color.has(list[i].color)&&forLocal.size.has(list[i].size)){
+      listCategory.push(list[i]);
+    }
+  }else {
+    if(forLocal.size.has(list[i].size)){
+    
     listCategory.push(list[i]);
     }
+  }
+  
     //  добавляем эти карточки в listCategory -------------------------------------
 } else {
-   listCategory.push(list[i]);
+  // здесь происходит когда нет размеров
+  if(forLocal.color.size>0){
+    // здесь происходит когда есть цвета
+    if(forLocal.color.has(list[i].color)){
+      listCategory.push(list[i]);
+    }
+
+  } else {
+    listCategory.push(list[i]);
+  }
+   
 }
     
    
@@ -199,7 +219,6 @@ const sizeInput = document.querySelectorAll('.size-input');
 
 for (let i=0; i < sizeLabel.length; i++) {
  count = 0;
-
  sizeInput[i].addEventListener('click', () => {
   sizeLabel[i].classList.toggle('checked');
     if(!forLocal.size.has(sizeLabel[i].innerHTML.split(' ')[0])){
@@ -209,13 +228,12 @@ for (let i=0; i < sizeLabel.length; i++) {
     forLocal.size.delete(sizeLabel[i].innerHTML.split(' ')[0])
   }
   console.log(forLocal.size)
-// здесь надо запускать обновление карточек
 getCategoryArray();
 buildCardsCategory();
 console.log(listCategory);
  });
-  for (let j = 0; j < list.length; j++) {
-    if (sizeLabel[i].innerHTML == list[j].size) {
+  for (let j = 0; j < listCategory.length; j++) {
+    if (sizeLabel[i].innerHTML == listCategory[j].size) {
       count++;
     }
   }
@@ -232,11 +250,16 @@ for (let i=0; i < colorLabel.length; i++) {
   countColor = 0;
   colorInput[i].addEventListener('click', () => {
     colorLabel[i].classList.toggle('checked');
-    console.log('zahodit');
-    console.log(colorLabel[i].innerHTML)
+    if(!forLocal.color.has(colorLabel[i].innerHTML.split(' ')[0])){
+      forLocal.color.add(colorLabel[i].innerHTML.split(' ')[0])
+    } else if(forLocal.color.has(colorLabel[i].innerHTML.split(" ")[0])){
+      forLocal.color.delete(colorLabel[i].innerHTML.split(' ')[0])
+    }
+    getCategoryArray();
+buildCardsCategory();
   });
-  for (let j = 0; j < list.length; j++) {
-    if (colorLabel[i].innerHTML == list[j].color) {
+  for (let j = 0; j < listCategory.length; j++) {
+    if (colorLabel[i].innerHTML == listCategory[j].color) {
       countColor++;
     }
   }
