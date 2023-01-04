@@ -298,7 +298,3 @@ for (let i = 0; i < sortPriceMenu.length; i++) {
   sortPriceMenu[0].addEventListener('click',()=>{
     // listCategory[i].price.sort((a, b) => b - a, 0)
   });
-  
-
-}
-
