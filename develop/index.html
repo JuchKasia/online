@@ -663,19 +663,12 @@
                                 </div>
                                 <div class="sort-row">
                                     <p class="sort-row-text">Sort by:</p>
-                                    <div class="sort-col">
-                                        <button class="btn-sort-col">Relevance
-                                            <i class="material-icon">&#9660;</i>
-                                        </button>
-                                        <div class="drop-down-menu non">
-                                            <button class="sort-price-menu" href="#">Price, low to high</button>
-                                            <button class="sort-price-menu" href="#">Price, hidh to low</button>
-                                            <!-- <button class="" href="#"></button>
-                                            <button class="" href="#"></button>
-                                            <button class="" href="#"></button> -->
-                                        </div>
-                                    </div>
-                                
+                                    <select class="drop-down-menu" name="sort">
+                                        <option class="drop" value="high">Price (low to high)</option>
+                                        <option class="drop" value="low">Price (high to low)</option>
+                                        <option class="drop" value="az">Name (A-Z)</option>
+                                        <option class="drop" value="za">Name (Z-A)</option>
+                                    </select>
                                 </div>
                             </div>
                             

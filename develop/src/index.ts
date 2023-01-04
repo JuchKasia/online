@@ -262,6 +262,7 @@ showList.addEventListener('click', () => {
 })
 
 // sort product by price in main menu-----------------------------------------------------
+
 const dropMenuBtn = document.querySelector('.btn-sort-col');
 const dropMenu = document.querySelector('.drop-down-menu');
 const sortPriceMenu = document.querySelectorAll('.sort-price-menu');
