@@ -20,8 +20,8 @@ const forLocal = {
 let listCategory = list;
 // forLocal.category('men');
 // forLocal.category.add('women');
-console.log(forLocal.size.size)
-console.log(listCategory[0].price)
+// console.log(forLocal.size.size)
+// console.log(listCategory[0].price)
 
 // function getCategoryArray start ------------------------------------------
 // аналитика доступных карточек на основе выбранных пунктов
@@ -295,15 +295,93 @@ showList.addEventListener('click', () => {
 
 // sort product by price in main menu-----------------------------------------------------
 
-const dropMenuBtn = document.querySelector('.btn-sort-col');
-const dropMenu = document.querySelector('.drop-down-menu');
-const sortPriceMenu = document.querySelectorAll('.sort-price-menu');
+// const dropLowToHigh = document.querySelector('.drop-low-to-high');
+// const dropHighToLow = document.querySelector('.drop-high to low');
+// const dropAZ = document.querySelector('.drop-AZ');
+// const dropZA = document.querySelector('.drop-ZA');
 
- dropMenuBtn.addEventListener('click', () => {
- dropMenu.classList.remove('non');
-})
+// Этот пример массива я прописывала, когда писала код 
 
-for (let i = 0; i < sortPriceMenu.length; i++) {
-  sortPriceMenu[0].addEventListener('click',()=>{
-    // listCategory[i].price.sort((a, b) => b - a, 0)
-  });
+// const listCategory  =
+//  [
+//   {
+//     "id": 1,
+//     "title" : "shirt",
+//   "brand":"Gucci",
+//   "category": "women",
+//   "price":26,
+//   },
+//   {
+//     "id":2,
+//     "title":"shirt",
+//   "brand":"Prada",
+//   "category":"women",
+//   "price":48,
+//   },
+//   {
+//     "id":3,
+//     "title":"shirt",
+//   "brand":"Dior",
+//   "category":"women",
+//   "price":38, 
+//   }];
+
+// КОД В JS, который работает.
+
+// const sortDropDownMenu = function() {
+//   const dropDownMenu = document.querySelector('.drop-down-menu');
+//   dropDownMenu.addEventListener("change", function() {
+//     function sortLowToHigh(listCategory) {
+//       listCategory.sort((a, b) => a.price > b.price ? 1 : -1);
+//     }
+//     sortLowToHigh(listCategory);
+//     console.log(listCategory);
+//   });
+// }
+// sortDropDownMenu()
+
+
+// Этот же код с поправленными данными в TS
+
+
+// const sortDropDownMenu = function() {
+  const dropDownMenu = document.querySelector('.drop-down-menu');
+  dropDownMenu.addEventListener("change", function() {
+    if(this.value=='high'){
+      sortLowToHigh(listCategory);
+      buildCardsCategory();
+    }
+
+    if(this.value=='low') {
+      sortHighToLow(listCategory);
+      buildCardsCategory();
+    }
+
+    // if(this.value=='az') {
+    //   // listCategory.sort(sortAZ);
+    //   sortAZ(listCategory);
+    //   // SortArray(listCategory, listCategory);
+    //   buildCardsCategory();
+    // }
+
+    function sortLowToHigh(listCategory: { price: number; }[]) {
+      listCategory.sort((a : {price: number}, b: {price: number}): number => a.price > b.price ? 1 : -1);
+    }
+    function sortHighToLow(listCategory: { price: number; }[]) {
+      listCategory.sort((a : {price: number}, b: {price: number}): number => a.price > b.price ? 1 : -1).reverse();
+    }
+    // function sortAZ(listCategory: { title: string; }[]) {
+    //   listCategory.sort((a : {title: string}, b: {title: string}): string => a.title > b.title ? 1 : -1);
+      // if (a.title < b.title) {return -1;}
+      // if (a.title > b.title) {return 1;}
+      // return 0;
+    // }
+  })
+  //   function SortArray(x, y){
+  //     return x.title.localeCompare(y.title);
+  //   }
+  //   listCategory.sort(SortArray);
+  // });
+
+// }
+// sortDropDownMenu()
