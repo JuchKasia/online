@@ -295,56 +295,6 @@ showList.addEventListener('click', () => {
 
 // sort product by price in main menu-----------------------------------------------------
 
-// const dropLowToHigh = document.querySelector('.drop-low-to-high');
-// const dropHighToLow = document.querySelector('.drop-high to low');
-// const dropAZ = document.querySelector('.drop-AZ');
-// const dropZA = document.querySelector('.drop-ZA');
-
-// Этот пример массива я прописывала, когда писала код 
-
-// const listCategory  =
-//  [
-//   {
-//     "id": 1,
-//     "title" : "shirt",
-//   "brand":"Gucci",
-//   "category": "women",
-//   "price":26,
-//   },
-//   {
-//     "id":2,
-//     "title":"shirt",
-//   "brand":"Prada",
-//   "category":"women",
-//   "price":48,
-//   },
-//   {
-//     "id":3,
-//     "title":"shirt",
-//   "brand":"Dior",
-//   "category":"women",
-//   "price":38, 
-//   }];
-
-// КОД В JS, который работает.
-
-// const sortDropDownMenu = function() {
-//   const dropDownMenu = document.querySelector('.drop-down-menu');
-//   dropDownMenu.addEventListener("change", function() {
-//     function sortLowToHigh(listCategory) {
-//       listCategory.sort((a, b) => a.price > b.price ? 1 : -1);
-//     }
-//     sortLowToHigh(listCategory);
-//     console.log(listCategory);
-//   });
-// }
-// sortDropDownMenu()
-
-
-// Этот же код с поправленными данными в TS
-
-
-// const sortDropDownMenu = function() {
   const dropDownMenu = document.querySelector('.drop-down-menu');
   dropDownMenu.addEventListener("change", function() {
     if(this.value=='high'){
@@ -357,12 +307,18 @@ showList.addEventListener('click', () => {
       buildCardsCategory();
     }
 
-    // if(this.value=='az') {
-    //   // listCategory.sort(sortAZ);
-    //   sortAZ(listCategory);
-    //   // SortArray(listCategory, listCategory);
-    //   buildCardsCategory();
-    // }
+    if(this.value=='az') {
+      sortAZ(listCategory);
+      console.log(listCategory);
+      buildCardsCategory();
+    }
+    
+    if(this.value=='za') {
+      sortZA(listCategory);
+      console.log(listCategory);
+      buildCardsCategory();
+    }
+
 
     function sortLowToHigh(listCategory: { price: number; }[]) {
       listCategory.sort((a : {price: number}, b: {price: number}): number => a.price > b.price ? 1 : -1);
@@ -370,18 +326,34 @@ showList.addEventListener('click', () => {
     function sortHighToLow(listCategory: { price: number; }[]) {
       listCategory.sort((a : {price: number}, b: {price: number}): number => a.price > b.price ? 1 : -1).reverse();
     }
-    // function sortAZ(listCategory: { title: string; }[]) {
-    //   listCategory.sort((a : {title: string}, b: {title: string}): string => a.title > b.title ? 1 : -1);
-      // if (a.title < b.title) {return -1;}
-      // if (a.title > b.title) {return 1;}
-      // return 0;
-    // }
-  })
-  //   function SortArray(x, y){
-  //     return x.title.localeCompare(y.title);
-  //   }
-  //   listCategory.sort(SortArray);
-  // });
 
-// }
-// sortDropDownMenu()
+    function sortAZ(listCategory: { title: string; }[]) {
+      listCategory.sort(function(a: {title: string}, b: {title: string}): number {
+        const titleA = a.title.toLowerCase();
+        const titleB = b.title.toLowerCase();
+         //сортируем строки по возрастанию
+        if (titleA < titleB) {
+          return -1
+        } 
+        if (titleA > titleB) {
+          return 1
+        }
+        return 0 
+      })
+    }
+
+    function sortZA(listCategory: { title: string; }[]) {
+      listCategory.sort(function(a: {title: string}, b: {title: string}): number {
+        const titleA = a.title.toLowerCase();
+        const titleB = b.title.toLowerCase();
+        //сортируем строки по уыванию
+        if (titleA < titleB) {
+          return -1
+        } 
+        if (titleA > titleB) {
+          return 1
+        }
+        return 0 
+       }).reverse();
+    }
+  })
