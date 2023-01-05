@@ -8,15 +8,18 @@ import "../normalize.css";
 
 import {list} from '../list';
 
+const category = new Set<string>(["men","women"]);
 const size = new Set<string>([]);
 const color = new Set<string>([]);
 
 const forLocal = {
-  "category": "",
+  category,
   size,
   color
 } 
 let listCategory = list;
+// forLocal.category('men');
+// forLocal.category.add('women');
 console.log(forLocal.size.size)
 console.log(listCategory[0].price)
 
@@ -26,7 +29,8 @@ function getCategoryArray(){
   listCategory = [];
 for(let i = 0;i<list.length;i++){
 // здесь выбор по men \ women
-  if (list[i].category == forLocal.category){
+  // if (list[i].category == forLocal.category){
+    if(forLocal.category.has(list[i].category)){
     
     // если размер какой-нибудь активирован -------------------------------------
 if(forLocal.size.size>0){
@@ -188,22 +192,26 @@ const way = document.querySelector('.way');
    mainCategory[i].addEventListener('click', function(){
   // (i==0) ? forLocal.category = 'men' : forLocal.category='women';
   if(i==0){
-    forLocal.category = 'men';
-
+    forLocal.category.delete('women');
+    forLocal.category.add('men');
     textCategoryWomen.classList.add('non');
     mainCategory[0].classList.add('checked');
     textCategoryMen.classList.remove('non');
     mainCategory[1].classList.remove('checked');
+    // нужно добавить функцию перебора форлокал и достать результат
+    way.innerHTML="Category : "+ mainCategory[0].innerHTML;
   }else if(i==1) {
-    forLocal.category = 'women';
+    forLocal.category.delete('men');
+    forLocal.category.add('women');
     textCategoryWomen.classList.remove('non');
     mainCategory[0].classList.remove('checked');
     textCategoryMen.classList.add('non');
     mainCategory[1].classList.add('checked');
+    way.innerHTML="Category : "+  mainCategory[1].innerHTML;
   }
-  way.innerHTML="Category : "+ forLocal.category;
+  
   console.log(forLocal.category);
-  localStorage.setItem('category',forLocal.category);
+  // localStorage.setItem('category',forLocal.category);
   getCategoryArray();
   buildCardsCategory();
    });
@@ -219,6 +227,7 @@ const sizeInput = document.querySelectorAll('.size-input');
 
 for (let i=0; i < sizeLabel.length; i++) {
  count = 0;
+
  sizeInput[i].addEventListener('click', () => {
   sizeLabel[i].classList.toggle('checked');
     if(!forLocal.size.has(sizeLabel[i].innerHTML.split(' ')[0])){
@@ -286,15 +295,15 @@ showList.addEventListener('click', () => {
 
 // sort product by price in main menu-----------------------------------------------------
 
-// const dropMenuBtn = document.querySelector('.btn-sort-col');
-// const dropMenu = document.querySelector('.drop-down-menu');
-// const sortPriceMenu = document.querySelectorAll('.sort-price-menu');
+const dropMenuBtn = document.querySelector('.btn-sort-col');
+const dropMenu = document.querySelector('.drop-down-menu');
+const sortPriceMenu = document.querySelectorAll('.sort-price-menu');
 
-//  dropMenuBtn.addEventListener('click', () => {
-//  dropMenu.classList.remove('non');
-// })
+ dropMenuBtn.addEventListener('click', () => {
+ dropMenu.classList.remove('non');
+})
 
-// for (let i = 0; i < sortPriceMenu.length; i++) {
-//   sortPriceMenu[0].addEventListener('click',()=>{
-//     // listCategory[i].price.sort((a, b) => b - a, 0)
-//   });
+for (let i = 0; i < sortPriceMenu.length; i++) {
+  sortPriceMenu[0].addEventListener('click',()=>{
+    // listCategory[i].price.sort((a, b) => b - a, 0)
+  });
