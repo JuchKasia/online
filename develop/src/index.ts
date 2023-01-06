@@ -27,6 +27,7 @@ export let listCategory = list;
 // function getCategoryArray start ------------------------------------------
 // аналитика доступных карточек на основе выбранных пунктов
 export function getCategoryArray(){
+
   listCategory = [];
 for(let i = 0;i<list.length;i++){
 // здесь выбор по men \ women
@@ -39,13 +40,15 @@ if(forLocal.size.size>0){
     if(forLocal.color.has(list[i].color)&&forLocal.size.has(list[i].size)){
       listCategory.push(list[i]);
     }
+    
   }else {
     if(forLocal.size.has(list[i].size)){
     
     listCategory.push(list[i]);
+    
     }
+    
   }
-  
     //  добавляем эти карточки в listCategory -------------------------------------
 } else {
   // здесь происходит когда нет размеров
@@ -58,7 +61,6 @@ if(forLocal.size.size>0){
   } else {
     listCategory.push(list[i]);
   }
-   
 }
     
    
@@ -196,13 +198,14 @@ const way = document.querySelector('.way');
   // (i==0) ? forLocal.category = 'men' : forLocal.category='women';
   if(i==0){
     forLocal.category.delete('women');
-    forLocal.category.add('men');
+    forLocal.category.add('');
     textCategoryWomen.classList.add('non');
     mainCategory[0].classList.add('checked');
     textCategoryMen.classList.remove('non');
     mainCategory[1].classList.remove('checked');
     // нужно добавить функцию перебора форлокал и достать результат
-    way.innerHTML="Category : "+ mainCategory[0].innerHTML;
+    console.log(way.innerHTML)
+    way.innerHTML="Category : Men";
   }else if(i==1) {
     forLocal.category.delete('men');
     forLocal.category.add('women');
@@ -210,7 +213,8 @@ const way = document.querySelector('.way');
     mainCategory[0].classList.remove('checked');
     textCategoryMen.classList.add('non');
     mainCategory[1].classList.add('checked');
-    way.innerHTML="Category : "+  mainCategory[1].innerHTML;
+    console.log(way.innerHTML)
+    way.innerHTML="Category : Women";
   }
   
   console.log(forLocal.category);
