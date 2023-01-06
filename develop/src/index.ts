@@ -25,6 +25,7 @@ export let listCategory = list;
 // console.log(listCategory[0].price)
 
 // function getCategoryArray start ------------------------------------------
+const sortText = document.querySelector('.sort-text');
 // аналитика доступных карточек на основе выбранных пунктов
 export function getCategoryArray(){
 
@@ -72,6 +73,12 @@ localStorage.setItem('listCategory',JSON.stringify(listCategory));
 console.log('listCategory '+listCategory.length);
 sizeFilter();
 colorFilter();
+if(listCategory.length<19){
+  sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join(" ")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
+}else {
+  sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join(" ")} 18 ${sortText.innerHTML.split(" ").slice(-1)}`
+}
+
 }
 
 //  function getRandomArray -------------------------------------------------
@@ -128,6 +135,7 @@ for(let i = 0;i<productDetailText.length; i++){
 }
 (!JSON.parse(localStorage.getItem('listCategory')))?buildCardsCategory:
 buildCards();
+
 export function buildCardsCategory(){
   clearCards();
   for(let i = 0;i<listCategory.length;i++){
@@ -139,6 +147,7 @@ export function buildCardsCategory(){
     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
     secondCardImg[i].classList.add("non");
   }
+  // sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join("")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
 }
 function clearCards(){
   for(let i = 0;i<productMiniature.length;i++){
@@ -204,7 +213,6 @@ const way = document.querySelector('.way');
     textCategoryMen.classList.remove('non');
     mainCategory[1].classList.remove('checked');
     // нужно добавить функцию перебора форлокал и достать результат
-    console.log(way.innerHTML)
     way.innerHTML="Category : Men";
   }else if(i==1) {
     forLocal.category.delete('men');
@@ -213,7 +221,6 @@ const way = document.querySelector('.way');
     mainCategory[0].classList.remove('checked');
     textCategoryMen.classList.add('non');
     mainCategory[1].classList.add('checked');
-    console.log(way.innerHTML)
     way.innerHTML="Category : Women";
   }
   
