@@ -7,17 +7,18 @@ import "../normalize.css";
 
 
 import {list} from '../list';
+import {sizeFilter,colorFilter} from './category';
 
 const category = new Set<string>(["men","women"]);
 const size = new Set<string>([]);
 const color = new Set<string>([]);
 
-const forLocal = {
+export const forLocal = {
   category,
   size,
   color
 } 
-let listCategory = list;
+export let listCategory = list;
 // forLocal.category('men');
 // forLocal.category.add('women');
 // console.log(forLocal.size.size)
@@ -25,7 +26,7 @@ let listCategory = list;
 
 // function getCategoryArray start ------------------------------------------
 // аналитика доступных карточек на основе выбранных пунктов
-function getCategoryArray(){
+export function getCategoryArray(){
   listCategory = [];
 for(let i = 0;i<list.length;i++){
 // здесь выбор по men \ women
@@ -67,6 +68,8 @@ if(forLocal.size.size>0){
 localStorage.setItem('listCategory',JSON.stringify(listCategory));
 // let poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
 console.log('listCategory '+listCategory.length);
+sizeFilter();
+colorFilter();
 }
 
 //  function getRandomArray -------------------------------------------------
@@ -123,7 +126,7 @@ for(let i = 0;i<productDetailText.length; i++){
 }
 (!JSON.parse(localStorage.getItem('listCategory')))?buildCardsCategory:
 buildCards();
-function buildCardsCategory(){
+export function buildCardsCategory(){
   clearCards();
   for(let i = 0;i<listCategory.length;i++){
     productMiniature[i].classList.remove('non');
@@ -222,8 +225,8 @@ const way = document.querySelector('.way');
 
 // size filter left-aside ----------------------------------------------------------
 let count:number;
-const sizeLabel = document.querySelectorAll('.size-label');
-const sizeInput = document.querySelectorAll('.size-input');
+export const sizeLabel = document.querySelectorAll('.size-label');
+export const sizeInput = document.querySelectorAll('.size-input');
 
 for (let i=0; i < sizeLabel.length; i++) {
  count = 0;
@@ -252,8 +255,8 @@ console.log(listCategory);
 
 // color filter left-aside ----------------------------------------------------------
 let countColor: number;
-const colorLabel = document.querySelectorAll('.color-label');
-const colorInput = document.querySelectorAll('.color-input');
+export const colorLabel = document.querySelectorAll('.color-label');
+export const colorInput = document.querySelectorAll('.color-input');
 
 for (let i=0; i < colorLabel.length; i++) {
   countColor = 0;
