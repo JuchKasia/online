@@ -775,29 +775,52 @@ input[type=number]::-webkit-outer-spin-button {
             gap: 20px;
             align-items: center;
             // border: 1px solid green;
-            .show-grid {
-                display: inline-block;
-                width: 30px;
-                height: 30px;
-                background-image: url('./assets/svg/show-grid.svg');
-                background-size: 90%;
-                background-repeat: no-repeat;
-                opacity: 1.0;
-                vertical-align: top;
-                cursor: pointer;
-                // pointer-events: none;
-            }
-            .show-list {
-                display: inline-block;
-                width: 40px;
-                height: 40px;
-                background-image: url('./assets/svg/show-list.svg');
-                background-size: 90%;
-                background-repeat: no-repeat;
-                opacity: 1.0;
-                vertical-align: top;
-                cursor: pointer;
-                // pointer-events: none;
+            .show-product-container {
+                display: flex;
+                max-width: 100px;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+                // text-align: center;
+                // border: 1px solid green;
+                // flex-direction: row;
+                .show-grid {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    background-image: url('./assets/svg/show-grid.svg');
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    opacity: 1.0;
+                    vertical-align: top;
+                    cursor: pointer;
+                    // pointer-events: none;
+                    // border: 1px solid red;
+                }
+                .show-grid:hover {
+                    background-color: #85c38d;
+                    opacity: 0.8;
+
+                }
+                .show-list {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    background-image: url('./assets/svg/show-list.svg');
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                    opacity: 1.0;
+                    vertical-align: top;
+                    cursor: pointer;
+                    // pointer-events: none;
+                    // border: 1px solid blue;
+                }
+                .show-list:hover {
+                    background-color: #85c38d;
+                    opacity: 0.8;
+                }
+
             }
             .sort-text {
                 display: inline-block;
@@ -2095,4 +2118,8 @@ object-fit: cover;
 
 .checked {
     color:#85c38d;
+}
+
+.background-color {
+    background-color:#85c38d;
 }
