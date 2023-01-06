@@ -33,36 +33,36 @@ export function getCategoryArray(){
 for(let i = 0;i<list.length;i++){
 // здесь выбор по men \ women
   // if (list[i].category == forLocal.category){
-    if(forLocal.category.has(list[i].category)){
-    
+  if(forLocal.category.has(list[i].category)){
+    console.log(forLocal.category.has(list[i].category));
     // если размер какой-нибудь активирован -------------------------------------
-if(forLocal.size.size>0){
-  if(forLocal.color.size>0){
-    if(forLocal.color.has(list[i].color)&&forLocal.size.has(list[i].size)){
-      listCategory.push(list[i]);
-    }
-    
-  }else {
-    if(forLocal.size.has(list[i].size)){
-    
-    listCategory.push(list[i]);
-    
-    }
-    
-  }
-    //  добавляем эти карточки в listCategory -------------------------------------
-} else {
-  // здесь происходит когда нет размеров
-  if(forLocal.color.size>0){
-    // здесь происходит когда есть цвета
-    if(forLocal.color.has(list[i].color)){
-      listCategory.push(list[i]);
-    }
+      if(forLocal.size.size>0){
+        if(forLocal.color.size>0){
+          if(forLocal.color.has(list[i].color)&&forLocal.size.has(list[i].size)){
+            listCategory.push(list[i]);
+          }
+          
+        }else {
+          if(forLocal.size.has(list[i].size)){
+          
+          listCategory.push(list[i]);
+          
+          }
+          
+        }
+          //  добавляем эти карточки в listCategory -------------------------------------
+      } else {
+        // здесь происходит когда нет размеров
+        if(forLocal.color.size>0){
+          // здесь происходит когда есть цвета
+          if(forLocal.color.has(list[i].color)){
+            listCategory.push(list[i]);
+          }
 
-  } else {
-    listCategory.push(list[i]);
-  }
-}
+        } else {
+          listCategory.push(list[i]);
+        }
+      }
     
    
   }
@@ -196,9 +196,9 @@ for (let k = 0; k < productTitleSpec.length; k++) {
 }
 
 // category selection  ------------------------------------------------------------
-const mainCategory = document.querySelectorAll('.category');
-const textCategoryMen = document.querySelector('.text-main-category-men');
-const textCategoryWomen = document.querySelector('.text-main-category-women');
+export const mainCategory = document.querySelectorAll('.category');
+export const textCategoryMen = document.querySelector('.text-main-category-men');
+export const textCategoryWomen = document.querySelector('.text-main-category-women');
 
 
  for(let i = 0;i<mainCategory.length;i++){
@@ -207,7 +207,7 @@ const way = document.querySelector('.way');
   // (i==0) ? forLocal.category = 'men' : forLocal.category='women';
   if(i==0){
     forLocal.category.delete('women');
-    forLocal.category.add('');
+    forLocal.category.add('men');
     textCategoryWomen.classList.add('non');
     mainCategory[0].classList.add('checked');
     textCategoryMen.classList.remove('non');
@@ -370,21 +370,4 @@ showList.addEventListener('click', () => {
         return 0 
        }).reverse();
     }
-  })
-
-
-  // смотрю функцию обновления
-
-  // async function elementUpdate(selector: string){
-//   try {
-//     const html = await (await fetch(location.href)).text();
-//     const newdoc = new DOMParser().parseFromString(html, 'text/html');
-//     document.querySelector(selector).outerHTML = newdoc.querySelector(selector).outerHTML;
-//     console.log("Элемент "+ selector + " был успешно обновлен");
-//     return true;
-//   } catch(err){
-//     console.log(('При обновлении элемента '+ selector + ' произошла ошибка:'));
-//     console.error(err);
-//     return false;
-//   }
-// }
+  });
