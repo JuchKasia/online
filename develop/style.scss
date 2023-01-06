@@ -829,7 +829,9 @@ input[type=number]::-webkit-outer-spin-button {
             .drop-down-menu{
                 font-size: 14px;
                 font-weight: 400;
+                cursor: pointer;
                 .drop {
+                    cursor: pointer;
                     font-size: 14px;
                     color: #232323;
                 }

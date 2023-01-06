@@ -20,8 +20,8 @@ const forLocal = {
 let listCategory = list;
 // forLocal.category('men');
 // forLocal.category.add('women');
-console.log(forLocal.size.size)
-console.log(listCategory[0].price)
+// console.log(forLocal.size.size)
+// console.log(listCategory[0].price)
 
 // function getCategoryArray start ------------------------------------------
 // аналитика доступных карточек на основе выбранных пунктов
@@ -295,9 +295,73 @@ showList.addEventListener('click', () => {
 
 // sort product by price in main menu-----------------------------------------------------
 
+  const dropDownMenu = document.querySelector('.drop-down-menu');
+  dropDownMenu.addEventListener("change", function() {
+    if(this.value=='high'){
+      sortLowToHigh(listCategory);
+      buildCardsCategory();
+    }
+
+    if(this.value=='low') {
+      sortHighToLow(listCategory);
+      buildCardsCategory();
+    }
+
+    if(this.value=='az') {
+      sortAZ(listCategory);
+      console.log(listCategory);
+      buildCardsCategory();
+    }
+    
+    if(this.value=='za') {
+      sortZA(listCategory);
+      console.log(listCategory);
+      buildCardsCategory();
+    }
 
 
-// async function elementUpdate(selector: string){
+    function sortLowToHigh(listCategory: { price: number; }[]) {
+      listCategory.sort((a : {price: number}, b: {price: number}): number => a.price > b.price ? 1 : -1);
+    }
+    function sortHighToLow(listCategory: { price: number; }[]) {
+      listCategory.sort((a : {price: number}, b: {price: number}): number => a.price > b.price ? 1 : -1).reverse();
+    }
+
+    function sortAZ(listCategory: { title: string; }[]) {
+      listCategory.sort(function(a: {title: string}, b: {title: string}): number {
+        const titleA = a.title.toLowerCase();
+        const titleB = b.title.toLowerCase();
+         //сортируем строки по возрастанию
+        if (titleA < titleB) {
+          return -1
+        } 
+        if (titleA > titleB) {
+          return 1
+        }
+        return 0 
+      })
+    }
+
+    function sortZA(listCategory: { title: string; }[]) {
+      listCategory.sort(function(a: {title: string}, b: {title: string}): number {
+        const titleA = a.title.toLowerCase();
+        const titleB = b.title.toLowerCase();
+        //сортируем строки по уыванию
+        if (titleA < titleB) {
+          return -1
+        } 
+        if (titleA > titleB) {
+          return 1
+        }
+        return 0 
+       }).reverse();
+    }
+  })
+
+
+  // смотрю функцию обновления
+
+  // async function elementUpdate(selector: string){
 //   try {
 //     const html = await (await fetch(location.href)).text();
 //     const newdoc = new DOMParser().parseFromString(html, 'text/html');
