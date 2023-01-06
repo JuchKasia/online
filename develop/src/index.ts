@@ -1,5 +1,5 @@
 // console.log("Hello World!");
-
+// 6,7,14,23,27
 import "../index";
 import "../style.css";
 import "../style.scss";
