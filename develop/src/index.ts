@@ -295,42 +295,18 @@ showList.addEventListener('click', () => {
 
 // sort product by price in main menu-----------------------------------------------------
 
-// const dropMenuBtn = document.querySelector('.btn-sort-col');
-const dropMenu = document.querySelector('.drop-down-menu');
-//const sortPriceMenu = document.querySelectorAll('.sort-price-menu');
 
-//  dropMenuBtn.addEventListener('click', () => {
-//  dropMenu.classList.remove('non');
-// })
 
-// for (let i = 0; i < sortPriceMenu.length; i++) {
-//   sortPriceMenu[0].addEventListener('click',()=>{
-//     // listCategory[i].price.sort((a, b) => b - a, 0)
-//   });
-  
-
+// async function elementUpdate(selector: string){
+//   try {
+//     const html = await (await fetch(location.href)).text();
+//     const newdoc = new DOMParser().parseFromString(html, 'text/html');
+//     document.querySelector(selector).outerHTML = newdoc.querySelector(selector).outerHTML;
+//     console.log("Элемент "+ selector + " был успешно обновлен");
+//     return true;
+//   } catch(err){
+//     console.log(('При обновлении элемента '+ selector + ' произошла ошибка:'));
+//     console.error(err);
+//     return false;
+//   }
 // }
-
-// console.log(dropBtn);
-
-// for (let i = 0; i < dropBtn.length; i++) {
-//   dropBtn[i].addEventListener('click', function() {
-//     console.log('work');
-//     for (let j = 0; j < listCategory.length; j++) {
-//       listCategory[j].price;
-//     }
-//     console.log(listCategory[0].price);
-//   })
-// }
-dropMenu.addEventListener('click',function(){
-  // if(this.value=='high'){
-
-  // }
-  // console.log(this.value)
-  // (this.value=='high')
-  // (this.value=='low')
-  // (this.value=='az')
-  // (this.value=='za')
-   
-})
-
