@@ -2095,6 +2095,7 @@ input[type=number]::-webkit-outer-spin-button {
 .container {
   max-width: 1400px;
   width: 100%;
+  border-radius: 1px solid brown;
 }
 
 .border-card {
@@ -2511,5 +2512,25 @@ input[type=number]::-webkit-outer-spin-button {
 
 .background-color {
   background-color: #85c38d;
+}
+
+.flex-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.flex-row .cart-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 30px;
+  gap: 10px;
 }
 /*# sourceMappingURL=style.css.map */

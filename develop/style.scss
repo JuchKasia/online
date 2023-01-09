@@ -1782,6 +1782,7 @@ input[type=number]::-webkit-outer-spin-button {
   .container {
     max-width: 1400px;
       width: 100%;
+      border-radius: 1px solid brown;
   }
   .border-card {
     border: 1px solid #a1a1a1;
@@ -2124,4 +2125,15 @@ input[type=number]::-webkit-outer-spin-button {
 
 .background-color {
     background-color:#85c38d;
+}
+
+.flex-row {
+    flex-direction: row;
+    width: 100%;
+    .cart-description {
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+        gap: 10px;
+    }
 }

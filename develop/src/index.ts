@@ -315,12 +315,17 @@ buildCardsCategory();
 const showGrid = document.querySelector('.show-grid');
 const showList = document.querySelector('.show-list');
 const productWrapper = document.querySelector('.product-wrapper');
+const productMiniatures = document.querySelectorAll('.product-miniature');
 
 showGrid.addEventListener('click', () => {
   productWrapper.classList.add('product-wrapper-grid');
   productWrapper.classList.remove('product-wrapper-list');
   showGrid.classList.add('background-color');
   showList.classList.remove('background-color');
+  for (let i=0; i< productMiniatures.length; i++) {
+    productMiniatures[i].classList.remove('flex-row');
+  }
+
 })
 
 showList.addEventListener('click', () => {
@@ -328,6 +333,11 @@ showList.addEventListener('click', () => {
   productWrapper.classList.add('product-wrapper-list');
   showList.classList.add('background-color');
   showGrid.classList.remove('background-color');
+  for (let i=0; i< productMiniatures.length; i++) {
+    productMiniatures[i].classList.add('flex-row');
+  }
+  
+  // showGrid.classList.remove('flex-row');
 })
 
 // sort product by price in main menu-----------------------------------------------------
