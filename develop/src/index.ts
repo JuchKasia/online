@@ -18,6 +18,7 @@ export const forLocal = {
   size,
   color
 } 
+// export const basket = [];
 //  listCategory: Product;
 // console.log(localStorage.getItem('listCategory'))
 export let  listCategory = list;
@@ -79,7 +80,7 @@ if(listCategory.length<19){
 }else {
   sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join(" ")} 18 ${sortText.innerHTML.split(" ").slice(-1)}`
 }
-
+console.log(listCategory)
 }
 
 //  function getRandomArray -------------------------------------------------
@@ -137,6 +138,8 @@ for(let i = 0;i<productDetailText.length; i++){
 (!JSON.parse(localStorage.getItem('listCategory')))?buildCardsCategory:
 buildCards();
 
+const cartProductsCount = document.querySelector('.cart-products-count');
+console.log( Number(cartProductsCount.innerHTML));
 export function buildCardsCategory(){
   clearCards();
   for(let i = 0;i<listCategory.length;i++){
@@ -149,7 +152,22 @@ export function buildCardsCategory(){
     secondCardImg[i].classList.add("non");
   }
   // sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join("")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
+
+      
+    
 }
+// const addcards = document.querySelectorAll('.btn-add-to-cart');
+//       for(let i = 0;i<addcards.length;i++){
+//         addcards[i].addEventListener('click',function(){
+//         // cartProductsCount.innerHTML = +cartProductsCount.innerHTML++
+//     console.log(listCategory[i]);
+//     console.log(addcards[i])
+//         });
+//       }
+
+
+
+
 function clearCards(){
   for(let i = 0;i<productMiniature.length;i++){
    if(i<listCategory.length){
@@ -159,7 +177,7 @@ function clearCards(){
    }
 
   }
-  
+
 }
 //  function getRandomArrayBest -------------------------------------------------
 
