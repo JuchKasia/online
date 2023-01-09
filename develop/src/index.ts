@@ -19,15 +19,12 @@ export const forLocal = {
   color
 } 
 //  listCategory: Product;
-
-
-export let  listCategory=JSON.parse(localStorage.getItem('listCategory'));
-if(listCategory.length==0){
-  listCategory=list;
-}
-//  console.log(JSON.parse(localStorage.getItem('listCategory')));
-
-console.log("localStorage "+localStorage.length);
+// console.log(localStorage.getItem('listCategory'))
+export let  listCategory = list;
+// forLocal.category('men');
+// forLocal.category.add('women');
+// console.log(forLocal.size.size)
+// console.log(listCategory[0].price)
 
 // function getCategoryArray start ------------------------------------------
 const sortText = document.querySelector('.sort-text');
@@ -73,8 +70,7 @@ for(let i = 0;i<list.length;i++){
   
 }
 localStorage.setItem('listCategory',JSON.stringify(listCategory));
-const poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
-console.log("poluchitObj "+poluchitObj.length);
+// let poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
 console.log('listCategory '+listCategory.length);
 sizeFilter();
 colorFilter();
@@ -305,16 +301,11 @@ const productWrapper = document.querySelector('.product-wrapper');
 showGrid.addEventListener('click', () => {
   productWrapper.classList.add('product-wrapper-grid');
   productWrapper.classList.remove('product-wrapper-list');
-  showGrid.classList.add('background-color');
-  showList.classList.remove('background-color');
-
 })
 
 showList.addEventListener('click', () => {
   productWrapper.classList.remove('product-wrapper-grid');
   productWrapper.classList.add('product-wrapper-list');
-  showList.classList.add('background-color');
-  showGrid.classList.remove('background-color');
 })
 
 // sort product by price in main menu-----------------------------------------------------

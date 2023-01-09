@@ -24,7 +24,8 @@ if(cat.forLocal.size.size>0&&way.innerHTML.split(" ")[way.innerHTML.split(" ").l
 } else if(cat.forLocal.size.size==0&&way.innerHTML.split(" ")[way.innerHTML.split(" ").length-1]=="size"){
   way.innerHTML = way.innerHTML.split(" ").slice(0,-1).join(' ');
 }
-
+console.log('forlocal '+ cat.forLocal)
+localStorage.setItem('forLocal',JSON.stringify(cat.forLocal));
 }
 
 export function colorFilter(){
@@ -43,4 +44,6 @@ export function colorFilter(){
   // if(cat.forLocal.color.size>0){
   //   console.log("way.innerHTML ");
   // }
+  console.log('forlocal '+ cat.forLocal.color)
+  localStorage.setItem('forLocal',JSON.stringify(cat.forLocal));
 }
