@@ -319,6 +319,7 @@ const productWrapper = document.querySelector('.product-wrapper');
 showGrid.addEventListener('click', () => {
   productWrapper.classList.add('product-wrapper-grid');
   productWrapper.classList.remove('product-wrapper-list');
+  // showGrid.addEventListener.add('')
 })
 
 showList.addEventListener('click', () => {
