@@ -1026,6 +1026,8 @@ input[type=number]::-webkit-outer-spin-button {
           flex-direction: column;
   width: calc((100% - 20px) / 3);
   gap: 10px;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   border: 1px solid red;
 }
 
@@ -1039,7 +1041,6 @@ input[type=number]::-webkit-outer-spin-button {
           flex-direction: column;
   position: relative;
   width: 100%;
-  height: 80%;
   margin-bottom: 10px;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -1051,14 +1052,12 @@ input[type=number]::-webkit-outer-spin-button {
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  max-width: 325px;
   -webkit-transition: all 500ms ease 0s;
   transition: all 500ms ease 0s;
-  border: solid 5px violet;
 }
 
 .product-miniature .cart-img .product-img .img-prod1 {
-  width: 90%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
   background-position: center;
@@ -1066,32 +1065,34 @@ input[type=number]::-webkit-outer-spin-button {
   background-size: cover;
   -o-object-fit: cover;
      object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .product-miniature .cart-img .product-img .img-prod2 {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.second-img {
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  opacity: 0;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transition: all 500ms ease 0s;
-  transition: all 500ms ease 0s;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .product-add-to-cart {
+  position: relative;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 150px;
+  bottom: 10px;
+  left: calc((100% - 150px) / 2);
 }
 
 .add-to-cart {
@@ -1106,14 +1107,53 @@ input[type=number]::-webkit-outer-spin-button {
 
 .add-to-cart .btn-add-to-cart {
   position: relative;
-  width: 70px;
+  max-width: 70px;
+  width: 100%;
   height: 44px;
   padding: 16px 32px;
   background: url("./assets/svg/basket.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 70%;
+  background-color: #efefefbb;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  border: none;
+  outline: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.add-to-cart .btn-add-to-cart:hover {
   background-color: #fff;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.eye-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.eye-cart .btn-eye-cart {
+  position: relative;
+  width: 70px;
+  height: 44px;
+  padding: 16px 32px;
+  background: url("./assets/svg/eye-svg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-color: #efefefbb;
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
   border: none;
   outline: 0;
   color: #85c38d;
@@ -1123,8 +1163,8 @@ input[type=number]::-webkit-outer-spin-button {
   transition: all ease 0.5s;
 }
 
-.add-to-cart .btn-add-to-cart:hover {
-  background-color: #efefef;
+.eye-cart .btn-eye-cart:hover {
+  background-color: #fff;
   -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -1133,7 +1173,6 @@ input[type=number]::-webkit-outer-spin-button {
   position: relative;
   display: inline-block;
   width: 100%;
-  height: 30%;
   margin: 0 auto;
   background-color: #fff;
   vertical-align: top;
