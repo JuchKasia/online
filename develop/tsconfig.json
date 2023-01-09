@@ -9,27 +9,14 @@
 //   "files": ["src/index.ts"]
 // }
 { 
-  "compileOnSave": true,// При значении true указывает используемой редактору кода производить компиляцию при каждом сохранении файлов TypeScript. Поддерживается не всеми редакторами кода.
+  //"compileOnSave": true,// При значении true указывает используемой редактору кода производить компиляцию при каждом сохранении файлов TypeScript. Поддерживается не всеми редакторами кода.
   "compilerOptions": {
-    "target": "es2015",
-      "module": "commonjs",
-      // "target": "es3",
-      "noImplicitAny": false,// Показывать ошибку, если где-то задан тип "any".
-      // "outDir": "built",
-      "rootDir": ".",
-      "sourceMap": false,
-      "alwaysStrict": false,//Компилировать ли каждый файл в строгом режиме и создавать ли 'use strict' для каждого выходного файла
-      "noUnusedLocals": true,// Показывать ошибку, если где-то найдены неиспользуемые локальные значения.
-      "noUnusedParameters": true, // Показывать ошибку, если где-то найдены неиспользуемые параметры.
-      "noImplicitUseStrict": false, // Не записывать 'use strict' в итоговый выходной файл?
-      "pretty": true, // Окрашивать в терминале сообщения об ошибках.
-      "allowSyntheticDefaultImports": true, // Разрешить импортировать модули не имеющие внутри себя "import default"?
-      
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-    "resolveJsonModule": true
-   },
-   "exclude": [
-      "node_modules"
-   ]
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    // "allowJs": true
+  },
+  "files": ["src/index.ts"]
 }
+
