@@ -1,5 +1,5 @@
 // console.log("Hello World!");
-
+// 6,7,14,23,27
 import "../index";
 import "../style.css";
 import "../style.scss";
@@ -7,27 +7,90 @@ import "../normalize.css";
 
 
 import {list} from '../list';
+import {sizeFilter,colorFilter} from './category';
 
-const forLocal = {"category": ""}; 
-let listCategory = list;
+const category = new Set<string>(["men","women"]);
+const size = new Set<string>([]);
+const color = new Set<string>([]);
+
+export const forLocal = {
+  category,
+  size,
+  color
+} 
+export let listCategory = list;
+// forLocal.category('men');
+// forLocal.category.add('women');
+// console.log(forLocal.size.size)
+// console.log(listCategory[0].price)
+
 // function getCategoryArray start ------------------------------------------
-function getCategoryArray(){
+const sortText = document.querySelector('.sort-text');
+// аналитика доступных карточек на основе выбранных пунктов
+export function getCategoryArray(){
+
   listCategory = [];
 for(let i = 0;i<list.length;i++){
-// console.log('list[i].category ' +list[i].category+" : "+" forLocal.category " +forLocal.category);
-  if (list[i].category == forLocal.category){
+// здесь выбор по men \ women
+  // if (list[i].category == forLocal.category){
+    if(forLocal.category.has(list[i].category)){
+    
+    // если размер какой-нибудь активирован -------------------------------------
+if(forLocal.size.size>0){
+  if(forLocal.color.size>0){
+    if(forLocal.color.has(list[i].color)&&forLocal.size.has(list[i].size)){
+      listCategory.push(list[i]);
+    }
+    
+  }else {
+    if(forLocal.size.has(list[i].size)){
+    
     listCategory.push(list[i]);
+    
+    }
+    
+  }
+    //  добавляем эти карточки в listCategory -------------------------------------
+} else {
+  // здесь происходит когда нет размеров
+  if(forLocal.color.size>0){
+    // здесь происходит когда есть цвета
+    if(forLocal.color.has(list[i].color)){
+      listCategory.push(list[i]);
+    }
+
+  } else {
+    listCategory.push(list[i]);
+  }
+}
+    
+   
   }
   
 }
+localStorage.setItem('listCategory',JSON.stringify(listCategory));
+// let poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
 console.log('listCategory '+listCategory.length);
+sizeFilter();
+colorFilter();
+if(listCategory.length<19){
+  sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join(" ")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
+}else {
+  sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join(" ")} 18 ${sortText.innerHTML.split(" ").slice(-1)}`
+}
+
 }
 
 //  function getRandomArray -------------------------------------------------
 // eslint-disable-next-line prefer-const
 let randomArray: number[] = [];
+let arrayForCardsSpec: Array<number> = [];
+let arrayForCardsBest: Array<number> = [];
+
 function getRandomArray(m:number,max:number) {
   randomArray = [];
+  // arrayForCardsSpec = [];
+  // arrayForCardsBest = [];
   for(let i = 0;i<m;i++){
     const num:number = Math.floor(Math.random() * max);
     if(!randomArray.includes(num)){
@@ -39,9 +102,13 @@ function getRandomArray(m:number,max:number) {
 return randomArray;
 }
 let arrayForCards:Array<number>=[];
-arrayForCards= getRandomArray(18,99);
-console.log(arrayForCards);
 
+arrayForCards= getRandomArray(18,99);
+arrayForCardsSpec = getRandomArray(3, 99);
+arrayForCardsBest = getRandomArray(3, 99);
+console.log(arrayForCards);
+console.log(arrayForCardsBest);
+console.log(arrayForCardsSpec);
 // function getRandomArray finish -----------------------------------------
 
 
@@ -52,7 +119,7 @@ const priceProduct = document.querySelectorAll('.price');
 const productTitle = document.querySelectorAll('.product-title');
 const mainCardImg = document.querySelectorAll('.img-prod1');
 const secondCardImg = document.querySelectorAll('.img-prod2');
-
+const productMiniature = document.querySelectorAll('.product-miniature');
 // console.log("card " +priceProduct.length);
 // console.log("card " +cardsStock.length);
 // console.log(productTitle.length);
@@ -66,12 +133,13 @@ for(let i = 0;i<productDetailText.length; i++){
     secondCardImg[i].classList.add("non");
 }
 }
+(!JSON.parse(localStorage.getItem('listCategory')))?buildCardsCategory:
 buildCards();
-function buildCardsCategory(){
-  // const way = document.querySelector('.way');
-  // console.log('way.innerHTML '+way.innerHTML);
-  // console.log('forLocal '+forLocal.category)
+
+export function buildCardsCategory(){
+  clearCards();
   for(let i = 0;i<listCategory.length;i++){
+    productMiniature[i].classList.remove('non');
     productDetailText[i].innerHTML = listCategory[i].description;
     cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i].stock;
     priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i].price;
@@ -79,53 +147,249 @@ function buildCardsCategory(){
     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
     secondCardImg[i].classList.add("non");
   }
-  // way.innerHTML = forLocal.category;
+  // sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join("")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
+}
+function clearCards(){
+  for(let i = 0;i<productMiniature.length;i++){
+   if(i<listCategory.length){
+    continue;
+   } else {
+    productMiniature[i].classList.add('non');
+   }
+
+  }
+  
 }
 //  function getRandomArrayBest -------------------------------------------------
-let arrayForCardsBest: Array<number> = [];
-arrayForCardsBest = getRandomArray(3, 99);
+
 // console.log('arrayForCardsBest '+arrayForCardsBest);
 
 // function buildBestsellerCards -----------------------------------------
 const productTitleBest = document.querySelectorAll('.product-title-best');
 const priceProductBest = document.querySelectorAll('.price-best');
+const imgBest = document.querySelectorAll('.product-bestseller-img');
+
 
 for (let j = 0; j < productTitleBest.length; j++) {
+  // let img = document.createAttribute('img')
     productTitleBest[j].innerHTML = list[arrayForCardsBest[j]].title;
     priceProductBest[j].innerHTML = priceProductBest[j].innerHTML[0] + " " + list[arrayForCardsBest[j]].price;
+    imgBest[j].setAttribute('src', `${list[arrayForCardsBest[j]].images[0]}`);
 }
 
 
 //  function getRandomArraySpec -------------------------------------------------
-let arrayForCardsSpec: Array<number> = [];
-arrayForCardsSpec = getRandomArray(3, 99);
-// console.log('arrayForCardsSpec '+arrayForCardsSpec);
 
 // function buildSpecialCards -----------------------------------------
 const productTitleSpec = document.querySelectorAll('.product-title-spec');
 const productWithDisc = document.querySelectorAll('.price-spec');
 const priceProductSpec = document.querySelectorAll('.regular-price');
 const discountProductSpec = document.querySelectorAll('.discount-spec');
-
+const imgSpec = document.querySelectorAll('.product-special-img');
 
 for (let k = 0; k < productTitleSpec.length; k++) {
     productTitleSpec[k].innerHTML = list[arrayForCardsSpec[k]].title;
     productWithDisc[k].innerHTML =productWithDisc[k].innerHTML[0]+" "+(list[arrayForCardsSpec[k]].price - list[arrayForCardsSpec[k]].price/100*list[arrayForCardsSpec[k]].discount);
     priceProductSpec[k].innerHTML = priceProductSpec[k].innerHTML[0] + " " + list[arrayForCardsSpec[k]].price;
     discountProductSpec[k].innerHTML ="% " + list[arrayForCardsSpec[k]].discount;
+    imgSpec[k].setAttribute('src', `${list[arrayForCardsSpec[k]].images[0]}`);
 }
 
 // category selection  ------------------------------------------------------------
 const mainCategory = document.querySelectorAll('.category');
+const textCategoryMen = document.querySelector('.text-main-category-men');
+const textCategoryWomen = document.querySelector('.text-main-category-women');
+
 
  for(let i = 0;i<mainCategory.length;i++){
 const way = document.querySelector('.way');
    mainCategory[i].addEventListener('click', function(){
-  (i==0) ? forLocal.category = 'men' : forLocal.category='women';
-  way.innerHTML="Category : "+ forLocal.category;
+  // (i==0) ? forLocal.category = 'men' : forLocal.category='women';
+  if(i==0){
+    forLocal.category.delete('women');
+    forLocal.category.add('');
+    textCategoryWomen.classList.add('non');
+    mainCategory[0].classList.add('checked');
+    textCategoryMen.classList.remove('non');
+    mainCategory[1].classList.remove('checked');
+    // нужно добавить функцию перебора форлокал и достать результат
+    way.innerHTML="Category : Men";
+  }else if(i==1) {
+    forLocal.category.delete('men');
+    forLocal.category.add('women');
+    textCategoryWomen.classList.remove('non');
+    mainCategory[0].classList.remove('checked');
+    textCategoryMen.classList.add('non');
+    mainCategory[1].classList.add('checked');
+    way.innerHTML="Category : Women";
+  }
+  
   console.log(forLocal.category);
-
+  // localStorage.setItem('category',forLocal.category);
   getCategoryArray();
-  buildCardsCategory()
+  buildCardsCategory();
    });
  }
+
+//  finish category selection ----------------------------------------------------
+
+
+// size filter left-aside ----------------------------------------------------------
+let count:number;
+export const sizeLabel = document.querySelectorAll('.size-label');
+export const sizeInput = document.querySelectorAll('.size-input');
+
+for (let i=0; i < sizeLabel.length; i++) {
+ count = 0;
+
+ sizeInput[i].addEventListener('click', () => {
+  sizeLabel[i].classList.toggle('checked');
+    if(!forLocal.size.has(sizeLabel[i].innerHTML.split(' ')[0])){
+    forLocal.size.add(sizeLabel[i].innerHTML.split(' ')[0])
+  } else 
+  if(forLocal.size.has(sizeLabel[i].innerHTML.split(' ')[0])){
+    forLocal.size.delete(sizeLabel[i].innerHTML.split(' ')[0])
+  }
+  console.log(forLocal.size)
+getCategoryArray();
+buildCardsCategory();
+console.log(listCategory);
+ });
+  for (let j = 0; j < listCategory.length; j++) {
+    if (sizeLabel[i].innerHTML == listCategory[j].size) {
+      count++;
+    }
+  }
+  sizeLabel[i].innerHTML = sizeLabel[i].innerHTML.slice(0, 2) + ` (` + `${count}` + ')';
+  
+}
+
+// color filter left-aside ----------------------------------------------------------
+let countColor: number;
+export const colorLabel = document.querySelectorAll('.color-label');
+export const colorInput = document.querySelectorAll('.color-input');
+
+for (let i=0; i < colorLabel.length; i++) {
+  countColor = 0;
+  colorInput[i].addEventListener('click', () => {
+    colorLabel[i].classList.toggle('checked');
+    if(!forLocal.color.has(colorLabel[i].innerHTML.split(' ')[0])){
+      forLocal.color.add(colorLabel[i].innerHTML.split(' ')[0])
+    } else if(forLocal.color.has(colorLabel[i].innerHTML.split(" ")[0])){
+      forLocal.color.delete(colorLabel[i].innerHTML.split(' ')[0])
+    }
+    getCategoryArray();
+buildCardsCategory();
+  });
+  for (let j = 0; j < listCategory.length; j++) {
+    if (colorLabel[i].innerHTML == listCategory[j].color) {
+      countColor++;
+    }
+  }
+  colorLabel[i].innerHTML = colorLabel[i].innerHTML.slice(0, 7) + ` (` + `${countColor}` + ')';
+}
+
+// dual range slider for search filter ----------------------------------------------------------
+
+
+// sort product by grid and list----------------------------------------------------------
+const showGrid = document.querySelector('.show-grid');
+const showList = document.querySelector('.show-list');
+const productWrapper = document.querySelector('.product-wrapper');
+
+showGrid.addEventListener('click', () => {
+  productWrapper.classList.add('product-wrapper-grid');
+  productWrapper.classList.remove('product-wrapper-list');
+  showGrid.classList.add('background-color');
+  showList.classList.remove('background-color');
+
+})
+
+showList.addEventListener('click', () => {
+  productWrapper.classList.remove('product-wrapper-grid');
+  productWrapper.classList.add('product-wrapper-list');
+  showList.classList.add('background-color');
+  showGrid.classList.remove('background-color');
+})
+
+// sort product by price in main menu-----------------------------------------------------
+
+  const dropDownMenu = document.querySelector('.drop-down-menu');
+  dropDownMenu.addEventListener("change", function() {
+    if(this.value=='high'){
+      sortLowToHigh(listCategory);
+      buildCardsCategory();
+    }
+
+    if(this.value=='low') {
+      sortHighToLow(listCategory);
+      buildCardsCategory();
+    }
+
+    if(this.value=='az') {
+      sortAZ(listCategory);
+      console.log(listCategory);
+      buildCardsCategory();
+    }
+    
+    if(this.value=='za') {
+      sortZA(listCategory);
+      console.log(listCategory);
+      buildCardsCategory();
+    }
+
+
+    function sortLowToHigh(listCategory: { price: number; }[]) {
+      listCategory.sort((a : {price: number}, b: {price: number}): number => a.price > b.price ? 1 : -1);
+    }
+    function sortHighToLow(listCategory: { price: number; }[]) {
+      listCategory.sort((a : {price: number}, b: {price: number}): number => a.price > b.price ? 1 : -1).reverse();
+    }
+
+    function sortAZ(listCategory: { title: string; }[]) {
+      listCategory.sort(function(a: {title: string}, b: {title: string}): number {
+        const titleA = a.title.toLowerCase();
+        const titleB = b.title.toLowerCase();
+         //сортируем строки по возрастанию
+        if (titleA < titleB) {
+          return -1
+        } 
+        if (titleA > titleB) {
+          return 1
+        }
+        return 0 
+      })
+    }
+
+    function sortZA(listCategory: { title: string; }[]) {
+      listCategory.sort(function(a: {title: string}, b: {title: string}): number {
+        const titleA = a.title.toLowerCase();
+        const titleB = b.title.toLowerCase();
+        //сортируем строки по уыванию
+        if (titleA < titleB) {
+          return -1
+        } 
+        if (titleA > titleB) {
+          return 1
+        }
+        return 0 
+       }).reverse();
+    }
+  })
+
+
+  // смотрю функцию обновления
+
+  // async function elementUpdate(selector: string){
+//   try {
+//     const html = await (await fetch(location.href)).text();
+//     const newdoc = new DOMParser().parseFromString(html, 'text/html');
+//     document.querySelector(selector).outerHTML = newdoc.querySelector(selector).outerHTML;
+//     console.log("Элемент "+ selector + " был успешно обновлен");
+//     return true;
+//   } catch(err){
+//     console.log(('При обновлении элемента '+ selector + ' произошла ошибка:'));
+//     console.error(err);
+//     return false;
+//   }
+// }
