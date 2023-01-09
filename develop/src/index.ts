@@ -5,7 +5,7 @@ import "../style.css";
 import "../style.scss";
 import "../normalize.css";
 
-
+// import {Product} from './assets/types';
 import {list} from '../list';
 import {sizeFilter,colorFilter} from './category';
 
@@ -18,7 +18,9 @@ export const forLocal = {
   size,
   color
 } 
-export let listCategory = list;
+//  listCategory: Product;
+// console.log(localStorage.getItem('listCategory'))
+export let  listCategory = list;
 // forLocal.category('men');
 // forLocal.category.add('women');
 // console.log(forLocal.size.size)
@@ -34,7 +36,6 @@ for(let i = 0;i<list.length;i++){
 // здесь выбор по men \ women
   // if (list[i].category == forLocal.category){
   if(forLocal.category.has(list[i].category)){
-    console.log(forLocal.category.has(list[i].category));
     // если размер какой-нибудь активирован -------------------------------------
       if(forLocal.size.size>0){
         if(forLocal.color.size>0){
@@ -224,7 +225,7 @@ const way = document.querySelector('.way');
     way.innerHTML="Category : Women";
   }
   
-  console.log(forLocal.category);
+  // console.log(forLocal.category);
   // localStorage.setItem('category',forLocal.category);
   getCategoryArray();
   buildCardsCategory();
@@ -250,10 +251,10 @@ for (let i=0; i < sizeLabel.length; i++) {
   if(forLocal.size.has(sizeLabel[i].innerHTML.split(' ')[0])){
     forLocal.size.delete(sizeLabel[i].innerHTML.split(' ')[0])
   }
-  console.log(forLocal.size)
+  // console.log(forLocal.size)
 getCategoryArray();
 buildCardsCategory();
-console.log(listCategory);
+// console.log(listCategory);
  });
   for (let j = 0; j < listCategory.length; j++) {
     if (sizeLabel[i].innerHTML == listCategory[j].size) {
