@@ -16,12 +16,12 @@ export var forLocal = {
     color: color
 };
 //  listCategory: Product;
-export var listCategory = JSON.parse(localStorage.getItem('listCategory'));
-if (listCategory.length == 0) {
-    listCategory = list;
-}
-//  console.log(JSON.parse(localStorage.getItem('listCategory')));
-console.log("localStorage " + localStorage.length);
+// console.log(localStorage.getItem('listCategory'))
+export var listCategory = list;
+// forLocal.category('men');
+// forLocal.category.add('women');
+// console.log(forLocal.size.size)
+// console.log(listCategory[0].price)
 // function getCategoryArray start ------------------------------------------
 var sortText = document.querySelector('.sort-text');
 // аналитика доступных карточек на основе выбранных пунктов
@@ -60,8 +60,7 @@ export function getCategoryArray() {
         }
     }
     localStorage.setItem('listCategory', JSON.stringify(listCategory));
-    var poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
-    console.log("poluchitObj " + poluchitObj.length);
+    // let poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
     console.log('listCategory ' + listCategory.length);
     sizeFilter();
     colorFilter();
@@ -273,14 +272,10 @@ var productWrapper = document.querySelector('.product-wrapper');
 showGrid.addEventListener('click', function () {
     productWrapper.classList.add('product-wrapper-grid');
     productWrapper.classList.remove('product-wrapper-list');
-    showGrid.classList.add('background-color');
-    showList.classList.remove('background-color');
 });
 showList.addEventListener('click', function () {
     productWrapper.classList.remove('product-wrapper-grid');
     productWrapper.classList.add('product-wrapper-list');
-    showList.classList.add('background-color');
-    showGrid.classList.remove('background-color');
 });
 // sort product by price in main menu-----------------------------------------------------
 var dropDownMenu = document.querySelector('.drop-down-menu');
