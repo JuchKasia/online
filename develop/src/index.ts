@@ -301,11 +301,16 @@ const productWrapper = document.querySelector('.product-wrapper');
 showGrid.addEventListener('click', () => {
   productWrapper.classList.add('product-wrapper-grid');
   productWrapper.classList.remove('product-wrapper-list');
+  showGrid.classList.add('background-color');
+  showList.classList.remove('background-color');
+
 })
 
 showList.addEventListener('click', () => {
   productWrapper.classList.remove('product-wrapper-grid');
   productWrapper.classList.add('product-wrapper-list');
+  showList.classList.add('background-color');
+  showGrid.classList.remove('background-color');
 })
 
 // sort product by price in main menu-----------------------------------------------------

@@ -880,28 +880,53 @@ input[type=number]::-webkit-outer-spin-button {
           align-items: center;
 }
 
-.sort-filter .sort-wrapper .total-products .show-grid {
+.sort-filter .sort-wrapper .total-products .show-product-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 100px;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+.sort-filter .sort-wrapper .total-products .show-product-container .show-grid {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-image: url("./assets/svg/show-grid.svg");
-  background-size: 90%;
+  background-size: 100%;
   background-repeat: no-repeat;
   opacity: 1.0;
   vertical-align: top;
   cursor: pointer;
 }
 
-.sort-filter .sort-wrapper .total-products .show-list {
+.sort-filter .sort-wrapper .total-products .show-product-container .show-grid:hover {
+  background-color: #85c38d;
+  opacity: 0.8;
+}
+
+.sort-filter .sort-wrapper .total-products .show-product-container .show-list {
   display: inline-block;
   width: 40px;
   height: 40px;
   background-image: url("./assets/svg/show-list.svg");
-  background-size: 90%;
+  background-size: 100%;
   background-repeat: no-repeat;
   opacity: 1.0;
   vertical-align: top;
   cursor: pointer;
+}
+
+.sort-filter .sort-wrapper .total-products .show-product-container .show-list:hover {
+  background-color: #85c38d;
+  opacity: 0.8;
 }
 
 .sort-filter .sort-wrapper .total-products .sort-text {
@@ -945,9 +970,11 @@ input[type=number]::-webkit-outer-spin-button {
 .sort-filter .sort-wrapper .sort-row .drop-down-menu {
   font-size: 14px;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .sort-filter .sort-wrapper .sort-row .drop-down-menu .drop {
+  cursor: pointer;
   font-size: 14px;
   color: #232323;
 }
@@ -1012,6 +1039,7 @@ input[type=number]::-webkit-outer-spin-button {
           flex-direction: column;
   position: relative;
   width: 100%;
+  height: 80%;
   margin-bottom: 10px;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
@@ -1030,10 +1058,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .product-miniature .cart-img .product-img .img-prod1 {
-  width: 100%;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .product-miniature .cart-img .product-img .img-prod2 {
@@ -2448,5 +2480,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .checked {
   color: #85c38d;
+}
+
+.background-color {
+  background-color: #85c38d;
 }
 /*# sourceMappingURL=style.css.map */
