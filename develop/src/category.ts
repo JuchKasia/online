@@ -63,13 +63,15 @@ const cpv = document.querySelector('.cart-products-value').innerHTML.split(' ')[
     addcards[i].addEventListener('click',function(){
       basket.push(cat.listCategory[i]);
       basketPrice+=cat.listCategory[i].price
+      cartProductsCount.innerHTML = basket.length+"";
+    cartProductsValue.innerHTML = cpv+basketPrice;
 // console.log(basketPrice);
 // console.log(addcards[i])
 // console.log(basket[i]);
     });
   }
 
-   setInterval(function(){
-    cartProductsCount.innerHTML = basket.length+"";
-    cartProductsValue.innerHTML = cpv+basketPrice;
-   },500)
+  //  setInterval(function(){
+  //   cartProductsCount.innerHTML = basket.length+"";
+  //   cartProductsValue.innerHTML = cpv+basketPrice;
+  //  },500)
