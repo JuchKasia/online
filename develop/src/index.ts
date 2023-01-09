@@ -19,12 +19,15 @@ export const forLocal = {
   color
 } 
 //  listCategory: Product;
-// console.log(localStorage.getItem('listCategory'))
-export let  listCategory = list;
-// forLocal.category('men');
-// forLocal.category.add('women');
-// console.log(forLocal.size.size)
-// console.log(listCategory[0].price)
+
+
+export let  listCategory=JSON.parse(localStorage.getItem('listCategory'));
+if(listCategory.length==0){
+  listCategory=list;
+}
+//  console.log(JSON.parse(localStorage.getItem('listCategory')));
+
+console.log("localStorage "+localStorage.length);
 
 // function getCategoryArray start ------------------------------------------
 const sortText = document.querySelector('.sort-text');
@@ -70,7 +73,8 @@ for(let i = 0;i<list.length;i++){
   
 }
 localStorage.setItem('listCategory',JSON.stringify(listCategory));
-// let poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
+const poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
+console.log("poluchitObj "+poluchitObj.length);
 console.log('listCategory '+listCategory.length);
 sizeFilter();
 colorFilter();
