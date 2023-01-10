@@ -1968,7 +1968,9 @@ input[type=number]::-webkit-outer-spin-button {
   .desk-block-inf > div {
     margin-bottom: 15px;
   }
-  
+  .desc-base-value {
+    padding-left: 20%;
+  }
   /* .block-inf-way {
      
     }
@@ -2078,6 +2080,10 @@ input[type=number]::-webkit-outer-spin-button {
     height: 200px;
     margin-bottom: 5px;
   }
+  .descriptionCard img{
+    fill: black;
+    color: black;
+  }
   
   /* .desc-sell-text {
     }
@@ -2136,3 +2142,10 @@ input[type=number]::-webkit-outer-spin-button {
         gap: 10px;
     }
 }
+
+.scale {
+    transition: 1s; /* Время эффекта */
+   }
+   .scale:hover {
+    transform: scale(1.2); /* Увеличиваем масштаб */
+   }

@@ -9,6 +9,7 @@ import { list } from '../list';
 
 export const basket = [{}];
 basket.length = 0;
+export let descrpiptQuantity = 1;
 export const desk: ({ id: number; title: string; brand: string; category: string; description: string; price: number; discount: number; stock: number; size: string; color: string; images: string[]; } | { id: number; title: string; brand: string; category: string; description: string; price: number; stock: number; size: string; color: string; images: string[]; discount?: undefined; })[] = [];
 
 export let basketPrice = 0;
@@ -131,34 +132,35 @@ const blockInfPrice=document.querySelector(".block-inf-price");
 const blockInfSize=document.querySelector(".block-inf-size"); 
 const blockInfColor=document.querySelector(".block-inf-color"); 
 const blockInfQuantity=document.querySelector(".block-inf-quantity"); 
-const baskBaseValue=document.querySelector(".desk-base-value"); 
+// const baskBaseValue=document.querySelector(".desk-base-value"); 
 const baskUp=document.querySelector(".bask-up"); 
 const baskDown=document.querySelector(".bask-down"); 
 const descripInf=document.querySelector(".descrip-inf");
 const descriptionCard = document.querySelector('.descriptionCard'); 
+const descBaseValue = document.querySelector('.desc-base-value');
+const daskUp = document.querySelector('.dask-up');
+const daskDown = document.querySelector('.dask-down');
+const descripInfText = document.querySelector('.descrip-inf-text')
 
 
 function buildDescription(){
-  // blockInfPrice.innerHTML ="";
-  // blockInfSize.innerHTML = "";
-  // blockInfColor.innerHTML ="";
   const way = document.querySelector('.way');
  deskMainImage.setAttribute('src',`${desk[0].images[0]}`);
  mainImFirst.setAttribute('src',`${desk[0].images[1]}`);
  secondImFirst.setAttribute('src',`${desk[0].images[2]}`);
   blockInfWay.innerHTML= way.innerHTML;
   // blockInfCategory.innerHTML = 
-  blockInfPrice.innerHTML =blockInfPrice.innerHTML+ desk[0].price+"";
-  blockInfSize.innerHTML = blockInfSize.innerHTML+" : " + desk[0].size;
-  blockInfColor.innerHTML =blockInfColor.innerHTML+" : "+ desk[0].color;
-  // baskBaseValue.innerHTML = 
+  blockInfPrice.innerHTML ="$"+ desk[0].price;
+  blockInfSize.innerHTML = "Size : " + desk[0].size;
+  blockInfColor.innerHTML ="Color : "+ desk[0].color;
+  descBaseValue.innerHTML = descrpiptQuantity+"";
   descripInf.innerHTML = desk[0].description;
   const descripDescrip = document.querySelector('.descrip-descrip').addEventListener('click',function(){
-    descripInf.innerHTML = desk[0].description;
+    descripInfText.innerHTML = desk[0].description;
    });
    const descripDetal = document.querySelector('.descrip-detal').addEventListener('click',function(){
   if(desk[0].brand=="Dior"){
-    descripInf.innerHTML = "";
+    descripInfText.innerHTML = "";
     descriptionCard.setAttribute('src',`../assets/svg/dior.svg`);
   }else if(desk[0].brand=="Prada"){
     descripInf.innerHTML = "";
@@ -174,8 +176,18 @@ function buildDescription(){
     descriptionCard.setAttribute('src',`../assets/svg/icons8-gucci.svg`);
   }
    });
+   
 }
-
+daskUp.addEventListener('click', function(){
+    descBaseValue.innerHTML = ++descrpiptQuantity+"";
+   });
+   daskDown.addEventListener('click', function(){
+    if(descrpiptQuantity==1){
+      descriptionPage.classList.add('non');
+      main.classList.remove('non');
+    }
+    descBaseValue.innerHTML = --descrpiptQuantity+"";
+   });
 const descSellIm = document.querySelectorAll('.desc-sell-im');
 const descSellTxt = document.querySelectorAll('.desc-sell-txt');
 const descSellPrice = document.querySelectorAll('.desc-sell-price');
@@ -188,8 +200,13 @@ for(let i = 0;i<descSellIm.length;i++){
 }
 }
 
-
-
+const descriptionButton = document.querySelector('.description-button');
+// добавление в типо карзину простое отоброжение 
+descriptionButton.addEventListener('click',function(){
+basket.push(desk[0]);
+cartProductsCount.innerHTML = descrpiptQuantity+"";
+cartProductsValue.innerHTML = cpv+desk[0].price*descrpiptQuantity;
+});
 
 
 
