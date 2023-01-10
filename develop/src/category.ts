@@ -184,6 +184,7 @@ daskUp.addEventListener('click', function(){
    daskDown.addEventListener('click', function(){
     if(descrpiptQuantity==1){
       descriptionPage.classList.add('non');
+      pageDescription.classList.add('non');
       main.classList.remove('non');
     }
     descBaseValue.innerHTML = --descrpiptQuantity+"";
