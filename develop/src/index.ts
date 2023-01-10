@@ -8,6 +8,7 @@ import "../normalize.css";
 // import {Product} from './assets/types';
 import {list} from '../list';
 import {sizeFilter,colorFilter} from './category';
+// import {} from './desc';
 
 const category = new Set<string>(["men","women"]);
 const size = new Set<string>([]);
@@ -88,11 +89,10 @@ console.log(listCategory)
 let randomArray: number[] = [];
 let arrayForCardsSpec: Array<number> = [];
 let arrayForCardsBest: Array<number> = [];
+export let arrayForCardsDesc: Array<number> = [];
 
 function getRandomArray(m:number,max:number) {
   randomArray = [];
-  // arrayForCardsSpec = [];
-  // arrayForCardsBest = [];
   for(let i = 0;i<m;i++){
     const num:number = Math.floor(Math.random() * max);
     if(!randomArray.includes(num)){
@@ -108,6 +108,7 @@ let arrayForCards:Array<number>=[];
 arrayForCards= getRandomArray(18,99);
 arrayForCardsSpec = getRandomArray(3, 99);
 arrayForCardsBest = getRandomArray(3, 99);
+arrayForCardsDesc = getRandomArray(4,99);
 console.log(arrayForCards);
 console.log(arrayForCardsBest);
 console.log(arrayForCardsSpec);
