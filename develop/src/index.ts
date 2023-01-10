@@ -315,16 +315,29 @@ buildCardsCategory();
 const showGrid = document.querySelector('.show-grid');
 const showList = document.querySelector('.show-list');
 const productWrapper = document.querySelector('.product-wrapper');
+const productMiniatures = document.querySelectorAll('.product-miniature');
 
 showGrid.addEventListener('click', () => {
   productWrapper.classList.add('product-wrapper-grid');
   productWrapper.classList.remove('product-wrapper-list');
-  // showGrid.addEventListener.add('')
+  showGrid.classList.add('background-color');
+  showList.classList.remove('background-color');
+  for (let i=0; i< productMiniatures.length; i++) {
+    productMiniatures[i].classList.remove('flex-row');
+  }
+
 })
 
 showList.addEventListener('click', () => {
   productWrapper.classList.remove('product-wrapper-grid');
   productWrapper.classList.add('product-wrapper-list');
+  showList.classList.add('background-color');
+  showGrid.classList.remove('background-color');
+  for (let i=0; i< productMiniatures.length; i++) {
+    productMiniatures[i].classList.add('flex-row');
+  }
+  
+  // showGrid.classList.remove('flex-row');
 })
 
 // sort product by price in main menu-----------------------------------------------------
@@ -391,3 +404,12 @@ showList.addEventListener('click', () => {
        }).reverse();
     }
   });
+
+
+
+
+  // list category img -----------------------------------------------
+const listCategoryImg = ['https://img.freepik.com/free-photo/portrait-handsome-man_158595-3414.jpg?w=1060&t=st=1673293770~exp=1673294370~hmac=59a4bda47004f4bbd3d261b05ca193e50021cc2dc4eb19102d674646825e9578', 'https://img.freepik.com/free-photo/shallow-focus-shot-posing-handsome-smiling-european-guy-hat_181624-61284.jpg?w=1060&t=st=1673293793~exp=1673294393~hmac=0a76c438833d9d01a23c5d064703e4d13c40dd4ab64f1de6ef7687b42c52ebe4', 'https://img.freepik.com/free-photo/handsome-confident-hipster-modelsexy-unshaven-man-dressed-summer-stylish-green-hoodie-jeans-clothes-fashion-male-with-curly-hairstyle-posing-studio-isolated-blue_158538-26582.jpg?w=1060&t=st=1673294250~exp=1673294850~hmac=c95ac2d51f54372698969fba827480816b14e4c2cdd93ed83466a786a393cc0b', 'https://img.freepik.com/free-photo/excited-white-girl-bright-stylish-glasses-posing-pink-dreamy-curly-woman-playing-with-her-ginger-hair-laughing_197531-11045.jpg?w=1060&t=st=1673294269~exp=1673294869~hmac=17ed82fb7efa83890f41a1e1c7756786a1df0a8840fa58348318f5cfcec673b4', 'https://img.freepik.com/free-photo/cute-young-girl-with-dark-wavy-hairstyle-bright-makeup-silk-dress-black-jacket-holding-sunglasses-hands-looking-away-against-beige-building-wall_197531-24462.jpg?w=1060&t=st=1673294271~exp=1673294871~hmac=9c114b52890ff1a1c7e1a914e66a1af5fc4b4bfe81aae4b1b5b45343fa470484', 'https://img.freepik.com/free-photo/stylish-european-brunette-woman-red-coat-black-hat-posing-white-wall_273443-4636.jpg?w=1060&t=st=1673294275~exp=1673294875~hmac=4f680379b04c021c9e5732c86dad1fe876fad7156491a1753bcc02fd48feb904'];
+const coverProduct = document.querySelector('.cover-product');
+
+coverProduct.setAttribute('src',`${listCategoryImg[0]}`);
