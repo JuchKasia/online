@@ -12,7 +12,7 @@ export const list  =
   "stock":21,
   "size": "m",
   "color": "white",
-  "images":["https://img.freepik.com/free-photo/fashionable-african-woman-in-white-blouse-and-jeans-posing-on-pink-background_273443-3243.jpg?w=740&t=st=1671038113~exp=1671038713~hmac=10029c738e30776d61dc14f090896658c9ad644b305973f10d3d3a3cc72c48aa","https://img.freepik.com/free-photo/fashionable-african-woman-in-white-blouse-and-jeans-posing-on-pink-background_273443-3240.jpg?w=740&t=st=1671038292~exp=1671038892~hmac=9b59ebd0fad13548b42f7501fecbcffca5a3dcef475aae3f67aa07b027a8dec5"]
+  "images":["https://img.freepik.com/free-photo/fashionable-african-woman-in-white-blouse-and-jeans-posing-on-pink-background_273443-3243.jpg?w=740&t=st=1671038113~exp=1671038713~hmac=10029c738e30776d61dc14f090896658c9ad644b305973f10d3d3a3cc72c48aa","https://img.freepik.com/free-photo/fashionable-african-woman-in-white-blouse-and-jeans-posing-on-pink-background_273443-3240.jpg?w=740&t=st=1671038292~exp=1671038892~hmac=9b59ebd0fad13548b42f7501fecbcffca5a3dcef475aae3f67aa07b027a8dec5","https://img.freepik.com/premium-photo/happy-cute-woman-portrait-outdoor_624325-1851.jpg?w=996"]
   },
   {
     "id":2,

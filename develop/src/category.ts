@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as cat from './index';
 import '../index';
-// import '../list';
+
 import { list } from '../list';
 // export const cat = 'category file work';
 // console.log('this is file category');
@@ -109,7 +109,12 @@ basketPage.classList.remove('non');
   pageDescription.classList.add('non');
   descriptionPage.classList.add('non');
  })
-
+ const itemLink4 = document.querySelectorAll('.item__link')[4].addEventListener('click',function(){
+  main.classList.remove('non');
+  basketPage.classList.add('non');
+  pageDescription.classList.add('non');
+  descriptionPage.classList.add('non');
+ })
 const logoLink = document.querySelector('.logo-link').addEventListener('click',function(){
   main.classList.remove('non');
   basketPage.classList.add('non');
@@ -121,26 +126,54 @@ const deskMainImage = document.querySelector('.desk-main-image');
 const mainImFirst = document.querySelector('.main-im-first');
 const secondImFirst = document.querySelector('.main-im-second');
 const blockInfWay=document.querySelector(".block-inf-way"); 
-const blockInfCategory=document.querySelector(".block-inf-category"); 
+// const blockInfCategory=document.querySelector(".block-inf-category"); 
 const blockInfPrice=document.querySelector(".block-inf-price"); 
 const blockInfSize=document.querySelector(".block-inf-size"); 
 const blockInfColor=document.querySelector(".block-inf-color"); 
 const blockInfQuantity=document.querySelector(".block-inf-quantity"); 
-const baskBaseValue=document.querySelector(".bask-base-value"); 
+const baskBaseValue=document.querySelector(".desk-base-value"); 
 const baskUp=document.querySelector(".bask-up"); 
 const baskDown=document.querySelector(".bask-down"); 
+const descripInf=document.querySelector(".descrip-inf");
+const descriptionCard = document.querySelector('.descriptionCard'); 
 
 
 function buildDescription(){
+  // blockInfPrice.innerHTML ="";
+  // blockInfSize.innerHTML = "";
+  // blockInfColor.innerHTML ="";
   const way = document.querySelector('.way');
  deskMainImage.setAttribute('src',`${desk[0].images[0]}`);
  mainImFirst.setAttribute('src',`${desk[0].images[1]}`);
  secondImFirst.setAttribute('src',`${desk[0].images[2]}`);
   blockInfWay.innerHTML= way.innerHTML;
-  blockInfCategory.innerHTML = cat.forLocal.category+"";
-  blockInfPrice.innerHTML = desk[0].price+"";
-  blockInfColor.innerHTML = desk[0].color+"";
-  baskBaseValue.innerHTML = "1";
+  // blockInfCategory.innerHTML = 
+  blockInfPrice.innerHTML =blockInfPrice.innerHTML+ desk[0].price+"";
+  blockInfSize.innerHTML = blockInfSize.innerHTML+" : " + desk[0].size;
+  blockInfColor.innerHTML =blockInfColor.innerHTML+" : "+ desk[0].color;
+  // baskBaseValue.innerHTML = 
+  descripInf.innerHTML = desk[0].description;
+  const descripDescrip = document.querySelector('.descrip-descrip').addEventListener('click',function(){
+    descripInf.innerHTML = desk[0].description;
+   });
+   const descripDetal = document.querySelector('.descrip-detal').addEventListener('click',function(){
+  if(desk[0].brand=="Dior"){
+    descripInf.innerHTML = "";
+    descriptionCard.setAttribute('src',`../assets/svg/dior.svg`);
+  }else if(desk[0].brand=="Prada"){
+    descripInf.innerHTML = "";
+    descriptionCard.setAttribute('src',`../assets/svg/prada.svg`);
+  }else if(desk[0].brand=="Valentino"){
+    descripInf.innerHTML = "";
+    descriptionCard.setAttribute('src',`../assets/svg/valentino.svg`);
+  }else if(desk[0].brand=="Versace"){
+    descripInf.innerHTML = "";
+    descriptionCard.setAttribute('src',`../assets/svg/versace.svg`);
+  }else if(desk[0].brand=="Gucci"){
+    descripInf.innerHTML = "";
+    descriptionCard.setAttribute('src',`../assets/svg/icons8-gucci.svg`);
+  }
+   });
 }
 
 const descSellIm = document.querySelectorAll('.desc-sell-im');
@@ -155,6 +188,8 @@ for(let i = 0;i<descSellIm.length;i++){
 }
 }
 
- 
+
+
+
 
 
