@@ -1,12 +1,16 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as cat from './index';
 import '../index';
+// import '../list';
+import { list } from '../list';
 // export const cat = 'category file work';
 // console.log('this is file category');
 // console.log("from category file "+cat.listCategory);
 
 export const basket = [{}];
 basket.length = 0;
+export const desk: ({ id: number; title: string; brand: string; category: string; description: string; price: number; discount: number; stock: number; size: string; color: string; images: string[]; } | { id: number; title: string; brand: string; category: string; description: string; price: number; stock: number; size: string; color: string; images: string[]; discount?: undefined; })[] = [];
+
 export let basketPrice = 0;
 export function sizeFilter(){
   const way = document.querySelector('.way');
@@ -62,8 +66,11 @@ const cpv = document.querySelector('.cart-products-value').innerHTML.split(' ')[
   const btnEyeCart = document.querySelectorAll('.btn-eye-cart');
   const main = document.querySelector('.main');
   const pageDescription = document.querySelector('.pageDescription');
-
+  const descriptionPage = document.querySelector('.description');
+  
+console.log(desk)
   for(let i = 0;i<addcards.length;i++){
+    
     addcards[i].addEventListener('click',function(){
       basket.push(cat.listCategory[i]);
       basketPrice+=cat.listCategory[i].price
@@ -71,8 +78,13 @@ const cpv = document.querySelector('.cart-products-value').innerHTML.split(' ')[
     cartProductsValue.innerHTML = cpv+basketPrice;
     });
     btnEyeCart[i].addEventListener('click',function(){
+      desk.pop();
       main.classList.add('non');
       pageDescription.classList.remove('non');
+      descriptionPage.classList.remove('non');
+        desk.push(cat.listCategory[i]);
+        buildDescription();
+        buildBestDeck();
     });
   }
 
@@ -84,7 +96,7 @@ const cpv = document.querySelector('.cart-products-value').innerHTML.split(' ')[
   const containerCart = document.querySelector('.header-cart');
   const basketPage = document.querySelector('.basket-page');
  
-console.log(containerCart);
+// console.log(containerCart);
   containerCart.addEventListener('click',function(){
     console.log('conta')
 main.classList.add('non');
@@ -95,10 +107,54 @@ basketPage.classList.remove('non');
   main.classList.remove('non');
   basketPage.classList.add('non');
   pageDescription.classList.add('non');
+  descriptionPage.classList.add('non');
  })
 
 const logoLink = document.querySelector('.logo-link').addEventListener('click',function(){
   main.classList.remove('non');
   basketPage.classList.add('non');
   pageDescription.classList.add('non');
+  descriptionPage.classList.add('non');
 });
+
+const deskMainImage = document.querySelector('.desk-main-image');
+const mainImFirst = document.querySelector('.main-im-first');
+const secondImFirst = document.querySelector('.main-im-second');
+const blockInfWay=document.querySelector(".block-inf-way"); 
+const blockInfCategory=document.querySelector(".block-inf-category"); 
+const blockInfPrice=document.querySelector(".block-inf-price"); 
+const blockInfSize=document.querySelector(".block-inf-size"); 
+const blockInfColor=document.querySelector(".block-inf-color"); 
+const blockInfQuantity=document.querySelector(".block-inf-quantity"); 
+const baskBaseValue=document.querySelector(".bask-base-value"); 
+const baskUp=document.querySelector(".bask-up"); 
+const baskDown=document.querySelector(".bask-down"); 
+
+
+function buildDescription(){
+  const way = document.querySelector('.way');
+ deskMainImage.setAttribute('src',`${desk[0].images[0]}`);
+ mainImFirst.setAttribute('src',`${desk[0].images[1]}`);
+ secondImFirst.setAttribute('src',`${desk[0].images[2]}`);
+  blockInfWay.innerHTML= way.innerHTML;
+  blockInfCategory.innerHTML = cat.forLocal.category+"";
+  blockInfPrice.innerHTML = desk[0].price+"";
+  blockInfColor.innerHTML = desk[0].color+"";
+  baskBaseValue.innerHTML = "1";
+}
+
+const descSellIm = document.querySelectorAll('.desc-sell-im');
+const descSellTxt = document.querySelectorAll('.desc-sell-txt');
+const descSellPrice = document.querySelectorAll('.desc-sell-price');
+
+function buildBestDeck(){
+for(let i = 0;i<descSellIm.length;i++){
+  descSellIm[i].setAttribute('src',`${list[cat.arrayForCardsDesc[i]].images}`);
+  descSellTxt[i].innerHTML = list[cat.arrayForCardsDesc[i]].description;
+  descSellPrice[i].innerHTML = list[cat.arrayForCardsDesc[i]].price+" $";
+}
+}
+
+ 
+
+

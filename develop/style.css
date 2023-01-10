@@ -1792,12 +1792,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* start description page -------------------------------------------- */
-/* #main {
-  display: none;
-} */
-.pageDescription {
-  display: none;
-}
 
 .description {
   width: 100%;
@@ -2097,6 +2091,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* start basket page  --------------------------------------------------------------- */
+
 .container {
   max-width: 1400px;
   width: 100%;
@@ -2296,9 +2291,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* finish basket page -----------------------------------------------  */
 /* start description page -------------------------------------------- */
-/* #main {
-    display: none;
-  } */
+
 .description {
   width: 100%;
 }
