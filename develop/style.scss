@@ -370,7 +370,7 @@ body {
 
 .center-wrapper {
     width: 75%;
-    border: 1px solid green;
+    // border: 1px solid green;
 
 }
 .search-filters-wrapper {
@@ -731,9 +731,15 @@ input[type=number]::-webkit-outer-spin-button {
             display: block;
             margin: 0 0 25px;
             width: 100%;
-            height: 200px;
-            border: 1px solid green;
+            // height: 100px;
+            height: auto;
+            // border: 1px solid green;
             .cover-product {
+                width: 100%;
+                padding:  0 10px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
                 // max-width: 100%; /* это значение поставить после добавления картинки */
             }
         }
@@ -892,7 +898,7 @@ input[type=number]::-webkit-outer-spin-button {
     // height: 300px;
     gap: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-    border: 1px solid red;
+    // border: 1px solid red;
     .cart-img {
         display: flex;
         flex-direction: column;
@@ -901,7 +907,7 @@ input[type=number]::-webkit-outer-spin-button {
         // height: 80%;
         margin-bottom: 10px;
         transition: all 0.5s ease;
-        border: 1px solid green;
+        // border: 1px solid green;
         .product-img {
             display: flex;
             position: relative;
@@ -913,9 +919,9 @@ input[type=number]::-webkit-outer-spin-button {
                 width: 100%;
                 height: auto;
                 margin: 0 auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
+                // background-position: center;
+                // background-repeat: no-repeat;
+                // background-size: cover;
                 object-fit: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -2116,4 +2122,15 @@ input[type=number]::-webkit-outer-spin-button {
 
 .background-color {
     background-color:#85c38d;
+}
+
+.flex-row {
+    flex-direction: row;
+    width: 100%;
+    .cart-description {
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+        gap: 10px;
+    }
 }
