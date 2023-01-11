@@ -211,3 +211,4 @@ cartProductsValue.innerHTML = cpv+desk[0].price*descrpiptQuantity;
 
 
 
+// basket 
