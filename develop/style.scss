@@ -1388,7 +1388,6 @@ input[type=number]::-webkit-outer-spin-button {
 /* MODAL PAGE PURCHASE */
 .modal-shadow {
     display: block;
-    display: none;
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -1405,14 +1404,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .modal-purchase-wrapper {
-    display: none;
-    // position: fixed;
+    position: absolute;
     width: 50%;
-    margin: 0 auto;
+    margin: 0 calc(50%/2);
     background: linear-gradient(177.09deg, #FFFFFF 6.15%, #85c38d 202.69%);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     // float: right;
     // border: 1px solid red;
+    z-index: 5;
 }
 
 .modal-purchase-wrapper.open {
@@ -1909,6 +1908,8 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #000;
     color: #efefef;
     padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.5s;
   }
   
   
@@ -2155,3 +2156,8 @@ input[type=number]::-webkit-outer-spin-button {
    }
 
 //    strikethrough    перечеркнутый текст
+
+
+.border-red {
+    border: solid 2px red;
+}

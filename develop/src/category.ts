@@ -67,7 +67,7 @@ const cpv = document.querySelector('.cart-products-value').innerHTML.split(' ')[
 
   const addcards = document.querySelectorAll('.btn-add-to-cart');
   const btnEyeCart = document.querySelectorAll('.btn-eye-cart');
-  const main = document.querySelector('.main');
+export const main = document.querySelector('.main');
   const pageDescription = document.querySelector('.pageDescription');
   const descriptionPage = document.querySelector('.description');
 
@@ -107,7 +107,7 @@ const cpv = document.querySelector('.cart-products-value').innerHTML.split(' ')[
   //  },500)
 
   const containerCart = document.querySelector('.header-cart');
-  const basketPage = document.querySelector('.basket-page');
+ export const basketPage = document.querySelector('.basket-page');
  
 // console.log(containerCart);
   containerCart.addEventListener('click',function(){
