@@ -8,8 +8,9 @@ import "../normalize.css";
 // import {Product} from './assets/types';
 import {list} from '../list';
 import {sizeFilter,colorFilter} from './category';
+import {proso} from './modalPuchase';
 // import {} from './desc';
-
+console.log(proso);
 const category = new Set<string>(["men","women"]);
 const size = new Set<string>([]);
 const color = new Set<string>([]);
@@ -107,7 +108,7 @@ return randomArray;
 }
 
 export let arrayForCards:Array<number>=[];
-arrayForCards= getRandomArray(18,99);
+arrayForCards= getRandomArray(99,99);
 arrayForCardsSpec = getRandomArray(3, 99);
 arrayForCardsBest = getRandomArray(3, 99);
 arrayForCardsDesc = getRandomArray(4,99);
@@ -465,3 +466,5 @@ forInterval++;
   coverProduct.setAttribute('src',`${listCategoryImg[0]}`);
 
 // forLocal.category.has(list[i].category)
+
+
