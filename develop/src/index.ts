@@ -19,6 +19,7 @@ export const forLocal = {
   size,
   color
 } 
+export let countRandom = 0;
 // export const basket = [];
 //  listCategory: Product;
 // console.log(localStorage.getItem('listCategory'))
@@ -81,7 +82,8 @@ if(listCategory.length<19){
 }else {
   sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join(" ")} 18 ${sortText.innerHTML.split(" ").slice(-1)}`
 }
-console.log(listCategory)
+// console.log(listCategory)
+countRandom++;
 }
 
 //  function getRandomArray -------------------------------------------------
@@ -103,8 +105,8 @@ function getRandomArray(m:number,max:number) {
   }
 return randomArray;
 }
-let arrayForCards:Array<number>=[];
 
+export let arrayForCards:Array<number>=[];
 arrayForCards= getRandomArray(18,99);
 arrayForCardsSpec = getRandomArray(3, 99);
 arrayForCardsBest = getRandomArray(3, 99);
@@ -127,6 +129,8 @@ const productMiniature = document.querySelectorAll('.product-miniature');
 // console.log("card " +cardsStock.length);
 // console.log(productTitle.length);
 function buildCards(){
+  console.log(listCategory);
+  console.log(arrayForCards);
 for(let i = 0;i<productDetailText.length; i++){
     productDetailText[i].innerHTML = list[arrayForCards[i]].description;
     cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+list[arrayForCards[i]].stock;
@@ -142,6 +146,7 @@ buildCards();
 const cartProductsCount = document.querySelector('.cart-products-count');
 console.log( Number(cartProductsCount.innerHTML));
 export function buildCardsCategory(){
+  countRandom++;
   clearCards();
   for(let i = 0;i<listCategory.length;i++){
     productMiniature[i].classList.remove('non');

@@ -1,6 +1,18 @@
 export const list  =
  [
- 
+  {
+    "id":0,
+    "title":"sweater",
+  "brand":"Gucci",
+  "category":"men",
+  "description":"Original sweater from Gucci, modern in a horizontal stripe dark blue almost black stripes with white.",
+  "price":36,
+  "discount":8,
+  "stock":14,
+  "size":"m",
+  "color":"black",
+  "images":["https://img.freepik.com/free-photo/smart-attractive-asian-glasses-male-hand-rise-up-cheerful-exited-standing-and-smile-with-freshness-and-joyful-casual-blue-shirt-portrait-white-background_609648-1167.jpg?w=740&t=st=1671211349~exp=1671211949~hmac=5b240b5fd110712e4ffc04a048e616c26645f78e819e4a267890a8c3680a0266","https://img.freepik.com/free-photo/smart-attractive-asian-friendly-male-hand-rise-up-cheerful-exited-standing-and-smile-with-freshness-and-joyful-casual-blue-shirt-portrait-white-background_609648-494.jpg?w=740&t=st=1671211356~exp=1671211956~hmac=486bcafa7c1ca7759e22e011440df1f9ac9326c48a76b9ea5babcfeddf936a50","https://img.freepik.com/free-photo/smart-attractive-asian-glasses-male-hand-rise-up-cheerful-exited-standing-and-smile-with-freshness-and-joyful-casual-blue-shirt-portrait-white-background_609648-1156.jpg?w=740&t=st=1671211363~exp=1671211963~hmac=8b11c7cd9ccc0984b4d2f4d37b6a85707cc6fb702f12dbc6ba5a32fae5630f2c"]
+  },
   {
     "id": 1,
     "title" : "shirt",
@@ -349,6 +361,19 @@ export const list  =
   "size":"m",
   "color":"brown",
   "images":["https://img.freepik.com/free-photo/fashionable-woman-in-brown-coat-and-beige-hat-posing_273443-3774.jpg?w=1060&t=st=1673258911~exp=1673259511~hmac=4f0eff21c5c7ce1546ca25874e1334964bd747769cd5ed760f1af814ea195c88","https://img.freepik.com/free-photo/fashionable-woman-in-brown-coat-and-beige-hat-posing_273443-3773.jpg?w=1060&t=st=1673258922~exp=1673259522~hmac=a15bd02457eb718fe5a61c0428fad58e9365df07a74239361c8bb58bacbfa765","https://img.freepik.com/free-photo/gentle-pretty-woman-in-beige-hat-and-winter-coat_273443-3776.jpg?w=1060&t=st=1673258932~exp=1673259532~hmac=d8ed3851ebb1ca9db1cf28dfe56287652bbf272adae4820de51b9b15fd2f9ad6"]
+  },
+  {
+    "id":28,
+    "title":"coat",
+  "brand":"Prada",
+  "category":"men",
+  "description":"Stylish costume from Prada. In an exquisite beige color for self-confident real men. The sexy long neckline emphasizes independence and strength.",
+  "price":87,
+  "discount":1,
+  "stock":8,
+  "size":"s",
+  "color":"beige",
+  "images":["https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-modern-man-dressed-in-elegant-beige-suit-fashion-male-with-curly-hairstyle-posing-in-studio-isolated-in-sunglasses_158538-26632.jpg?w=996&t=st=1673437828~exp=1673438428~hmac=a9171bd203b4d9328926d3c6f1553338e4b0526589e5c271825ca1ece18cce18","https://img.freepik.com/free-photo/handsome-smiling-hipster-modelunshaven-arabian-man-dressed-in-elegant-beige-suit-fashion-male-with-long-curly-hairstyle-posing-near-beige-wall-in-studio-isolated_158538-26993.jpg?w=740&t=st=1673437850~exp=1673438450~hmac=5d630a931b2cb3ca18893ad59488805d174b5ef79549700eca415e4a934ee732","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-modern-man-dressed-in-elegant-beige-suit-fashion-male-with-curly-hairstyle-posing-in-studio-isolated_158538-26618.jpg?w=996&t=st=1673437879~exp=1673438479~hmac=131f46bccd1cba58b27127c4834c071b0dfead46ca2782e65f3405e5f056bf41"]
   },
   {
     "id":29,
@@ -1273,19 +1298,7 @@ export const list  =
   "color":"pink",
   "images":["https://img.freepik.com/free-photo/portrait-of-handsome-confident-model-sexy-stylish-man-dressed-in-pink-sweater-and-jeans-fashion-hipster-male-posing-near-blue-wall-in-studio-in-sunglasses-isolated_158538-23398.jpg?w=740&t=st=1671211090~exp=1671211690~hmac=83c4e2f338da5ef4f53ff0bb363e9e1ca2afc57cb8d866f943e26bebfb6b6a48","https://img.freepik.com/free-photo/portrait-of-handsome-confident-model-sexy-stylish-man-dressed-in-pink-sweater-and-jeans-fashion-hipster-male-posing-near-blue-wall-in-studio-in-sunglasses-isolated_158538-23400.jpg?w=360&t=st=1671211055~exp=1671211655~hmac=19a91387e81539a9a76ee477bb6242b2788d000fac4c6f60ea8000ebd555d620","https://img.freepik.com/free-photo/portrait-of-handsome-confident-model-sexy-stylish-man-dressed-in-pink-sweater-and-jeans-fashion-hipster-male-posing-near-blue-wall-in-studio-in-sunglasses-isolated_158538-23392.jpg?w=740&t=st=1671211103~exp=1671211703~hmac=d18812ee82146ef69dc9e3b700350e46cdc61b6f8dba111350a61f2a70a4f684"]
   },
-  {
-    "id":0,
-    "title":"sweater",
-  "brand":"Gucci",
-  "category":"men",
-  "description":"Original sweater from Gucci, modern in a horizontal stripe dark blue almost black stripes with white.",
-  "price":36,
-  "discount":8,
-  "stock":14,
-  "size":"m",
-  "color":"black",
-  "images":["https://img.freepik.com/free-photo/smart-attractive-asian-glasses-male-hand-rise-up-cheerful-exited-standing-and-smile-with-freshness-and-joyful-casual-blue-shirt-portrait-white-background_609648-1167.jpg?w=740&t=st=1671211349~exp=1671211949~hmac=5b240b5fd110712e4ffc04a048e616c26645f78e819e4a267890a8c3680a0266","https://img.freepik.com/free-photo/smart-attractive-asian-friendly-male-hand-rise-up-cheerful-exited-standing-and-smile-with-freshness-and-joyful-casual-blue-shirt-portrait-white-background_609648-494.jpg?w=740&t=st=1671211356~exp=1671211956~hmac=486bcafa7c1ca7759e22e011440df1f9ac9326c48a76b9ea5babcfeddf936a50","https://img.freepik.com/free-photo/smart-attractive-asian-glasses-male-hand-rise-up-cheerful-exited-standing-and-smile-with-freshness-and-joyful-casual-blue-shirt-portrait-white-background_609648-1156.jpg?w=740&t=st=1671211363~exp=1671211963~hmac=8b11c7cd9ccc0984b4d2f4d37b6a85707cc6fb702f12dbc6ba5a32fae5630f2c"]
-  }
+ 
   
   ]
 
