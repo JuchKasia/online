@@ -1830,6 +1830,9 @@ input[type=number]::-webkit-outer-spin-button {
   .bask-image {
     justify-content: center;
     align-items: center;
+    // background-size: cover;
+    max-width: 140px;
+    max-height: 100px;
   }
   .bask-inf {
     padding-bottom: 15px;
@@ -2150,3 +2153,5 @@ input[type=number]::-webkit-outer-spin-button {
    .scale:hover {
     transform: scale(1.2); /* Увеличиваем масштаб */
    }
+
+//    strikethrough    перечеркнутый текст

@@ -3,13 +3,15 @@ import * as cat from './index';
 import '../index';
 
 import { list } from '../list';
+import { count } from 'console';
 // export const cat = 'category file work';
 // console.log('this is file category');
 // console.log("from category file "+cat.listCategory);
 
-export const basket = [{}];
+export const basket = [1];//index 
 basket.length = 0;
 export let descrpiptQuantity = 1;
+export let baskQuantity = 1;
 export const desk: ({ id: number; title: string; brand: string; category: string; description: string; price: number; discount: number; stock: number; size: string; color: string; images: string[]; } | { id: number; title: string; brand: string; category: string; description: string; price: number; stock: number; size: string; color: string; images: string[]; discount?: undefined; })[] = [];
 
 export let basketPrice = 0;
@@ -68,22 +70,32 @@ const cpv = document.querySelector('.cart-products-value').innerHTML.split(' ')[
   const main = document.querySelector('.main');
   const pageDescription = document.querySelector('.pageDescription');
   const descriptionPage = document.querySelector('.description');
-  
-console.log(desk)
+
   for(let i = 0;i<addcards.length;i++){
     
     addcards[i].addEventListener('click',function(){
-      basket.push(cat.listCategory[i]);
+      if(cat.countRandom==0){
+        basket.push(cat.listCategory[cat.arrayForCards[i]].id); 
+        basketPrice+=cat.listCategory[cat.arrayForCards[i]].price
+      }else {
+      basket.push(cat.listCategory[i].id);
       basketPrice+=cat.listCategory[i].price
+      }
       cartProductsCount.innerHTML = basket.length+"";
     cartProductsValue.innerHTML = cpv+basketPrice;
     });
     btnEyeCart[i].addEventListener('click',function(){
       desk.pop();
       main.classList.add('non');
+      basketPage.classList.add('non');
       pageDescription.classList.remove('non');
       descriptionPage.classList.remove('non');
+      if(cat.countRandom==0){
+        desk.push(cat.listCategory[cat.arrayForCards[i]]);
+      }else {
         desk.push(cat.listCategory[i]);
+      }
+        
         buildDescription();
         buildBestDeck();
     });
@@ -99,9 +111,9 @@ console.log(desk)
  
 // console.log(containerCart);
   containerCart.addEventListener('click',function(){
-    console.log('conta')
 main.classList.add('non');
 basketPage.classList.remove('non');
+getshopCard();
   });
 
  const itemLink = document.querySelectorAll('.item__link')[0].addEventListener('click',function(){
@@ -204,11 +216,80 @@ for(let i = 0;i<descSellIm.length;i++){
 const descriptionButton = document.querySelector('.description-button');
 // добавление в типо карзину простое отоброжение 
 descriptionButton.addEventListener('click',function(){
-basket.push(desk[0]);
+basket.push(desk[0].id);
 cartProductsCount.innerHTML = descrpiptQuantity+"";
 cartProductsValue.innerHTML = cpv+desk[0].price*descrpiptQuantity;
 });
 
 
 
-// basket 
+// basket page --------------------------------------------------------------
+const baskImage = document.querySelector('.bask-image');
+const baskBlockValue = document.querySelector(".bask-block-value");
+const baskBlockVal = document.querySelector(".bask-block-val");
+const baskSize=document.querySelector(".bask-size");
+const baskColor = document.querySelector('.bask-color');
+const baskBaseValue=document.querySelector('.bask-base-value');
+
+const baskDellImg = document.querySelector('.bask-dell-img');
+const baskTotValue = document.querySelector('.bask-tot-value');
+const baskTot= document.querySelector('.bask-tot-total');
+document.querySelector('.back-start').addEventListener('click',function(){
+  main.classList.remove('non');
+  basketPage.classList.add('non');
+});
+
+function getshopCard(){
+
+baskDellImg.setAttribute('src',`../assets/svg/basket.svg`);//not work!!!!!!!
+
+for(let i = 0;i<cat.listCategory.length;i++){
+if(cat.listCategory[i].id==basket[0]){
+  basket[0] = i;
+}
+}
+baskImage.setAttribute('src',`${cat.listCategory[basket[0]].images[0]}`);
+baskImage.classList.add('scale');
+baskBlockValue.innerHTML = 'Cost : $ '+ cat.listCategory[basket[0]].price;
+baskBlockVal.innerHTML = '$ '+ cat.listCategory[basket[0]].price;
+baskSize.innerHTML = 'Size : '+ cat.listCategory[basket[0]].size;
+baskColor.innerHTML = 'Color : '+ cat.listCategory[basket[0]].color;
+ baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price;
+ baskTot.innerHTML =""+cat.listCategory[basket[0]].price;
+}
+
+
+const baskBlockDisk = document.querySelector('.bask-block-disk');
+const goodPrice = document.querySelector('.goodPrice');
+const basketTotalAll = document.querySelectorAll('.basket-total-all')[1];
+const baskTotDiskaunt = document.querySelector('.bask-tot-diskaunt');
+
+document.querySelector('.bask-total-quest').addEventListener('click',function(){
+baskBlockDisk.classList.remove('non');
+goodPrice.classList.remove('non');
+basketTotalAll.classList.remove('non');
+goodPrice.innerHTML= "-"+cat.listCategory[basket[0]].discount*baskQuantity+" %";
+baskBlockDisk.innerHTML ="Discount : $ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
+baskTotDiskaunt.innerHTML ="$ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
+baskTot.innerHTML = "$ "+ (cat.listCategory[basket[0]].price*baskQuantity - cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity);
+});
+
+
+// bask-block-val   
+baskUp.addEventListener('click',function(){
+baskBaseValue.innerHTML = ++baskQuantity+"";
+baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+});
+baskDown.addEventListener('click',function(){
+  if(baskQuantity>0){
+    baskBaseValue.innerHTML = --baskQuantity+"";
+  }
+  baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+  baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+  baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+  });
+
+
+// для оптимизации нужно добавлять не обьекты. а индексы
