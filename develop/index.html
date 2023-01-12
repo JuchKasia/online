@@ -54,7 +54,7 @@
         </div>
         <div class="modal-shadow"></div>
         <!-- окно на весь экран -->
-        <div class="modal-purchase-wrapper non">
+        <div class="modal-purchase-wrapper">
             <!-- окно модальное контейнет -->
             <div class="modal-content">
                 <div class="modal__close">
@@ -69,14 +69,14 @@
                                     <h3 class="personal-title" id="personal-title">PERSONAL INFORMATION</h3>
                                     <div class="customer-name">
                                         <div class="customer-name-item">
-                                            <label for="personal-name" class="name" title="first name and last name">Name</label>
+                                            <label for="personal-name" class="name" title="full name">Full name</label>
                                             <input class="personal-name" type="text" name="name" id="personal-name" minlength="3" required placeholder="name">
                                         </div>
                                     </div>
                                     <div class="customer-phone">
                                         <div class="customer-name-item">
                                             <label for="phone">Phone number</label>
-                                            <input class="phone" type="text" name="phone" id="phone" pattern="[0-9]{13,19}" minlength="9" required placeholder="phone number">
+                                            <input class="phone" type="text" name="phone" id="phone" value="+" pattern="[0-9]{13,19}" minlength="9" data-mask="0000 0000 0000 0000" required placeholder="phone number">
                                         </div>
                                     </div>
                                     <div class="customer-adress">
