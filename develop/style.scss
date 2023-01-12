@@ -1388,7 +1388,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* MODAL PAGE PURCHASE */
 .modal-shadow {
     display: block;
-    display: none;
+    // display: none;
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -1405,7 +1405,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .modal-purchase-wrapper {
-    display: none;
+    // display: none;
     // position: fixed;
     width: 50%;
     margin: 0 auto;
