@@ -148,12 +148,12 @@ const blockInfQuantity=document.querySelector(".block-inf-quantity");
 const baskUp=document.querySelector(".bask-up"); 
 const baskDown=document.querySelector(".bask-down"); 
 const descripInf=document.querySelector(".descrip-inf");
-const descriptionCard = document.querySelector('.descriptionCard'); 
+// const descriptionCard = document.querySelector('.descriptionCard'); 
 const descBaseValue = document.querySelector('.desc-base-value');
 const daskUp = document.querySelector('.dask-up');
 const daskDown = document.querySelector('.dask-down');
-const descripInfText = document.querySelector('.descrip-inf-text')
-
+// const descripInfText = document.querySelector('.descrip-inf-text')
+const descripDetal = document.querySelector('.descrip-detal');
 
 function buildDescription(){
   const way = document.querySelector('.way');
@@ -167,29 +167,41 @@ function buildDescription(){
   blockInfColor.innerHTML ="Color : "+ desk[0].color;
   descBaseValue.innerHTML = descrpiptQuantity+"";
   descripInf.innerHTML = desk[0].description;
-  const descripDescrip = document.querySelector('.descrip-descrip').addEventListener('click',function(){
-    descripInfText.innerHTML = desk[0].description;
-   });
-   const descripDetal = document.querySelector('.descrip-detal').addEventListener('click',function(){
-  if(desk[0].brand=="Dior"){
-    descripInfText.innerHTML = "";
-    descriptionCard.setAttribute('src',`../assets/svg/dior.svg`);
-  }else if(desk[0].brand=="Prada"){
-    descripInf.innerHTML = "";
-    descriptionCard.setAttribute('src',`../assets/svg/prada.svg`);
-  }else if(desk[0].brand=="Valentino"){
-    descripInf.innerHTML = "";
-    descriptionCard.setAttribute('src',`../assets/svg/valentino.svg`);
-  }else if(desk[0].brand=="Versace"){
-    descripInf.innerHTML = "";
-    descriptionCard.setAttribute('src',`../assets/svg/versace.svg`);
-  }else if(desk[0].brand=="Gucci"){
-    descripInf.innerHTML = "";
-    descriptionCard.setAttribute('src',`../assets/svg/icons8-gucci.svg`);
-  }
-   });
+  
    
 }
+document.querySelector('.descrip-descrip').addEventListener('click',function(){
+     descripInf.innerHTML = desk[0].description;
+   });
+   descripDetal.addEventListener('click',function(){
+    const img = document.createElement('img');
+    img.classList.add('brand-logo');
+    // для решения проблемы битой ссылки предлагаю сделать массив в ts с сылками 
+  if(desk[0].brand=="Dior"){
+    console.log('dior');
+    descripInf.innerHTML = "";
+    img.setAttribute('src',`../assets/svg/dior.svg`);
+    img.setAttribute('alt','image brand logo');
+  }else if(desk[0].brand=="Prada"){
+    console.log('prada');
+    descripInf.innerHTML = "";
+    img.setAttribute('src',`../assets/svg/prada.svg`);
+    img.setAttribute('alt','image brand logo');
+  }else if(desk[0].brand=="Valentino"){
+    descripInf.innerHTML = "";
+    img.setAttribute('src',`$../assets/svg/valentino.svg`);
+    img.setAttribute('alt','image brand logo');
+  }else if(desk[0].brand=="Versace"){
+    descripInf.innerHTML = "";
+    img.setAttribute('src',`../assets/svg/versace.svg`);
+    img.setAttribute('alt','image brand logo');
+  }else if(desk[0].brand=="Gucci"){
+    descripInf.innerHTML = "";
+    img.setAttribute('src',`../assets/svg/icons8-gucci.svg`);
+    img.setAttribute('alt','image brand logo');
+  }
+  descripInf.append(img);
+   });
 daskUp.addEventListener('click', function(){
     descBaseValue.innerHTML = ++descrpiptQuantity+"";
    });
