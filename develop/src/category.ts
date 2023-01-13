@@ -170,6 +170,10 @@ function buildDescription(){
   
    
 }
+const brandIcon = ["https://icons8.com/icon/SZcJ6dmuRAjg/dior%2C-a-french-luxury-goods-companyand-its-world's-largest-luxury-group"];
+// dior https://icons8.com/icon/SZcJ6dmuRAjg/dior%2C-a-french-luxury-goods-companyand-its-world's-largest-luxury-group
+// valentino https://icons8.com/icon/Qy3TkWjxXVIT/valentino-an-italian-clothing-fashion-group-company
+// gucci https://icons8.com/icon/60396/gucci
 document.querySelector('.descrip-descrip').addEventListener('click',function(){
      descripInf.innerHTML = desk[0].description;
    });
@@ -180,7 +184,7 @@ document.querySelector('.descrip-descrip').addEventListener('click',function(){
   if(desk[0].brand=="Dior"){
     console.log('dior');
     descripInf.innerHTML = "";
-    img.setAttribute('src',`../assets/svg/dior.svg`);
+    img.setAttribute('src',`${brandIcon[0]}`);
     img.setAttribute('alt','image brand logo');
   }else if(desk[0].brand=="Prada"){
     console.log('prada');
