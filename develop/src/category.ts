@@ -170,17 +170,18 @@ function buildDescription(){
   
    
 }
-const brandIcon = ["https://icons8.com/icon/SZcJ6dmuRAjg/dior%2C-a-french-luxury-goods-companyand-its-world's-largest-luxury-group"];
-// dior https://icons8.com/icon/SZcJ6dmuRAjg/dior%2C-a-french-luxury-goods-companyand-its-world's-largest-luxury-group
-// valentino https://icons8.com/icon/Qy3TkWjxXVIT/valentino-an-italian-clothing-fashion-group-company
-// gucci https://icons8.com/icon/60396/gucci
+const brandIcon = ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dior_Logo.svg/300px-Dior_Logo.svg.png?20100916160103","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Prada-Logo.svg/512px-Prada-Logo.svg.png?20200520125737","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Valentino_logo.svg/800px-Valentino_logo.svg.png?20220515071350","https://www.alamy.com/versace-medusa-logo-fashion-luxury-brand-clothes-illustration-image217740490.html","https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Gucci_logo.svg/512px-Gucci_logo.svg.png?20180702130155"];
+// dior https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dior_Logo.svg/300px-Dior_Logo.svg.png?20100916160103
+
+// valentino https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Valentino_logo.svg/800px-Valentino_logo.svg.png?20220515071350
+// versace https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Versace.png/800px-Versace.png?20221205144422
 document.querySelector('.descrip-descrip').addEventListener('click',function(){
      descripInf.innerHTML = desk[0].description;
    });
    descripDetal.addEventListener('click',function(){
     const img = document.createElement('img');
     img.classList.add('brand-logo');
-    // для решения проблемы битой ссылки предлагаю сделать массив в ts с сылками 
+    
   if(desk[0].brand=="Dior"){
     console.log('dior');
     descripInf.innerHTML = "";
@@ -189,19 +190,19 @@ document.querySelector('.descrip-descrip').addEventListener('click',function(){
   }else if(desk[0].brand=="Prada"){
     console.log('prada');
     descripInf.innerHTML = "";
-    img.setAttribute('src',`../assets/svg/prada.svg`);
+    img.setAttribute('src',`${brandIcon[1]}`);
     img.setAttribute('alt','image brand logo');
   }else if(desk[0].brand=="Valentino"){
     descripInf.innerHTML = "";
-    img.setAttribute('src',`$../assets/svg/valentino.svg`);
+    img.setAttribute('src',`${brandIcon[2]}`);
     img.setAttribute('alt','image brand logo');
   }else if(desk[0].brand=="Versace"){
     descripInf.innerHTML = "";
-    img.setAttribute('src',`../assets/svg/versace.svg`);
+    img.setAttribute('src',`${brandIcon[3]}`);
     img.setAttribute('alt','image brand logo');
   }else if(desk[0].brand=="Gucci"){
     descripInf.innerHTML = "";
-    img.setAttribute('src',`../assets/svg/icons8-gucci.svg`);
+    img.setAttribute('src',`${brandIcon[4]}`);
     img.setAttribute('alt','image brand logo');
   }
   descripInf.append(img);
