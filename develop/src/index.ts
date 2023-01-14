@@ -21,9 +21,14 @@ export const forLocal = {
   color
 } 
 export let countRandom = 0;
+// export let listCategory = JSON.parse(localStorage.getItem('listCategory'));
 // export const basket = [];
 //  listCategory: Product;
-// console.log(localStorage.getItem('listCategory'))
+// localStorage.clear();
+//  console.log(localStorage.getItem('listCategory'))
+//  if(localStorage.getItem('listCategory')==null){
+//   console.log()
+//  }
 export let  listCategory = list;
 // forLocal.category('men');
 // forLocal.category.add('women');
@@ -73,9 +78,9 @@ for(let i = 0;i<list.length;i++){
   }
   
 }
-localStorage.setItem('listCategory',JSON.stringify(listCategory));
+// localStorage.setItem('listCategory',JSON.stringify(listCategory));
 // let poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
-console.log('listCategory '+listCategory.length);
+// console.log('listCategory '+listCategory.length);
 sizeFilter();
 colorFilter();
 if(listCategory.length<19){
@@ -112,9 +117,9 @@ arrayForCards= getRandomArray(99,99);
 arrayForCardsSpec = getRandomArray(3, 99);
 arrayForCardsBest = getRandomArray(3, 99);
 arrayForCardsDesc = getRandomArray(4,99);
-console.log(arrayForCards);
-console.log(arrayForCardsBest);
-console.log(arrayForCardsSpec);
+// console.log(arrayForCards);
+// console.log(arrayForCardsBest);
+// console.log(arrayForCardsSpec);
 // function getRandomArray finish -----------------------------------------
 
 
@@ -130,8 +135,8 @@ const productMiniature = document.querySelectorAll('.product-miniature');
 // console.log("card " +cardsStock.length);
 // console.log(productTitle.length);
 function buildCards(){
-  console.log(listCategory);
-  console.log(arrayForCards);
+  // console.log(listCategory);
+  // console.log(arrayForCards);
 for(let i = 0;i<productDetailText.length; i++){
     productDetailText[i].innerHTML = list[arrayForCards[i]].description;
     cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+list[arrayForCards[i]].stock;
@@ -141,11 +146,11 @@ for(let i = 0;i<productDetailText.length; i++){
     secondCardImg[i].classList.add("non");
 }
 }
-(!JSON.parse(localStorage.getItem('listCategory')))?buildCardsCategory:
+// (!JSON.parse(localStorage.getItem('listCategory')))?buildCardsCategory:
 buildCards();
 
-const cartProductsCount = document.querySelector('.cart-products-count');
-console.log( Number(cartProductsCount.innerHTML));
+// const cartProductsCount = document.querySelector('.cart-products-count');
+// console.log( Number(cartProductsCount.innerHTML));
 export function buildCardsCategory(){
   countRandom++;
   clearCards();
@@ -277,8 +282,8 @@ for (let i=0; i < sizeLabel.length; i++) {
     forLocal.size.delete(sizeLabel[i].innerHTML.split(' ')[0])
   }
   // console.log(forLocal.size)
-getCategoryArray();
-buildCardsCategory();
+  getCategoryArray();
+  buildCardsCategory();
 // console.log(listCategory);
  });
   for (let j = 0; j < listCategory.length; j++) {
@@ -416,55 +421,43 @@ showList.addEventListener('click', () => {
 
 
   // list category img -----------------------------------------------
-const listCategoryImg = ['https://img.freepik.com/free-photo/portrait-handsome-man_158595-3414.jpg?w=1060&t=st=1673293770~exp=1673294370~hmac=59a4bda47004f4bbd3d261b05ca193e50021cc2dc4eb19102d674646825e9578', 'https://img.freepik.com/free-photo/shallow-focus-shot-posing-handsome-smiling-european-guy-hat_181624-61284.jpg?w=1060&t=st=1673293793~exp=1673294393~hmac=0a76c438833d9d01a23c5d064703e4d13c40dd4ab64f1de6ef7687b42c52ebe4', 'https://img.freepik.com/free-photo/handsome-confident-hipster-modelsexy-unshaven-man-dressed-summer-stylish-green-hoodie-jeans-clothes-fashion-male-with-curly-hairstyle-posing-studio-isolated-blue_158538-26582.jpg?w=1060&t=st=1673294250~exp=1673294850~hmac=c95ac2d51f54372698969fba827480816b14e4c2cdd93ed83466a786a393cc0b', 'https://img.freepik.com/free-photo/excited-white-girl-bright-stylish-glasses-posing-pink-dreamy-curly-woman-playing-with-her-ginger-hair-laughing_197531-11045.jpg?w=1060&t=st=1673294269~exp=1673294869~hmac=17ed82fb7efa83890f41a1e1c7756786a1df0a8840fa58348318f5cfcec673b4', 'https://img.freepik.com/free-photo/cute-young-girl-with-dark-wavy-hairstyle-bright-makeup-silk-dress-black-jacket-holding-sunglasses-hands-looking-away-against-beige-building-wall_197531-24462.jpg?w=1060&t=st=1673294271~exp=1673294871~hmac=9c114b52890ff1a1c7e1a914e66a1af5fc4b4bfe81aae4b1b5b45343fa470484', 'https://img.freepik.com/free-photo/stylish-european-brunette-woman-red-coat-black-hat-posing-white-wall_273443-4636.jpg?w=1060&t=st=1673294275~exp=1673294875~hmac=4f680379b04c021c9e5732c86dad1fe876fad7156491a1753bcc02fd48feb904'];
+const listCategoryImg = ['https://img.freepik.com/free-photo/young-handsome-man-in-jacket-posing-in-the-street-in-winter-time_1303-30028.jpg?w=996&t=st=1673701238~exp=1673701838~hmac=4047426187f50c36fc3e5a82d0c5ff5de5cbeda06ca5b685985f35d74eefdb27', 'https://img.freepik.com/free-photo/sexy-guy-with-unbuttoned-fleece-shirt-posing-at-a-studio-isolated-on-a-dark-background_613910-21306.jpg?w=996&t=st=1673679617~exp=1673680217~hmac=9acd3d3b42b5f47a820ae42efae7bf1a663d833f36fe04f924a7ce578c263972', 'https://img.freepik.com/free-photo/handsome-confident-hipster-modelsexy-unshaven-man-dressed-summer-stylish-green-hoodie-jeans-clothes-fashion-male-with-curly-hairstyle-posing-studio-isolated-blue_158538-26582.jpg?w=1060&t=st=1673294250~exp=1673294850~hmac=c95ac2d51f54372698969fba827480816b14e4c2cdd93ed83466a786a393cc0b', 'https://img.freepik.com/free-photo/excited-white-girl-bright-stylish-glasses-posing-pink-dreamy-curly-woman-playing-with-her-ginger-hair-laughing_197531-11045.jpg?w=1060&t=st=1673294269~exp=1673294869~hmac=17ed82fb7efa83890f41a1e1c7756786a1df0a8840fa58348318f5cfcec673b4', 'https://img.freepik.com/free-photo/cute-young-girl-with-dark-wavy-hairstyle-bright-makeup-silk-dress-black-jacket-holding-sunglasses-hands-looking-away-against-beige-building-wall_197531-24462.jpg?w=1060&t=st=1673294271~exp=1673294871~hmac=9c114b52890ff1a1c7e1a914e66a1af5fc4b4bfe81aae4b1b5b45343fa470484', 'https://img.freepik.com/free-photo/stylish-european-brunette-woman-red-coat-black-hat-posing-white-wall_273443-4636.jpg?w=1060&t=st=1673294275~exp=1673294875~hmac=4f680379b04c021c9e5732c86dad1fe876fad7156491a1753bcc02fd48feb904',"https://img.freepik.com/free-photo/stylish-couple-in-love-sitting-in-street-on-romantic-trip_285396-9919.jpg?w=996&t=st=1673712712~exp=1673713312~hmac=4a6b99136bc243662dae01afb5683aae70f75f722beef80dd324a5f9bb0b438f"];
 const coverProduct = document.querySelector('.cover-product');
 
-// coverProduct.setAttribute('src',`${listCategoryImg[0]}`);
-
 let forInterval = 0;
+coverProduct.setAttribute('src',`${listCategoryImg[listCategoryImg.length-1]}`);
 setInterval(function() {
-if(forLocal.category.size==2){
-  coverProduct.setAttribute('src',`${listCategoryImg[forInterval]}`);
-  if(forInterval==5){
-  forInterval=-1;
-}
-forInterval++;
-}else {
-if(forLocal.category.has('men')){
-  if(forInterval>2){
-    forInterval=0;
-  }
-  coverProduct.setAttribute('src',`${listCategoryImg[forInterval]}`);
-if(forInterval==3){
-  forInterval=-1
-}
-forInterval++;
-} else if(forLocal.category.has('women')){
-  if(forInterval<3){
-    forInterval=3;
-  }
-  coverProduct.setAttribute('src',`${listCategoryImg[forInterval]}`);
-  if(forInterval==5){
-    forInterval=2
+  if(forLocal.category.size==2){
+    coverProduct.setAttribute('src',`${listCategoryImg[forInterval]}`);
+    if(forInterval==5){
+    forInterval=-1;
   }
   forInterval++;
-}
-}
-
-
-
-
+  }else {
+  if(forLocal.category.has('men')){
+    if(forInterval>2){
+      forInterval=0;
+    }
+    coverProduct.setAttribute('src',`${listCategoryImg[forInterval]}`);
+  if(forInterval==3){
+    forInterval=-1
+  }
+  forInterval++;
+  } else if(forLocal.category.has('women')){
+    if(forInterval<3){
+      forInterval=3;
+    }
+    coverProduct.setAttribute('src',`${listCategoryImg[forInterval]}`);
+    if(forInterval==5){
+      forInterval=2
+    }
+    forInterval++;
+  }
+  }
 
 }, 3000);
-  // if(forLocal.category.size==2){
-  //   if(listCategoryImg.length-1==i){
-  //     i=0;
-  //   }
-    
-  // }
 
-  coverProduct.setAttribute('src',`${listCategoryImg[0]}`);
-
-// forLocal.category.has(list[i].category)
+// localStorage.setItem('listCategory', JSON.stringify( listCategory));
+// console.log(JSON.parse(localStorage.getItem('listCategory')));
 
 
