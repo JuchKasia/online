@@ -457,7 +457,7 @@ setInterval(function() {
 
 }, 3000);
 
-// localStorage.setItem('listCategory', JSON.stringify( listCategory));
-// console.log(JSON.parse(localStorage.getItem('listCategory')));
+//localStorage.setItem('listCategory', JSON.stringify( listCategory));
+// console.log(listCategory = JSON.parse(localStorage.getItem('listCategory')));
 
 
