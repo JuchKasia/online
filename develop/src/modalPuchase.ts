@@ -22,7 +22,7 @@ const personalEmail = document.querySelector('.personal-email');
 const cartNumber = document.querySelector('.cart-number');
 const cardOwner = document.querySelector('.card-owner');
 const expirationDate = document.querySelector('#expiration-date');
-// const cardCvv = document.querySelector('.card-cvv');
+const cardCvv = document.querySelector('.card-cvv');
 personalName.addEventListener('blur', function() {
     // console.log(this.value.split(" ").length==2);
     // this.value.split(" ").length == 2;
@@ -118,4 +118,14 @@ expirationDate.addEventListener('blur', function() {
          expirationDate.classList.add('border-red');
     }
     this.value = this.value.slice(0, 2) + '/' + this.value.slice(2,4);
+})
+
+
+const cardCvvValide = (/[0-9]{3}/);
+cardCvv.addEventListener('blur', function() {
+    if(this.value.match(cardCvvValide)) {
+        cardCvv.classList.remove('border-red');
+    } else {
+        cardCvv.classList.add('border-red');
+    }
 })
