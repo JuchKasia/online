@@ -18,7 +18,7 @@ btnClose.addEventListener('click', () => {
 const personalName = document.querySelector('.personal-name');
 const phone = document.querySelector('.phone');
 const address = document.querySelector('.address');
-// const personalEmail = document.querySelector('.personal-email');
+const personalEmail = document.querySelector('.personal-email');
 // const cartNumber = document.querySelector('.cart-number');
 // const cardOwner = document.querySelector('.card-owner');
 // const expirationDate = document.querySelector('.expiration-date');
@@ -121,7 +121,8 @@ address.addEventListener('blur', function() {
 
 /* Варианты регулярных выражений */
 // const emailValid = (/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu);
-const emailValid = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+// const emailValid = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+const emailValid =/^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 // const value = emailValid.value.trim();
     personalEmail.addEventListener('blur', function() {
     // if (this.value != this.value.match(emailValid)) {
