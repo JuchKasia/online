@@ -20,7 +20,7 @@ const phone = document.querySelector('.phone');
 const address = document.querySelector('.address');
 const personalEmail = document.querySelector('.personal-email');
 const cartNumber = document.querySelector('.cart-number');
-// const cardOwner = document.querySelector('.card-owner');
+const cardOwner = document.querySelector('.card-owner');
 // const expirationDate = document.querySelector('.expiration-date');
 // const cardCvv = document.querySelector('.card-cvv');
 personalName.addEventListener('blur', function() {
@@ -98,3 +98,12 @@ cartNumber.addEventListener('keypress',function(){
     // }
 });
 
+cardOwner.addEventListener('blur', function() {
+    // console.log(this.value.split(" ").length==2);
+    // this.value.split(" ").length == 2;
+    if (this.value.split(" ").length >= 2 && this.value.split(" ")[0].length >=3 && this.value.split(" ")[1].length >=3) {
+        return cardOwner.classList.remove('border-red');
+    } else {
+        return cardOwner.classList.add('border-red');
+    }
+})
