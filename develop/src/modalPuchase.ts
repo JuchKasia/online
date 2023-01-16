@@ -21,7 +21,7 @@ const address = document.querySelector('.address');
 const personalEmail = document.querySelector('.personal-email');
 const cartNumber = document.querySelector('.cart-number');
 const cardOwner = document.querySelector('.card-owner');
-// const expirationDate = document.querySelector('.expiration-date');
+const expirationDate = document.querySelector('#expiration-date');
 // const cardCvv = document.querySelector('.card-cvv');
 personalName.addEventListener('blur', function() {
     // console.log(this.value.split(" ").length==2);
@@ -106,4 +106,16 @@ cardOwner.addEventListener('blur', function() {
     } else {
         return cardOwner.classList.add('border-red');
     }
+})
+
+const dateValidate1 = /^[01][0-2]/;
+const dateValidate2 = /[0-2][0-8]$/;
+expirationDate.addEventListener('blur', function() {
+    if(this.value.slice(0, 2).match(dateValidate1)&& this.value.slice(2,4).match(dateValidate2)){
+        expirationDate.classList.remove('border-red');
+    }
+    else {
+         expirationDate.classList.add('border-red');
+    }
+    this.value = this.value.slice(0, 2) + '/' + this.value.slice(2,4);
 })
