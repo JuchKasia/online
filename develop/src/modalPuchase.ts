@@ -19,7 +19,7 @@ const personalName = document.querySelector('.personal-name');
 const phone = document.querySelector('.phone');
 const address = document.querySelector('.address');
 const personalEmail = document.querySelector('.personal-email');
-// const cartNumber = document.querySelector('.cart-number');
+const cartNumber = document.querySelector('.cart-number');
 // const cardOwner = document.querySelector('.card-owner');
 // const expirationDate = document.querySelector('.expiration-date');
 // const cardCvv = document.querySelector('.card-cvv');
@@ -70,4 +70,31 @@ personalEmail.addEventListener('blur', function() {
     }
 
 })
+
+const bank1 = document.querySelector('.bank__item1');
+const bank2 = document.querySelector('.bank__item2');
+const bank3 = document.querySelector('.bank__item3');
+const bank4 = document.querySelector('.bank__item4');
+const bankItem = document.querySelectorAll('.bank__item');
+
+cartNumber.addEventListener('keypress',function(){
+    for(let i=0; i<= bankItem.length; i++) {
+        bankItem[i].classList.remove('cardVisible');
+        if(this.value[0] == 4) {
+            bank1.classList.add('cardVisible');
+        }
+        if(this.value[0] == 5) {
+            bank2.classList.add('cardVisible');
+        }
+        if(this.value[0] == 6) {
+            bank3.classList.add('cardVisible');
+        }
+        if(this.value[0] < 4 || this.value[0] > 6) {
+            bank4.classList.add('cardVisible');
+        }
+    }
+    // if(this.value.length == 4 && this.value.length == 9 && this.value.length == 14) {
+    //     this.value=this.value + " ";
+    // }
+});
 
