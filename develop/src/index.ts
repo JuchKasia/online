@@ -9,6 +9,7 @@ import "../normalize.css";
 import {list} from '../list';
 import {sizeFilter,colorFilter} from './category';
 import {proso} from './modalPuchase';
+// import { fstat } from "fs";
 // import {} from './desc';
 console.log(proso);
 const category = new Set<string>(["men","women"]);
@@ -460,4 +461,9 @@ setInterval(function() {
 //localStorage.setItem('listCategory', JSON.stringify( listCategory));
 // console.log(listCategory = JSON.parse(localStorage.getItem('listCategory')));
 
-
+// import {fs} from 'fs/promises';
+// async function func() {
+//   const dat= await fs.promises.readFile('list.json', 'utf8');
+//   console.log(dat);
+// }
+// func();

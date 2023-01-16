@@ -81,6 +81,9 @@ export const main = document.querySelector('.main');
       basket.push(cat.listCategory[i].id);
       basketPrice+=cat.listCategory[i].price
       }
+      // здесь добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
+
+      // if(addcards[i].contains(''))
       cartProductsCount.innerHTML = basket.length+"";
     cartProductsValue.innerHTML = cpv+basketPrice;
     });
