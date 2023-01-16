@@ -105,24 +105,12 @@
                                                 </div>
                                                 <div class="logo-bank bank">
                                                     <div class="bank__item bank__item1 item">
-                                                        <!-- <input class="card-details__card-input" type="radio" name="cardType" id="visa" data-card-type="visa" checked> -->
-                                                        <!-- <label class="item-card-label">Visa</label> -->
-                                                        <!-- <img class="item-card-image" src="https://svgshare.com/i/7h2.svg" alt="Visa Card" aria-hidden="true"> -->
                                                     </div>
                                                     <div class="bank__item bank__item2 item">
-                                                        <!-- <label class="item-card-label">MasterCard</label> -->
-                                                        <!-- <img class="item-card-image" src="https://svgshare.com/i/7fu.svg" alt="MasterCard" aria-hidden="true"> -->
                                                     </div>
                                                     <div class="bank__item bank__item3 item">
-                                                        <!-- <label class="item-card-label">MasterCard</label> -->
-                                                        <!-- <img class="item-card-image" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Maestro" aria-hidden="true">
-                                                    </div> -->
                                                     </div>
-                                                <!-- логотипы банков и валидацию, мин 3 платежные системы -->
-                                                <!-- автоматическая смена логотипа платежной системы. 
-                                                Например, если номер карты начинает с 4, устанавливается логотип Visa, 
-                                                если 5 - MasterCard.card-type
-                                                 Реализовать не менее 3 платежных систем -->
+                                                    <div class="bank__item bank__item4 item"></div>
                                                 </div>
                                                 
                                             </div>
@@ -132,14 +120,14 @@
                                     </div>
                                     <div class="payment-card-bank">
                                         <div class="payment-card-item">
-                                            <label for="card-owner">Name</label>
-                                            <input class="card-owner" type="text" name="card-owner" id="card-owner" required placeholder="name">
+                                            <label for="card-owner" class="name" title="full name">Full name</label>
+                                            <input class="card-owner" type="text" name="card-owner" id="card-owner" required placeholder="full name">
                                         </div>
                                     </div>
                                     <div class="payment-card-bank">
                                         <div class="payment-card-item">
                                             <label for="expiration-date">Expiration date</label>
-                                            <input class="expiration-date" type="text" name="expiration-date" id="expiration-date" maxlength="7" value="MM / YY" required placeholder="MM / YY">
+                                            <input class="expiration-date" type="text" name="expiration-date" id="expiration-date" maxlength="5" required placeholder="MM/YY">
                                         </div>
                                     </div>
                                     <div class="payment-card-bank">
