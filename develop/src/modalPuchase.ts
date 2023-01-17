@@ -22,7 +22,7 @@ const personalEmail = document.querySelector('.personal-email');
 const cartNumber = document.querySelector('.cart-number');
 const cardOwner = document.querySelector('.card-owner');
 const expirationDate = document.querySelector('#expiration-date');
-const cardCvv = document.querySelector('.card-cvv');
+const cardCvv = document.querySelector('#card-cvv');
 personalName.addEventListener('blur', function() {
     // console.log(this.value.split(" ").length==2);
     // this.value.split(" ").length == 2;
@@ -42,7 +42,7 @@ phone.addEventListener('blur', function() {
      phone.classList.add('border-red');
     }
     else { 
-        phone.classList.remove('border-red');
+        cardCvv.classList.remove('border-red');
     }
     if (this.value[0] != "+") {
      this.value = '+' + this.value; 
@@ -121,11 +121,13 @@ expirationDate.addEventListener('blur', function() {
 })
 
 
-const cardCvvValide = (/[0-9]{3}/);
+const cardCvvValidate = (/^[0-9]{3}$/);
 cardCvv.addEventListener('blur', function() {
-    if(this.value.match(cardCvvValide)) {
-        cardCvv.classList.remove('border-red');
-    } else {
+    if(this.value != this.value.match(cardCvvValidate) && this.value.length < 3 || this.value.length > 3) {
         cardCvv.classList.add('border-red');
     }
+    else { 
+        cardCvv.classList.remove('border-red');
+    }
+    this.value = this.value.slice(0, 3)
 })
