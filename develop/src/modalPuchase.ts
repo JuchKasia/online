@@ -16,7 +16,7 @@ btnClose.addEventListener('click', () => {
 
 
 const personalName = document.querySelector('.personal-name');
-// const phone = document.querySelector('.phone');
+const phone = document.querySelector('.phone');
 const address = document.querySelector('.address');
 const personalEmail = document.querySelector('.personal-email');
 const cartNumber = document.querySelector('.cart-number');
@@ -39,28 +39,24 @@ personalName.addEventListener('blur', function() {
     }
 })
 
-// const numberValid = (/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
+const numberValid = (/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
 // const numberValid2 = (/[0-9]{9,13}$/);
 // const numberValid =(/^(\+)?((\d{2,3}) ?\d|\d)(([ -]?\d)|( ?(\d{2,3}) ?)){5,12}\d$/);
-// phone.addEventListener('blur', function() {
-//     console.log(this.value)
-//     // console.log("afdsd "+this.innerHTML)
-//     // (this.value != this.value.match(numberValid) && this.value.length > 10)||
-//     if((this.value.length < 9)) {
-//      phone.classList.add('border-red');
-//      purchaseError[1].classList.remove('non');
-//      errorModal[1] = 1;
-//     }
-//     else { 
-//         phone.classList.remove('border-red');
-//         purchaseError[1].classList.add('non');
-//         errorModal[1] = 0;
-//     }
-//     // if (this.value[0] != "+") {
-//     //     this.value = '+' + this.value; 
-//     // }
+phone.addEventListener('blur', function() {
+    if (this.value.match(numberValid)) {
+        phone.classList.add('border-red');
+        purchaseError[1].classList.remove('non');
+        errorModal[1] = 1;
+    } else {
+        phone.classList.remove('border-red');
+        purchaseError[1].classList.add('non');
+        errorModal[1] = 0;
+    }
+    if (this.value[0] != "+") {
+        this.value = '+' + this.value; 
+    }
     
-// })
+})
 
 address.addEventListener('blur', function() {
     // console.log('dafs')
