@@ -461,9 +461,4 @@ setInterval(function() {
 //localStorage.setItem('listCategory', JSON.stringify( listCategory));
 // console.log(listCategory = JSON.parse(localStorage.getItem('listCategory')));
 
-// import {fs} from 'fs/promises';
-// async function func() {
-//   const dat= await fs.promises.readFile('list.json', 'utf8');
-//   console.log(dat);
-// }
-// func();
+
