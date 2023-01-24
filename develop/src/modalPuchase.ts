@@ -74,9 +74,10 @@ const bank3 = document.querySelector('.bank__item3');
 const bank4 = document.querySelector('.bank__item4');
 const bankItem = document.querySelectorAll('.bank__item');
 
-cartNumber.addEventListener('keypress',function(){
+cartNumber.addEventListener('blur',function(){
     for(let i=0; i<= bankItem.length; i++) {
         bankItem[i].classList.remove('cardVisible');
+        
         if(this.value[0] == 4) {
             bank1.classList.add('cardVisible');
         }
@@ -93,6 +94,7 @@ cartNumber.addEventListener('keypress',function(){
     // if(this.value.length == 4 && this.value.length == 9 && this.value.length == 14) {
     //     this.value=this.value + " ";
     // }
+    console.log(this.value)
 });
 
 cardOwner.addEventListener('blur', function() {
