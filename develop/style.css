@@ -1668,6 +1668,10 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: transparent;
 }
 
+.modal-window {
+  width: 100%;
+}
+
 .modal-window .modal-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1698,8 +1702,9 @@ input[type=number]::-webkit-outer-spin-button {
 .form-group .blok-payment {
   padding: 0.9375rem;
   margin: 0 0 30px;
-  max-width: 400px;
+  max-width: 450px;
   width: 100%;
+  border: 1px solid green;
 }
 
 .form-group .blok-personal .personal-title,
@@ -1715,11 +1720,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 .customer-name-item,
 .payment-card-item,
-.payment-card-item-wrap {
+.card-number-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 90%;
+  width: 100%;
   font-size: 14px;
   padding-bottom: 5px;
   -webkit-box-pack: justify;
@@ -1729,13 +1734,38 @@ input[type=number]::-webkit-outer-spin-button {
 
 .customer-name-item input,
 .payment-card-item input,
-.payment-card-item-wrap input {
+.card-number-wrapper input {
   border-radius: 5px;
 }
 
-.payment-card-item-wrap {
+.card-number-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.payment-card-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
   padding-bottom: 0px;
+}
+
+.btn-modal-sbm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .btn-payment-submit {
@@ -1746,6 +1776,9 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 10px;
   border: none;
   background-color: #85c38d;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .payment-card-wrap {
@@ -1800,6 +1833,10 @@ input[type=number]::-webkit-outer-spin-button {
   background-repeat: no-repeat;
   background-size: 50%;
   opacity: 0.5;
+}
+
+.purchase-error {
+  color: red;
 }
 
 /* start description page -------------------------------------------- */
