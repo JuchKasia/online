@@ -55,7 +55,6 @@ phone.addEventListener('blur', function() {
     if (this.value[0] != "+") {
         this.value = '+' + this.value; 
     }
-    
 })
 
 address.addEventListener('blur', function() {

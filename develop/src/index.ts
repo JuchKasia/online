@@ -460,4 +460,62 @@ setInterval(function() {
 //localStorage.setItem('listCategory', JSON.stringify( listCategory));
 // console.log(listCategory = JSON.parse(localStorage.getItem('listCategory')));
 
+// PAGINATION //
+// const textPagination = document.querySelector('.col-left-pagination');
+// const prevPage = document.querySelector('.prev-page');
+const nextPage = document.querySelector('.next-page');
+// const currentPage = document.querySelector('.current-page');
+const disabledPage = document.querySelector('.disabled-page');
 
+
+nextPage.addEventListener('click', () => {
+console.log(listCategory)
+  if (listCategory.length>17){
+    console.log()
+      clearCards();
+    for(let i = 0;i<listCategory.length;i++){
+      // productMiniature[i].classList.remove('non');
+      productDetailText[i].innerHTML = listCategory[i+18].description;
+      cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i+18].stock;
+      priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+18].price;
+      productTitle[i].innerHTML = listCategory[i+18].title;
+      mainCardImg[i].setAttribute('src',`${listCategory[i+18].images[0]}`);
+      secondCardImg[i].classList.add("non");
+    }
+
+  }
+  // if (listCategory.length>17){
+  //   console.log()
+  //     clearCards();
+  //   for(let i = 0;i<listCategory.length;i++){
+  //     // productMiniature[i].classList.remove('non');
+  //     productDetailText[i].innerHTML = listCategory[i+18].description;
+  //     cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i+18].stock;
+  //     priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+18].price;
+  //     productTitle[i].innerHTML = listCategory[i+18].title;
+  //     mainCardImg[i].setAttribute('src',`${listCategory[i+18].images[0]}`);
+  //     secondCardImg[i].classList.add("non");
+  //   }
+
+  // }
+})
+// nextPage.addEventListener('click', () => {
+
+// })
+disabledPage.addEventListener('click', () => {
+  console.log(listCategory)
+    if (listCategory.length>17){
+      console.log()
+        clearCards();
+      for(let i = 0;i<listCategory.length;i++){
+        // productMiniature[i].classList.remove('non');
+        productDetailText[i].innerHTML = listCategory[i+18].description;
+        cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i+18].stock;
+        priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+18].price;
+        productTitle[i].innerHTML = listCategory[i+18].title;
+        mainCardImg[i].setAttribute('src',`${listCategory[i+18].images[0]}`);
+        secondCardImg[i].classList.add("non");
+      }
+  
+    }
+})
