@@ -34,7 +34,7 @@ if(cat.forLocal.size.size>0&&way.innerHTML.split(" ")[way.innerHTML.split(" ").l
 } else if(cat.forLocal.size.size==0&&way.innerHTML.split(" ")[way.innerHTML.split(" ").length-1]=="size"){
   way.innerHTML = way.innerHTML.split(" ").slice(0,-1).join(' ');
 }
-// console.log('forlocal '+ cat.forLocal)
+// console.log( cat.forLocal)
 // localStorage.setItem('forLocal',JSON.stringify(cat.forLocal));
 }
 
@@ -54,7 +54,7 @@ export function colorFilter(){
   // if(cat.forLocal.color.size>0){
   //   console.log("way.innerHTML ");
   // }
-  // console.log('forlocal '+ cat.forLocal.color)
+  // console.log(cat.forLocal.color)
   // localStorage.setItem('forLocal',JSON.stringify(cat.forLocal));
 }
 
@@ -81,6 +81,9 @@ export const main = document.querySelector('.main');
       basket.push(cat.listCategory[i].id);
       basketPrice+=cat.listCategory[i].price
       }
+      // здесь добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
+      console.log(basket);
+      // if(addcards[i].contains(''))
       cartProductsCount.innerHTML = basket.length+"";
     cartProductsValue.innerHTML = cpv+basketPrice;
     });

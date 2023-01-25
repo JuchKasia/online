@@ -9,6 +9,7 @@ import "../normalize.css";
 import {list} from '../list';
 import {sizeFilter,colorFilter} from './category';
 import {proso} from './modalPuchase';
+// import { fstat } from "fs";
 // import {} from './desc';
 console.log(proso);
 const category = new Set<string>(["men","women"]);
@@ -21,20 +22,15 @@ export const forLocal = {
   color
 } 
 export let countRandom = 0;
-// export let listCategory = JSON.parse(localStorage.getItem('listCategory'));
-// export const basket = [];
-//  listCategory: Product;
-// localStorage.clear();
-//  console.log(localStorage.getItem('listCategory'))
-//  if(localStorage.getItem('listCategory')==null){
-//   console.log()
-//  }
-export let  listCategory = list;
-// forLocal.category('men');
-// forLocal.category.add('women');
-// console.log(forLocal.size.size)
-// console.log(listCategory[0].price)
 
+export let  listCategory = list;
+
+console.log((localStorage));
+document.addEventListener("DOMContentLoaded",function(){
+console.log('произошла перезагрузка');
+console.log(JSON.parse(localStorage.getItem('listCategory')));
+console.log(JSON.parse(localStorage.getItem('forLocal')));
+});
 // function getCategoryArray start ------------------------------------------
 const sortText = document.querySelector('.sort-text');
 // аналитика доступных карточек на основе выбранных пунктов
@@ -78,7 +74,10 @@ for(let i = 0;i<list.length;i++){
   }
   
 }
-// localStorage.setItem('listCategory',JSON.stringify(listCategory));
+ localStorage.setItem('listCategory',JSON.stringify(listCategory));
+ localStorage.setItem('forLocal',JSON.stringify(forLocal));
+ console.log("79 forLocal "+forLocal);
+ console.log(forLocal);
 // let poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
 // console.log('listCategory '+listCategory.length);
 sizeFilter();
@@ -88,8 +87,10 @@ if(listCategory.length<19){
 }else {
   sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join(" ")} 18 ${sortText.innerHTML.split(" ").slice(-1)}`
 }
-// console.log(listCategory)
+ console.log(listCategory);
+ console.log(forLocal);
 countRandom++;
+
 }
 
 //  function getRandomArray -------------------------------------------------
@@ -456,6 +457,7 @@ setInterval(function() {
   }
 
 }, 3000);
+
 
 //localStorage.setItem('listCategory', JSON.stringify( listCategory));
 // console.log(listCategory = JSON.parse(localStorage.getItem('listCategory')));

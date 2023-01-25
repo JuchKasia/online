@@ -21,10 +21,12 @@ const address = document.querySelector('.address');
 const personalEmail = document.querySelector('.personal-email');
 const cartNumber = document.querySelector('.cart-number');
 const cardOwner = document.querySelector('.card-owner');
+
 const expirationDate = document.querySelector('#expiration-date');
 const cardCvv = document.querySelector('#card-cvv');
 const purchaseError = document.querySelectorAll('.purchase-error');
 const errorModal = [0,0,0,0,0,0,0];
+
 personalName.addEventListener('blur', function() {
     // console.log(this.value.split(" ").length==2);
     // this.value.split(" ").length == 2;
@@ -43,6 +45,7 @@ const numberValid = (/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
 // const numberValid2 = (/[0-9]{9,13}$/);
 // const numberValid =(/^(\+)?((\d{2,3}) ?\d|\d)(([ -]?\d)|( ?(\d{2,3}) ?)){5,12}\d$/);
 phone.addEventListener('blur', function() {
+
     if (this.value.match(numberValid)) {
         phone.classList.add('border-red');
         purchaseError[1].classList.remove('non');
@@ -58,7 +61,6 @@ phone.addEventListener('blur', function() {
 })
 
 address.addEventListener('blur', function() {
-    // console.log('dafs')
     if (this.value.split(" ").length >= 3 && this.value.split(" ")[0].length >=5 && this.value.split(" ")[1].length >=5 && this.value.split(" ")[2].length >=5) {
         address.classList.remove('border-red');
         purchaseError[2].classList.add('non');
@@ -93,9 +95,10 @@ const bank3 = document.querySelector('.bank__item3');
 const bank4 = document.querySelector('.bank__item4');
 const bankItem = document.querySelectorAll('.bank__item');
 
-cartNumber.addEventListener('keypress',function(){
+cartNumber.addEventListener('blur',function(){
     for(let i=0; i<= bankItem.length; i++) {
         bankItem[i].classList.remove('cardVisible');
+        
         if(this.value[0] == 4) {
             bank1.classList.add('cardVisible');
         }
@@ -109,6 +112,7 @@ cartNumber.addEventListener('keypress',function(){
             bank4.classList.add('cardVisible');
         }
     }
+
 });
 
 const cardNumberValidate = (/^[0-9]{14}$/);
@@ -156,6 +160,7 @@ expirationDate.addEventListener('blur', function() {
 })
 
 
+
 const cardCvvValidate = (/^[0-9]{3}$/);
 cardCvv.addEventListener('blur', function() {
     if(this.value != this.value.match(cardCvvValidate) && this.value.length < 3 || this.value.length > 3) {
@@ -185,3 +190,4 @@ btnPaymentSubmit.addEventListener('click', () => {
             main.classList.remove('non')}, 4000)
     }
 });
+
