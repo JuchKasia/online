@@ -1111,48 +1111,31 @@ input[type=number]::-webkit-outer-spin-button {
         margin: 0 3px;
         text-align: center;
         vertical-align: top;
-        .prev-available-page {
+        .btn-page {
             display: block;
             width: 30px;
             height: 30px;
             font-size: 14px;
             line-height: 30px;
-            color: black;
-            text-decoration: none;
-            border: solid 1px black;
+            color: #000;
         }
-        .disabled-page {
-            display: block;
-            width: 30px;
-            height: 30px;
-            font-size: 14px;
-            line-height: 30px;
-            color: #ffffff;
+        .current-disabled-page {
             background-color: #85c38d;
             border: 1px solid #85c38d;
-            text-decoration: none;
-        }
-        .available-page {
-            display: block;
-            width: 30px;
-            height: 30px;
-            font-size: 14px;
-            line-height: 30px;
             color: #ffffff;
-            background-color: #000000;
-            border: 1px solid #000000;
-            text-decoration: none;
+            
         }
+        .available-page,
         .next-available-page {
-            display: block;
-            width: 30px;
-            height: 30px;
-            font-size: 14px;
-            line-height: 30px;
-            color: #ffffff;
             background-color: #000000;
             border: 1px solid #000000;
+            color: #ffffff;
+        }
+        .prev-available-page {
+            color: black;
+            background-color: transparent;
             text-decoration: none;
+            color: #ffffff;
         }
     }
 }

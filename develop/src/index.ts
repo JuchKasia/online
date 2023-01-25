@@ -462,28 +462,72 @@ setInterval(function() {
 
 // PAGINATION //
 // const textPagination = document.querySelector('.col-left-pagination');
-// const prevPage = document.querySelector('.prev-page');
-const nextPage = document.querySelector('.next-page');
+const btnPages = document.querySelectorAll('.btn-page');
+// const nextPage = document.querySelector('.next-page');
 // const currentPage = document.querySelector('.current-page');
-const disabledPage = document.querySelector('.disabled-page');
+// const disabledPage = document.querySelector('.disabled-page');
+let prevNumberOfBtns = 1;
+let nextNumberOfBtns = 1;
+let numberOfCards = 18;
 
-
-nextPage.addEventListener('click', () => {
-console.log(listCategory)
+function buildPaginationPage(limiter) {
   if (listCategory.length>17){
     console.log()
       clearCards();
     for(let i = 0;i<listCategory.length;i++){
       // productMiniature[i].classList.remove('non');
-      productDetailText[i].innerHTML = listCategory[i+18].description;
-      cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i+18].stock;
-      priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+18].price;
-      productTitle[i].innerHTML = listCategory[i+18].title;
-      mainCardImg[i].setAttribute('src',`${listCategory[i+18].images[0]}`);
+      productDetailText[i].innerHTML = listCategory[i+limiter].description;
+      cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i+limiter].stock;
+      priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+limiter].price;
+      productTitle[i].innerHTML = listCategory[i+limiter].title;
+      mainCardImg[i].setAttribute('src',`${listCategory[i+limiter].images[0]}`);
       secondCardImg[i].classList.add("non");
     }
-
   }
+}
+
+for (let i =0; i < btnPages.length; i++) {
+  btnPages[i].addEventListener('click',function(){
+    
+if(i===0){
+  buildPaginationPage(0);
+}else if(i===1){
+  buildPaginationPage(18);
+}else if(i===2){
+  buildPaginationPage(36);
+}else if(i===3){
+  buildPaginationPage(listCategory.length-18);
+}
+  });
+
+}
+
+// btnPages[i].addEventListener('click', () => {
+
+// // console.log(listCategory)
+  
+
+// })
+
+
+
+// Количество карточек для отображения на странице
+// let numberOfCards = 18;
+
+// Считает нужное количество кнопок пагинации
+// function numberOfBtns(arr,num){
+//   return Math.ceil(arr.length/num)
+// }
+
+// Отрисовывает кнопки пагинации
+// function paintPaginationBtn (count){
+//   for(i=1, r=""; i<=count; i++){
+//   r += ` ${i} `
+//   }
+//   return r
+// }
+
+
   // if (listCategory.length>17){
   //   console.log()
   //     clearCards();
@@ -498,24 +542,3 @@ console.log(listCategory)
   //   }
 
   // }
-})
-// nextPage.addEventListener('click', () => {
-
-// })
-disabledPage.addEventListener('click', () => {
-  console.log(listCategory)
-    if (listCategory.length>17){
-      console.log()
-        clearCards();
-      for(let i = 0;i<listCategory.length;i++){
-        // productMiniature[i].classList.remove('non');
-        productDetailText[i].innerHTML = listCategory[i+18].description;
-        cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i+18].stock;
-        priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+18].price;
-        productTitle[i].innerHTML = listCategory[i+18].title;
-        mainCardImg[i].setAttribute('src',`${listCategory[i+18].images[0]}`);
-        secondCardImg[i].classList.add("non");
-      }
-  
-    }
-})
