@@ -468,12 +468,12 @@ const btnPages = document.querySelectorAll('.btn-page');
 // const nextPage = document.querySelector('.next-page');
 // const currentPage = document.querySelector('.current-page');
 // const disabledPage = document.querySelector('.disabled-page');
-let prevNumberOfBtns = 1;
-let nextNumberOfBtns = 1;
-let numberOfCards = 18;
+// let prevNumberOfBtns = 1;
+// let nextNumberOfBtns = 1;
+// let numberOfCards = 18;
 
-function buildPaginationPage(limiter) {
-  if (listCategory.length>17){
+function buildPaginationPage(limiter:number) {
+  // if (listCategory.length>17){
     console.log()
       clearCards();
     for(let i = 0;i<listCategory.length;i++){
@@ -485,15 +485,19 @@ function buildPaginationPage(limiter) {
       mainCardImg[i].setAttribute('src',`${listCategory[i+limiter].images[0]}`);
       secondCardImg[i].classList.add("non");
     }
-  }
+  // }
 }
 
 for (let i =0; i < btnPages.length; i++) {
   btnPages[i].addEventListener('click',function(){
-    
+    // здесь добавлять класс зеленого цвета или активный
+    //  так же удалять с других активный класс или менять на другой цвет
+    // добавить здесь условие на длину listCategory, если надо
 if(i===0){
   buildPaginationPage(0);
 }else if(i===1){
+  // здесь 18 должна быть переменной в зависимости от страницы
+  // 
   buildPaginationPage(18);
 }else if(i===2){
   buildPaginationPage(36);
