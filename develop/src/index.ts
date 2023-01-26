@@ -469,15 +469,18 @@ const btnPages = document.querySelectorAll('.btn-page');
 let stopI =18;
 function buildPaginationPage(limiter:number) {
 // let stopI =18;
-    console.log()
+   
     
     for(let i = 0;i<18;i++){
       
-     
+      console.log(stopI);
       // productMiniature[i].classList.remove('non');
       if(i>=stopI){
         productMiniature[i].classList.add('non');
         continue;
+      }
+      if(stopI==18){
+        productMiniature[i].classList.remove('non');
       }
       productDetailText[i].innerHTML = listCategory[i+limiter].description;
       cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i+limiter].stock;
@@ -486,6 +489,7 @@ function buildPaginationPage(limiter:number) {
       mainCardImg[i].setAttribute('src',`${listCategory[i+limiter].images[0]}`);
       secondCardImg[i].classList.add("non");
     }
+
   // }
 }
 
@@ -518,7 +522,7 @@ if(i===0){
   btnPages[3].classList.add('available-page');
   btnPages[1].innerHTML ='1';
   btnPages[2].innerHTML = '2';
-
+  stopI = 18;
   buildPaginationPage(0);
 }else if(i===1){
   // здесь 18 должна быть переменной в зависимости от страницы
