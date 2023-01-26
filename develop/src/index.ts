@@ -25,11 +25,11 @@ export let countRandom = 0;
 
 export let  listCategory = list;
 
-console.log((localStorage));
+// console.log((localStorage));
 document.addEventListener("DOMContentLoaded",function(){
 console.log('произошла перезагрузка');
-console.log(JSON.parse(localStorage.getItem('listCategory')));
-console.log(JSON.parse(localStorage.getItem('forLocal')));
+// console.log(JSON.parse(localStorage.getItem('listCategory')));
+// console.log(JSON.parse(localStorage.getItem('forLocal')));
 });
 // function getCategoryArray start ------------------------------------------
 const sortText = document.querySelector('.sort-text');
@@ -465,19 +465,20 @@ setInterval(function() {
 // PAGINATION //
 // const textPagination = document.querySelector('.col-left-pagination');
 const btnPages = document.querySelectorAll('.btn-page');
-// const nextPage = document.querySelector('.next-page');
-// const currentPage = document.querySelector('.current-page');
-// const disabledPage = document.querySelector('.disabled-page');
-// let prevNumberOfBtns = 1;
-// let nextNumberOfBtns = 1;
-// let numberOfCards = 18;
 
+let stopI =18;
 function buildPaginationPage(limiter:number) {
-  // if (listCategory.length>17){
+// let stopI =18;
     console.log()
-      clearCards();
-    for(let i = 0;i<listCategory.length;i++){
+    
+    for(let i = 0;i<18;i++){
+      
+     
       // productMiniature[i].classList.remove('non');
+      if(i>=stopI){
+        productMiniature[i].classList.add('non');
+        continue;
+      }
       productDetailText[i].innerHTML = listCategory[i+limiter].description;
       cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i+limiter].stock;
       priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+limiter].price;
@@ -488,33 +489,78 @@ function buildPaginationPage(limiter:number) {
   // }
 }
 
+btnPages[0].classList.add('prev-available-page');
+btnPages[1].classList.add('cdp');
+btnPages[2].classList.add('available-page');
+btnPages[3].classList.add('available-page');
+
 for (let i =0; i < btnPages.length; i++) {
   btnPages[i].addEventListener('click',function(){
+    console.log(listCategory);
+    const count = Math.ceil(listCategory.length/18);
+  // if (i>0 && i < btnPages.length-2) {
+    // console.log(btnPages[i]);
+    // btnPages[i].addEventListener('click',function(){
+    //   btnPages[i].classList.add('current-disabled-page');
+    // });
+
+  // }
+  
     // здесь добавлять класс зеленого цвета или активный
     //  так же удалять с других активный класс или менять на другой цвет
     // добавить здесь условие на длину listCategory, если надо
 if(i===0){
+  btnPages[0].classList.add('prev-available-page');
+  btnPages[1].classList.remove('available-page');
+  btnPages[1].classList.add('cdp');
+  btnPages[2].classList.add('available-page');
+  btnPages[3].classList.remove('prev-available-page');
+  btnPages[3].classList.add('available-page');
+  btnPages[1].innerHTML ='1';
+  btnPages[2].innerHTML = '2';
+
   buildPaginationPage(0);
 }else if(i===1){
   // здесь 18 должна быть переменной в зависимости от страницы
-  // 
-  buildPaginationPage(18);
+  btnPages[0].classList.add('prev-available-page');
+  btnPages[1].classList.remove('available-page');
+   btnPages[1].classList.add('cdp');
+   btnPages[2].classList.remove('cdp');
+   btnPages[2].classList.add('available-page');
+   btnPages[3].classList.remove('prev-available-page');
+   btnPages[3].classList.add('available-page');
+   
+
+  buildPaginationPage(0);
+  
 }else if(i===2){
-  buildPaginationPage(36);
-}else if(i===3){
-  buildPaginationPage(listCategory.length-18);
-}
-  });
+  btnPages[2].classList.remove('available-page');
+  btnPages[2].classList.add('cdp');
+  btnPages[1].classList.remove('cdp');
+  btnPages[1].classList.add('available-page');
 
-}
-
-// btnPages[i].addEventListener('click', () => {
-
-// // console.log(listCategory)
+  buildPaginationPage(18);
   
 
-// })
+}else if(i===3){
+  btnPages[0].classList.remove('prev-available-page');
+  btnPages[0].classList.add('available-page');
+  btnPages[1].classList.remove('cdp');
+  btnPages[1].classList.add('available-page');
+  btnPages[2].classList.remove('available-page');
+  btnPages[2].classList.add('cdp');
+  btnPages[3].classList.add('prev-available-page');
+  
+   btnPages[1].innerHTML = count-1+"";
+   btnPages[2].innerHTML = count+"";
+   stopI = listCategory.length-18*(count-1);
+  buildPaginationPage(listCategory.length-(listCategory.length-18*(count-1)));
 
+}
+  
+
+}
+)}
 
 
 // Количество карточек для отображения на странице
@@ -525,26 +571,5 @@ if(i===0){
 //   return Math.ceil(arr.length/num)
 // }
 
-// Отрисовывает кнопки пагинации
-// function paintPaginationBtn (count){
-//   for(i=1, r=""; i<=count; i++){
-//   r += ` ${i} `
-//   }
-//   return r
-// }
-
-
-  // if (listCategory.length>17){
-  //   console.log()
-  //     clearCards();
-  //   for(let i = 0;i<listCategory.length;i++){
-  //     // productMiniature[i].classList.remove('non');
-  //     productDetailText[i].innerHTML = listCategory[i+18].description;
-  //     cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i+18].stock;
-  //     priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+18].price;
-  //     productTitle[i].innerHTML = listCategory[i+18].title;
-  //     mainCardImg[i].setAttribute('src',`${listCategory[i+18].images[0]}`);
-  //     secondCardImg[i].classList.add("non");
-  //   }
-
-  // }
+// let currentDisabledPage = 1;
+// let maxBtnPagesLength = 6;
