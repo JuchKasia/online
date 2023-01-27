@@ -1103,11 +1103,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .page-list {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 0px;
     padding: 5px 0;
     float: right;
+    list-style: none;
     .page {
-        display: inline-block;
+        
         margin: 0 3px;
         text-align: center;
         vertical-align: top;

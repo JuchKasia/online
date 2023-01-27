@@ -167,7 +167,7 @@ export function buildCardsCategory(){
   // sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join("")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
 
       
-    
+  buildPaginationPage(0);
 }
 // const addcards = document.querySelectorAll('.btn-add-to-cart');
 //       for(let i = 0;i<addcards.length;i++){
@@ -465,14 +465,29 @@ setInterval(function() {
 // PAGINATION //
 // const textPagination = document.querySelector('.col-left-pagination');
 const btnPages = document.querySelectorAll('.btn-page');
+const pages = document.querySelectorAll('.page');
 
 let stopI =18;
 function buildPaginationPage(limiter:number) {
 // let stopI =18;
-   
-    
-    for(let i = 0;i<18;i++){
+   if (listCategory.length < 36) {
+        pages[3].classList.add('non');
+        pages[4].classList.add('prev-available-page');
+        btnPages[4].setAttribute('disabled', 'true');
+      }if (listCategory.length < 18) {
+        pages[2].classList.add('non');
+        pages[3].classList.add('non');
+        btnPages[4].classList.add('prev-available-page');
+      }
+       if (listCategory.length > 18) {
+        pages[2].classList.remove('non');
+      }
+      if (listCategory.length > 36) {
+        pages[3].classList.remove('non');
+      }
       
+    for(let i = 0;i<18;i++){
+   
       console.log(stopI);
       // productMiniature[i].classList.remove('non');
       if(i>=stopI){
@@ -482,6 +497,9 @@ function buildPaginationPage(limiter:number) {
       if(stopI==18){
         productMiniature[i].classList.remove('non');
       }
+
+      
+      console.log(limiter);
       productDetailText[i].innerHTML = listCategory[i+limiter].description;
       cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i+limiter].stock;
       priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+limiter].price;
@@ -497,6 +515,7 @@ btnPages[0].classList.add('prev-available-page');
 btnPages[1].classList.add('cdp');
 btnPages[2].classList.add('available-page');
 btnPages[3].classList.add('available-page');
+btnPages[4].classList.add('available-page');
 
 for (let i =0; i < btnPages.length; i++) {
   btnPages[i].addEventListener('click',function(){
@@ -520,9 +539,13 @@ if(i===0){
   btnPages[2].classList.add('available-page');
   btnPages[3].classList.remove('prev-available-page');
   btnPages[3].classList.add('available-page');
+  btnPages[4].classList.remove('prev-available-page');
+  btnPages[4].classList.add('available-page');
   btnPages[1].innerHTML ='1';
   btnPages[2].innerHTML = '2';
+  btnPages[3].innerHTML = '3';
   stopI = 18;
+
   buildPaginationPage(0);
 }else if(i===1){
   // здесь 18 должна быть переменной в зависимости от страницы
@@ -533,31 +556,60 @@ if(i===0){
    btnPages[2].classList.add('available-page');
    btnPages[3].classList.remove('prev-available-page');
    btnPages[3].classList.add('available-page');
-   
-
+  //  if(listCategory.length>1)
+  stopI = 18;
   buildPaginationPage(0);
-  
 }else if(i===2){
   btnPages[2].classList.remove('available-page');
   btnPages[2].classList.add('cdp');
   btnPages[1].classList.remove('cdp');
   btnPages[1].classList.add('available-page');
-
+  btnPages[3].classList.remove('cdp');
+  btnPages[3].classList.add('available-page');
+  stopI = 18;
+  // if (btnPages[1].innerHTML =='4') {
+  //   btnPages[0].classList.remove('prev-available-page');
+  //   btnPages[0].classList.add('available-page');
+  // }
+  // stopI = listCategory.length-18*(count-1);
   buildPaginationPage(18);
-  
 
 }else if(i===3){
+  btnPages[3].classList.remove('available-page');
+  btnPages[3].classList.add('cdp');
+  btnPages[1].classList.remove('cdp');
+  btnPages[1].classList.add('available-page');
+  btnPages[2].classList.remove('cdp');
+  btnPages[2].classList.add('available-page');
+  btnPages[4].classList.remove('prev-available-page');
+  btnPages[4].classList.add('available-page');
+  stopI = 18;
+  // if (btnPages[2].innerHTML =='5') {
+  //   btnPages[4].classList.remove('prev-available-page');
+  //   btnPages[4].classList.add('available-page');
+  // }
+  // stopI = listCategory.length-18*(count-1);
+  buildPaginationPage(36);
+  
+
+}
+else if(i===4){
   btnPages[0].classList.remove('prev-available-page');
   btnPages[0].classList.add('available-page');
   btnPages[1].classList.remove('cdp');
   btnPages[1].classList.add('available-page');
-  btnPages[2].classList.remove('available-page');
-  btnPages[2].classList.add('cdp');
-  btnPages[3].classList.add('prev-available-page');
+  btnPages[2].classList.remove('cdp');
+  btnPages[2].classList.add('available-page');
+  // btnPages[2].classList.remove('available-page');
+  // btnPages[2].classList.add('cdp');
+  btnPages[3].classList.remove('available-page');
+  btnPages[3].classList.add('cdp');
+  btnPages[4].classList.add('prev-available-page');
   
-   btnPages[1].innerHTML = count-1+"";
-   btnPages[2].innerHTML = count+"";
-   stopI = listCategory.length-18*(count-1);
+  btnPages[1].innerHTML = count-2+"";
+  btnPages[2].innerHTML = count-1+"";
+  btnPages[3].innerHTML = count+"";
+  stopI = listCategory.length-18*(count-1);
   buildPaginationPage(listCategory.length-(listCategory.length-18*(count-1)));
 
 }
@@ -567,6 +619,8 @@ if(i===0){
 )}
 
 
+
+// const s
 // Количество карточек для отображения на странице
 // let numberOfCards = 18;
 

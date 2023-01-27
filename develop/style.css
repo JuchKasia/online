@@ -1249,13 +1249,20 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .page-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-bottom: 0px;
   padding: 5px 0;
   float: right;
+  list-style: none;
 }
 
 .page-list .page {
-  display: inline-block;
   margin: 0 3px;
   text-align: center;
   vertical-align: top;
@@ -1268,9 +1275,12 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: 14px;
   line-height: 30px;
   color: #000;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.page-list .page .current-disabled-page {
+.page-list .page .cdp {
   background-color: #85c38d;
   border: 1px solid #85c38d;
   color: #ffffff;
@@ -1287,7 +1297,7 @@ input[type=number]::-webkit-outer-spin-button {
   color: black;
   background-color: transparent;
   text-decoration: none;
-  color: #ffffff;
+  border: solid 1px black;
 }
 
 /* Footer */
