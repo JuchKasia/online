@@ -557,6 +557,12 @@ if(i===0){
    btnPages[3].classList.remove('prev-available-page');
    btnPages[3].classList.add('available-page');
   //  if(listCategory.length>1)
+  if (btnPages[1].innerHTML =='4') {
+    btnPages[0].classList.remove('prev-available-page');
+    btnPages[0].classList.add('available-page');
+    btnPages[4].classList.remove('prev-available-page');
+    btnPages[4].classList.add('available-page');
+  }
   stopI = 18;
   buildPaginationPage(0);
 }else if(i===2){
@@ -567,10 +573,12 @@ if(i===0){
   btnPages[3].classList.remove('cdp');
   btnPages[3].classList.add('available-page');
   stopI = 18;
-  // if (btnPages[1].innerHTML =='4') {
-  //   btnPages[0].classList.remove('prev-available-page');
-  //   btnPages[0].classList.add('available-page');
-  // }
+  if (btnPages[2].innerHTML =='5') {
+    btnPages[0].classList.remove('prev-available-page');
+    btnPages[0].classList.add('available-page');
+    btnPages[4].classList.remove('prev-available-page');
+    btnPages[4].classList.add('available-page');
+  }
   // stopI = listCategory.length-18*(count-1);
   buildPaginationPage(18);
 
@@ -584,6 +592,12 @@ if(i===0){
   btnPages[4].classList.remove('prev-available-page');
   btnPages[4].classList.add('available-page');
   stopI = 18;
+  if (btnPages[3].innerHTML =='6') {
+    btnPages[0].classList.remove('prev-available-page');
+    btnPages[0].classList.add('available-page');
+    btnPages[4].classList.remove('available-page');
+    btnPages[4].classList.add('prev-available-page');
+  }
   // if (btnPages[2].innerHTML =='5') {
   //   btnPages[4].classList.remove('prev-available-page');
   //   btnPages[4].classList.add('available-page');
