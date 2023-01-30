@@ -492,11 +492,13 @@ console.log(stopI);
     for(let i = 0;i<18;i++){
    
       // console.log(stopI);
-      if(stopI>i){
+      // if(stopI>i){
+        if(i>=stopI){
         productMiniature[i].classList.add('non');
         continue;
       }
-      if(stopI==0&&i==1){
+      // if(stopI==0&&i==1){
+        if(stopI==18){
         productMiniature[i].classList.remove('non');
       }
 
@@ -544,12 +546,6 @@ for (let i =0; i < btnPages.length; i++) {
     // btnPages[i].addEventListener('click',function(){
     //   btnPages[i].classList.add('current-disabled-page');
     // });
-    // if(i <listCategory.length) {
-    //     stopI=18;
-    //     i++;
-    // } else {
-    //    stopI = listCategory.length%18;
-    // }
 
   // }  
     // здесь добавлять класс зеленого цвета или активный
@@ -567,7 +563,7 @@ if(i===0){
   btnPages[1].innerHTML ='1';
   btnPages[2].innerHTML = '2';
   btnPages[3].innerHTML = '3';
-  // stopI = 18;
+  stopI = 18;
   // listCategory.length - (Math.floor(listCategory.length/18))
   // const count = Math.ceil(listCategory.length/18);
   clearPagination()
@@ -588,7 +584,7 @@ if(i===0){
     btnPages[4].classList.remove('prev-available-page');
     btnPages[4].classList.add('available-page');
   }
-  // stopI = 18;
+  stopI = 18;
   clearPagination()
   buildPaginationPage(0);
 }else if(i===2){
@@ -598,7 +594,7 @@ if(i===0){
   btnPages[1].classList.add('available-page');
   btnPages[3].classList.remove('cdp');
   btnPages[3].classList.add('available-page');
-  // stopI = 18;
+  stopI = 18;
   if (btnPages[2].innerHTML =='5') {
     btnPages[0].classList.remove('prev-available-page');
     btnPages[0].classList.add('available-page');
@@ -618,7 +614,7 @@ if(i===0){
   btnPages[2].classList.add('available-page');
   btnPages[4].classList.remove('prev-available-page');
   btnPages[4].classList.add('available-page');
-  // stopI = 18;
+  stopI = 18;
   if (btnPages[3].innerHTML =='6') {
     btnPages[0].classList.remove('prev-available-page');
     btnPages[0].classList.add('available-page');
@@ -628,7 +624,6 @@ if(i===0){
   clearPagination()
   buildPaginationPage(36);
   // stopI = listCategory.length-18*(count-1);
-
 }
 else if(i===4){
   btnPages[0].classList.remove('prev-available-page');
@@ -651,7 +646,6 @@ else if(i===4){
   buildPaginationPage(listCategory.length-(listCategory.length-18*(count-1)));
 
 }
-  
 
 }
 )}
