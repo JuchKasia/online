@@ -190,7 +190,6 @@ function clearCards(){
    }
 
   }
-
 }
 //  function getRandomArrayBest -------------------------------------------------
 
@@ -467,9 +466,13 @@ setInterval(function() {
 const btnPages = document.querySelectorAll('.btn-page');
 const pages = document.querySelectorAll('.page');
 
-let stopI =18;
-function buildPaginationPage(limiter:number) {
 // let stopI =18;
+let stopI: number;
+// console.log(5%2);
+function buildPaginationPage(limiter:number) {
+// stopI = listCategory.length - (Math.floor(listCategory.length/18))*18;
+console.log(stopI);
+
    if (listCategory.length < 36) {
         pages[3].classList.add('non');
         pages[4].classList.add('prev-available-page');
@@ -488,18 +491,16 @@ function buildPaginationPage(limiter:number) {
       
     for(let i = 0;i<18;i++){
    
-      console.log(stopI);
-      // productMiniature[i].classList.remove('non');
-      if(i>=stopI){
+      // console.log(stopI);
+      if(stopI>i){
         productMiniature[i].classList.add('non');
         continue;
       }
-      if(stopI==18){
+      if(stopI==0&&i==1){
         productMiniature[i].classList.remove('non');
       }
 
-      
-      console.log(limiter);
+      // console.log(limiter);
       productDetailText[i].innerHTML = listCategory[i+limiter].description;
       cardsStock[i].innerHTML = cardsStock[i].innerHTML.slice(0,4)+" "+listCategory[i+limiter].stock;
       priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+limiter].price;
@@ -511,6 +512,21 @@ function buildPaginationPage(limiter:number) {
   // }
 }
 
+let ourBtn =0;
+function clearPagination(){
+  
+  if(listCategory.length >= ourBtn) {
+    stopI=18;
+  } else {
+    stopI = listCategory.length%18;
+  }
+  
+  // ((listCategory.length/18))*18)
+  // stopI=listCategory.length%18;
+  // (Math.floor(listCategory.length/18))*18
+
+}
+
 btnPages[0].classList.add('prev-available-page');
 btnPages[1].classList.add('cdp');
 btnPages[2].classList.add('available-page');
@@ -519,6 +535,8 @@ btnPages[4].classList.add('available-page');
 
 for (let i =0; i < btnPages.length; i++) {
   btnPages[i].addEventListener('click',function(){
+    ourBtn = i;
+    console.log("i",i);
     console.log(listCategory);
     const count = Math.ceil(listCategory.length/18);
   // if (i>0 && i < btnPages.length-2) {
@@ -526,9 +544,14 @@ for (let i =0; i < btnPages.length; i++) {
     // btnPages[i].addEventListener('click',function(){
     //   btnPages[i].classList.add('current-disabled-page');
     // });
+    // if(i <listCategory.length) {
+    //     stopI=18;
+    //     i++;
+    // } else {
+    //    stopI = listCategory.length%18;
+    // }
 
-  // }
-  
+  // }  
     // здесь добавлять класс зеленого цвета или активный
     //  так же удалять с других активный класс или менять на другой цвет
     // добавить здесь условие на длину listCategory, если надо
@@ -544,8 +567,10 @@ if(i===0){
   btnPages[1].innerHTML ='1';
   btnPages[2].innerHTML = '2';
   btnPages[3].innerHTML = '3';
-  stopI = 18;
-
+  // stopI = 18;
+  // listCategory.length - (Math.floor(listCategory.length/18))
+  // const count = Math.ceil(listCategory.length/18);
+  clearPagination()
   buildPaginationPage(0);
 }else if(i===1){
   // здесь 18 должна быть переменной в зависимости от страницы
@@ -563,7 +588,8 @@ if(i===0){
     btnPages[4].classList.remove('prev-available-page');
     btnPages[4].classList.add('available-page');
   }
-  stopI = 18;
+  // stopI = 18;
+  clearPagination()
   buildPaginationPage(0);
 }else if(i===2){
   btnPages[2].classList.remove('available-page');
@@ -572,15 +598,16 @@ if(i===0){
   btnPages[1].classList.add('available-page');
   btnPages[3].classList.remove('cdp');
   btnPages[3].classList.add('available-page');
-  stopI = 18;
+  // stopI = 18;
   if (btnPages[2].innerHTML =='5') {
     btnPages[0].classList.remove('prev-available-page');
     btnPages[0].classList.add('available-page');
     btnPages[4].classList.remove('prev-available-page');
     btnPages[4].classList.add('available-page');
   }
-  // stopI = listCategory.length-18*(count-1);
+  clearPagination()
   buildPaginationPage(18);
+  // stopI = listCategory.length-18*(count-1);
 
 }else if(i===3){
   btnPages[3].classList.remove('available-page');
@@ -591,20 +618,16 @@ if(i===0){
   btnPages[2].classList.add('available-page');
   btnPages[4].classList.remove('prev-available-page');
   btnPages[4].classList.add('available-page');
-  stopI = 18;
+  // stopI = 18;
   if (btnPages[3].innerHTML =='6') {
     btnPages[0].classList.remove('prev-available-page');
     btnPages[0].classList.add('available-page');
     btnPages[4].classList.remove('available-page');
     btnPages[4].classList.add('prev-available-page');
   }
-  // if (btnPages[2].innerHTML =='5') {
-  //   btnPages[4].classList.remove('prev-available-page');
-  //   btnPages[4].classList.add('available-page');
-  // }
-  // stopI = listCategory.length-18*(count-1);
+  clearPagination()
   buildPaginationPage(36);
-  
+  // stopI = listCategory.length-18*(count-1);
 
 }
 else if(i===4){
@@ -623,7 +646,8 @@ else if(i===4){
   btnPages[1].innerHTML = count-2+"";
   btnPages[2].innerHTML = count-1+"";
   btnPages[3].innerHTML = count+"";
-  stopI = listCategory.length-18*(count-1);
+  // stopI = listCategory.length-18*(count-1);
+  clearPagination()
   buildPaginationPage(listCategory.length-(listCategory.length-18*(count-1)));
 
 }
