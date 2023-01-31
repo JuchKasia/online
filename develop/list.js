@@ -48,7 +48,7 @@ export var list = [
         "discount": 11,
         "stock": 5,
         "size": "l",
-        "color": "off white",
+        "color": "white",
         "images": ["https://img.freepik.com/free-photo/woman-in-blue-shirt_144627-44782.jpg?w=360&t=st=1671042109~exp=1671042709~hmac=587bb6f366a22c7dbfcee9170569d8223a397ea8ee3e0a187da1e53212847526", "https://img.freepik.com/free-photo/woman-in-blue-shirt_144627-44779.jpg?w=360&t=st=1671042118~exp=1671042718~hmac=42797b344a6bc741f82b24efedb81ebda8a6c1ea198e80ff7219992ba5d2a162", "https://img.freepik.com/free-photo/woman-in-blue-shirt_144627-44781.jpg?w=360&t=st=1671042131~exp=1671042731~hmac=c66c80f090ec68ec44b3de880320515606d56ab15c14ed033080fef767448035"]
     },
     {
@@ -98,7 +98,7 @@ export var list = [
         "price": 58,
         "stock": 1,
         "size": "m",
-        "color": "off white",
+        "color": "beige",
         "images": ["https://img.freepik.com/free-photo/beautiful-woman-in-the-studio_1157-17120.jpg?w=740&t=st=1671043372~exp=1671043972~hmac=420e2bc6a00b864b0f5c845257823dbad18e30f844b7eed40992ea48bb860816", "https://img.freepik.com/free-photo/beautiful-woman-in-the-studio_1157-17074.jpg?w=740&t=st=1671043382~exp=1671043982~hmac=5b707f1d827102c401571fbdcb6854936507140e42cd1f70d05a81a8affbd4a6", "https://img.freepik.com/free-photo/beautiful-woman-in-the-studio_1157-17073.jpg?w=740&t=st=1671043425~exp=1671044025~hmac=18e745b302b94fc1a2c8db4dc78bcd720979798c657761e3e8cf9e5cb6ee2994"]
     },
     {
@@ -111,7 +111,7 @@ export var list = [
         "discount": 0,
         "stock": 3,
         "size": "l",
-        "color": "off white",
+        "color": "brown",
         "images": ["https://img.freepik.com/free-photo/woman-in-shirt-and-jeans-going-down-on-steps_23-2147910873.jpg?w=740&t=st=1671045281~exp=1671045881~hmac=d259b8837065296504ca39e85fd2fd0954343a470d062c95e27c513b8d298830", "https://img.freepik.com/free-photo/woman-sitting-on-steps-and-readjusting-hairs_23-2147910844.jpg?w=740&t=st=1671045307~exp=1671045907~hmac=a4d667ee2ef234371dd1b98b837e941d8e50d7b58cdfbb7c2e00a2e7c1882d5b", "https://img.freepik.com/free-photo/attractive-woman-leaning-on-tree-and-reading-book-in-sunny-park_23-2147910841.jpg?w=740&t=st=1671045689~exp=1671046289~hmac=8f0ad5db40ac93441ea9a77fc71fd8eeb2ff0413a8db4d3f1233761f83addf1e"]
     },
     {
@@ -163,7 +163,7 @@ export var list = [
         "discount": 2,
         "stock": 4,
         "size": "l",
-        "color": "off white",
+        "color": "beige",
         "images": ["https://img.freepik.com/free-photo/fashionable-tall-arab-beard-man-wear-on-shirt-jeans-and-sunglasses-sitting-on-red-bench-at-park_627829-5838.jpg?w=740&t=st=1671047477~exp=1671048077~hmac=ab4fee0ac1172cf7091dc432900d3db508f46d6b975848fdf7f5cc8c4a75aae1", "https://img.freepik.com/free-photo/fashionable-tall-arab-beard-man-wear-on-shirt-jeans-and-sunglasses-posed-on-park-and-hold-bag-case_627829-5806.jpg?w=360&t=st=1671047464~exp=1671048064~hmac=1b78fdf59cfcca24919208c5260a95dd3b535638a2471a4e2c33b3b0394771f1", "https://img.freepik.com/free-photo/fashionable-tall-arab-beard-man-wear-on-shirt-jeans-and-sunglasses-posed-on-park-and-hold-wallet-at-hand_627829-5801.jpg?w=740&t=st=1671047501~exp=1671048101~hmac=f0ad0e134b1e4076aad341acc1d9713a3f63ad52ac4b99e120025e8c17fbe869"]
     },
     {
@@ -423,7 +423,7 @@ export var list = [
         "discount": 6,
         "stock": 8,
         "size": "l",
-        "color": "off white",
+        "color": "beige",
         "images": ["https://img.freepik.com/free-photo/feminine-woman-blowing-golden-confetti-in-evening-dress_176420-17609.jpg?w=740&t=st=1671103856~exp=1671104456~hmac=c3aaa0c2bbacda56a305399cb1f76772d0178642ed59baa965f7d7a128342d7b", "https://img.freepik.com/free-photo/profile-of-attractive-woman-in-evening-dress-smiling_176420-17844.jpg?w=740&t=st=1671103864~exp=1671104464~hmac=b237bf819132eb31501fa22eb0565940f619a93aa11e71836afd95c59d4e0308", "https://img.freepik.com/free-photo/gorgeous-sassy-woman-in-stylish-evening-dress_176420-17843.jpg?w=740&t=st=1671103876~exp=1671104476~hmac=377aa690d11db72b0df553c94721a6d88d842af5101b1b7835160f837b91b1e2"]
     },
     {
@@ -605,7 +605,7 @@ export var list = [
         "discount": 1,
         "stock": 22,
         "size": "m",
-        "color": "off white",
+        "color": "pink",
         "images": ["https://img.freepik.com/free-photo/confused-redhead-woman-frowning-pointing-fingers-at-herself-being-offended-or-accused-standing-in-tank-top-against-white-background_176420-47237.jpg?w=740&t=st=1671108332~exp=1671108932~hmac=ec70ad6ded58e212310a935ff50fa42e67e7c034ba6632fc4cfd390930198b64", "https://img.freepik.com/free-photo/redhead-smiling-woman-shows-thumbs-up-looking-happy-and-motivated-complimenting-standing-in-tank-top-against-white-background_176420-47274.jpg?w=740&t=st=1671108338~exp=1671108938~hmac=0911de5a36669797a0e3818302d773ff48595c5f9df891cbebc538611c3b5ec2", "https://img.freepik.com/free-photo/fashion-and-women-beauty-stylish-redhead-girl-in-tank-top-with-jeans-holding-hands-in-pockets-smiling-happy-standing-relaxed-looking-aside-white-background_176420-47199.jpg?w=740&t=st=1671108347~exp=1671108947~hmac=c28e221b0a5f6ef994604e8295c0861ab2623c38711771bcb9e806e88f7db2f7"]
     },
     {
@@ -1216,8 +1216,8 @@ export var list = [
         "discount": 1,
         "stock": 14,
         "size": "m",
-        "color": "off white",
-        "images": ["https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-tshirt-and-jeans-fashion-male-isolated-on-white-wall-in-studio_158538-26485.jpg?w=740&t=st=1671196137~exp=1671196737~hmac=392cc80aff8b9ff043d95fe6c8164cc6525112210c9f38fd6fbaa3e4498c37ef", "https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-tshirt-and-jeans-fashion-male-isolated-on-blue-wall-in-studio_158538-26451.jpg?w=740&t=st=1671196147~exp=1671196747~hmac=d0fc3f038006565db2331d03c5d724eb86c7bce2a575f4b1a5d51090f8110c31", "https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-tshirt-and-jeans-fashion-male-isolated-on-white-wall-in-studio_158538-26483.jpg?w=740&t=st=1671196155~exp=1671196755~hmac=618f6b2a1b1b5bacc1af3ca457c33a63608042648b5c980a2366cecf1220b26f"]
+        "color": "white",
+        "images": ["https://img.freepik.com/free-photo/expressive-young-male-posing-in-the-studio_176474-98594.jpg?w=996&t=st=1673716444~exp=1673717044~hmac=a2640538b1660f055d65ea2a77f44d5fcb22897b128c42e8959995e2920ff1b4", "https://img.freepik.com/free-photo/expressive-young-guy-posing-in-the-studio_176474-98564.jpg?w=996&t=st=1673716465~exp=1673717065~hmac=0d6f34a7ebe629dbac2052de5a816ec71162f069cda3d17a53ac2b2e762a68e9", "https://img.freepik.com/free-photo/expressive-young-male-posing-in-the-studio_176474-98601.jpg?w=996&t=st=1673716486~exp=1673717086~hmac=3771c80e499ac0c3f82d6c962fcccb5bb646bc6cf370f862eac8f5d5c31e3f18"]
     },
     {
         "id": 96,
