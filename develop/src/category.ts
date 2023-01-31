@@ -70,10 +70,12 @@ const cpv = document.querySelector('.cart-products-value').innerHTML.split(' ')[
 export const main = document.querySelector('.main');
   const pageDescription = document.querySelector('.pageDescription');
   const descriptionPage = document.querySelector('.description');
+  const addToCarts = document.querySelectorAll('.add-to-cart');
 
   for(let i = 0;i<addcards.length;i++){
     
     addcards[i].addEventListener('click',function(){
+      // addcards[i].classList.add('svgActive');
       if(cat.countRandom==0){
         basket.push(cat.listCategory[cat.arrayForCards[i]].id); 
         basketPrice+=cat.listCategory[cat.arrayForCards[i]].price
@@ -81,9 +83,15 @@ export const main = document.querySelector('.main');
       basket.push(cat.listCategory[i].id);
       basketPrice+=cat.listCategory[i].price
       }
+      // addcards[i].classList.add('svgActive');
       // здесь добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
       console.log(basket);
-      // if(addcards[i].contains(''))
+      if(!addToCarts[i].classList.contains('svgActive')) {
+        addToCarts[i].classList.add('svgActive');
+      } 
+      // if(addcards[i].classList.contains('svgActive')){
+      //   addcards[i].classList.remove('svgActive');
+      // }
       cartProductsCount.innerHTML = basket.length+"";
     cartProductsValue.innerHTML = cpv+basketPrice;
     });
