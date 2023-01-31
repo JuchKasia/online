@@ -461,7 +461,7 @@ setInterval(function() {
 //localStorage.setItem('listCategory', JSON.stringify( listCategory));
 // console.log(listCategory = JSON.parse(localStorage.getItem('listCategory')));
 
-// PAGINATION //
+// PAGINATION //-----------------------------------------------------------------------
 // const textPagination = document.querySelector('.col-left-pagination');
 const btnPages = document.querySelectorAll('.btn-page');
 const pages = document.querySelectorAll('.page');
@@ -471,7 +471,7 @@ let stopI: number;
 // console.log(5%2);
 function buildPaginationPage(limiter:number) {
 // stopI = listCategory.length - (Math.floor(listCategory.length/18))*18;
-console.log(stopI);
+  // console.log("stopI ",stopI);
 
    if (listCategory.length < 36) {
         pages[3].classList.add('non');
@@ -515,18 +515,15 @@ console.log(stopI);
 }
 
 let ourBtn =0;
+
 function clearPagination(){
-  
-  if(listCategory.length >= ourBtn) {
+  // console.log('ourBtn ', ourBtn)
+  if(listCategory.length/18 > ourBtn) {
     stopI=18;
   } else {
     stopI = listCategory.length%18;
   }
-  
-  // ((listCategory.length/18))*18)
-  // stopI=listCategory.length%18;
-  // (Math.floor(listCategory.length/18))*18
-
+  // console.log('525 stopI ',stopI);
 }
 
 btnPages[0].classList.add('prev-available-page');
@@ -537,9 +534,10 @@ btnPages[4].classList.add('available-page');
 
 for (let i =0; i < btnPages.length; i++) {
   btnPages[i].addEventListener('click',function(){
-    ourBtn = i;
+    let forOurBtn = 0;
     console.log("i",i);
     console.log(listCategory);
+    ourBtn = this.innerHTML;
     const count = Math.ceil(listCategory.length/18);
   // if (i>0 && i < btnPages.length-2) {
     // console.log(btnPages[i]);
@@ -563,13 +561,10 @@ if(i===0){
   btnPages[1].innerHTML ='1';
   btnPages[2].innerHTML = '2';
   btnPages[3].innerHTML = '3';
+  clearPagination();
   stopI = 18;
-  // listCategory.length - (Math.floor(listCategory.length/18))
-  // const count = Math.ceil(listCategory.length/18);
-  clearPagination()
   buildPaginationPage(0);
 }else if(i===1){
-  // здесь 18 должна быть переменной в зависимости от страницы
   btnPages[0].classList.add('prev-available-page');
   btnPages[1].classList.remove('available-page');
    btnPages[1].classList.add('cdp');
@@ -584,9 +579,14 @@ if(i===0){
     btnPages[4].classList.remove('prev-available-page');
     btnPages[4].classList.add('available-page');
   }
-  stopI = 18;
-  clearPagination()
-  buildPaginationPage(0);
+  clearPagination();
+   if(ourBtn==1){
+    forOurBtn =0;
+  }else {
+    forOurBtn = (ourBtn-1)*18;
+  }
+  // здесь вместо принудительной цифры надо исходить от ourBtn
+  buildPaginationPage(forOurBtn);
 }else if(i===2){
   btnPages[2].classList.remove('available-page');
   btnPages[2].classList.add('cdp');
@@ -594,16 +594,19 @@ if(i===0){
   btnPages[1].classList.add('available-page');
   btnPages[3].classList.remove('cdp');
   btnPages[3].classList.add('available-page');
-  stopI = 18;
   if (btnPages[2].innerHTML =='5') {
     btnPages[0].classList.remove('prev-available-page');
     btnPages[0].classList.add('available-page');
     btnPages[4].classList.remove('prev-available-page');
     btnPages[4].classList.add('available-page');
   }
-  clearPagination()
-  buildPaginationPage(18);
-  // stopI = listCategory.length-18*(count-1);
+  clearPagination();
+  if(ourBtn==1){
+    forOurBtn =0;
+  }else {
+    forOurBtn = (ourBtn-1)*18;
+  }
+  buildPaginationPage(forOurBtn);
 
 }else if(i===3){
   btnPages[3].classList.remove('available-page');
@@ -621,9 +624,13 @@ if(i===0){
     btnPages[4].classList.remove('available-page');
     btnPages[4].classList.add('prev-available-page');
   }
-  clearPagination()
-  buildPaginationPage(36);
-  // stopI = listCategory.length-18*(count-1);
+  clearPagination();
+  if(ourBtn==1){
+    forOurBtn =0;
+  }else {
+    forOurBtn = (ourBtn-1)*18;
+  }
+  buildPaginationPage(forOurBtn);
 }
 else if(i===4){
   btnPages[0].classList.remove('prev-available-page');
@@ -642,14 +649,17 @@ else if(i===4){
   btnPages[2].innerHTML = count-1+"";
   btnPages[3].innerHTML = count+"";
   // stopI = listCategory.length-18*(count-1);
-  clearPagination()
+  clearPagination();
+  // console.log('последяя кнопка ')
+  // console.log((listCategory.length-18*(count-1)));
+  // console.log(listCategory.length-(listCategory.length-18*(count-1)))
   buildPaginationPage(listCategory.length-(listCategory.length-18*(count-1)));
 
 }
 
 }
 )}
-
+// 
 
 
 // const s
@@ -663,3 +673,17 @@ else if(i===4){
 
 // let currentDisabledPage = 1;
 // let maxBtnPagesLength = 6;
+
+// show in second image in card -------------------------------------------------------------------
+
+// for(let i=0;i<mainCardImg.length;i++){
+
+//   mainCardImg[i].addEventListener('mouseover',function(){
+// console.log(this);
+// mainCardImg[i].setAttribute('src',`${listCategory[i].images[1]}`);
+//   });
+//   mainCardImg[i].addEventListener('mouseout',function(){
+//     console.log(this);
+//     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
+//       });
+// }
