@@ -8,8 +8,9 @@ import { count } from 'console';
 // console.log('this is file category');
 // console.log("from category file "+cat.listCategory);
 
-export const basket = [1];//index 
-basket.length = 0;
+export const basket = new Map();
+// export const basket = [1];//index 
+// basket.length = 0;
 export let descrpiptQuantity = 1;
 export let baskQuantity = 1;
 export const desk: ({ id: number; title: string; brand: string; category: string; description: string; price: number; discount: number; stock: number; size: string; color: string; images: string[]; } | { id: number; title: string; brand: string; category: string; description: string; price: number; stock: number; size: string; color: string; images: string[]; discount?: undefined; })[] = [];
@@ -65,67 +66,107 @@ const cpv = document.querySelector('.cart-products-value').innerHTML.split(' ')[
 // console.log(typeof +cartProductsCount.innerHTML);
 
 
-  const addcards = document.querySelectorAll('.btn-add-to-cart');
-  const btnEyeCart = document.querySelectorAll('.btn-eye-cart');
+const addcards = document.querySelectorAll('.btn-add-to-cart');
+const btnEyeCart = document.querySelectorAll('.btn-eye-cart');
 export const main = document.querySelector('.main');
-  const pageDescription = document.querySelector('.pageDescription');
-  const descriptionPage = document.querySelector('.description');
-  const addToCarts = document.querySelectorAll('.add-to-cart');
+const pageDescription = document.querySelector('.pageDescription');
+const descriptionPage = document.querySelector('.description');
+const addToCarts = document.querySelectorAll('.add-to-cart');
 
-  for(let i = 0;i<addcards.length;i++){
+for(let i = 0;i<addcards.length;i++){
     
-    addcards[i].addEventListener('click',function(){
-      // addcards[i].classList.add('svgActive');
-      if(cat.countRandom==0){
-        basket.push(cat.listCategory[cat.arrayForCards[i]].id); 
-        basketPrice+=cat.listCategory[cat.arrayForCards[i]].price
-      }else {
-      basket.push(cat.listCategory[i].id);
-      basketPrice+=cat.listCategory[i].price
-      }
-      // addcards[i].classList.add('svgActive');
-      // здесь добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
-      console.log(basket);
-      if(!addToCarts[i].classList.contains('svgActive')) {
-        addToCarts[i].classList.add('svgActive');
-      } 
-      // if(addcards[i].classList.contains('svgActive')){
+  addcards[i].addEventListener('click',function(){
+    console.log(document.querySelector(".cdp").innerHTML)
+    const cdpvalue = +document.querySelector(".cdp").innerHTML;
+     console.log(cat.listCategory);  
+     console.log(i+(18*(cdpvalue-1)));
+     console.log('one card')
+     console.log(cat.listCategory[i+(18*(+cdpvalue-1))]);
+    console.log(cat.listCategory[i+(18*(+cdpvalue-1))].price);
+    console.log('our random');
+    console.log(cat.arrayForCards);
+basketPrice=0;
+if(!basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
+    addToCarts[i].classList.add('svgActive'); 
+     // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
+    cartProductsCount.innerHTML = basket.size + "";
+    // cartProductsValue.innerHTML = cpv + ;
+    basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
+}else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
+  basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
+  addToCarts[i].classList.remove('svgActive'); 
+}
+    
+     console.log(basket);
+   
+
+
+// 
+    // basketPrice += cat.listCategory[cat.arrayForCards[i]].price;
+
+
+    // if(cat.countRandom==0){
+    //   basket.push(cat.listCategory[cat.arrayForCards[i]].id); 
+    //   basketPrice+=cat.listCategory[cat.arrayForCards[i]].price
+    // }else {
+    // basket.push(cat.listCategory[i].id);
+    // basketPrice+=cat.listCategory[i].price
+    // }
+
+
+      // if(!addToCarts[i].classList.contains('svgActive')) {
+      //   addToCarts[i].classList.add('svgActive');
+      // } 
+      // if (basket.has(cat.listCategory[cat.arrayForCards[i]].id)) {
+      //   addcards[i].classList.remove('svgActive');
+      //   basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
+      // } 
+            // if(addcards[i].classList.contains('svgActive')){
       //   addcards[i].classList.remove('svgActive');
       // }
-      cartProductsCount.innerHTML = basket.length+"";
-    cartProductsValue.innerHTML = cpv+basketPrice;
-    });
-    btnEyeCart[i].addEventListener('click',function(){
-      desk.pop();
-      main.classList.add('non');
-      basketPage.classList.add('non');
-      pageDescription.classList.remove('non');
-      descriptionPage.classList.remove('non');
-      if(cat.countRandom==0){
-        desk.push(cat.listCategory[cat.arrayForCards[i]]);
-      }else {
-        desk.push(cat.listCategory[i]);
-      }
-        
-        buildDescription();
-        buildBestDeck();
-    });
-  }
+    
+
+    // addcards[i].addEventListener('click',function(){
+    //   addToCarts[i].classList.remove('svgActive');
+    //   cartProductsCount.innerHTML = basket.size -1 + "";
+      // basketPrice+=cat.listCategory[i].price
+            // basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
+
+
+      // delete cat.listCategory[cat.arrayForCards[i]].price;
+    // });
+  });
+  btnEyeCart[i].addEventListener('click',function(){
+    desk.pop();
+    main.classList.add('non');
+    basketPage.classList.add('non');
+    pageDescription.classList.remove('non');
+    descriptionPage.classList.remove('non');
+    if(cat.countRandom==0){
+      desk.push(cat.listCategory[cat.arrayForCards[i]]);
+    }else {
+      desk.push(cat.listCategory[i]);
+    }
+    buildDescription();
+    buildBestDeck();
+  });
+}
+
 
   //  setInterval(function(){
   //   cartProductsCount.innerHTML = basket.length+"";
   //   cartProductsValue.innerHTML = cpv+basketPrice;
   //  },500)
 
-  const containerCart = document.querySelector('.header-cart');
- export const basketPage = document.querySelector('.basket-page');
+const containerCart = document.querySelector('.header-cart');
+export const basketPage = document.querySelector('.basket-page');
  
 // console.log(containerCart);
-  containerCart.addEventListener('click',function(){
-main.classList.add('non');
-basketPage.classList.remove('non');
-getshopCard();
-  });
+containerCart.addEventListener('click',function(){
+  main.classList.add('non');
+  basketPage.classList.remove('non');
+  getshopCard();
+});
 
  const itemLink = document.querySelectorAll('.item__link')[0].addEventListener('click',function(){
   main.classList.remove('non');
@@ -168,19 +209,18 @@ const descripDetal = document.querySelector('.descrip-detal');
 
 function buildDescription(){
   const way = document.querySelector('.way');
- deskMainImage.setAttribute('src',`${desk[0].images[0]}`);
- mainImFirst.setAttribute('src',`${desk[0].images[1]}`);
- secondImFirst.setAttribute('src',`${desk[0].images[2]}`);
+  deskMainImage.setAttribute('src',`${desk[0].images[0]}`);
+  mainImFirst.setAttribute('src',`${desk[0].images[1]}`);
+  secondImFirst.setAttribute('src',`${desk[0].images[2]}`);
   blockInfWay.innerHTML= way.innerHTML;
   // blockInfCategory.innerHTML = 
-  blockInfPrice.innerHTML ="$"+ desk[0].price;
-  blockInfSize.innerHTML = "Size : " + desk[0].size;
-  blockInfColor.innerHTML ="Color : "+ desk[0].color;
-  descBaseValue.innerHTML = descrpiptQuantity+"";
-  descripInf.innerHTML = desk[0].description;
-  
-   
+   blockInfPrice.innerHTML ="$"+ desk[0].price;
+   blockInfSize.innerHTML = "Size : " + desk[0].size;
+   blockInfColor.innerHTML ="Color : "+ desk[0].color;
+   descBaseValue.innerHTML = descrpiptQuantity+"";
+   descripInf.innerHTML = desk[0].description;
 }
+
 const brandIcon = ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dior_Logo.svg/300px-Dior_Logo.svg.png?20100916160103","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Prada-Logo.svg/512px-Prada-Logo.svg.png?20200520125737","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Valentino_logo.svg/800px-Valentino_logo.svg.png?20220515071350","https://www.alamy.com/versace-medusa-logo-fashion-luxury-brand-clothes-illustration-image217740490.html","https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Gucci_logo.svg/512px-Gucci_logo.svg.png?20180702130155"];
 // dior https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dior_Logo.svg/300px-Dior_Logo.svg.png?20100916160103
 
@@ -189,9 +229,9 @@ const brandIcon = ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Di
 document.querySelector('.descrip-descrip').addEventListener('click',function(){
      descripInf.innerHTML = desk[0].description;
    });
-   descripDetal.addEventListener('click',function(){
-    const img = document.createElement('img');
-    img.classList.add('brand-logo');
+descripDetal.addEventListener('click',function(){
+  const img = document.createElement('img');
+  img.classList.add('brand-logo');
     
   if(desk[0].brand=="Dior"){
     console.log('dior');
@@ -217,7 +257,7 @@ document.querySelector('.descrip-descrip').addEventListener('click',function(){
     img.setAttribute('alt','image brand logo');
   }
   descripInf.append(img);
-   });
+});
 daskUp.addEventListener('click', function(){
     descBaseValue.innerHTML = ++descrpiptQuantity+"";
    });
@@ -244,9 +284,9 @@ for(let i = 0;i<descSellIm.length;i++){
 const descriptionButton = document.querySelector('.description-button');
 // добавление в типо карзину простое отоброжение 
 descriptionButton.addEventListener('click',function(){
-basket.push(desk[0].id);
-cartProductsCount.innerHTML = descrpiptQuantity+"";
-cartProductsValue.innerHTML = cpv+desk[0].price*descrpiptQuantity;
+  basket.set(desk[0].id, 1);
+  cartProductsCount.innerHTML = descrpiptQuantity + "";
+  cartProductsValue.innerHTML = cpv + desk[0].price * descrpiptQuantity;
 });
 
 
@@ -272,18 +312,18 @@ function getshopCard(){
 baskDellImg.setAttribute('src',`../assets/svg/basket.svg`);//not work!!!!!!!
 
 for(let i = 0;i<cat.listCategory.length;i++){
-if(cat.listCategory[i].id==basket[0]){
-  basket[0] = i;
+// if(cat.listCategory[i].id==basket[0]){
+//   basket[0] = i;
+// }
 }
-}
-baskImage.setAttribute('src',`${cat.listCategory[basket[0]].images[0]}`);
-baskImage.classList.add('scale');
-baskBlockValue.innerHTML = 'Cost : $ '+ cat.listCategory[basket[0]].price;
-baskBlockVal.innerHTML = '$ '+ cat.listCategory[basket[0]].price;
-baskSize.innerHTML = 'Size : '+ cat.listCategory[basket[0]].size;
-baskColor.innerHTML = 'Color : '+ cat.listCategory[basket[0]].color;
- baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price;
- baskTot.innerHTML =""+cat.listCategory[basket[0]].price;
+// baskImage.setAttribute('src',`${cat.listCategory[basket[0]].images[0]}`);
+// baskImage.classList.add('scale');
+// baskBlockValue.innerHTML = 'Cost : $ '+ cat.listCategory[basket[0]].price;
+// baskBlockVal.innerHTML = '$ '+ cat.listCategory[basket[0]].price;
+// baskSize.innerHTML = 'Size : '+ cat.listCategory[basket[0]].size;
+// baskColor.innerHTML = 'Color : '+ cat.listCategory[basket[0]].color;
+//  baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price;
+//  baskTot.innerHTML =""+cat.listCategory[basket[0]].price;
 }
 
 
@@ -296,28 +336,29 @@ document.querySelector('.bask-total-quest').addEventListener('click',function(){
 baskBlockDisk.classList.remove('non');
 goodPrice.classList.remove('non');
 basketTotalAll.classList.remove('non');
-goodPrice.innerHTML= "-"+cat.listCategory[basket[0]].discount*baskQuantity+" %";
-baskBlockDisk.innerHTML ="Discount : $ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
-baskTotDiskaunt.innerHTML ="$ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
-baskTot.innerHTML = "$ "+ (cat.listCategory[basket[0]].price*baskQuantity - cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity);
+// goodPrice.innerHTML= "-"+cat.listCategory[basket[0]].discount*baskQuantity+" %";
+// baskBlockDisk.innerHTML ="Discount : $ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
+// baskTotDiskaunt.innerHTML ="$ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
+// baskTot.innerHTML = "$ "+ (cat.listCategory[basket[0]].price*baskQuantity - cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity);
 });
 
 
 // bask-block-val   
-baskUp.addEventListener('click',function(){
-baskBaseValue.innerHTML = ++baskQuantity+"";
-baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+baskUp.addEventListener('click', function(){
+baskBaseValue.innerHTML = ++baskQuantity + "";
+// baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+// baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+// baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
 });
-baskDown.addEventListener('click',function(){
+baskDown.addEventListener('click', function(){
   if(baskQuantity>0){
-    baskBaseValue.innerHTML = --baskQuantity+"";
+    baskBaseValue.innerHTML = --baskQuantity + "";
   }
-  baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-  baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-  baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+  // baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+  // baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+  // baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
   });
 
 
 // для оптимизации нужно добавлять не обьекты. а индексы
+// let div = document.createElement(`a<a;dlf${src};asldj${baskt.value}fl`)
