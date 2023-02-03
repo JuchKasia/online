@@ -85,8 +85,11 @@ for(let i = 0;i<addcards.length;i++){
     console.log(cat.listCategory[i+(18*(+cdpvalue-1))].price);
     console.log('our random');
     console.log(cat.arrayForCards);
+    console.log('countRandom ', cat.countRandom);
 basketPrice=0;
-if(!basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
+// list[arrayForCards[i]]
+if(cat.countRandom==0){
+  if(!basket.has(cat.listCategory[cat.arrayForCards[i+(18*(+cdpvalue-1))]].id)){
     addToCarts[i].classList.add('svgActive'); 
      // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
     cartProductsCount.innerHTML = basket.size + "";
@@ -96,6 +99,19 @@ if(!basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
   basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
   addToCarts[i].classList.remove('svgActive'); 
 }
+}else {
+  if(!basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
+    addToCarts[i].classList.add('svgActive'); 
+     // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
+    cartProductsCount.innerHTML = basket.size + "";
+    // cartProductsValue.innerHTML = cpv + ;
+    basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
+}else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
+  basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
+  addToCarts[i].classList.remove('svgActive'); 
+}
+}
+
     
      console.log(basket);
    
