@@ -130,7 +130,7 @@ const productDetailText = document.querySelectorAll('.product-detail-text');
 const cardsStock = document.querySelectorAll('.stock');
 const priceProduct = document.querySelectorAll('.price');
 const productTitle = document.querySelectorAll('.product-title');
-const mainCardImg = document.querySelectorAll('.img-prod1');
+export const mainCardImg = document.querySelectorAll('.img-prod1');
 const secondCardImg = document.querySelectorAll('.img-prod2');
 const productMiniature = document.querySelectorAll('.product-miniature');
 // console.log("card " +priceProduct.length);
@@ -145,6 +145,7 @@ for(let i = 0;i<productDetailText.length; i++){
     priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + list[arrayForCards[i]].price;
     productTitle[i].innerHTML = list[arrayForCards[i]].title;
     mainCardImg[i].setAttribute('src',`${list[arrayForCards[i]].images[0]}`);
+    mainCardImg[i].setAttribute('data-id',`${list[arrayForCards[i]].id}`);
     secondCardImg[i].classList.add("non");
 }
 }
@@ -163,6 +164,7 @@ export function buildCardsCategory(){
     priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i].price;
     productTitle[i].innerHTML = listCategory[i].title;
     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
+    mainCardImg[i].setAttribute('data-id',`${listCategory[i].id}`);
     secondCardImg[i].classList.add("non");
   }
   // sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join("")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
@@ -188,6 +190,7 @@ function clearCards(){
     continue;
    } else {
     productMiniature[i].classList.add('non');
+    mainCardImg[i].setAttribute('data-id',``);
    }
 
   }

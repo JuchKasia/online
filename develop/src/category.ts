@@ -9,7 +9,7 @@ import { count } from 'console';
 // console.log("from category file "+cat.listCategory);
 
 export const basket = new Map();
-// export const basket = [1];//index 
+export let basketDesc:number;//index 
 // basket.length = 0;
 export let descrpiptQuantity = 1;
 export let baskQuantity = 1;
@@ -86,31 +86,31 @@ for(let i = 0;i<addcards.length;i++){
     console.log('our random');
     console.log(cat.arrayForCards);
     console.log('countRandom ', cat.countRandom);
-basketPrice=0;
-// list[arrayForCards[i]]
-if(cat.countRandom==0){
-  if(!basket.has(cat.listCategory[cat.arrayForCards[i+(18*(+cdpvalue-1))]].id)){
-    addToCarts[i].classList.add('svgActive'); 
-     // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
-    cartProductsCount.innerHTML = basket.size + "";
-    // cartProductsValue.innerHTML = cpv + ;
-    basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
-}else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-  basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-  addToCarts[i].classList.remove('svgActive'); 
-}
-}else {
-  if(!basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-    addToCarts[i].classList.add('svgActive'); 
-     // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
-    cartProductsCount.innerHTML = basket.size + "";
-    // cartProductsValue.innerHTML = cpv + ;
-    basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
-}else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-  basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-  addToCarts[i].classList.remove('svgActive'); 
-}
-}
+    basketPrice=0;
+    // list[arrayForCards[i]]
+    if(cat.countRandom==0){
+      if(!basket.has(cat.listCategory[cat.arrayForCards[i+(18*(+cdpvalue-1))]].id)){
+        addToCarts[i].classList.add('svgActive'); 
+        // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
+        cartProductsCount.innerHTML = basket.size + "";
+        // cartProductsValue.innerHTML = cpv + ;
+        basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
+    }else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
+      basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
+      addToCarts[i].classList.remove('svgActive'); 
+    }
+    }else {
+      if(!basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
+        addToCarts[i].classList.add('svgActive'); 
+        // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
+        cartProductsCount.innerHTML = basket.size + "";
+        // cartProductsValue.innerHTML = cpv + ;
+        basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
+    }else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
+      basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
+      addToCarts[i].classList.remove('svgActive'); 
+    }
+  }
 
     
      console.log(basket);
@@ -153,6 +153,13 @@ if(cat.countRandom==0){
     // });
   });
   btnEyeCart[i].addEventListener('click',function(){
+    const cdpvalue = +document.querySelector(".cdp").innerHTML;
+    basketDesc = +cat.mainCardImg[i].getAttribute('data-id');
+    console.log('it is')
+    console.log(cat.listCategory[i+(18*(+cdpvalue-1))]);
+    console.log(cat.mainCardImg[i].getAttribute('data-id'));
+    // console.log(cat.mainCardImg[i]);
+    // console.log(console.log(cat.listCategory[i+(18*(+cdpvalue-1))]));
     desk.pop();
     main.classList.add('non');
     basketPage.classList.add('non');
@@ -207,7 +214,7 @@ const deskMainImage = document.querySelector('.desk-main-image');
 const mainImFirst = document.querySelector('.main-im-first');
 const secondImFirst = document.querySelector('.main-im-second');
 const blockInfWay=document.querySelector(".block-inf-way"); 
-// const blockInfCategory=document.querySelector(".block-inf-category"); 
+const blockInfCategory=document.querySelector(".block-inf-category"); 
 const blockInfPrice=document.querySelector(".block-inf-price"); 
 const blockInfSize=document.querySelector(".block-inf-size"); 
 const blockInfColor=document.querySelector(".block-inf-color"); 
@@ -224,17 +231,35 @@ const daskDown = document.querySelector('.dask-down');
 const descripDetal = document.querySelector('.descrip-detal');
 
 function buildDescription(){
-  const way = document.querySelector('.way');
-  deskMainImage.setAttribute('src',`${desk[0].images[0]}`);
-  mainImFirst.setAttribute('src',`${desk[0].images[1]}`);
-  secondImFirst.setAttribute('src',`${desk[0].images[2]}`);
-  blockInfWay.innerHTML= way.innerHTML;
-  // blockInfCategory.innerHTML = 
-   blockInfPrice.innerHTML ="$"+ desk[0].price;
-   blockInfSize.innerHTML = "Size : " + desk[0].size;
-   blockInfColor.innerHTML ="Color : "+ desk[0].color;
+  // нужно удалить все что связано с елементом desk как заработает с basketDesc ============ you can do it ===================
+  for(let i=0;i<cat.listCategory.length;i++){
+    // console.log(basketDesc,);
+    if(basketDesc===cat.listCategory[i].id){
+      const way = document.querySelector('.way');
+  deskMainImage.setAttribute('src',`${cat.listCategory[i].images[0]}`);
+  mainImFirst.setAttribute('src',`${cat.listCategory[i].images[1]}`);
+  secondImFirst.setAttribute('src',`${cat.listCategory[i].images[2]}`);
+  blockInfWay.innerHTML= `Category - ${way.innerHTML} / color - ${cat.listCategory[i].color} / size - ${cat.listCategory[i].size}`;
+  // console.log(cat.forLocal);
+   blockInfCategory.innerHTML = `${way.innerHTML}`;
+   blockInfPrice.innerHTML ="$"+ cat.listCategory[i].price;
+   blockInfSize.innerHTML = "Size : " + cat.listCategory[i].size;
+   blockInfColor.innerHTML ="Color : "+ cat.listCategory[i].color;
    descBaseValue.innerHTML = descrpiptQuantity+"";
-   descripInf.innerHTML = desk[0].description;
+   descripInf.innerHTML = cat.listCategory[i].description;
+    }
+  }
+  // const way = document.querySelector('.way');
+  // deskMainImage.setAttribute('src',`${desk[0].images[0]}`);
+  // mainImFirst.setAttribute('src',`${desk[0].images[1]}`);
+  // secondImFirst.setAttribute('src',`${desk[0].images[2]}`);
+  // blockInfWay.innerHTML= way.innerHTML;
+  // // blockInfCategory.innerHTML = 
+  //  blockInfPrice.innerHTML ="$"+ desk[0].price;
+  //  blockInfSize.innerHTML = "Size : " + desk[0].size;
+  //  blockInfColor.innerHTML ="Color : "+ desk[0].color;
+  //  descBaseValue.innerHTML = descrpiptQuantity+"";
+  //  descripInf.innerHTML = desk[0].description;
 }
 
 const brandIcon = ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dior_Logo.svg/300px-Dior_Logo.svg.png?20100916160103","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Prada-Logo.svg/512px-Prada-Logo.svg.png?20200520125737","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Valentino_logo.svg/800px-Valentino_logo.svg.png?20220515071350","https://www.alamy.com/versace-medusa-logo-fashion-luxury-brand-clothes-illustration-image217740490.html","https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Gucci_logo.svg/512px-Gucci_logo.svg.png?20180702130155"];
@@ -290,11 +315,11 @@ const descSellTxt = document.querySelectorAll('.desc-sell-txt');
 const descSellPrice = document.querySelectorAll('.desc-sell-price');
 
 function buildBestDeck(){
-for(let i = 0;i<descSellIm.length;i++){
-  descSellIm[i].setAttribute('src',`${list[cat.arrayForCardsDesc[i]].images}`);
-  descSellTxt[i].innerHTML = list[cat.arrayForCardsDesc[i]].description;
-  descSellPrice[i].innerHTML = list[cat.arrayForCardsDesc[i]].price+" $";
-}
+  for(let i = 0;i<descSellIm.length;i++){
+    descSellIm[i].setAttribute('src',`${list[cat.arrayForCardsDesc[i]].images}`);
+    descSellTxt[i].innerHTML = list[cat.arrayForCardsDesc[i]].description;
+    descSellPrice[i].innerHTML = list[cat.arrayForCardsDesc[i]].price+" $";
+  }
 }
 
 const descriptionButton = document.querySelector('.description-button');
@@ -325,7 +350,7 @@ document.querySelector('.back-start').addEventListener('click',function(){
 
 function getshopCard(){
 
-baskDellImg.setAttribute('src',`../assets/svg/basket.svg`);//not work!!!!!!!
+baskDellImg.setAttribute('src',`../assets/svg/basket.svg`);//it is not works!!!!!!!
 
 for(let i = 0;i<cat.listCategory.length;i++){
 // if(cat.listCategory[i].id==basket[0]){
@@ -349,22 +374,22 @@ const basketTotalAll = document.querySelectorAll('.basket-total-all')[1];
 const baskTotDiskaunt = document.querySelector('.bask-tot-diskaunt');
 
 document.querySelector('.bask-total-quest').addEventListener('click',function(){
-baskBlockDisk.classList.remove('non');
-goodPrice.classList.remove('non');
-basketTotalAll.classList.remove('non');
-// goodPrice.innerHTML= "-"+cat.listCategory[basket[0]].discount*baskQuantity+" %";
-// baskBlockDisk.innerHTML ="Discount : $ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
-// baskTotDiskaunt.innerHTML ="$ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
-// baskTot.innerHTML = "$ "+ (cat.listCategory[basket[0]].price*baskQuantity - cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity);
+  baskBlockDisk.classList.remove('non');
+  goodPrice.classList.remove('non');
+  basketTotalAll.classList.remove('non');
+  // goodPrice.innerHTML= "-"+cat.listCategory[basket[0]].discount*baskQuantity+" %";
+  // baskBlockDisk.innerHTML ="Discount : $ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
+  // baskTotDiskaunt.innerHTML ="$ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
+  // baskTot.innerHTML = "$ "+ (cat.listCategory[basket[0]].price*baskQuantity - cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity);
 });
 
 
 // bask-block-val   
 baskUp.addEventListener('click', function(){
-baskBaseValue.innerHTML = ++baskQuantity + "";
-// baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-// baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-// baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+  baskBaseValue.innerHTML = ++baskQuantity + "";
+  // baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+  // baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
+  // baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
 });
 baskDown.addEventListener('click', function(){
   if(baskQuantity>0){
@@ -378,3 +403,37 @@ baskDown.addEventListener('click', function(){
 
 // для оптимизации нужно добавлять не обьекты. а индексы
 // let div = document.createElement(`a<a;dlf${src};asldj${baskt.value}fl`)
+
+// let divBlock = document.createElement('div');
+// divBlock.innerHTML =  `<div class="basket-column-card__bask border-card">
+// <img class="bask-image">
+// <div class="bask-inf">
+//   <div class="bask-inf-text">
+//     description...
+//   </div>
+//   <div class="bask-inf-block">
+//     <div class="bask-price">
+//       <div class="bask-price-real">
+//         <div class="bask-block-value">${}</div>
+//         <div class="bask-block-disk non">${}</div>
+//       </div>
+//       <div class="bask-price-disc goodPrice non">${}</div>
+//     </div>
+//     <!-- 3 -->
+//   </div>
+//   <div class="bask-size">Size: ${}</div>
+//   <div class="bask-color">Color: White</div>
+//   <!-- need do -->
+// </div>
+// <div class="bask-block-count">
+//   <div class="bask-count-base border-card">
+//     <div class="bask-base-value">0</div>
+//       <div class="bask-base-button">
+//         <button class='bask-up'>+</button>
+//         <button class='bask-down'>-</button>
+//       </div>
+//     </div>
+//   </div>
+//   <div class="bask-block-val">$11.01</div>
+// <div class="bask-dell"><img src="./assets/svg/basket.svg" class="bask-dell-img" alt="basket image"></div>
+// </div>`
