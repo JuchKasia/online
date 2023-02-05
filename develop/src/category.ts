@@ -361,4 +361,79 @@ baskDown.addEventListener('click', function(){
 
 
 // для оптимизации нужно добавлять не обьекты. а индексы
-// let div = document.createElement(`a<a;dlf${src};asldj${baskt.value}fl`)
+
+let divBlock = document.createElement('div');
+divBlock.innerHTML = `<div class="basket-column-card__bask border-card">
+<img class="bask-image">
+<div class="bask-inf">
+  <div class="bask-inf-text">
+    description...
+  </div>
+  <div class="bask-inf-block">
+    <div class="bask-price">
+      <div class="bask-price-real">
+        <div class="bask-block-value">${baskBlockValue}</div>
+        <div class="bask-block-disk non">${baskBlockDisk}</div>
+      </div>
+      <div class="bask-price-disc goodPrice non">${goodPrice}</div>
+    </div>
+  </div>
+  <div class="bask-size">Size: ${sizeFilter()}</div>
+  <div class="bask-color">Color: ${colorFilter()}</div>
+</div>
+<div class="bask-block-count">
+  <div class="bask-count-base border-card">
+    <div class="bask-base-value">${baskBlockValue}</div>
+      <div class="bask-base-button">
+        <button class='bask-up'>+</button>
+        <button class='bask-down'>-</button>
+      </div>
+    </div>
+  </div>
+  <div class="bask-block-val">${baskBlockVal}</div>
+<div class="bask-dell"><img src="./assets/svg/basket.svg" class="bask-dell-img" alt="basket image"></div>
+</div>`;
+
+// // create a new div 
+// let divBasketCol = document.createElement('div');
+// divBasketCol.className = 'basket-column-card__bask';
+
+
+// // create element in divS
+// let imgBasketCol = document.createElement('img');
+// divBasketCol.appendChild(imgBasketCol);
+// // let div = document.createElement(`a<a;dlf${src};asldj${baskt.value}fl`)
+
+// // add div to the document
+// document.body.appendChild(divBasketCol);
+
+
+
+// // bask-inf
+// let divBaskInf = document.createElement('div');
+// divBaskInf.className = 'bask-inf';
+// // divBaskInf.textContent = 'Products';
+// divBasketCol.appendChild(divBaskInf);
+
+
+
+// let divBaskInfText = document.createElement('div');
+// divBaskInfText.className = 'bask-inf-text';
+// divBaskInfText.textContent = 'Description...';
+// divBaskInf.appendChild(divBaskInfText);
+
+
+
+// let divBaskInfBlock = document.createElement('div');
+// divBaskInfBlock.className = 'bask-inf-text';
+// divBaskInfBlock.textContent = 'Description...';
+// divBaskInf.appendChild(divBaskInfBlock);
+
+// let divBaskInfPrice = document.createElement('div');
+// divBaskInfPrice.className = 'bask-price';
+// divBaskInfBlock.appendChild(divBaskInfPrice);
+
+// let divBaskInfPrice = document.createElement('div');
+// divBaskInfPrice.className = 'bask-price';
+// divBaskInfBlock.appendChild(divBaskInfPrice);
+
