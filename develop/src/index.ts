@@ -36,60 +36,61 @@ const sortText = document.querySelector('.sort-text');
 // аналитика доступных карточек на основе выбранных пунктов
 export function getCategoryArray(){
 
-  listCategory = [];
-for(let i = 0;i<list.length;i++){
-// здесь выбор по men \ women
-  // if (list[i].category == forLocal.category){
-  if(forLocal.category.has(list[i].category)){
-    // если размер какой-нибудь активирован -------------------------------------
-      if(forLocal.size.size>0){
-        if(forLocal.color.size>0){
-          if(forLocal.color.has(list[i].color)&&forLocal.size.has(list[i].size)){
+    listCategory = [];
+  for(let i = 0;i<list.length;i++){
+  // здесь выбор по men \ women
+    // if (list[i].category == forLocal.category){
+    if(forLocal.category.has(list[i].category)){
+      // если размер какой-нибудь активирован -------------------------------------
+        if(forLocal.size.size>0){
+          if(forLocal.color.size>0){
+            if(forLocal.color.has(list[i].color)&&forLocal.size.has(list[i].size)){
+              listCategory.push(list[i]);
+            }
+            
+          }else {
+            if(forLocal.size.has(list[i].size)){
+            
             listCategory.push(list[i]);
+            
+            }
+            
           }
-          
-        }else {
-          if(forLocal.size.has(list[i].size)){
-          
-          listCategory.push(list[i]);
-          
-          }
-          
-        }
-          //  добавляем эти карточки в listCategory -------------------------------------
-      } else {
-        // здесь происходит когда нет размеров
-        if(forLocal.color.size>0){
-          // здесь происходит когда есть цвета
-          if(forLocal.color.has(list[i].color)){
-            listCategory.push(list[i]);
-          }
-
+            //  добавляем эти карточки в listCategory -------------------------------------
         } else {
-          listCategory.push(list[i]);
+          // здесь происходит когда нет размеров
+          if(forLocal.color.size>0){
+            // здесь происходит когда есть цвета
+            if(forLocal.color.has(list[i].color)){
+              listCategory.push(list[i]);
+            }
+
+          } else {
+            listCategory.push(list[i]);
+          }
         }
-      }
+      
     
-   
+    }
+    
   }
-  
-}
- localStorage.setItem('listCategory',JSON.stringify(listCategory));
- localStorage.setItem('forLocal',JSON.stringify(forLocal));
- console.log("79 forLocal "+forLocal);
- console.log(forLocal);
-// let poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
-// console.log('listCategory '+listCategory.length);
-sizeFilter();
-colorFilter();
-if(listCategory.length<19){
-  sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join(" ")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
-}else {
-  sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join(" ")} 18 ${sortText.innerHTML.split(" ").slice(-1)}`
-}
- console.log(listCategory);
- console.log(forLocal);
-countRandom++;
+  localStorage.setItem('listCategory',JSON.stringify(listCategory));
+  localStorage.setItem('forLocal',JSON.stringify(forLocal));
+  console.log("79 forLocal "+forLocal);
+  console.log(forLocal);
+  // let poluchitObj = JSON.parse(localStorage.getItem('listCategory'));
+  // console.log('listCategory '+listCategory.length);
+  sizeFilter();
+  colorFilter();
+  if(listCategory.length<19){
+    sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join(" ")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
+  }else {
+    sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join(" ")} 18 ${sortText.innerHTML.split(" ").slice(-1)}`
+  }
+  paginationText();
+  console.log(listCategory);
+  console.log(forLocal);
+  countRandom++;
 
 }
 
@@ -129,7 +130,7 @@ const productDetailText = document.querySelectorAll('.product-detail-text');
 const cardsStock = document.querySelectorAll('.stock');
 const priceProduct = document.querySelectorAll('.price');
 const productTitle = document.querySelectorAll('.product-title');
-const mainCardImg = document.querySelectorAll('.img-prod1');
+export const mainCardImg = document.querySelectorAll('.img-prod1');
 const secondCardImg = document.querySelectorAll('.img-prod2');
 const productMiniature = document.querySelectorAll('.product-miniature');
 // console.log("card " +priceProduct.length);
@@ -144,6 +145,7 @@ for(let i = 0;i<productDetailText.length; i++){
     priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + list[arrayForCards[i]].price;
     productTitle[i].innerHTML = list[arrayForCards[i]].title;
     mainCardImg[i].setAttribute('src',`${list[arrayForCards[i]].images[0]}`);
+    mainCardImg[i].setAttribute('data-id',`${list[arrayForCards[i]].id}`);
     secondCardImg[i].classList.add("non");
 }
 }
@@ -162,6 +164,7 @@ export function buildCardsCategory(){
     priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i].price;
     productTitle[i].innerHTML = listCategory[i].title;
     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
+    mainCardImg[i].setAttribute('data-id',`${listCategory[i].id}`);
     secondCardImg[i].classList.add("non");
   }
   // sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join("")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
@@ -187,6 +190,7 @@ function clearCards(){
     continue;
    } else {
     productMiniature[i].classList.add('non');
+    mainCardImg[i].setAttribute('data-id',``);
    }
 
   }
@@ -549,118 +553,131 @@ for (let i =0; i < btnPages.length; i++) {
     // здесь добавлять класс зеленого цвета или активный
     //  так же удалять с других активный класс или менять на другой цвет
     // добавить здесь условие на длину listCategory, если надо
-if(i===0){
-  btnPages[0].classList.add('prev-available-page');
-  btnPages[1].classList.remove('available-page');
-  btnPages[1].classList.add('cdp');
-  btnPages[2].classList.add('available-page');
-  btnPages[3].classList.remove('prev-available-page');
-  btnPages[3].classList.add('available-page');
-  btnPages[4].classList.remove('prev-available-page');
-  btnPages[4].classList.add('available-page');
-  btnPages[1].innerHTML ='1';
-  btnPages[2].innerHTML = '2';
-  btnPages[3].innerHTML = '3';
-  clearPagination();
-  stopI = 18;
-  buildPaginationPage(0);
-}else if(i===1){
-  btnPages[0].classList.add('prev-available-page');
-  btnPages[1].classList.remove('available-page');
-   btnPages[1].classList.add('cdp');
-   btnPages[2].classList.remove('cdp');
-   btnPages[2].classList.add('available-page');
-   btnPages[3].classList.remove('prev-available-page');
-   btnPages[3].classList.add('available-page');
-  //  if(listCategory.length>1)
-  if (btnPages[1].innerHTML =='4') {
-    btnPages[0].classList.remove('prev-available-page');
-    btnPages[0].classList.add('available-page');
+  if(i===0){
+    btnPages[0].classList.add('prev-available-page');
+    btnPages[1].classList.remove('available-page');
+    btnPages[1].classList.add('cdp');
+    btnPages[2].classList.add('available-page');
+    btnPages[3].classList.remove('prev-available-page');
+    btnPages[3].classList.add('available-page');
     btnPages[4].classList.remove('prev-available-page');
     btnPages[4].classList.add('available-page');
-  }
-  clearPagination();
-   if(ourBtn==1){
-    forOurBtn =0;
-  }else {
-    forOurBtn = (ourBtn-1)*18;
-  }
-  // здесь вместо принудительной цифры надо исходить от ourBtn
-  buildPaginationPage(forOurBtn);
-}else if(i===2){
-  btnPages[2].classList.remove('available-page');
-  btnPages[2].classList.add('cdp');
-  btnPages[1].classList.remove('cdp');
-  btnPages[1].classList.add('available-page');
-  btnPages[3].classList.remove('cdp');
-  btnPages[3].classList.add('available-page');
-  if (btnPages[2].innerHTML =='5') {
-    btnPages[0].classList.remove('prev-available-page');
-    btnPages[0].classList.add('available-page');
-    btnPages[4].classList.remove('prev-available-page');
-    btnPages[4].classList.add('available-page');
-  }
-  clearPagination();
-  if(ourBtn==1){
-    forOurBtn =0;
-  }else {
-    forOurBtn = (ourBtn-1)*18;
-  }
-  buildPaginationPage(forOurBtn);
+    btnPages[1].innerHTML ='1';
+    btnPages[2].innerHTML = '2';
+    btnPages[3].innerHTML = '3';
+    clearPagination();
+    stopI = 18;
+    paginationText();
+    buildPaginationPage(0);
+  }else if(i===1){
+    btnPages[0].classList.add('prev-available-page');
+    btnPages[1].classList.remove('available-page');
+    btnPages[1].classList.add('cdp');
+    btnPages[2].classList.remove('cdp');
+    btnPages[2].classList.add('available-page');
+    btnPages[3].classList.remove('prev-available-page');
+    btnPages[3].classList.add('available-page');
+    //  if(listCategory.length>1)
+    if (btnPages[1].innerHTML =='4') {
+      btnPages[0].classList.remove('prev-available-page');
+      btnPages[0].classList.add('available-page');
+      btnPages[4].classList.remove('prev-available-page');
+      btnPages[4].classList.add('available-page');
+    }
+    clearPagination();
+    if(ourBtn==1){
+      forOurBtn =0;
+    }else {
+      forOurBtn = (ourBtn-1)*18;
+    }
+    // здесь вместо принудительной цифры надо исходить от ourBtn
+    paginationText();
+    buildPaginationPage(forOurBtn);
+  }else if(i===2){
+    btnPages[2].classList.remove('available-page');
+    btnPages[2].classList.add('cdp');
+    btnPages[1].classList.remove('cdp');
+    btnPages[1].classList.add('available-page');
+    btnPages[3].classList.remove('cdp');
+    btnPages[3].classList.add('available-page');
+    if (btnPages[2].innerHTML =='5') {
+      btnPages[0].classList.remove('prev-available-page');
+      btnPages[0].classList.add('available-page');
+      btnPages[4].classList.remove('prev-available-page');
+      btnPages[4].classList.add('available-page');
+    }
+    clearPagination();
+    if(ourBtn==1){
+      forOurBtn =0;
+    }else {
+      forOurBtn = (ourBtn-1)*18;
+    }
+    paginationText();
+    buildPaginationPage(forOurBtn);
 
-}else if(i===3){
-  btnPages[3].classList.remove('available-page');
-  btnPages[3].classList.add('cdp');
-  btnPages[1].classList.remove('cdp');
-  btnPages[1].classList.add('available-page');
-  btnPages[2].classList.remove('cdp');
-  btnPages[2].classList.add('available-page');
-  btnPages[4].classList.remove('prev-available-page');
-  btnPages[4].classList.add('available-page');
-  stopI = 18;
-  if (btnPages[3].innerHTML =='6') {
+  }else if(i===3){
+    btnPages[3].classList.remove('available-page');
+    btnPages[3].classList.add('cdp');
+    btnPages[1].classList.remove('cdp');
+    btnPages[1].classList.add('available-page');
+    btnPages[2].classList.remove('cdp');
+    btnPages[2].classList.add('available-page');
+    btnPages[4].classList.remove('prev-available-page');
+    btnPages[4].classList.add('available-page');
+    stopI = 18;
+    if (btnPages[3].innerHTML =='6') {
+      btnPages[0].classList.remove('prev-available-page');
+      btnPages[0].classList.add('available-page');
+      btnPages[4].classList.remove('available-page');
+      btnPages[4].classList.add('prev-available-page');
+    }
+    clearPagination();
+    if(ourBtn==1){
+      forOurBtn =0;
+    }else {
+      forOurBtn = (ourBtn-1)*18;
+    }
+    paginationText();
+    buildPaginationPage(forOurBtn);
+  }
+  else if(i===4){
     btnPages[0].classList.remove('prev-available-page');
     btnPages[0].classList.add('available-page');
-    btnPages[4].classList.remove('available-page');
+    btnPages[1].classList.remove('cdp');
+    btnPages[1].classList.add('available-page');
+    btnPages[2].classList.remove('cdp');
+    btnPages[2].classList.add('available-page');
+    // btnPages[2].classList.remove('available-page');
+    // btnPages[2].classList.add('cdp');
+    btnPages[3].classList.remove('available-page');
+    btnPages[3].classList.add('cdp');
     btnPages[4].classList.add('prev-available-page');
-  }
-  clearPagination();
-  if(ourBtn==1){
-    forOurBtn =0;
-  }else {
-    forOurBtn = (ourBtn-1)*18;
-  }
-  buildPaginationPage(forOurBtn);
-}
-else if(i===4){
-  btnPages[0].classList.remove('prev-available-page');
-  btnPages[0].classList.add('available-page');
-  btnPages[1].classList.remove('cdp');
-  btnPages[1].classList.add('available-page');
-  btnPages[2].classList.remove('cdp');
-  btnPages[2].classList.add('available-page');
-  // btnPages[2].classList.remove('available-page');
-  // btnPages[2].classList.add('cdp');
-  btnPages[3].classList.remove('available-page');
-  btnPages[3].classList.add('cdp');
-  btnPages[4].classList.add('prev-available-page');
-  
-  btnPages[1].innerHTML = count-2+"";
-  btnPages[2].innerHTML = count-1+"";
-  btnPages[3].innerHTML = count+"";
-  // stopI = listCategory.length-18*(count-1);
-  clearPagination();
-  // console.log('последяя кнопка ')
-  // console.log((listCategory.length-18*(count-1)));
-  // console.log(listCategory.length-(listCategory.length-18*(count-1)))
-  buildPaginationPage(listCategory.length-(listCategory.length-18*(count-1)));
+    
+    btnPages[1].innerHTML = count-2+"";
+    btnPages[2].innerHTML = count-1+"";
+    btnPages[3].innerHTML = count+"";
+    // stopI = listCategory.length-18*(count-1);
+    clearPagination();
+    // console.log('последяя кнопка ')
+    // console.log((listCategory.length-18*(count-1)));
+    // console.log(listCategory.length-(listCategory.length-18*(count-1)))
+    paginationText();
+    buildPaginationPage(listCategory.length-(listCategory.length-18*(count-1)));
 
-}
+  }
 
-}
+  }
 )}
-// 
 
+const leftPagination = document.querySelector('.col-left-pagination');
+function paginationText(){
+ leftPagination.innerHTML="";
+ if(listCategory.length<19){
+  leftPagination.innerHTML = `Showing ${listCategory.length} of ${listCategory.length} items`;
+ }else {
+  leftPagination.innerHTML = `Showing 18 of ${listCategory.length} items`
+ }
+}
 
 // const s
 // Количество карточек для отображения на странице
