@@ -71,46 +71,60 @@ const btnEyeCart = document.querySelectorAll('.btn-eye-cart');
 export const main = document.querySelector('.main');
 const pageDescription = document.querySelector('.pageDescription');
 const descriptionPage = document.querySelector('.description');
-const addToCarts = document.querySelectorAll('.add-to-cart');
+export const addToCarts = document.querySelectorAll('.add-to-cart');
 
 for(let i = 0;i<addcards.length;i++){
     
   addcards[i].addEventListener('click',function(){
-    console.log(document.querySelector(".cdp").innerHTML)
-    const cdpvalue = +document.querySelector(".cdp").innerHTML;
-     console.log(cat.listCategory);  
-     console.log(i+(18*(cdpvalue-1)));
-     console.log('one card')
-     console.log(cat.listCategory[i+(18*(+cdpvalue-1))]);
-    console.log(cat.listCategory[i+(18*(+cdpvalue-1))].price);
-    console.log('our random');
+    const ourId = cat.mainCardImg[i].getAttribute('data-id');
+console.log('click')
+    console.log(cat.listCategory); 
     console.log(cat.arrayForCards);
-    console.log('countRandom ', cat.countRandom);
-    basketPrice=0;
-    // list[arrayForCards[i]]
-    if(cat.countRandom==0){
-      if(!basket.has(cat.listCategory[cat.arrayForCards[i+(18*(+cdpvalue-1))]].id)){
-        addToCarts[i].classList.add('svgActive'); 
-        // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
-        cartProductsCount.innerHTML = basket.size + "";
-        // cartProductsValue.innerHTML = cpv + ;
-        basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
-    }else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-      basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-      addToCarts[i].classList.remove('svgActive'); 
-    }
-    }else {
-      if(!basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-        addToCarts[i].classList.add('svgActive'); 
-        // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
-        cartProductsCount.innerHTML = basket.size + "";
-        // cartProductsValue.innerHTML = cpv + ;
-        basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
-    }else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-      basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-      addToCarts[i].classList.remove('svgActive'); 
-    }
-  }
+    console.log(ourId);
+    console.log(basket);
+     if(!basket.has(ourId)){
+      addToCarts[i].classList.add('svgActive');
+      basket.set(ourId,1);
+     } else if(basket.has(ourId)){
+      addToCarts[i].classList.remove('svgActive');
+      
+      basket.delete(ourId);
+     }
+
+
+      
+  //    console.log(i+(18*(cdpvalue-1)));
+  //    console.log('one card')
+  //    console.log(cat.listCategory[i+(18*(+cdpvalue-1))]);
+  //   console.log(cat.listCategory[i+(18*(+cdpvalue-1))].price);
+  //   console.log('our random');
+  //   console.log(cat.arrayForCards);
+  //   console.log('countRandom ', cat.countRandom);
+     basketPrice=0;
+  //   // list[arrayForCards[i]]
+  //   if(cat.countRandom==0){
+  //     if(!basket.has(cat.listCategory[cat.arrayForCards[i+(18*(+cdpvalue-1))]].id)){
+  //       addToCarts[i].classList.add('svgActive'); 
+  //       // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
+  //       cartProductsCount.innerHTML = basket.size + "";
+  //       // cartProductsValue.innerHTML = cpv + ;
+  //       basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
+  //   }else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
+  //     basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
+  //     addToCarts[i].classList.remove('svgActive'); 
+  //   }
+  //   }else {
+  //     if(!basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
+  //       addToCarts[i].classList.add('svgActive'); 
+  //       // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
+  //       cartProductsCount.innerHTML = basket.size + "";
+  //       // cartProductsValue.innerHTML = cpv + ;
+  //       basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
+  //   }else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
+  //     basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
+  //     addToCarts[i].classList.remove('svgActive'); 
+  //   }
+  // }
 
     
      console.log(basket);
@@ -153,11 +167,12 @@ for(let i = 0;i<addcards.length;i++){
     // });
   });
   btnEyeCart[i].addEventListener('click',function(){
-    const cdpvalue = +document.querySelector(".cdp").innerHTML;
+    // const cdpvalue = +document.querySelector(".cdp").innerHTML;
     basketDesc = +cat.mainCardImg[i].getAttribute('data-id');
     console.log('it is')
-    console.log(cat.listCategory[i+(18*(+cdpvalue-1))]);
+    // console.log(cat.listCategory[i+(18*(+cdpvalue-1))]);
     console.log(cat.mainCardImg[i].getAttribute('data-id'));
+    // console.log(cdpvalue);
     // console.log(cat.mainCardImg[i]);
     // console.log(console.log(cat.listCategory[i+(18*(+cdpvalue-1))]));
     desk.pop();
@@ -239,9 +254,9 @@ function buildDescription(){
   deskMainImage.setAttribute('src',`${cat.listCategory[i].images[0]}`);
   mainImFirst.setAttribute('src',`${cat.listCategory[i].images[1]}`);
   secondImFirst.setAttribute('src',`${cat.listCategory[i].images[2]}`);
-  blockInfWay.innerHTML= `Category - ${way.innerHTML} / color - ${cat.listCategory[i].color} / size - ${cat.listCategory[i].size}`;
+  blockInfWay.innerHTML= `Category - ${cat.listCategory[i].category} / color - ${cat.listCategory[i].color} / size - ${cat.listCategory[i].size}`;
   // console.log(cat.forLocal);
-   blockInfCategory.innerHTML = `${way.innerHTML}`;
+   blockInfCategory.innerHTML = cat.listCategory[i].category;
    blockInfPrice.innerHTML ="$"+ cat.listCategory[i].price;
    blockInfSize.innerHTML = "Size : " + cat.listCategory[i].size;
    blockInfColor.innerHTML ="Color : "+ cat.listCategory[i].color;
@@ -402,6 +417,83 @@ baskDown.addEventListener('click', function(){
 
 
 // для оптимизации нужно добавлять не обьекты. а индексы
+
+// let divBlock = document.createElement('div');
+// divBlock.innerHTML = `<div class="basket-column-card__bask border-card">
+// <img class="bask-image">
+// <div class="bask-inf">
+//   <div class="bask-inf-text">
+//     description...
+//   </div>
+//   <div class="bask-inf-block">
+//     <div class="bask-price">
+//       <div class="bask-price-real">
+//         <div class="bask-block-value">${baskBlockValue}</div>
+//         <div class="bask-block-disk non">${baskBlockDisk}</div>
+//       </div>
+//       <div class="bask-price-disc goodPrice non">${goodPrice}</div>
+//     </div>
+//   </div>
+//   <div class="bask-size">Size: ${sizeFilter()}</div>
+//   <div class="bask-color">Color: ${colorFilter()}</div>
+// </div>
+// <div class="bask-block-count">
+//   <div class="bask-count-base border-card">
+//     <div class="bask-base-value">${baskBlockValue}</div>
+//       <div class="bask-base-button">
+//         <button class='bask-up'>+</button>
+//         <button class='bask-down'>-</button>
+//       </div>
+//     </div>
+//   </div>
+//   <div class="bask-block-val">${baskBlockVal}</div>
+// <div class="bask-dell"><img src="./assets/svg/basket.svg" class="bask-dell-img" alt="basket image"></div>
+// </div>`;
+
+// // create a new div 
+// let divBasketCol = document.createElement('div');
+// divBasketCol.className = 'basket-column-card__bask';
+
+
+// // create element in divS
+// let imgBasketCol = document.createElement('img');
+// divBasketCol.appendChild(imgBasketCol);
+// // let div = document.createElement(`a<a;dlf${src};asldj${baskt.value}fl`)
+
+// // add div to the document
+// document.body.appendChild(divBasketCol);
+
+
+
+// // bask-inf
+// let divBaskInf = document.createElement('div');
+// divBaskInf.className = 'bask-inf';
+// // divBaskInf.textContent = 'Products';
+// divBasketCol.appendChild(divBaskInf);
+
+
+
+// let divBaskInfText = document.createElement('div');
+// divBaskInfText.className = 'bask-inf-text';
+// divBaskInfText.textContent = 'Description...';
+// divBaskInf.appendChild(divBaskInfText);
+
+
+
+// let divBaskInfBlock = document.createElement('div');
+// divBaskInfBlock.className = 'bask-inf-text';
+// divBaskInfBlock.textContent = 'Description...';
+// divBaskInf.appendChild(divBaskInfBlock);
+
+// let divBaskInfPrice = document.createElement('div');
+// divBaskInfPrice.className = 'bask-price';
+// divBaskInfBlock.appendChild(divBaskInfPrice);
+
+// let divBaskInfPrice = document.createElement('div');
+// divBaskInfPrice.className = 'bask-price';
+// divBaskInfBlock.appendChild(divBaskInfPrice);
+
+
 // let div = document.createElement(`a<a;dlf${src};asldj${baskt.value}fl`)
 
 // let divBlock = document.createElement('div');

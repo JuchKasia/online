@@ -7,11 +7,11 @@ import "../normalize.css";
 
 // import {Product} from './assets/types';
 import {list} from '../list';
-import {sizeFilter,colorFilter} from './category';
-import {proso} from './modalPuchase';
+import {sizeFilter,colorFilter,addToCarts, basket} from './category';
+// import {proso} from './modalPuchase';
 // import { fstat } from "fs";
 // import {} from './desc';
-console.log(proso);
+
 const category = new Set<string>(["men","women"]);
 const size = new Set<string>([]);
 const color = new Set<string>([]);
@@ -22,9 +22,7 @@ export const forLocal = {
   color
 } 
 export let countRandom = 0;
-
 export let  listCategory = list;
-
 // console.log((localStorage));
 document.addEventListener("DOMContentLoaded",function(){
 console.log('произошла перезагрузка');
@@ -115,10 +113,10 @@ return randomArray;
 }
 
 export let arrayForCards:Array<number>=[];
-arrayForCards= getRandomArray(99,99);
-arrayForCardsSpec = getRandomArray(3, 99);
-arrayForCardsBest = getRandomArray(3, 99);
-arrayForCardsDesc = getRandomArray(4,99);
+arrayForCards= getRandomArray(100,100);
+arrayForCardsSpec = getRandomArray(3, 100);
+arrayForCardsBest = getRandomArray(3, 100);
+arrayForCardsDesc = getRandomArray(4,100);
 // console.log(arrayForCards);
 // console.log(arrayForCardsBest);
 // console.log(arrayForCardsSpec);
@@ -169,7 +167,7 @@ export function buildCardsCategory(){
   }
   // sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join("")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
 
-      
+      console.log('то что ниже должно запуститься')
   buildPaginationPage(0);
 }
 // const addcards = document.querySelectorAll('.btn-add-to-cart');
@@ -512,7 +510,21 @@ function buildPaginationPage(limiter:number) {
       priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+limiter].price;
       productTitle[i].innerHTML = listCategory[i+limiter].title;
       mainCardImg[i].setAttribute('src',`${listCategory[i+limiter].images[0]}`);
+      mainCardImg[i].setAttribute('data-id',`${listCategory[i+limiter].id}`);
       secondCardImg[i].classList.add("non");
+
+      // addToCarts[i].classList.remove('svgActive');
+      console.log('здесь будет ')
+       console.log(mainCardImg[i].getAttribute('data-id'));
+       try {
+        if(basket.has(mainCardImg[i].getAttribute('data-id'))){
+        addToCarts[i].classList.add('svgActive');
+      }
+           
+       } catch(err){
+        console.log('it is attribute');
+       }
+      // basket;
     }
 
   // }
@@ -590,6 +602,8 @@ for (let i =0; i < btnPages.length; i++) {
     }else {
       forOurBtn = (ourBtn-1)*18;
     }
+    console.log('кнопка номер один');
+    console.log(forOurBtn);
     // здесь вместо принудительной цифры надо исходить от ourBtn
     paginationText();
     buildPaginationPage(forOurBtn);
@@ -612,6 +626,8 @@ for (let i =0; i < btnPages.length; i++) {
     }else {
       forOurBtn = (ourBtn-1)*18;
     }
+    console.log('кнопка номер два');
+    console.log(forOurBtn);
     paginationText();
     buildPaginationPage(forOurBtn);
 
@@ -704,3 +720,22 @@ function paginationText(){
 //     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
 //       });
 // }
+
+console.log(list[arrayForCards[0]]);
+console.log(arrayForCards[0]);
+console.log(listCategory[0]);
+// function listCatByRandom(){
+  listCategory.length = 0;
+  
+
+ listCategory.push(list[arrayForCards[0]])
+// listCategory = arrayForCards.map(function(el){
+//   console.log(list[el]);
+// return list[el];
+// });
+for(let i = 0;i<arrayForCards.length;i++){
+  listCategory.push(list[arrayForCards[i]]);
+}
+// return listCategory;
+// }
+console.log(listCategory)
