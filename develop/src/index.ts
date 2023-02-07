@@ -704,3 +704,22 @@ function paginationText(){
 //     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
 //       });
 // }
+
+console.log(list[arrayForCards[0]]);
+console.log(arrayForCards[0]);
+console.log(listCategory[0]);
+// function listCatByRandom(){
+  listCategory.length = 0;
+  
+
+ listCategory.push(list[arrayForCards[0]])
+// listCategory = arrayForCards.map(function(el){
+//   console.log(list[el]);
+// return list[el];
+// });
+for(let i = 0;i<arrayForCards.length;i++){
+  listCategory.push(list[arrayForCards[i]]);
+}
+// return listCategory;
+// }
+console.log(listCategory)
