@@ -1,0 +1,24 @@
+// {
+//   "compilerOptions": {
+//     "allowSyntheticDefaultImports": true,
+//     "noImplicitAny": true,
+//     "module": "es6",
+//     "target": "es5",
+//     "allowJs": true
+//   },
+//   "files": ["src/index.ts"]
+// }
+{ 
+  //"compileOnSave": true,// При значении true указывает используемой редактору кода производить компиляцию при каждом сохранении файлов TypeScript. Поддерживается не всеми редакторами кода.
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    
+    // "allowJs": true
+    // "outDir": "dist"
+  },
+  "files": ["src/index.ts"]
+}
+
