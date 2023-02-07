@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as cat from './index';
 import '../index';
 
@@ -416,6 +417,7 @@ baskDown.addEventListener('click', function(){
 
 
 // для оптимизации нужно добавлять не обьекты. а индексы
+
 // let divBlock = document.createElement('div');
 // divBlock.innerHTML = `<div class="basket-column-card__bask border-card">
 // <img class="bask-image">
