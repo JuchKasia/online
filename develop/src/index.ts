@@ -7,11 +7,11 @@ import "../normalize.css";
 
 // import {Product} from './assets/types';
 import {list} from '../list';
-import {sizeFilter,colorFilter} from './category';
-import {proso} from './modalPuchase';
+import {sizeFilter,colorFilter,addToCarts, basket} from './category';
+// import {proso} from './modalPuchase';
 // import { fstat } from "fs";
 // import {} from './desc';
-console.log(proso);
+
 const category = new Set<string>(["men","women"]);
 const size = new Set<string>([]);
 const color = new Set<string>([]);
@@ -22,9 +22,49 @@ export const forLocal = {
   color
 } 
 export let countRandom = 0;
+export let  listCategory = [...list];
+listCategory.length = 0;
 
-export let  listCategory = list;
+//  function getRandomArray -------------------------------------------------
+// eslint-disable-next-line prefer-const
+let randomArray: number[] = [];
+let arrayForCardsSpec: Array<number> = [];
+let arrayForCardsBest: Array<number> = [];
+export let arrayForCardsDesc: Array<number> = [];
 
+function getRandomArray(m:number,max:number) {
+  randomArray = [];
+  for(let i = 0;i<m;i++){
+    const num:number = Math.floor(Math.random() * max);
+    if(!randomArray.includes(num)){
+      randomArray.push(num);
+    } else {
+      i--;
+    }
+  }
+return randomArray;
+}
+
+export let arrayForCards:Array<number>=[];
+arrayForCards= getRandomArray(99,99);
+arrayForCardsSpec = getRandomArray(3, 100);
+arrayForCardsBest = getRandomArray(3, 100);
+arrayForCardsDesc = getRandomArray(4,100);
+// console.log(arrayForCards);
+// console.log(arrayForCardsBest);
+// console.log(arrayForCardsSpec);
+// function getRandomArray finish -----------------------------------------
+
+
+
+for(let j = 0;j<arrayForCards.length;j++){
+  for(let i = 0;i<arrayForCards.length;i++){
+      if(list[i].id===arrayForCards[j]){
+        listCategory.push(list[i]);
+        break;
+      }
+  }
+}
 // console.log((localStorage));
 document.addEventListener("DOMContentLoaded",function(){
 console.log('произошла перезагрузка');
@@ -94,36 +134,6 @@ export function getCategoryArray(){
 
 }
 
-//  function getRandomArray -------------------------------------------------
-// eslint-disable-next-line prefer-const
-let randomArray: number[] = [];
-let arrayForCardsSpec: Array<number> = [];
-let arrayForCardsBest: Array<number> = [];
-export let arrayForCardsDesc: Array<number> = [];
-
-function getRandomArray(m:number,max:number) {
-  randomArray = [];
-  for(let i = 0;i<m;i++){
-    const num:number = Math.floor(Math.random() * max);
-    if(!randomArray.includes(num)){
-      randomArray.push(num);
-    } else {
-      i--;
-    }
-  }
-return randomArray;
-}
-
-export let arrayForCards:Array<number>=[];
-arrayForCards= getRandomArray(99,99);
-arrayForCardsSpec = getRandomArray(3, 99);
-arrayForCardsBest = getRandomArray(3, 99);
-arrayForCardsDesc = getRandomArray(4,99);
-// console.log(arrayForCards);
-// console.log(arrayForCardsBest);
-// console.log(arrayForCardsSpec);
-// function getRandomArray finish -----------------------------------------
-
 
 //  function buildCards -------------------------------------------------
 const productDetailText = document.querySelectorAll('.product-detail-text');
@@ -169,20 +179,9 @@ export function buildCardsCategory(){
   }
   // sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join("")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
 
-      
+      console.log('то что ниже должно запуститься')
   buildPaginationPage(0);
 }
-// const addcards = document.querySelectorAll('.btn-add-to-cart');
-//       for(let i = 0;i<addcards.length;i++){
-//         addcards[i].addEventListener('click',function(){
-//         // cartProductsCount.innerHTML = +cartProductsCount.innerHTML++
-//     console.log(listCategory[i]);
-//     console.log(addcards[i])
-//         });
-//       }
-
-
-
 
 function clearCards(){
   for(let i = 0;i<productMiniature.length;i++){
@@ -314,7 +313,7 @@ for (let i=0; i < colorLabel.length; i++) {
       forLocal.color.delete(colorLabel[i].innerHTML.split(' ')[0])
     }
     getCategoryArray();
-buildCardsCategory();
+    buildCardsCategory();
   });
   for (let j = 0; j < listCategory.length; j++) {
     if (colorLabel[i].innerHTML == listCategory[j].color) {
@@ -512,7 +511,21 @@ function buildPaginationPage(limiter:number) {
       priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+limiter].price;
       productTitle[i].innerHTML = listCategory[i+limiter].title;
       mainCardImg[i].setAttribute('src',`${listCategory[i+limiter].images[0]}`);
+      mainCardImg[i].setAttribute('data-id',`${listCategory[i+limiter].id}`);
       secondCardImg[i].classList.add("non");
+
+      // addToCarts[i].classList.remove('svgActive');
+      console.log('здесь будет ')
+       console.log(mainCardImg[i].getAttribute('data-id'));
+       try {
+        if(basket.has(mainCardImg[i].getAttribute('data-id'))){
+        addToCarts[i].classList.add('svgActive');
+      }
+           
+       } catch(err){
+        console.log('it is attribute');
+       }
+      // basket;
     }
 
   // }
@@ -590,6 +603,8 @@ for (let i =0; i < btnPages.length; i++) {
     }else {
       forOurBtn = (ourBtn-1)*18;
     }
+    console.log('кнопка номер один');
+    console.log(forOurBtn);
     // здесь вместо принудительной цифры надо исходить от ourBtn
     paginationText();
     buildPaginationPage(forOurBtn);
@@ -612,6 +627,8 @@ for (let i =0; i < btnPages.length; i++) {
     }else {
       forOurBtn = (ourBtn-1)*18;
     }
+    console.log('кнопка номер два');
+    console.log(forOurBtn);
     paginationText();
     buildPaginationPage(forOurBtn);
 
@@ -705,21 +722,5 @@ function paginationText(){
 //       });
 // }
 
-console.log(list[arrayForCards[0]]);
-console.log(arrayForCards[0]);
-console.log(listCategory[0]);
-// function listCatByRandom(){
-  listCategory.length = 0;
-  
 
- listCategory.push(list[arrayForCards[0]])
-// listCategory = arrayForCards.map(function(el){
-//   console.log(list[el]);
-// return list[el];
-// });
-for(let i = 0;i<arrayForCards.length;i++){
-  listCategory.push(list[arrayForCards[i]]);
-}
-// return listCategory;
-// }
-console.log(listCategory)
+
