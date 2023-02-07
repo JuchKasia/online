@@ -22,7 +22,49 @@ export const forLocal = {
   color
 } 
 export let countRandom = 0;
-export let  listCategory = list;
+export let  listCategory = [...list];
+listCategory.length = 0;
+
+//  function getRandomArray -------------------------------------------------
+// eslint-disable-next-line prefer-const
+let randomArray: number[] = [];
+let arrayForCardsSpec: Array<number> = [];
+let arrayForCardsBest: Array<number> = [];
+export let arrayForCardsDesc: Array<number> = [];
+
+function getRandomArray(m:number,max:number) {
+  randomArray = [];
+  for(let i = 0;i<m;i++){
+    const num:number = Math.floor(Math.random() * max);
+    if(!randomArray.includes(num)){
+      randomArray.push(num);
+    } else {
+      i--;
+    }
+  }
+return randomArray;
+}
+
+export let arrayForCards:Array<number>=[];
+arrayForCards= getRandomArray(99,99);
+arrayForCardsSpec = getRandomArray(3, 100);
+arrayForCardsBest = getRandomArray(3, 100);
+arrayForCardsDesc = getRandomArray(4,100);
+// console.log(arrayForCards);
+// console.log(arrayForCardsBest);
+// console.log(arrayForCardsSpec);
+// function getRandomArray finish -----------------------------------------
+
+
+
+for(let j = 0;j<arrayForCards.length;j++){
+  for(let i = 0;i<arrayForCards.length;i++){
+      if(list[i].id===arrayForCards[j]){
+        listCategory.push(list[i]);
+        break;
+      }
+  }
+}
 // console.log((localStorage));
 document.addEventListener("DOMContentLoaded",function(){
 console.log('произошла перезагрузка');
@@ -92,36 +134,6 @@ export function getCategoryArray(){
 
 }
 
-//  function getRandomArray -------------------------------------------------
-// eslint-disable-next-line prefer-const
-let randomArray: number[] = [];
-let arrayForCardsSpec: Array<number> = [];
-let arrayForCardsBest: Array<number> = [];
-export let arrayForCardsDesc: Array<number> = [];
-
-function getRandomArray(m:number,max:number) {
-  randomArray = [];
-  for(let i = 0;i<m;i++){
-    const num:number = Math.floor(Math.random() * max);
-    if(!randomArray.includes(num)){
-      randomArray.push(num);
-    } else {
-      i--;
-    }
-  }
-return randomArray;
-}
-
-export let arrayForCards:Array<number>=[];
-arrayForCards= getRandomArray(100,100);
-arrayForCardsSpec = getRandomArray(3, 100);
-arrayForCardsBest = getRandomArray(3, 100);
-arrayForCardsDesc = getRandomArray(4,100);
-// console.log(arrayForCards);
-// console.log(arrayForCardsBest);
-// console.log(arrayForCardsSpec);
-// function getRandomArray finish -----------------------------------------
-
 
 //  function buildCards -------------------------------------------------
 const productDetailText = document.querySelectorAll('.product-detail-text');
@@ -170,17 +182,6 @@ export function buildCardsCategory(){
       console.log('то что ниже должно запуститься')
   buildPaginationPage(0);
 }
-// const addcards = document.querySelectorAll('.btn-add-to-cart');
-//       for(let i = 0;i<addcards.length;i++){
-//         addcards[i].addEventListener('click',function(){
-//         // cartProductsCount.innerHTML = +cartProductsCount.innerHTML++
-//     console.log(listCategory[i]);
-//     console.log(addcards[i])
-//         });
-//       }
-
-
-
 
 function clearCards(){
   for(let i = 0;i<productMiniature.length;i++){
@@ -312,7 +313,7 @@ for (let i=0; i < colorLabel.length; i++) {
       forLocal.color.delete(colorLabel[i].innerHTML.split(' ')[0])
     }
     getCategoryArray();
-buildCardsCategory();
+    buildCardsCategory();
   });
   for (let j = 0; j < listCategory.length; j++) {
     if (colorLabel[i].innerHTML == listCategory[j].color) {
@@ -721,21 +722,5 @@ function paginationText(){
 //       });
 // }
 
-console.log(list[arrayForCards[0]]);
-console.log(arrayForCards[0]);
-console.log(listCategory[0]);
-// function listCatByRandom(){
-  listCategory.length = 0;
-  
 
- listCategory.push(list[arrayForCards[0]])
-// listCategory = arrayForCards.map(function(el){
-//   console.log(list[el]);
-// return list[el];
-// });
-for(let i = 0;i<arrayForCards.length;i++){
-  listCategory.push(list[arrayForCards[i]]);
-}
-// return listCategory;
-// }
-console.log(listCategory)
+

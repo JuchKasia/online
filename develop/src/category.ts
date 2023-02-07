@@ -15,7 +15,7 @@ export let descrpiptQuantity = 1;
 export let baskQuantity = 1;
 export const desk: ({ id: number; title: string; brand: string; category: string; description: string; price: number; discount: number; stock: number; size: string; color: string; images: string[]; } | { id: number; title: string; brand: string; category: string; description: string; price: number; stock: number; size: string; color: string; images: string[]; discount?: undefined; })[] = [];
 
-export let basketPrice = 0;
+// export let basketPrice = 0;
 export function sizeFilter(){
   const way = document.querySelector('.way');
   for (let i=0; i < cat.sizeLabel.length; i++) {
@@ -72,12 +72,12 @@ export const main = document.querySelector('.main');
 const pageDescription = document.querySelector('.pageDescription');
 const descriptionPage = document.querySelector('.description');
 export const addToCarts = document.querySelectorAll('.add-to-cart');
+const idDeskCard = document.querySelector('.idDeskCard');
 
 for(let i = 0;i<addcards.length;i++){
     
   addcards[i].addEventListener('click',function(){
     const ourId = cat.mainCardImg[i].getAttribute('data-id');
-console.log('click')
     console.log(cat.listCategory); 
     console.log(cat.arrayForCards);
     console.log(ourId);
@@ -90,81 +90,11 @@ console.log('click')
       
       basket.delete(ourId);
      }
-
-
-      
-  //    console.log(i+(18*(cdpvalue-1)));
-  //    console.log('one card')
-  //    console.log(cat.listCategory[i+(18*(+cdpvalue-1))]);
-  //   console.log(cat.listCategory[i+(18*(+cdpvalue-1))].price);
-  //   console.log('our random');
-  //   console.log(cat.arrayForCards);
-  //   console.log('countRandom ', cat.countRandom);
-     basketPrice=0;
-  //   // list[arrayForCards[i]]
-  //   if(cat.countRandom==0){
-  //     if(!basket.has(cat.listCategory[cat.arrayForCards[i+(18*(+cdpvalue-1))]].id)){
-  //       addToCarts[i].classList.add('svgActive'); 
-  //       // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
-  //       cartProductsCount.innerHTML = basket.size + "";
-  //       // cartProductsValue.innerHTML = cpv + ;
-  //       basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
-  //   }else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-  //     basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-  //     addToCarts[i].classList.remove('svgActive'); 
-  //   }
-  //   }else {
-  //     if(!basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-  //       addToCarts[i].classList.add('svgActive'); 
-  //       // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
-  //       cartProductsCount.innerHTML = basket.size + "";
-  //       // cartProductsValue.innerHTML = cpv + ;
-  //       basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
-  //   }else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-  //     basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-  //     addToCarts[i].classList.remove('svgActive'); 
-  //   }
-  // }
-
-    
+     cartProductsCount.innerHTML = String(basket.size);
+     cartProductsValue.innerHTML = `$ `;
      console.log(basket);
-   
+     showHeaderPrice();
 
-
-// 
-    // basketPrice += cat.listCategory[cat.arrayForCards[i]].price;
-
-
-    // if(cat.countRandom==0){
-    //   basket.push(cat.listCategory[cat.arrayForCards[i]].id); 
-    //   basketPrice+=cat.listCategory[cat.arrayForCards[i]].price
-    // }else {
-    // basket.push(cat.listCategory[i].id);
-    // basketPrice+=cat.listCategory[i].price
-    // }
-
-
-      // if(!addToCarts[i].classList.contains('svgActive')) {
-      //   addToCarts[i].classList.add('svgActive');
-      // } 
-      // if (basket.has(cat.listCategory[cat.arrayForCards[i]].id)) {
-      //   addcards[i].classList.remove('svgActive');
-      //   basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-      // } 
-            // if(addcards[i].classList.contains('svgActive')){
-      //   addcards[i].classList.remove('svgActive');
-      // }
-    
-
-    // addcards[i].addEventListener('click',function(){
-    //   addToCarts[i].classList.remove('svgActive');
-    //   cartProductsCount.innerHTML = basket.size -1 + "";
-      // basketPrice+=cat.listCategory[i].price
-            // basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-
-
-      // delete cat.listCategory[cat.arrayForCards[i]].price;
-    // });
   });
   btnEyeCart[i].addEventListener('click',function(){
     // const cdpvalue = +document.querySelector(".cdp").innerHTML;
@@ -185,6 +115,7 @@ console.log('click')
     }else {
       desk.push(cat.listCategory[i]);
     }
+    idDeskCard.setAttribute('data-id',cat.mainCardImg[i].getAttribute('data-id'));
     buildDescription();
     buildBestDeck();
   });
@@ -340,12 +271,26 @@ function buildBestDeck(){
 const descriptionButton = document.querySelector('.description-button');
 // добавление в типо карзину простое отоброжение 
 descriptionButton.addEventListener('click',function(){
-  basket.set(desk[0].id, 1);
-  cartProductsCount.innerHTML = descrpiptQuantity + "";
-  cartProductsValue.innerHTML = cpv + desk[0].price * descrpiptQuantity;
+basket.set(idDeskCard.getAttribute('data-id'),+descBaseValue.innerHTML);
+// здесь нужно добавить отображение в хеадер
+
+  // когда будет работать ниже можно удалять
+  // basket.set(desk[0].id, 1);
+  // cartProductsCount.innerHTML = descrpiptQuantity + "";
+  // cartProductsValue.innerHTML = cpv + desk[0].price * descrpiptQuantity;
 });
 
-
+// function for show by header ----------------------------------------------------------------
+ function showHeaderPrice(){
+//    let count = 0
+// for(const [, elem] in basket.values()){
+//   // count+=+amount;
+//   count+=elem;
+}
+// console.log('count',count)
+// console.log(basket.values());
+// return count;
+//  }
 
 // basket page --------------------------------------------------------------
 const baskImage = document.querySelector('.bask-image');
@@ -367,11 +312,11 @@ function getshopCard(){
 
 baskDellImg.setAttribute('src',`../assets/svg/basket.svg`);//it is not works!!!!!!!
 
-for(let i = 0;i<cat.listCategory.length;i++){
+// for(let i = 0;i<cat.listCategory.length;i++){
 // if(cat.listCategory[i].id==basket[0]){
 //   basket[0] = i;
 // }
-}
+// }
 // baskImage.setAttribute('src',`${cat.listCategory[basket[0]].images[0]}`);
 // baskImage.classList.add('scale');
 // baskBlockValue.innerHTML = 'Cost : $ '+ cat.listCategory[basket[0]].price;
@@ -414,6 +359,7 @@ baskDown.addEventListener('click', function(){
   // baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
   // baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
   });
+
 
 
 // для оптимизации нужно добавлять не обьекты. а индексы
