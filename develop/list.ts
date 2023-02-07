@@ -62,8 +62,8 @@ export const list  =
   "discount":11,
   "stock":5,
   "size":"l",
-  "color":"off white",
-  "images":["https://img.freepik.com/free-photo/woman-in-blue-shirt_144627-44782.jpg?w=360&t=st=1671042109~exp=1671042709~hmac=587bb6f366a22c7dbfcee9170569d8223a397ea8ee3e0a187da1e53212847526","https://img.freepik.com/free-photo/woman-in-blue-shirt_144627-44779.jpg?w=360&t=st=1671042118~exp=1671042718~hmac=42797b344a6bc741f82b24efedb81ebda8a6c1ea198e80ff7219992ba5d2a162","https://img.freepik.com/free-photo/woman-in-blue-shirt_144627-44781.jpg?w=360&t=st=1671042131~exp=1671042731~hmac=c66c80f090ec68ec44b3de880320515606d56ab15c14ed033080fef767448035"]
+  "color":"white",
+  "images":["https://img.freepik.com/free-photo/front-view-young-woman-in-white-blouse-with-coquette-face-on-white-background-job-office-female-feeling-model-emotion_140725-99074.jpg?w=996&t=st=1673714385~exp=1673714985~hmac=065aa90e75653f75af86c9059df9704a9c26fa5ab4e99eda1463b2b031e4a2a6","https://img.freepik.com/free-photo/female-office-employee-in-elegant-white-blouse-on-white_140725-44471.jpg?w=996&t=st=1673714399~exp=1673714999~hmac=8e3d20aa5d3a925b1b6b97cf50ea6e9ea672854dff9e1fb0295e05659e1fcfe9","https://img.freepik.com/free-photo/female-office-employee-in-white-blouse-holding-documents-on-white_140725-44625.jpg?t=st=1673714319~exp=1673714919~hmac=e402ba6dfda3d4619c6829b2f2d944763593ca674ac9b1e50ac1d27868208355"]
   },
   {
     "id":5,
@@ -76,7 +76,7 @@ export const list  =
   "stock":8,
   "size":"s",
   "color":"black",
-  "images":["https://img.freepik.com/free-photo/young-woman-with-long-straight-hair-at-studio-portrait-of-an-attractive-brunette-girl-fashion-model-wears-black-shirt-anf-jeans-sexy-female-model_186202-7463.jpg?w=360&t=st=1671041595~exp=1671042195~hmac=d1e6966aa9a36a8fe7b16c420580b5c06799240acf2ace75b08bde94d85a5081","https://img.freepik.com/free-photo/young-woman-with-long-straight-hair-at-studio-portrait-of-an-attractive-brunette-girl-fashion-model-wears-black-shirt-anf-jeans-sexy-female-model_186202-7462.jpg?w=360&t=st=1671041604~exp=1671042204~hmac=2fcc1f022e8e900c3835fe74e972d1687d6a4ab84727d063491dd0023df5a13a","https://img.freepik.com/free-photo/young-woman-with-long-straight-hair-at-studio-portrait-of-an-attractive-brunette-girl-fashion-model-wears-black-shirt-anf-jeans-sexy-female-model_186202-7461.jpg?w=360&t=st=1671041617~exp=1671042217~hmac=386d6118b6a66413a761b648c9ae65f95d4e9fda12c5143b9d3c0ac9c0c5bfd7"]
+  "images":["https://img.freepik.com/free-photo/girl-in-black-shirt-giving-appealing-and-neutral-poses-high-quality-photo_144627-60563.jpg?w=996&t=st=1673714462~exp=1673715062~hmac=74f16941b8a75f13ea69a1efac0db31018fa9a443ccb5168ef247525ebddcc99","https://img.freepik.com/free-photo/girl-in-black-shirt-giving-appealilng-poses-for-social-media-cover-photo-high-quality-photo_144627-60516.jpg?w=996&t=st=1673714483~exp=1673715083~hmac=c700eb2405e2f6a5ebfe800800998f13f4d9436ecabbc7b519d2cf0dca80cce1","https://img.freepik.com/free-photo/girl-in-black-shirt-giving-appealing-and-neutral-poses-high-quality-photo_144627-60547.jpg?w=996&t=st=1673714500~exp=1673715100~hmac=c620fcb4e1af2f8788067117d9419979d029243f1e96efbc6b7bac9d487b3d83"]
   },
   {
     "id":6,
@@ -112,7 +112,7 @@ export const list  =
   "price":58,
   "stock":1,
   "size":"m",
-  "color":"off white",
+  "color":"beige",
   "images":["https://img.freepik.com/free-photo/beautiful-woman-in-the-studio_1157-17120.jpg?w=740&t=st=1671043372~exp=1671043972~hmac=420e2bc6a00b864b0f5c845257823dbad18e30f844b7eed40992ea48bb860816","https://img.freepik.com/free-photo/beautiful-woman-in-the-studio_1157-17074.jpg?w=740&t=st=1671043382~exp=1671043982~hmac=5b707f1d827102c401571fbdcb6854936507140e42cd1f70d05a81a8affbd4a6","https://img.freepik.com/free-photo/beautiful-woman-in-the-studio_1157-17073.jpg?w=740&t=st=1671043425~exp=1671044025~hmac=18e745b302b94fc1a2c8db4dc78bcd720979798c657761e3e8cf9e5cb6ee2994"]
   },
   {
@@ -125,7 +125,7 @@ export const list  =
   "discount":0,
   "stock":3,
   "size":"l",
-  "color":"off white",
+  "color":"beige",
   "images":["https://img.freepik.com/free-photo/woman-in-shirt-and-jeans-going-down-on-steps_23-2147910873.jpg?w=740&t=st=1671045281~exp=1671045881~hmac=d259b8837065296504ca39e85fd2fd0954343a470d062c95e27c513b8d298830","https://img.freepik.com/free-photo/woman-sitting-on-steps-and-readjusting-hairs_23-2147910844.jpg?w=740&t=st=1671045307~exp=1671045907~hmac=a4d667ee2ef234371dd1b98b837e941d8e50d7b58cdfbb7c2e00a2e7c1882d5b","https://img.freepik.com/free-photo/attractive-woman-leaning-on-tree-and-reading-book-in-sunny-park_23-2147910841.jpg?w=740&t=st=1671045689~exp=1671046289~hmac=8f0ad5db40ac93441ea9a77fc71fd8eeb2ff0413a8db4d3f1233761f83addf1e"]
   },
   {
@@ -138,7 +138,7 @@ export const list  =
   "discount":5,
   "stock":3,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/clothes-season-brown-technology-red_1157-2857.jpg?w=740&t=st=1671046794~exp=1671047394~hmac=17a847cdaf7da9018061f2a479a48de382ed375bda801b65b7f1296a61202db2","https://img.freepik.com/free-photo/lady-young-clothes-outside-portrait_1157-3197.jpg?w=740&t=st=1671046806~exp=1671047406~hmac=a0ebff197bc2b9926df40e452662dd6a8a3455d689d7478df5e09d1c9debed7c","https://img.freepik.com/free-photo/wall-youth-people-cute-sofa_1157-2856.jpg?w=740&t=st=1671046846~exp=1671047446~hmac=65b978f6c548ccbdf5a65a4676e1e9d84a583e232406f41dcd2702b907601067"]
   },
   {
@@ -177,7 +177,7 @@ export const list  =
   "discount":2,
   "stock":4,
   "size":"l",
-  "color":"off white",
+  "color":"beige",
   "images":["https://img.freepik.com/free-photo/fashionable-tall-arab-beard-man-wear-on-shirt-jeans-and-sunglasses-sitting-on-red-bench-at-park_627829-5838.jpg?w=740&t=st=1671047477~exp=1671048077~hmac=ab4fee0ac1172cf7091dc432900d3db508f46d6b975848fdf7f5cc8c4a75aae1","https://img.freepik.com/free-photo/fashionable-tall-arab-beard-man-wear-on-shirt-jeans-and-sunglasses-posed-on-park-and-hold-bag-case_627829-5806.jpg?w=360&t=st=1671047464~exp=1671048064~hmac=1b78fdf59cfcca24919208c5260a95dd3b535638a2471a4e2c33b3b0394771f1","https://img.freepik.com/free-photo/fashionable-tall-arab-beard-man-wear-on-shirt-jeans-and-sunglasses-posed-on-park-and-hold-wallet-at-hand_627829-5801.jpg?w=740&t=st=1671047501~exp=1671048101~hmac=f0ad0e134b1e4076aad341acc1d9713a3f63ad52ac4b99e120025e8c17fbe869"]
   },
   {
@@ -204,7 +204,7 @@ export const list  =
   "stock":15,
   "size":"m",
   "color":"white",
-  "images":["https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-modelsexy-modern-man-dressed-in-white-shirt-and-trousers-fashion-male-posing-on-street-background-in-europe-city-at-sunset-in-sunglasses_158538-22388.jpg?w=740&t=st=1671099233~exp=1671099833~hmac=09ce0ad0699a643e746883c5b4b9894beb89396a8bc9072c1b60babd8c1f943b","https://img.freepik.com/free-photo/handsome-confident-stylish-hipster-lambersexual-modelmodern-man-dressed-in-white-shirt-and-trousers-fashion-male-posing-in-the-street-near-embankment-in-europe-park-city-at-sunset-in-sunglasses_158538-22368.jpg?w=740&t=st=1671099277~exp=1671099877~hmac=e031392eef6e22efac1872caf6d647144480832c8766ade65aa311c45a58fda5","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-modelsexy-modern-man-dressed-in-white-shirt-and-trousers-fashion-male-posing-on-street-background-in-europe-city-at-sunset-in-sunglasses_158538-22376.jpg?w=740&t=st=1671099291~exp=1671099891~hmac=4e8de65cdbada943a7cdb596e5177299c607f2b62e7389df13de901bd7d13de0"]
+  "images":["https://img.freepik.com/free-photo/handsome-confident-stylish-hipster-lambersexual-modelmodern-man-dressed-in-white-shirt-and-trousers-fashion-male-posing-in-the-street-near-embankment-in-europe-park-city-at-sunset-in-sunglasses_158538-22368.jpg?w=740&t=st=1671099277~exp=1671099877~hmac=e031392eef6e22efac1872caf6d647144480832c8766ade65aa311c45a58fda5","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-modelsexy-modern-man-dressed-in-white-shirt-and-trousers-fashion-male-posing-on-street-background-in-europe-city-at-sunset-in-sunglasses_158538-22388.jpg?w=740&t=st=1671099233~exp=1671099833~hmac=09ce0ad0699a643e746883c5b4b9894beb89396a8bc9072c1b60babd8c1f943b","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-modelsexy-modern-man-dressed-in-white-shirt-and-trousers-fashion-male-posing-on-street-background-in-europe-city-at-sunset-in-sunglasses_158538-22376.jpg?w=740&t=st=1671099291~exp=1671099891~hmac=4e8de65cdbada943a7cdb596e5177299c607f2b62e7389df13de901bd7d13de0"]
   },
   {
     "id":16,
@@ -216,7 +216,7 @@ export const list  =
   "discount":0,
   "stock":23,
   "size":"l",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/portrait-of-handsome-smiling-stylish-hipster-lambersexual-modelmodern-man-dressed-in-blue-shirt-fashion-male-posing-near-skyscraper-on-the-street-background-in-sunglasses-outdoors-at-sunset_158538-20765.jpg?w=740&t=st=1671099661~exp=1671100261~hmac=f18940393df39952fd65b39019e1b47839173572930ec37adc73f0c1edc8e41f","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-modelmodern-man-dressed-in-white-shirt-fashion-male-posing-in-the-street-background-near-skyscrapers-in-sunglasses_158538-20763.jpg?w=740&t=st=1671099676~exp=1671100276~hmac=1828976a3a274629f76ddc6c011e7832b92d662082317ff822927e376ebdef55","https://img.freepik.com/free-photo/handsome-confident-stylish-hipster-lambersexual-modelmodern-man-dressed-in-blue-shirt-fashion-male-posing-near-skyscraper-on-the-street-background-in-sunglasses-outdoors-at-sunsetcrossed-arms_158538-20771.jpg?w=740&t=st=1671099684~exp=1671100284~hmac=4f1eb689318ccb6f10993d34af9a73c1185599a4cac415ba9a1838a712af1a22"]
   },
   {
@@ -255,7 +255,7 @@ export const list  =
   "discount":11,
   "stock":25,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/handsome-smiling-hipster-lumbersexual-businessman-model-wearing-casual-jeans-shirt-clothes_158538-17437.jpg?w=740&t=st=1671100377~exp=1671100977~hmac=fad9dbf5e139f9a527e482f2ea3d6111edbd94439bc668d724fb42503eeffe93","https://img.freepik.com/free-photo/handsome-smiling-hipster-lumbersexual-businessman-model-wearing-casual-jeans-shirt-clothes_158538-17443.jpg?w=740&t=st=1671100402~exp=1671101002~hmac=4ee196a7935dfa6df000bb87be96e57fb2e478f21b23641329315a47b23e35bc","https://img.freepik.com/free-photo/handsome-smiling-hipster-lumbersexual-businessman-model-wearing-casual-jeans-shirt-clothes_158538-17431.jpg?w=740&t=st=1671100411~exp=1671101011~hmac=2bb281a8652936eda74178285e0ae120ad18af8e22c426ca5f233398a1faf405"]
   },
   {
@@ -333,7 +333,7 @@ export const list  =
   "discount":11,
   "stock":26,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/confident-young-man-pointing-at-camera_74855-4132.jpg?w=740&t=st=1671101595~exp=1671102195~hmac=681ff222b31362dcb6eb1e5252c09df34bb68be515067f0015fa25e8203781c4","https://img.freepik.com/free-photo/cheerful-young-man-showing-hand-heart-gesture_74855-4027.jpg?w=740&t=st=1671101603~exp=1671102203~hmac=c22dad9441093e044b9502878eb4ba2e18814cb7590163f23d20566e35421a5c","https://img.freepik.com/free-photo/excited-young-man-showing-biceps_74855-4187.jpg?w=740&t=st=1671101613~exp=1671102213~hmac=c8a9d70a91833a9c279618225dc018b8fa3e6b3d4ae1c647545aaf9f4252d74d"]
   },
   {
@@ -450,7 +450,7 @@ export const list  =
   "discount":6,
   "stock":8,
   "size":"l",
-  "color":"off white",
+  "color":"beige",
   "images":["https://img.freepik.com/free-photo/feminine-woman-blowing-golden-confetti-in-evening-dress_176420-17609.jpg?w=740&t=st=1671103856~exp=1671104456~hmac=c3aaa0c2bbacda56a305399cb1f76772d0178642ed59baa965f7d7a128342d7b","https://img.freepik.com/free-photo/profile-of-attractive-woman-in-evening-dress-smiling_176420-17844.jpg?w=740&t=st=1671103864~exp=1671104464~hmac=b237bf819132eb31501fa22eb0565940f619a93aa11e71836afd95c59d4e0308","https://img.freepik.com/free-photo/gorgeous-sassy-woman-in-stylish-evening-dress_176420-17843.jpg?w=740&t=st=1671103876~exp=1671104476~hmac=377aa690d11db72b0df553c94721a6d88d842af5101b1b7835160f837b91b1e2"]
   },
   {
@@ -542,7 +542,7 @@ export const list  =
   "stock":12,
   "size":"l",
   "color":"white",
-  "images":["https://img.freepik.com/free-photo/beauty-fashion-and-women-concept-portrait-of-tender-lovely-young-blond-girl-in-beautiful-white-dress-fold-lips-in-kiss-and-make-heart-sign-near-chest-standing-pink-background-show-sympathy_1258-93694.jpg?w=740&t=st=1671106224~exp=1671106824~hmac=4c9a409599751cad7a23ee12780714124ff1928a7a778ed079bdbec8f3ae5fd4","https://img.freepik.com/free-photo/beauty-fashion-and-women-concept-tender-and-carefree-pretty-young-girl-enjoying-spring-time-wearing-white-dress-dancing-and-looking-away-with-beaming-smile-having-fun-pink-background_1258-93885.jpg?w=826&t=st=1671106234~exp=1671106834~hmac=c8484d4c4827df328b3d4be153cb4037edf80b6b8d1d37d2ef88e3f314d074e1","https://img.freepik.com/free-photo/beauty-fashion-and-women-concept-portrait-of-uncertain-seriouslooking-feminine-young-blond-woman-in-white-dress-touch-chin-smirk-and-frowning-thoughtful-look-away-thinking_1258-93855.jpg?w=740&t=st=1671106253~exp=1671106853~hmac=eaf77cfa6f37f3555ca0de236f3d3b1e01237b92046e93cf9acf7206f5953a73"]
+  "images":["https://img.freepik.com/free-photo/beauty-portrait-of-young-brunette-woman-with-evening-makeup-and-perfect-clean-skin-sexy-model-with-curly-hair-posing-in-studio-with-red-bright-natural-lips-in-silver-dress_158538-23851.jpg?w=996&t=st=1673715562~exp=1673716162~hmac=71072251593a8934524ddb4956c38d317ed54772d1fcf84b4e4625ae17823fda","https://img.freepik.com/free-photo/beauty-portrait-of-young-brunette-woman-with-evening-makeup-and-perfect-clean-skin-sexy-model-with-curly-hair-posing-in-studio-with-red-bright-natural-lips-isolated-on-white-in-silver-dress_158538-23877.jpg?w=740&t=st=1673715572~exp=1673716172~hmac=d9be51029069ec9a61cb60acf584802f438c6301135f5ca1694fcab90afe6df2","https://img.freepik.com/free-photo/beauty-portrait-of-young-brunette-woman-with-evening-makeup-and-perfect-clean-skin-sexy-model-with-curly-hair-posing-in-studio-with-red-bright-natural-lips-in-silver-dress_158538-23853.jpg?w=740&t=st=1673715583~exp=1673716183~hmac=bc95243741139e59269bc2015324321f5aa2dfb8ade494a25ca2d9065f9500d5"]
   },
   {
     "id":42,
@@ -567,7 +567,7 @@ export const list  =
   "discount":1,
   "stock":9,
   "size":"m",
-  "color":"off white",
+  "color":"beige",
   "images":["https://img.freepik.com/free-photo/portrait-of-cute-smiling-blond-girl-in-sunglasses-looking-amazed-and-happy-at-camera-posing-in-summer-outfit-against-white-background_176420-50435.jpg?w=740&t=st=1671106634~exp=1671107234~hmac=cbf1be6854fe4f2fc02048a6031771fbb01baf594668d396e8b2cb715b66bd90","https://img.freepik.com/free-photo/portrait-of-excited-beautiful-blond-girl-claps-hands-and-smiling-applause-to-praise-you-standing-in-dress-over-white-background_176420-50439.jpg?w=740&t=st=1671106643~exp=1671107243~hmac=495223bdad933f009fe070ef8e46195e97c103b39aedc44ccf33d51e36d2611f","https://img.freepik.com/free-photo/stylish-blond-summer-girl-wearing-sunglasses-and-dress-smiling-and-looking-coquettish-at-camera-standing-over-white-background_176420-50433.jpg?w=740&t=st=1671106658~exp=1671107258~hmac=988cf966fbe2ca19c11546d98a2e31f3aecaea913fc118bf7cada6807b6111c2"]
   },
   {
@@ -593,7 +593,7 @@ export const list  =
   "discount":6,
   "stock":3,
   "size":"l",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/an-attractive-young-woman-in-a-sweater-sits-by-the-river_169016-24718.jpg?w=740&t=st=1671107517~exp=1671108117~hmac=e9ff43ec78df0dbbca8e8b49e65f8fe83484b755428baee999b66012c8e7ace6","https://img.freepik.com/free-photo/the-woman-hid-her-face-in-a-sweater-sitting-by-the-sea_169016-25140.jpg?w=740&t=st=1671107524~exp=1671108124~hmac=0d79da7b6c655fb5ffe81414629337bec2a689da59d614d88d79cf1ef13b6173","https://img.freepik.com/free-photo/a-young-woman-with-a-cup-of-coffee-sits-by-the-river_169016-24945.jpg?w=740&t=st=1671107531~exp=1671108131~hmac=b72e4ac6d785c393256637a27b4bfce5701b85360c244c0acc20e58dd125b2cb"]
   },
   {
@@ -607,7 +607,7 @@ export const list  =
   "stock":20,
   "size":"l",
   "color":"green",
-  "images":["https://img.freepik.com/free-photo/winter-holidays-and-christmas-happy-man-in-funny-sweater-pointing-finger-at-upper-left-corner-logo-s_1258-128078.jpg?w=740&t=st=1671107838~exp=1671108438~hmac=d02b773933724df437436ed145af15c315714ef33f33256ec09f147a6329e03b","https://img.freepik.com/free-photo/winter-holidays-and-christmas-man-looking-excited-as-pointing-finger-right-at-logo-standing-amazed-against-white-background_1258-128311.jpg?w=826&t=st=1671107853~exp=1671108453~hmac=64ccb8796ca93049110e104372447c0fc76753701574f224d5bd6bc65bdb1f2f","https://img.freepik.com/free-photo/concept-of-covid-and-christmas-holidays-funny-man-put-on-face-mask-on-his-sweater-deer-standing-over_1258-127974.jpg?w=740&t=st=1671107869~exp=1671108469~hmac=9a42ae9e58eaf5ce708528662d63df3d48dd56538696bc8561b965ab3ad3cd96"]
+  "images":["https://img.freepik.com/free-photo/positive-good-looking-young-bearded-man-in-glasses-wearing-green-sweater-while-standing-smiling-slightly-and-keeping-hands-folded_295783-6060.jpg?w=996&t=st=1673714984~exp=1673715584~hmac=27f490a4a3c7243e777af3810f3d5e35394e5bbc420d850e9dffd000d6f17fbd","https://img.freepik.com/free-photo/cheerful-young-bearded-male-with-brown-short-hair-wearing-glasses-while-posing-raising-hand-to-his-chin-and-smiling-positively-while-looking-upwards_295783-6068.jpg?w=996&t=st=1673714996~exp=1673715596~hmac=b87757c83ff55a720e0c351dafa211e2433e0f603f5a2b2280c16337ab6a8682","https://img.freepik.com/free-photo/portrait-of-confused-young-bearded-man-with-short-haircut-holding-his-eyewear-while-looking-puzzled-showing-ahead-with-index-figer-while-standing_295783-6063.jpg?w=996&t=st=1673715007~exp=1673715607~hmac=eae84e3278bd910e21ef8a340d728549151217ba3ef232f8640df969bd61ec5d"]
   },
   {
     "id":47,
@@ -619,8 +619,8 @@ export const list  =
   "discount":1,
   "stock":1,
   "size":"m",
-  "color":"off white",
-  "images":["https://img.freepik.com/free-photo/image-of-thoughful-handsome-man-making-decision-pointing-and-looking-left-at-something-interesting-showing-logo-over-white-background_1258-128446.jpg?w=740&t=st=1671108076~exp=1671108676~hmac=7ceefb8d087afefc30f960aad1ae6e48702ad634bac27d344d50080ffe24427c","https://img.freepik.com/free-photo/portrait-of-handsome-middleaged-man-shut-nose-from-disgusting-smell-complaining-on-stink-standing-ov_1258-129018.jpg?w=740&t=st=1671108082~exp=1671108682~hmac=b55d29403fa40686ce2f1474ce514ea6f606b7acb9036defa089f396ed6f5499","https://img.freepik.com/free-photo/image-of-annoyed-middleaged-man-rolling-eyes-looking-up-wearing-sweater-and-glasses-standing-over-wh_1258-129158.jpg?w=740&t=st=1671108090~exp=1671108690~hmac=266fae27bc10f75a7d8b8438540bb670d356631375333367a4f9956997440ee8"]
+  "color":"white",
+  "images":["https://img.freepik.com/free-photo/fashion-model-in-white-sweater-standing-on-concrete-wall-and-raising-hand-for-attention_144627-50106.jpg?w=996&t=st=1673715124~exp=1673715724~hmac=9856419279f5523dac4a8d7079ac1d16e70846c33fc9ff6ee140ab5f4812c43c","https://img.freepik.com/premium-photo/fashion-model-in-white-sweater-standing-on-concrete-wall-and-looks-sleepy-or-tired_144627-50108.jpg?w=996","https://img.freepik.com/free-photo/fashion-model-in-white-sweater-standing-on-concrete-wall-and-looks-sleepy-or-tired_144627-50102.jpg?w=996&t=st=1673715154~exp=1673715754~hmac=96208f60041b761884c919ac720887dcbe909a48db2745b6aad6b5511e9b21ef"]
   },
   {
     "id":48,
@@ -632,7 +632,7 @@ export const list  =
   "discount":1,
   "stock":22,
   "size":"m",
-  "color":"off white",
+  "color":"pink",
   "images":["https://img.freepik.com/free-photo/confused-redhead-woman-frowning-pointing-fingers-at-herself-being-offended-or-accused-standing-in-tank-top-against-white-background_176420-47237.jpg?w=740&t=st=1671108332~exp=1671108932~hmac=ec70ad6ded58e212310a935ff50fa42e67e7c034ba6632fc4cfd390930198b64","https://img.freepik.com/free-photo/redhead-smiling-woman-shows-thumbs-up-looking-happy-and-motivated-complimenting-standing-in-tank-top-against-white-background_176420-47274.jpg?w=740&t=st=1671108338~exp=1671108938~hmac=0911de5a36669797a0e3818302d773ff48595c5f9df891cbebc538611c3b5ec2","https://img.freepik.com/free-photo/fashion-and-women-beauty-stylish-redhead-girl-in-tank-top-with-jeans-holding-hands-in-pockets-smiling-happy-standing-relaxed-looking-aside-white-background_176420-47199.jpg?w=740&t=st=1671108347~exp=1671108947~hmac=c28e221b0a5f6ef994604e8295c0861ab2623c38711771bcb9e806e88f7db2f7"]
   },
   {
@@ -646,7 +646,7 @@ export const list  =
   "stock":25,
   "size":"l",
   "color":"white",
-  "images":["https://img.freepik.com/free-photo/very-fit-man-posing-while-wearing-tank-top_23-2148700613.jpg?w=360&t=st=1671108496~exp=1671109096~hmac=a89b0e8185ffa81f37d392ab925cbbc44f4f96bb1664483827c58c1f67439b61","https://img.freepik.com/free-photo/handsome-fit-man-posing-while-wearing-tank-top_23-2148700614.jpg?w=360&t=st=1671108505~exp=1671109105~hmac=8553effcb5f8ffec8639bff6ab500740469381b417115a035187f24799c5cede","https://img.freepik.com/free-photo/side-view-of-fit-man-posing-while-wearing-tank-top-with-crossed-arms_23-2148700611.jpg?w=360&t=st=1671108512~exp=1671109112~hmac=328ef438176800e5211c9a4cd72ccbba658ed147fb833b98bed0e27a28a35575"]
+  "images":["https://img.freepik.com/free-photo/young-man-in-white-t-shirt-and-black-pants-raising-index-finger-in-eureka-gesture-and-looking-pensive_176474-84136.jpg?w=996&t=st=1673714766~exp=1673715366~hmac=c851d2b7f08356c8640388bff93e4af739726e98f63fa371af5cacaff31c2a45","https://img.freepik.com/free-photo/young-man-in-white-t-shirt-and-black-pants-holding-hands-on-waist-and-looking-happy_176474-84138.jpg?w=996&t=st=1673714775~exp=1673715375~hmac=c406a9727ddc726670464c12447083c362fce3608ec7fd78788fe41ca5401469","https://img.freepik.com/free-photo/young-man-stretching-hands-as-holding-something-in-white-t-shirt-and-black-pants-and-looking-serious_176474-84139.jpg?w=996&t=st=1673714851~exp=1673715451~hmac=677d8e639b8fe1106485bda53ef7d7207e7eaba9fc8e79831ee4579832d4b8b5"]
   },
   {
     "id":50,
@@ -710,7 +710,7 @@ export const list  =
   "discount":10,
   "stock":12,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/front-view-young-male-in-blue-striped-jersey-on-the-black-wall_140725-108673.jpg?w=740&t=st=1671112135~exp=1671112735~hmac=8919df83533e15c26adfd696db9f9404d8300072899f15e3a3498ad7792a42b4","https://img.freepik.com/free-photo/front-view-young-male-in-blue-striped-jersey-on-the-black-wall-photo-color-emotion-darkness-human-model_140725-108677.jpg?w=740&t=st=1671112164~exp=1671112764~hmac=f4da71eac1d3b6471d08f5047af57d5ac66bec62fed090ecdbfc3e6697d2fedb","https://img.freepik.com/free-photo/front-view-young-male-in-blue-striped-jersey-on-the-black-wall_140725-108672.jpg?w=740&t=st=1671112187~exp=1671112787~hmac=317d991c664111017f0e68201f4a2d94acdda3247f5e05ea1b8531846bc1130f"]
   },
   {
@@ -762,7 +762,7 @@ export const list  =
   "discount":3,
   "stock":15,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/young-lady-looking-at-camera-in-singlet-skirt-and-looking-cheerful-front-view_176474-51326.jpg?w=740&t=st=1671113094~exp=1671113694~hmac=63ff18d8d1ca27212e3ff71e512702feafe0e43e7571c07663bff84472fddd7e","https://img.freepik.com/free-photo/young-woman-showing-double-thumbs-up-in-singlet-skirt-and-looking-joyful-front-view_176474-51580.jpg?w=740&t=st=1671113101~exp=1671113701~hmac=da8385113d2b38cb29a1e54bf11d99f5f00b3fc6775a2a82bee8541d38e4ffd8","https://img.freepik.com/free-photo/young-lady-showing-muscles-of-arm-in-singlet-skirt-and-looking-happy-front-view_176474-51320.jpg?w=740&t=st=1671113115~exp=1671113715~hmac=93c645e7ae63bc7583b9f5233ff2332a21bb365e43dc7cdefadeb867b1269113"]
   },
   {
@@ -801,7 +801,7 @@ export const list  =
   "discount":6,
   "stock":5,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/portrait-of-handsome-stylish-hipster-lumbersexual-businessman-model-man-dressed-in-jeans-jacket-clothes_158538-1727.jpg?w=740&t=st=1671116718~exp=1671117318~hmac=826a3d82c87dececb262b4b6176e37400a1af329a3530b6ada72aacdcdc7b174","https://img.freepik.com/free-photo/portrait-of-handsome-smiling-stylish-young-man-model-dressed-in-jeans-clothes-fashion-man_158538-5030.jpg?w=740&t=st=1671116729~exp=1671117329~hmac=89d740a74992899f3d35bc07c247c6f19387ab2901cca8dd37266bac8ab97f23","https://img.freepik.com/free-photo/portrait-of-handsome-confident-hipster-lumbersexual-businessman-model-wearing-casual-jeans-shirt-clothes_158538-17447.jpg?w=740&t=st=1671116737~exp=1671117337~hmac=924bd198dd0fe116729c3200b04a058ad787d83612a6bd48e6ad2ab80b1770b6"]
   },
   {
@@ -814,7 +814,7 @@ export const list  =
   "discount":2,
   "stock":29,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/chic-african-american-woman-in-brown-tunic-dress-and-jeans-jacket-posed-at-clothes-store-it-s-time-for-shopping_627829-13513.jpg?w=740&t=st=1671126559~exp=1671127159~hmac=f87df9255c42ac16d0db5d0db59e78cd635599f3cda9701c2e79616b29961be6","https://img.freepik.com/free-photo/chic-african-american-woman-in-brown-tunic-dress-and-jeans-jacket-posed-at-clothes-store-it-s-time-for-shopping_627829-13515.jpg?w=740&t=st=1671126598~exp=1671127198~hmac=1d85c6f01b22c97808d22e488636af27443437e5290ddc62cff2d640626f4651","https://img.freepik.com/free-photo/chic-african-american-woman-in-brown-tunic-dress-and-jeans-jacket-posed-at-clothes-store-it-s-time-for-shopping_627829-13511.jpg?w=740&t=st=1671126628~exp=1671127228~hmac=6f55ede9a8ee5f3dd78b0bbbb4adff3bad862a5cac050c2466553793a7ff8dbd"]
   },
   {
@@ -1010,7 +1010,7 @@ export const list  =
   "stock":8,
   "size":"l",
   "color":"black",
-  "images":["https://img.freepik.com/premium-photo/young-black-woman-in-a-trendy-christmas-sweater-with-print-crossing-arms-smiling-and-relaxed_1187-9630.jpg?w=360","https://img.freepik.com/premium-photo/young-black-woman-in-a-trendy-christmas-sweater-with-print-decide-between-two-options_1187-9608.jpg?w=360","https://img.freepik.com/premium-photo/young-black-woman-in-a-trendy-christmas-sweater-with-print-smiling-and-raising-thumb-up_1187-9601.jpg?w=360"]
+  "images":["https://img.freepik.com/free-photo/young-lady-holding-mobile-phone-in-oversized-hoodie-pants-and-looking-confident-front-view_176474-58601.jpg?w=996&t=st=1673715336~exp=1673715936~hmac=c64b60bfa0e6bae5aaf78c0431437475f347d52dc58624c8c318e752ac168282","https://img.freepik.com/free-photo/young-lady-in-oversized-hoodie-pants-holding-fists-under-chin-and-looking-cute-front-view_176474-58505.jpg?w=996&t=st=1673715359~exp=1673715959~hmac=dd5499f4a1c004263eb0d69608450cc68899f6eb66a2b7a4b96b0a663a50ded0","https://img.freepik.com/free-photo/young-lady-holding-hand-on-cheek-in-oversized-hoodie-pants-and-looking-charming-front-view_176474-58510.jpg?t=st=1673715359~exp=1673715959~hmac=ddcab8367973485b4750f909a55315338f3d0acfde468e54112af12a5a9d43df"]
   },
   {
     "id":78,
@@ -1022,7 +1022,7 @@ export const list  =
   "discount":2,
   "stock":20,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/portrait-of-young-beautiful-smiling-female-in-trendy-summer-jeans-skirt-carefree-woman-posing-near-yellow-wall-in-studio-positive-model-having-fun-indoors-cheerful-and-happy-in-hat_158538-25378.jpg?w=740&t=st=1671189111~exp=1671189711~hmac=45531241a68e023c9a8dbeaa8820d792ad564cfe008a187929438cd568c7e223","https://img.freepik.com/free-photo/portrait-of-young-beautiful-smiling-female-in-trendy-summer-jeans-skirt-carefree-woman-posing-near-yellow-wall-in-studio-positive-model-having-fun-indoors-cheerful-and-happy-in-hat_158538-25364.jpg?w=740&t=st=1671189126~exp=1671189726~hmac=8b1f7460e639ad3bd549009c5b5a461de138a0e5dd5011d1b0e08a867c9108a2","https://img.freepik.com/free-photo/portrait-of-young-beautiful-smiling-female-in-trendy-summer-jeans-skirt-carefree-woman-posing-near-yellow-wall-in-studio-positive-model-having-fun-indoors-cheerful-and-happy-in-hat_158538-25356.jpg?w=740&t=st=1671189179~exp=1671189779~hmac=e2d627a5238bbd5d1bf02233f008091c557da1e3719d7f86562489df04daa861"]
   },
   {
@@ -1048,7 +1048,7 @@ export const list  =
   "discount":1,
   "stock":6,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/modish-african-american-woman-in-red-shirt-and-jeans-skirt-with-jacket-posed-at-clothes-store-it-s-time-for-shopping_627829-13517.jpg?w=740&t=st=1671189901~exp=1671190501~hmac=cb30e3189f62ac70c9d4fbaae2a0ac754377cb7ed4b94131f4a47b96a2362718","https://img.freepik.com/free-photo/modish-african-american-woman-in-red-shirt-and-jeans-skirt-with-jacket-posed-at-clothes-store-it-s-time-for-shopping_627829-13519.jpg?w=740&t=st=1671189966~exp=1671190566~hmac=d318d308d0aaeedf77ee915d3898dabf2c0f8b4ccf7469417ca5c364c2e7f3e6","https://img.freepik.com/free-photo/modish-african-american-woman-in-red-shirt-and-jeans-skirt-posed-at-clothes-store-it-s-time-for-shopping_627829-13521.jpg?w=740&t=st=1671189973~exp=1671190573~hmac=0bff109c13d1828255a52d2c4fd04987386287e831ca3004e404117c4625920d"]
   },
   {
@@ -1191,7 +1191,7 @@ export const list  =
   "discount":10,
   "stock":10,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/excited-young-man-showing-biceps_74855-4187.jpg?w=740&t=st=1671194865~exp=1671195465~hmac=d6dab9faccefdfaf9989901a366f1a99a1f3ba6298d58f6ae69ad19d0afe650a","https://img.freepik.com/free-photo/portrait-of-handsome-smiling-young-man-model-wearing-casual-shirt-clothes-fashion-stylish-man-posing_158538-5312.jpg?w=740&t=st=1671194874~exp=1671195474~hmac=cea1aa81e988e4cf719c5b2d41f6b49134c2e2c6a19a69f3bbbaab481d5e254b","https://img.freepik.com/free-photo/confident-man-with-hand-on-chin-looking-at-camera_74855-4119.jpg?w=740&t=st=1671194902~exp=1671195502~hmac=a00d2b24b710d4a598e15d24caafa22520d8781884e5e0b57b1003841b2355ec"]
   },
   {
@@ -1204,7 +1204,7 @@ export const list  =
   "discount":3,
   "stock":6,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-with-curly-hairstyle-sexy-man-dressed-in-jeans-jacket-fashion-male-isolated-on-blue-wall-in-studio-in-sunglasses_158538-26556.jpg?w=740&t=st=1671195262~exp=1671195862~hmac=b9b16634052825e63a10264b2861faf1190602faad7a6b05e0bfc5b8041768d0","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-with-curly-hairstyle-sexy-man-dressed-in-jeans-jacket-fashion-male-isolated-on-white-wall-in-studiotaking-off-his-sunglasses_158538-26614.jpg?w=360&t=st=1671195254~exp=1671195854~hmac=22e5874c5e5c909c78cc6f9fb314ecbce2955bc1e92ecf263eb9f2b74a17e9f4","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-with-curly-hairstyle-sexy-man-dressed-in-jeans-jacket-fashion-male-isolated-on-blue-wall-in-studio-in-sunglasses_158538-26560.jpg?w=740&t=st=1671195278~exp=1671195878~hmac=ce8421bba94ac333586dab418eaec263c32cbcd1377cfd949160b3b09c33e56a"]
   },
   {
@@ -1230,7 +1230,7 @@ export const list  =
   "discount":10,
   "stock":15,
   "size":"m",
-  "color":"off white",
+  "color":"blue",
   "images":["https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-jeans-jacket-fashion-male-isolated-on-blue-wall-in-studio_158538-26429.jpg?w=740&t=st=1671195904~exp=1671196504~hmac=dbd4c9b265f1e4be746eb4a71b9b3bc530c7c69578acf2ad6dfdee03425f8419","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-jeans-jacket-fashion-male-isolated-on-blue-wall-in-studio_158538-26431.jpg?w=740&t=st=1671195912~exp=1671196512~hmac=7685099234af7f7fbf4a378c71f0df3898ca637faac7c1feccc0a5c9334cc4ea","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-jeans-jacket-fashion-male-isolated-on-blue-wall-in-studio-holding-smartphone_158538-26447.jpg?w=740&t=st=1671195924~exp=1671196524~hmac=c21522da184db2ae2d9c081105774074301bf006d481f99c7a1cbfe2f7ca5458"]
   },
   {
@@ -1243,8 +1243,8 @@ export const list  =
   "discount":1,
   "stock":14,
   "size":"m",
-  "color":"off white",
-  "images":["https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-tshirt-and-jeans-fashion-male-isolated-on-white-wall-in-studio_158538-26485.jpg?w=740&t=st=1671196137~exp=1671196737~hmac=392cc80aff8b9ff043d95fe6c8164cc6525112210c9f38fd6fbaa3e4498c37ef","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-tshirt-and-jeans-fashion-male-isolated-on-blue-wall-in-studio_158538-26451.jpg?w=740&t=st=1671196147~exp=1671196747~hmac=d0fc3f038006565db2331d03c5d724eb86c7bce2a575f4b1a5d51090f8110c31","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-tshirt-and-jeans-fashion-male-isolated-on-white-wall-in-studio_158538-26483.jpg?w=740&t=st=1671196155~exp=1671196755~hmac=618f6b2a1b1b5bacc1af3ca457c33a63608042648b5c980a2366cecf1220b26f"]
+  "color":"white",
+  "images":["https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-tshirt-and-jeans-fashion-male-isolated-on-blue-wall-in-studio_158538-26451.jpg?w=740&t=st=1671196147~exp=1671196747~hmac=d0fc3f038006565db2331d03c5d724eb86c7bce2a575f4b1a5d51090f8110c31","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-tshirt-and-jeans-fashion-male-isolated-on-white-wall-in-studio_158538-26485.jpg?w=740&t=st=1671196137~exp=1671196737~hmac=392cc80aff8b9ff043d95fe6c8164cc6525112210c9f38fd6fbaa3e4498c37ef","https://img.freepik.com/free-photo/portrait-of-handsome-confident-stylish-hipster-lambersexual-model-sexy-man-dressed-in-tshirt-and-jeans-fashion-male-isolated-on-white-wall-in-studio_158538-26483.jpg?w=740&t=st=1671196155~exp=1671196755~hmac=618f6b2a1b1b5bacc1af3ca457c33a63608042648b5c980a2366cecf1220b26f"]
   },
   {
     "id":96,

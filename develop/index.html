@@ -63,33 +63,36 @@
                 <!-- внутренний блок  -->
                 <div class="modal-window">
                     <div class="modal-content">
-                        <form action="#" class="customer-form" id="customer-form" method="post">
+                        <div class="customer-form" id="customer-form">
                             <div class="form-group">
                                 <div class="blok-personal personal">
                                     <h3 class="personal-title" id="personal-title">PERSONAL INFORMATION</h3>
                                     <div class="customer-name">
                                         <div class="customer-name-item">
-                                            <label for="personal-name" class="name" title="full name">Full name</label>
+                                            <label for="personal-name" class="name"title="full name">Full name</label>
+                                            <label class="purchase-error non" title="purchase-error">&#42; error</label>
                                             <input class="personal-name" type="text" name="name" id="personal-name" minlength="3" required placeholder="name">
                                         </div>
                                     </div>
                                     <div class="customer-phone">
                                         <div class="customer-name-item">
                                             <label for="phone">Phone number</label>
-                                            <input class="phone" type="text" name="phone" id="phone" value="+" pattern="[0-9]{13,19}" minlength="9" data-mask="0000 0000 0000 0000" required placeholder="phone number">
+                                            <label class="purchase-error non" title="purchase-error">&#42; error</label>
+                                            <input class="phone" type="text" name="phone" id="phone" pattern="[0-9]{13,19}" minlength="9" required placeholder="phone number">
                                         </div>
                                     </div>
-                                    <div class="customer-adress">
+                                    <div class="customer-address">
                                         <div class="customer-name-item">
-                                            <label for="adress">Adress delivery</label>
-                                            <input class="adress" type="text" name="adress" id="adress" minlength="5" required placeholder="adress delivery">
+                                            <label for="address">Address delivery</label>
+                                            <label class="purchase-error non" title="purchase-error">&#42; error</label>
+                                            <input class="address" type="text" name="address" id="address" minlength="5" required placeholder="adress delivery">
                                         </div>
-                                        
                                     </div>
                                     <div class="customer-email">
                                         <div class="customer-name-item">
                                             <label for="email">E-mail</label>
-                                            <input class="personal-email" type="email" name="email" id="email" required placeholder="email">
+                                            <label class="purchase-error non" title="purchase-error">&#42; error</label>
+                                            <input type="email" class="personal-email" placeholder="E-mail">
                                         </div>
                                     </div>
                                 </div>
@@ -100,57 +103,49 @@
                                             <div class="payment-card-wrap">
                                                 <div class="card-number-wrapper">
                                                     <label for="cart-number">Card number</label>
+                                                    <label class="purchase-error non" title="purchase-error">&#42; error</label>
                                                     <input class="cart-number" type="text" name="cart-number" id="cart-number" pattern="[0-9]{13,19}" maxlength="16" required placeholder="cart-number">
                                                 </div>
                                                 <div class="logo-bank bank">
                                                     <div class="bank__item bank__item1 item">
-                                                        <!-- <input class="card-details__card-input" type="radio" name="cardType" id="visa" data-card-type="visa" checked> -->
-                                                        <!-- <label class="item-card-label">Visa</label> -->
-                                                        <!-- <img class="item-card-image" src="https://svgshare.com/i/7h2.svg" alt="Visa Card" aria-hidden="true"> -->
                                                     </div>
                                                     <div class="bank__item bank__item2 item">
-                                                        <!-- <label class="item-card-label">MasterCard</label> -->
-                                                        <!-- <img class="item-card-image" src="https://svgshare.com/i/7fu.svg" alt="MasterCard" aria-hidden="true"> -->
                                                     </div>
                                                     <div class="bank__item bank__item3 item">
-                                                        <!-- <label class="item-card-label">MasterCard</label> -->
-                                                        <!-- <img class="item-card-image" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Maestro" aria-hidden="true">
-                                                    </div> -->
                                                     </div>
-                                                <!-- логотипы банков и валидацию, мин 3 платежные системы -->
-                                                <!-- автоматическая смена логотипа платежной системы. 
-                                                Например, если номер карты начинает с 4, устанавливается логотип Visa, 
-                                                если 5 - MasterCard.card-type
-                                                 Реализовать не менее 3 платежных систем -->
+                                                    <div class="bank__item bank__item4 item"></div>
                                                 </div>
-                                                
                                             </div>
-                                            
                                         </div>
-                                        
                                     </div>
                                     <div class="payment-card-bank">
                                         <div class="payment-card-item">
-                                            <label for="card-owner">Name</label>
-                                            <input class="card-owner" type="text" name="card-owner" id="card-owner" required placeholder="name">
+                                            <label for="card-owner" class="name" title="full name">Full name</label>
+                                            <label class="purchase-error non" title="purchase-error">&#42; error</label>
+                                            <input class="card-owner" type="text" name="card-owner" id="card-owner" required placeholder="full name">
                                         </div>
                                     </div>
                                     <div class="payment-card-bank">
                                         <div class="payment-card-item">
                                             <label for="expiration-date">Expiration date</label>
-                                            <input class="expiration-date" type="text" name="expiration-date" id="expiration-date" maxlength="7" value="MM / YY" required placeholder="MM / YY">
+                                            <label class="purchase-error non" title="purchase-error">&#42; error</label>
+                                            <input class="expiration-date" type="text" name="expiration-date" id="expiration-date" maxlength="5" required placeholder="MM/YY">
                                         </div>
                                     </div>
                                     <div class="payment-card-bank">
                                         <div class="payment-card-item">
-                                            <label class="card-cvv" aria-hidden="true">CVV</label>
-                                            <input class="card-cvv" type="text" minlength="3" maxlength="3" placeholder="000" id="card-cvv" required data-input>
+                                            <label for="card-cvv">CVV</label>
+                                            <label class="purchase-error non" title="purchase-error">&#42; error</label>
+                                            <input class="card-cvv" type="text" name="card-cvv" placeholder="000" id="card-cvv" required>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="btn-payment-submit" type="submit" data-submit-button>Confirm</button>
+                                <div class="btn-modal-sbm">
+                                    <button class="btn-payment-submit">Confirm</button>
+                                </div>
+                                <!-- <button class="btn-payment-submit" type="submit" data-submit-button>Confirm</button> -->
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -279,6 +274,7 @@
                         </div>
                         <div class="bask-block-button">
                             <div class="button-add">
+                                <div class="idDeskCard non"></div>
                                 <button class="description-button">Add to Cart</button>
                             </div>
                         </div>
@@ -291,8 +287,8 @@
                     <div class="descrip-detal">Product Details</div>
                 </div>
                 <div class="descrip-inf">
-                    <img class="descriptionCard" alt="description card">
-                    <p class="descrip-inf-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis amet, dolor optio non veniam iure, nihil enim vitae ratione modi alias ex. Perferendis voluptates quibusdam vitae sit, in nemo dolore.</p>
+                    <!-- <img class="descriptionCard" alt="description card">
+                    <p class="descrip-inf-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis amet, dolor optio non veniam iure, nihil enim vitae ratione modi alias ex. Perferendis voluptates quibusdam vitae sit, in nemo dolore.</p> -->
                 </div>
             </div>
             <!-- you can add a revocation block -->
@@ -527,6 +523,10 @@
                                 <div class="color-item">
                                     <input class="color-input" type="checkbox" name="color-box" id="pink">
                                     <label class="color-label" for="pink">pink</label>
+                                </div>
+                                <div class="color-item">
+                                    <input class="color-input" type="checkbox" name="color-box" id="blue">
+                                    <label class="color-label" for="blue">blue</label>
                                 </div>
                             </div>
                         </div>
@@ -1202,18 +1202,24 @@
                                     </div>
                                 </article>
                             </div>
-                            <div class="pagination non">
+                            <div class="pagination">
                                 <div class="col-left-pagination"> Showing 1 - 18 of 100 item(s) </div>
                                 <div class="col-right-pagination">
                                     <ul class="page-list list">
-                                        <li class="current-page page">
-                                            <a href="#" class="disabled-page">1</a>
+                                        <li class="page">
+                                            <button class="btn-page">&#60;</button>
                                         </li>
-                                        <li class="disabled-page page">
-                                            <a href="#" class="available-page">2</a>
+                                        <li class="page">
+                                            <button class="btn-page">1</button>
                                         </li>
-                                        <li class="next-page page">
-                                            <a href="#" class="next-available-page">&#62;</a>
+                                        <li class="page">
+                                            <button  class="btn-page">2</button>
+                                        </li>
+                                        <li class="page">
+                                            <button  class="btn-page">3</button>
+                                        </li>
+                                        <li class="page">
+                                            <button class="btn-page">&#62;</button>
                                         </li>
                                     </ul>
                                 </div>
