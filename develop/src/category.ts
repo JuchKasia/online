@@ -9,13 +9,14 @@ import { count } from 'console';
 // console.log("from category file "+cat.listCategory);
 
 export const basket = new Map();
+export let basketDesc:number;//index 
 // export const basket = [1];//index 
 // basket.length = 0;
 export let descrpiptQuantity = 1;
 export let baskQuantity = 1;
 export const desk: ({ id: number; title: string; brand: string; category: string; description: string; price: number; discount: number; stock: number; size: string; color: string; images: string[]; } | { id: number; title: string; brand: string; category: string; description: string; price: number; stock: number; size: string; color: string; images: string[]; discount?: undefined; })[] = [];
 
-export let basketPrice = 0;
+//export let basketPrice = 0;
 export function sizeFilter(){
   const way = document.querySelector('.way');
   for (let i=0; i < cat.sizeLabel.length; i++) {
@@ -71,88 +72,40 @@ const btnEyeCart = document.querySelectorAll('.btn-eye-cart');
 export const main = document.querySelector('.main');
 const pageDescription = document.querySelector('.pageDescription');
 const descriptionPage = document.querySelector('.description');
-const addToCarts = document.querySelectorAll('.add-to-cart');
+export const addToCarts = document.querySelectorAll('.add-to-cart');
+const idDeskCard = document.querySelector('.idDeskCard');
 
 for(let i = 0;i<addcards.length;i++){
     
   addcards[i].addEventListener('click',function(){
-    console.log(document.querySelector(".cdp").innerHTML)
-    const cdpvalue = +document.querySelector(".cdp").innerHTML;
-     console.log(cat.listCategory);  
-     console.log(i+(18*(cdpvalue-1)));
-     console.log('one card')
-     console.log(cat.listCategory[i+(18*(+cdpvalue-1))]);
-    console.log(cat.listCategory[i+(18*(+cdpvalue-1))].price);
-    console.log('our random');
+
+    const ourId = cat.mainCardImg[i].getAttribute('data-id');
+
+    console.log(cat.listCategory); 
     console.log(cat.arrayForCards);
-    console.log('countRandom ', cat.countRandom);
-basketPrice=0;
-// list[arrayForCards[i]]
-if(cat.countRandom==0){
-  if(!basket.has(cat.listCategory[cat.arrayForCards[i+(18*(+cdpvalue-1))]].id)){
-    addToCarts[i].classList.add('svgActive'); 
-     // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
-    cartProductsCount.innerHTML = basket.size + "";
-    // cartProductsValue.innerHTML = cpv + ;
-    basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
-}else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-  basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-  addToCarts[i].classList.remove('svgActive'); 
-}
-}else {
-  if(!basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-    addToCarts[i].classList.add('svgActive'); 
-     // добавляем класс кнопки добавления в корзину - - -- - - - - - - - - - -- 
-    cartProductsCount.innerHTML = basket.size + "";
-    // cartProductsValue.innerHTML = cpv + ;
-    basket.set(cat.listCategory[cat.arrayForCards[i]].id,1);
-}else if(basket.has(cat.listCategory[i+(18*(+cdpvalue-1))].id)){
-  basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-  addToCarts[i].classList.remove('svgActive'); 
-}
-}
+    console.log(ourId);
+    console.log(basket);
+     if(!basket.has(ourId)){
+      addToCarts[i].classList.add('svgActive');
+      basket.set(ourId,1);
+     } else if(basket.has(ourId)){
+      addToCarts[i].classList.remove('svgActive');
+      
+      basket.delete(ourId);
+     }
+     cartProductsCount.innerHTML = String(basket.size);
+     cartProductsValue.innerHTML = `$ `;
 
-    
      console.log(basket);
-   
-
-
-// 
-    // basketPrice += cat.listCategory[cat.arrayForCards[i]].price;
-
-
-    // if(cat.countRandom==0){
-    //   basket.push(cat.listCategory[cat.arrayForCards[i]].id); 
-    //   basketPrice+=cat.listCategory[cat.arrayForCards[i]].price
-    // }else {
-    // basket.push(cat.listCategory[i].id);
-    // basketPrice+=cat.listCategory[i].price
-    // }
-
-
-      // if(!addToCarts[i].classList.contains('svgActive')) {
-      //   addToCarts[i].classList.add('svgActive');
-      // } 
-      // if (basket.has(cat.listCategory[cat.arrayForCards[i]].id)) {
-      //   addcards[i].classList.remove('svgActive');
-      //   basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-      // } 
-            // if(addcards[i].classList.contains('svgActive')){
-      //   addcards[i].classList.remove('svgActive');
-      // }
-    
-
-    // addcards[i].addEventListener('click',function(){
-    //   addToCarts[i].classList.remove('svgActive');
-    //   cartProductsCount.innerHTML = basket.size -1 + "";
-      // basketPrice+=cat.listCategory[i].price
-            // basket.delete(cat.listCategory[cat.arrayForCards[i]].id);
-
-
-      // delete cat.listCategory[cat.arrayForCards[i]].price;
-    // });
+    //  showHeaderPrice();
   });
   btnEyeCart[i].addEventListener('click',function(){
+
+    basketDesc = +cat.mainCardImg[i].getAttribute('data-id');
+    //console.log('it is')
+    // console.log(cat.listCategory[i+(18*(+cdpvalue-1))]);
+    console.log(cat.mainCardImg[i].getAttribute('data-id'));
+
     desk.pop();
     main.classList.add('non');
     basketPage.classList.add('non');
@@ -163,6 +116,7 @@ if(cat.countRandom==0){
     }else {
       desk.push(cat.listCategory[i]);
     }
+    idDeskCard.setAttribute('data-id',cat.mainCardImg[i].getAttribute('data-id'));
     buildDescription();
     buildBestDeck();
   });
@@ -181,7 +135,7 @@ export const basketPage = document.querySelector('.basket-page');
 containerCart.addEventListener('click',function(){
   main.classList.add('non');
   basketPage.classList.remove('non');
-  getshopCard();
+  //getshopCard();
 });
 
  const itemLink = document.querySelectorAll('.item__link')[0].addEventListener('click',function(){
@@ -207,7 +161,7 @@ const deskMainImage = document.querySelector('.desk-main-image');
 const mainImFirst = document.querySelector('.main-im-first');
 const secondImFirst = document.querySelector('.main-im-second');
 const blockInfWay=document.querySelector(".block-inf-way"); 
-// const blockInfCategory=document.querySelector(".block-inf-category"); 
+const blockInfCategory=document.querySelector(".block-inf-category"); 
 const blockInfPrice=document.querySelector(".block-inf-price"); 
 const blockInfSize=document.querySelector(".block-inf-size"); 
 const blockInfColor=document.querySelector(".block-inf-color"); 
@@ -224,19 +178,36 @@ const daskDown = document.querySelector('.dask-down');
 const descripDetal = document.querySelector('.descrip-detal');
 
 function buildDescription(){
-  const way = document.querySelector('.way');
-  deskMainImage.setAttribute('src',`${desk[0].images[0]}`);
-  mainImFirst.setAttribute('src',`${desk[0].images[1]}`);
-  secondImFirst.setAttribute('src',`${desk[0].images[2]}`);
-  blockInfWay.innerHTML= way.innerHTML;
-  // blockInfCategory.innerHTML = 
-   blockInfPrice.innerHTML ="$"+ desk[0].price;
-   blockInfSize.innerHTML = "Size : " + desk[0].size;
-   blockInfColor.innerHTML ="Color : "+ desk[0].color;
-   descBaseValue.innerHTML = descrpiptQuantity+"";
-   descripInf.innerHTML = desk[0].description;
+  // нужно удалить все что связано с елементом desk как заработает с basketDesc ============ you can do it ===================
+  for(let i=0;i<cat.listCategory.length;i++){
+    // console.log(basketDesc,);
+    if(basketDesc===cat.listCategory[i].id){
+      const way = document.querySelector('.way');
+      deskMainImage.setAttribute('src',`${cat.listCategory[i].images[0]}`);
+      mainImFirst.setAttribute('src',`${cat.listCategory[i].images[1]}`);
+      secondImFirst.setAttribute('src',`${cat.listCategory[i].images[2]}`);
+      blockInfWay.innerHTML= `Category - ${cat.listCategory[i].category} / color - ${cat.listCategory[i].color} / size - ${cat.listCategory[i].size}`;
+      // console.log(cat.forLocal);
+      blockInfCategory.innerHTML = cat.listCategory[i].category;
+      blockInfPrice.innerHTML ="$"+ cat.listCategory[i].price;
+      blockInfSize.innerHTML = "Size : " + cat.listCategory[i].size;
+      blockInfColor.innerHTML ="Color : "+ cat.listCategory[i].color;
+      descBaseValue.innerHTML = descrpiptQuantity+"";
+      descripInf.innerHTML = cat.listCategory[i].description;
+    }
+    // const way = document.querySelector('.way');
+    // deskMainImage.setAttribute('src',`${desk[0].images[0]}`);
+    // mainImFirst.setAttribute('src',`${desk[0].images[1]}`);
+    // secondImFirst.setAttribute('src',`${desk[0].images[2]}`);
+    // blockInfWay.innerHTML= way.innerHTML;
+    // // blockInfCategory.innerHTML = 
+    //  blockInfPrice.innerHTML ="$"+ desk[0].price;
+    //  blockInfSize.innerHTML = "Size : " + desk[0].size;
+    //  blockInfColor.innerHTML ="Color : "+ desk[0].color;
+    //  descBaseValue.innerHTML = descrpiptQuantity+"";
+    //  descripInf.innerHTML = desk[0].description;
+  }
 }
-
 const brandIcon = ["https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dior_Logo.svg/300px-Dior_Logo.svg.png?20100916160103","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Prada-Logo.svg/512px-Prada-Logo.svg.png?20200520125737","https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Valentino_logo.svg/800px-Valentino_logo.svg.png?20220515071350","https://www.alamy.com/versace-medusa-logo-fashion-luxury-brand-clothes-illustration-image217740490.html","https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Gucci_logo.svg/512px-Gucci_logo.svg.png?20180702130155"];
 // dior https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Dior_Logo.svg/300px-Dior_Logo.svg.png?20100916160103
 
@@ -274,35 +245,39 @@ descripDetal.addEventListener('click',function(){
   }
   descripInf.append(img);
 });
+
 daskUp.addEventListener('click', function(){
     descBaseValue.innerHTML = ++descrpiptQuantity+"";
-   });
-   daskDown.addEventListener('click', function(){
+});
+
+daskDown.addEventListener('click', function(){
     if(descrpiptQuantity==1){
       descriptionPage.classList.add('non');
       pageDescription.classList.add('non');
       main.classList.remove('non');
     }
     descBaseValue.innerHTML = --descrpiptQuantity+"";
-   });
+});
+
 const descSellIm = document.querySelectorAll('.desc-sell-im');
 const descSellTxt = document.querySelectorAll('.desc-sell-txt');
 const descSellPrice = document.querySelectorAll('.desc-sell-price');
 
 function buildBestDeck(){
-for(let i = 0;i<descSellIm.length;i++){
-  descSellIm[i].setAttribute('src',`${list[cat.arrayForCardsDesc[i]].images}`);
-  descSellTxt[i].innerHTML = list[cat.arrayForCardsDesc[i]].description;
-  descSellPrice[i].innerHTML = list[cat.arrayForCardsDesc[i]].price+" $";
-}
+  for(let i = 0;i<descSellIm.length;i++){
+    descSellIm[i].setAttribute('src',`${list[cat.arrayForCardsDesc[i]].images}`);
+    descSellTxt[i].innerHTML = list[cat.arrayForCardsDesc[i]].description;
+    descSellPrice[i].innerHTML = list[cat.arrayForCardsDesc[i]].price+" $";
+  }
 }
 
 const descriptionButton = document.querySelector('.description-button');
 // добавление в типо карзину простое отоброжение 
 descriptionButton.addEventListener('click',function(){
-  basket.set(desk[0].id, 1);
-  cartProductsCount.innerHTML = descrpiptQuantity + "";
-  cartProductsValue.innerHTML = cpv + desk[0].price * descrpiptQuantity;
+  basket.set(idDeskCard.getAttribute('data-id'),+descBaseValue.innerHTML);
+  // basket.set(desk[0].id, 1);
+  // cartProductsCount.innerHTML = descrpiptQuantity + "";
+  // cartProductsValue.innerHTML = cpv + desk[0].price * descrpiptQuantity;
 });
 
 
@@ -323,15 +298,15 @@ document.querySelector('.back-start').addEventListener('click',function(){
   basketPage.classList.add('non');
 });
 
-function getshopCard(){
+// function getshopCard(){
 
-baskDellImg.setAttribute('src',`../assets/svg/basket.svg`);//not work!!!!!!!
+// baskDellImg.setAttribute('src',`../assets/svg/basket.svg`);//not work!!!!!!!
 
-for(let i = 0;i<cat.listCategory.length;i++){
+//for(let i = 0;i<cat.listCategory.length;i++){
 // if(cat.listCategory[i].id==basket[0]){
 //   basket[0] = i;
 // }
-}
+//}
 // baskImage.setAttribute('src',`${cat.listCategory[basket[0]].images[0]}`);
 // baskImage.classList.add('scale');
 // baskBlockValue.innerHTML = 'Cost : $ '+ cat.listCategory[basket[0]].price;
@@ -340,7 +315,7 @@ for(let i = 0;i<cat.listCategory.length;i++){
 // baskColor.innerHTML = 'Color : '+ cat.listCategory[basket[0]].color;
 //  baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price;
 //  baskTot.innerHTML =""+cat.listCategory[basket[0]].price;
-}
+// }
 
 
 const baskBlockDisk = document.querySelector('.bask-block-disk');
@@ -373,8 +348,8 @@ baskDown.addEventListener('click', function(){
   // baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
   // baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
   // baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-  });
+});
+
 
 
 // для оптимизации нужно добавлять не обьекты. а индексы
-// let div = document.createElement(`a<a;dlf${src};asldj${baskt.value}fl`)

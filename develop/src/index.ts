@@ -7,7 +7,7 @@ import "../normalize.css";
 
 // import {Product} from './assets/types';
 import {list} from '../list';
-import {sizeFilter,colorFilter} from './category';
+import {sizeFilter,colorFilter,addToCarts, basket} from './category';
 import {proso} from './modalPuchase';
 // import { fstat } from "fs";
 // import {} from './desc';
@@ -23,7 +23,49 @@ export const forLocal = {
 } 
 export let countRandom = 0;
 
-export let  listCategory = list;
+export let  listCategory = [...list];
+listCategory.length = 0;
+
+//  function getRandomArray -------------------------------------------------
+// eslint-disable-next-line prefer-const
+let randomArray: number[] = [];
+let arrayForCardsSpec: Array<number> = [];
+let arrayForCardsBest: Array<number> = [];
+export let arrayForCardsDesc: Array<number> = [];
+
+function getRandomArray(m:number,max:number) {
+  randomArray = [];
+  for(let i = 0;i<m;i++){
+    const num:number = Math.floor(Math.random() * max);
+    if(!randomArray.includes(num)){
+      randomArray.push(num);
+    } else {
+      i--;
+    }
+  }
+return randomArray;
+}
+
+export let arrayForCards:Array<number>=[];
+arrayForCards= getRandomArray(99,99);
+arrayForCardsSpec = getRandomArray(3, 100);
+arrayForCardsBest = getRandomArray(3, 100);
+arrayForCardsDesc = getRandomArray(4,100);
+// console.log(arrayForCards);
+// console.log(arrayForCardsBest);
+// console.log(arrayForCardsSpec);
+// function getRandomArray finish -----------------------------------------
+
+
+
+for(let j = 0;j<arrayForCards.length;j++){
+  for(let i = 0;i<arrayForCards.length;i++){
+      if(list[i].id===arrayForCards[j]){
+        listCategory.push(list[i]);
+        break;
+      }
+  }
+}
 
 // console.log((localStorage));
 document.addEventListener("DOMContentLoaded",function(){
@@ -94,43 +136,12 @@ export function getCategoryArray(){
 
 }
 
-//  function getRandomArray -------------------------------------------------
-// eslint-disable-next-line prefer-const
-let randomArray: number[] = [];
-let arrayForCardsSpec: Array<number> = [];
-let arrayForCardsBest: Array<number> = [];
-export let arrayForCardsDesc: Array<number> = [];
-
-function getRandomArray(m:number,max:number) {
-  randomArray = [];
-  for(let i = 0;i<m;i++){
-    const num:number = Math.floor(Math.random() * max);
-    if(!randomArray.includes(num)){
-      randomArray.push(num);
-    } else {
-      i--;
-    }
-  }
-return randomArray;
-}
-
-export let arrayForCards:Array<number>=[];
-arrayForCards= getRandomArray(99,99);
-arrayForCardsSpec = getRandomArray(3, 99);
-arrayForCardsBest = getRandomArray(3, 99);
-arrayForCardsDesc = getRandomArray(4,99);
-// console.log(arrayForCards);
-// console.log(arrayForCardsBest);
-// console.log(arrayForCardsSpec);
-// function getRandomArray finish -----------------------------------------
-
-
 //  function buildCards -------------------------------------------------
 const productDetailText = document.querySelectorAll('.product-detail-text');
 const cardsStock = document.querySelectorAll('.stock');
 const priceProduct = document.querySelectorAll('.price');
 const productTitle = document.querySelectorAll('.product-title');
-const mainCardImg = document.querySelectorAll('.img-prod1');
+export const mainCardImg = document.querySelectorAll('.img-prod1');
 const secondCardImg = document.querySelectorAll('.img-prod2');
 const productMiniature = document.querySelectorAll('.product-miniature');
 // console.log("card " +priceProduct.length);
@@ -145,6 +156,7 @@ for(let i = 0;i<productDetailText.length; i++){
     priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + list[arrayForCards[i]].price;
     productTitle[i].innerHTML = list[arrayForCards[i]].title;
     mainCardImg[i].setAttribute('src',`${list[arrayForCards[i]].images[0]}`);
+    mainCardImg[i].setAttribute('data-id',`${arrayForCards[i]}`);
     secondCardImg[i].classList.add("non");
 }
 }
@@ -163,6 +175,7 @@ export function buildCardsCategory(){
     priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i].price;
     productTitle[i].innerHTML = listCategory[i].title;
     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
+    mainCardImg[i].setAttribute('data-id',`${listCategory[i].id}`);
     secondCardImg[i].classList.add("non");
   }
   // sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join("")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
@@ -170,17 +183,6 @@ export function buildCardsCategory(){
       
   buildPaginationPage(0);
 }
-// const addcards = document.querySelectorAll('.btn-add-to-cart');
-//       for(let i = 0;i<addcards.length;i++){
-//         addcards[i].addEventListener('click',function(){
-//         // cartProductsCount.innerHTML = +cartProductsCount.innerHTML++
-//     console.log(listCategory[i]);
-//     console.log(addcards[i])
-//         });
-//       }
-
-
-
 
 function clearCards(){
   for(let i = 0;i<productMiniature.length;i++){
@@ -509,7 +511,20 @@ function buildPaginationPage(limiter:number) {
       priceProduct[i].innerHTML = priceProduct[i].innerHTML[0] + " " + listCategory[i+limiter].price;
       productTitle[i].innerHTML = listCategory[i+limiter].title;
       mainCardImg[i].setAttribute('src',`${listCategory[i+limiter].images[0]}`);
+      mainCardImg[i].setAttribute('data-id',`${listCategory[i+limiter].id}`);
       secondCardImg[i].classList.add("non");
+
+      // addToCarts[i].classList.remove('svgActive');
+      console.log('здесь будет ')
+       console.log(mainCardImg[i].getAttribute('data-id'));
+       try {
+        if(basket.has(mainCardImg[i].getAttribute('data-id'))){
+        addToCarts[i].classList.add('svgActive');
+      }
+           
+       } catch(err){
+        console.log('it is attribute');
+       }
     }
 
   // }
