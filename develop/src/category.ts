@@ -16,7 +16,7 @@ export let descrpiptQuantity = 1;
 export let baskQuantity = 1;
 export const desk: ({ id: number; title: string; brand: string; category: string; description: string; price: number; discount: number; stock: number; size: string; color: string; images: string[]; } | { id: number; title: string; brand: string; category: string; description: string; price: number; stock: number; size: string; color: string; images: string[]; discount?: undefined; })[] = [];
 
-//export let basketPrice = 0;
+ export let basketPrice = 0;
 export function sizeFilter(){
   const way = document.querySelector('.way');
   for (let i=0; i < cat.sizeLabel.length; i++) {
@@ -73,7 +73,7 @@ export const main = document.querySelector('.main');
 const pageDescription = document.querySelector('.pageDescription');
 const descriptionPage = document.querySelector('.description');
 export const addToCarts = document.querySelectorAll('.add-to-cart');
-const idDeskCard = document.querySelector('.idDeskCard');
+// const idDeskCard = document.querySelector('.idDeskCard');
 
 for(let i = 0;i<addcards.length;i++){
     
@@ -88,13 +88,15 @@ for(let i = 0;i<addcards.length;i++){
      if(!basket.has(ourId)){
       addToCarts[i].classList.add('svgActive');
       basket.set(ourId,1);
+      basketPrice+=Number(cat.mainCardImg[i].getAttribute('data-price'));
+      console.log('здесь будет суммироваться прайс ')
      } else if(basket.has(ourId)){
       addToCarts[i].classList.remove('svgActive');
-      
+      basketPrice-=Number(cat.mainCardImg[i].getAttribute('data-price'));
       basket.delete(ourId);
      }
      cartProductsCount.innerHTML = String(basket.size);
-     cartProductsValue.innerHTML = `$ `;
+     cartProductsValue.innerHTML = `$ ${basketPrice}`;
 
      console.log(basket);
     //  showHeaderPrice();
@@ -116,7 +118,8 @@ for(let i = 0;i<addcards.length;i++){
     }else {
       desk.push(cat.listCategory[i]);
     }
-    idDeskCard.setAttribute('data-id',cat.mainCardImg[i].getAttribute('data-id'));
+    console.log('ошибка, надо получить сперва id потом его установить')
+    // idDeskCard.setAttribute('data-id',String(basketDesc));
     buildDescription();
     buildBestDeck();
   });
@@ -180,7 +183,7 @@ const descripDetal = document.querySelector('.descrip-detal');
 function buildDescription(){
   // нужно удалить все что связано с елементом desk как заработает с basketDesc ============ you can do it ===================
   for(let i=0;i<cat.listCategory.length;i++){
-    // console.log(basketDesc,);
+     console.log("basketDesc ",basketDesc);
     if(basketDesc===cat.listCategory[i].id){
       const way = document.querySelector('.way');
       deskMainImage.setAttribute('src',`${cat.listCategory[i].images[0]}`);
@@ -274,7 +277,7 @@ function buildBestDeck(){
 const descriptionButton = document.querySelector('.description-button');
 // добавление в типо карзину простое отоброжение 
 descriptionButton.addEventListener('click',function(){
-  basket.set(idDeskCard.getAttribute('data-id'),+descBaseValue.innerHTML);
+  // basket.set(idDeskCard.getAttribute('data-id'),+descBaseValue.innerHTML);
   // basket.set(desk[0].id, 1);
   // cartProductsCount.innerHTML = descrpiptQuantity + "";
   // cartProductsValue.innerHTML = cpv + desk[0].price * descrpiptQuantity;
@@ -353,3 +356,7 @@ baskDown.addEventListener('click', function(){
 
 
 // для оптимизации нужно добавлять не обьекты. а индексы
+
+// function baskPrice(){
+
+// };

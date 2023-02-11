@@ -157,6 +157,7 @@ for(let i = 0;i<productDetailText.length; i++){
     productTitle[i].innerHTML = list[arrayForCards[i]].title;
     mainCardImg[i].setAttribute('src',`${list[arrayForCards[i]].images[0]}`);
     mainCardImg[i].setAttribute('data-id',`${arrayForCards[i]}`);
+    mainCardImg[i].setAttribute('data-price',`${list[arrayForCards[i]].price}`);
     secondCardImg[i].classList.add("non");
 }
 }
@@ -176,6 +177,7 @@ export function buildCardsCategory(){
     productTitle[i].innerHTML = listCategory[i].title;
     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
     mainCardImg[i].setAttribute('data-id',`${listCategory[i].id}`);
+    mainCardImg[i].setAttribute('data-price',`${listCategory[i].price}`);
     secondCardImg[i].classList.add("non");
   }
   // sortText.innerHTML= `${sortText.innerHTML.split(" ").slice(0,2).join("")} ${listCategory.length} ${sortText.innerHTML.split(" ").slice(-1)}`
@@ -512,6 +514,7 @@ function buildPaginationPage(limiter:number) {
       productTitle[i].innerHTML = listCategory[i+limiter].title;
       mainCardImg[i].setAttribute('src',`${listCategory[i+limiter].images[0]}`);
       mainCardImg[i].setAttribute('data-id',`${listCategory[i+limiter].id}`);
+      mainCardImg[i].setAttribute('data-price',`${listCategory[i].price}`);
       secondCardImg[i].classList.add("non");
 
       // addToCarts[i].classList.remove('svgActive');
