@@ -29,7 +29,7 @@
                         <a href="#contact" class="item__link link">Contact</a>
                     </li>
                     <li class="list__item item">
-                        <a href="#blog" class="item__link link">Blog</a>
+                        <a href="#blog" class="item__link link blog-link">Blog</a>
                     </li>
                 </ul>
             </nav>
@@ -225,7 +225,7 @@
             </div>
           </div>
         </div>
-      </section>
+    </section>
       <!-- finish basket page ----------------------------------------------- -->
 
     <!-- start description page -------------------------------------------- -->
@@ -347,7 +347,7 @@
             <h1 class="page404-title">PAGE NOT FOUND (404)</h1>
         </div>
     </section>
-    <section class="blog-page" id="blog">
+    <section class="blog-page non" id="blog">
         <div class="blog-container container">
             <h1 class="blog-title">Latest Blogs</h1>
             <div class="block-person1 block-person">
@@ -363,13 +363,15 @@
                         <div class="blog-calendar-svg"></div>December 18, 2022</div>
                 </div>
                 <div class="blog-content-info">
-                    <p class="blog-short-info">Studying is always interesting, and now it is necessary.
-                         It's nice to realize that I discovered the frontend for myself</p>
-                    <button class="blog-btn">Read more</button>
-                    <div class="blog-cv">
-                        <div class="col-left">
+                    <p class="blog-short-info blog-info-person1">Studying is always interesting, and now it is necessary.
+                         It's nice to realize that I discovered the frontend for myself...</p>
+                    <button class="blog-btn blog-btn-more">Read more</button>
+                    <button class="blog-btn blog-btn-less">Read less</button>
+                </div>
+                <div class="blog-cv blog-cv1" id="blog-cv1">
+                    <div class="col-left">
                             <div class="block-skills">
-                                <h2 class="title">Skills:</h2>
+                                <h2 class="skills-title">Skills:</h2>
                                 <ul class="skills-list">
                                     <li class="skills-item">HTML</li>
                                     <li class="skills-item">CSS / SASS</li>
@@ -383,34 +385,34 @@
                                 </ul>
                             </div>
                             <div class="block-education">
-                                <h2 class="title">Education:</h2>
-                                <p class="education-item">Belarusian State University of Informatics and Radioelectronics</в>
+                                <h2 class="education-title">Education:</h2>
+                                <p class="education-item">Belarusian State University<br> of Informatics and Radioelectronics</в>
                             </div>
+                    </div>
+                    <div class="col-right">
+                        <div class="block-profile">
+                            <h2 class="profile-title">Ihar Skavysh</h2>
+                            <p class="profile-item">Junior Front-end Developer</p>
                         </div>
-                        <div class="col-right">
-                            <div class="block-profile">
-                                <h2 class="profile-title">Ihar Skavysh</h2>
-                                <p class="profile-item">Junior Front-end Developer</p>
-                            </div>
-                            <div class="block-summaru">
+                        <div class="block-summaru">
                                 <h3 class="summaru-title">About me:</h3>
                                 <p class="summary-item">Studying is always interesting, and now it is necessary. 
                                     It's nice to realize that I discovered the frontend for myself, everything is good here,
                                      from interaction with other people to a beautiful and working result, and you can also reward
                                       yourself with solving interesting logical problems to make it all work. My principle is good where I am.
                                 </p>
-                            </div>
-                            <div class="block-languages">
-                                <h2 class="title">Languages:</h2>
+                        </div>
+                        <div class="block-languages">
+                                <h2 class="languages-title">Languages:</h2>
                                 <ul class="languages-list">
                                     <li class="languages-item">English - Intermediate</li>
                                     <li class="languages-item">Polish - Basic</li>
                                     <li class="languages-item">Belarusian - Native</li>
                                     <li class="languages-item">Russian - Native</li>
                                 </ul>
-                            </div>
-                            <div class="block-contact">
-                                <h2 class="title">Contacts:</h2>
+                        </div>
+                        <div class="block-blog-contact">
+                                <h2 class="contact-title">Contacts:</h2>
                                 <ul class="contact-list">
                                     <li class="contact-item">Location: Samarcande, Uzbekistan</li>
                                     <li class="contact-item">Email:
@@ -419,7 +421,6 @@
                                         <a href="https://github.com/Igogoblin" class="section-link">Igogoblin</a></li>
                                     <li class="contact-item">Discord: igo-go.blin</li>
                                 </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -431,37 +432,41 @@
                     <h2 class="blog-subtitle">Katarzyna Juchniewicz</h2>
                 </div>
                 <div class="blog-meta">
-                    <span class="blog-author">Katarzyna Juchniewicz</span>
-                    <span class="blog-calendar">December 18, 2022</span>
+                    <div class="blog-author">
+                        <div class="blog-author-svg"></div>Katarzyna Juchniewicz</div>
+                    <div class="blog-calendar">
+                        <div class="blog-calendar-svg"></div>December 18, 2022</div>
                 </div>
                 <div class="blog-content-info">
-                    <p class="blog-short-info">I was born in Belarus. Since 2017 I`m live in Warsaw.
-                        I`ve been graduated the medical-prophylactic faculty of the Belarusian National Medical University.</p>
-                    <button class="blog-btn">Read more</button>
-                    <div class="blog-cv">
-                        <div class="col-left">
-                            <div class="block-skills">
-                                <h2 class="title">Skills:</h2>
-                                <ul class="skills-list">
-                                    <li class="skills-item">HTML</li>
-                                    <li class="skills-item">CSS / SASS</li>
-                                    <li class="skills-item">JavaScript</li>
-                                    <li class="skills-item">Node.js Basic</li>
-                                    <li class="skills-item">Git, GitHub</li>
-                                    <li class="skills-item">Webpack</li>
-                                    <li class="skills-item">VSCode</li>
-                                    <li class="skills-item">Figma</li>
-                                    <li class="skills-item">Photoshop, Capture One</li>
-                                </ul>
-                            </div>
-                            <div class="block-education">
-                                <h2 class="title">Education:</h2>
-                                <ul class="education-list">
-                                    <li class="education-item">Belarusian State Medical University</li>
-                                </ul>
+                    <p class="blog-short-info blog-info-person2">I was born in Belarus. Since 2017 I`m live in Warsaw.
+                        I`ve been graduated the medical-prophylactic faculty of the Belarusian National Medical University...</p>
+                    <button class="blog-btn blog-btn-more">Read more</button>
+                    <button class="blog-btn blog-btn-less">Read less</button>
+                </div>
+                <div class="blog-cv blog-cv2" id="blog-cv2">
+                    <div class="col-left">
+                        <div class="block-skills">
+                            <h2 class="title">Skills:</h2>
+                            <ul class="skills-list">
+                                <li class="skills-item">HTML</li>
+                                <li class="skills-item">CSS / SASS</li>
+                                <li class="skills-item">JavaScript</li>
+                                <li class="skills-item">Node.js Basic</li>
+                                <li class="skills-item">Git, GitHub</li>
+                                <li class="skills-item">Webpack</li>
+                                <li class="skills-item">VSCode</li>
+                                <li class="skills-item">Figma</li>
+                                <li class="skills-item">Photoshop, Capture One</li>
+                            </ul>
+                        </div>
+                        <div class="block-education">
+                            <h2 class="title">Education:</h2>
+                            <div class="education-list">
+                                <p class="education-item">Belarusian State Medical University</p>
                             </div>
                         </div>
-                        <div class="col-right">
+                    </div>
+                    <div class="col-right">
                             <div class="block-profile">
                                 <h2 class="profile-title">Katarzyna Juchniewicz</h2>
                                 <p class="profile-item">Junior Front-end Developer</p>
@@ -488,7 +493,7 @@
                                     <li class="languages-item">Russian - Native</li>
                                 </ul>
                             </div>
-                            <div class="block-contact">
+                            <div class="block-blog-contact">
                                 <h2 class="title">Contacts:</h2>
                                 <ul class="contact-list">
                                     <li class="contact-item">Location: Warsaw, Poland</li>
@@ -499,9 +504,9 @@
                                     <li class="contact-item">Discord: juchkasia</li>
                                 </ul>
                             </div>
-                        </div>
                     </div>
                 </div>
+                <!-- </div> -->
             </div>
         </div>
     </section>

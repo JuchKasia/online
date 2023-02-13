@@ -9,9 +9,11 @@ import "../normalize.css";
 import {list} from '../list';
 import {sizeFilter,colorFilter} from './category';
 import {proso} from './modalPuchase';
+import {navBlog} from './blog';
 // import { fstat } from "fs";
 // import {} from './desc';
 console.log(proso);
+console.log(navBlog);
 const category = new Set<string>(["men","women"]);
 const size = new Set<string>([]);
 const color = new Set<string>([]);
@@ -687,3 +689,4 @@ else if(i===4){
 //     mainCardImg[i].setAttribute('src',`${listCategory[i].images[0]}`);
 //       });
 // }
+

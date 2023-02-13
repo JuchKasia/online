@@ -2167,10 +2167,6 @@ input[type=number]::-webkit-outer-spin-button {
     }
 }
 
-.non {
-    display: none;
-}
-
 .checked {
     color:#85c38d;
 }
@@ -2266,7 +2262,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    background-color: #f7f7f7;
+    // background-color: #f7f7f7;
     // border: 1px solid violet;
     .blog-title {
         // margin-bottom: 10px;
@@ -2278,18 +2274,16 @@ input[type=number]::-webkit-outer-spin-button {
         display: flex;
         flex-direction: column;
         padding: 0 20px;
+        margin-bottom: 30px;
         float: left;
-        // font-size: 13px;
-        // font-weight: 300;
-        // margin: 0 10px 0 0;
         gap: 10px;
-        border: 1px solid red;
-
+        background-color: #f7f7f7;
+        // border: 1px solid red;
         .blog-image {
             width: 400px;
             height: 400px;
-            border: 1px solid red;
-
+            margin-top: 20px;
+            // border: 1px solid red;
         }
         .img-pers1 {
             background-image: url('./assets/img/Igor-CV.jpg');
@@ -2355,17 +2349,18 @@ input[type=number]::-webkit-outer-spin-button {
             display: flex;
             flex-direction: column;
             padding-left: 10px;
+            padding-top: 5px;
             width: 80%;
-            font-size: 20px;
-            font-weight: 400;
             gap: 10px;
-            border: 1px solid red;
+            // border: 1px solid red;
             .blog-short-info {
-
+                font-size: 20px;
+                font-weight: 400;
             }
             .blog-btn {
                 width: 120px;
                 height: 25px;
+                margin-bottom: 20px;
                 font-size: 16px;
                 font-weight: 400;
                 // padding-left: 20px;
@@ -2373,28 +2368,96 @@ input[type=number]::-webkit-outer-spin-button {
                 border: 1px solid #85c38d;
                 cursor: pointer;
                 transition: 0.5s;
-
             }
-            .blog-cv {
-                display: flex;
-            }
-
         }
-    }
-    
+    } 
 }
+
+.blog-cv {
+    display: flex;
+    width: 80%;
+    padding-top: 10px;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    .col-left,
+    .col-right {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .col-left {
+        width: 40%;
+    }
+    .col-right {
+        width: 60%;
+    }
+}
+
+.block-skills,
+.block-education,
+.block-profile,
+.block-summaru,
+.block-languages,
+.block-blog-contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-right: 5px;
+    margin-bottom: 5px;
+}
+
+.skills-title,
+.education-title,
+.profile-title,
+.summaru-title,
+.languages-title,
+.contact-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
 
 .skills-list,
 .languages-list,
-.contact-list {
+.contact-list,
+.education-item,
+.profile-item,
+.summary-item {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    font-size: 17px;
+    font-weight: 400;
+    gap: 2px;
     margin-top: 10px;
+    // text-decoration: none;
 }
 
 .skills-item,
 .languages-item,
 .contact-item {
-    text-decoration: none;
+    // text-decoration: none;
+    list-style: none;
 }
+
+.section-link {
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.section-link:hover {
+    color: #85c38d;
+}
+
+.non {
+    display: none;
+}
+// #blog-cv1,
+// #blog-cv2{
+//     display: none;
+// }
+
+// div .asdf 
+// .asdf
