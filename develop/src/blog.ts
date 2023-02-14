@@ -55,8 +55,3 @@ clothing.addEventListener('click', () => {
     blogPage.classList.add('non');
     main.classList.remove('non');
 })
-// btnClose.addEventListener('click', () => {
-//     modalPurchaseWrapper.classList.add('non');
-//     basketPage.classList.add('non');
-//     main.classList.remove('non');
-// });
