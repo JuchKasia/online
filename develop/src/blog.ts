@@ -2,6 +2,8 @@ import { main } from './category';
 import '../index';
 
 export const navBlog = document.querySelector('.blog-link');
+// export const clothing = document.querySelector('.clothing-link');
+const clothing = document.querySelector('.clothing-link');
 const blogPage = document.querySelector('.blog-page');
 // const blogInfoPerson = document.querySelectorAll('.blog-info-person1');
 
@@ -47,3 +49,14 @@ blogBtnLess[1].addEventListener('click', () => {
     blogBtnMore[1].classList.remove('non');
     blogBtnLess[1].classList.add('non');
 })
+
+
+clothing.addEventListener('click', () => {
+    blogPage.classList.add('non');
+    main.classList.remove('non');
+})
+// btnClose.addEventListener('click', () => {
+//     modalPurchaseWrapper.classList.add('non');
+//     basketPage.classList.add('non');
+//     main.classList.remove('non');
+// });
