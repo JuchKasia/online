@@ -14,6 +14,9 @@ export let basketDesc:number;//index
 // basket.length = 0;
 export let descrpiptQuantity = 1;
 export let baskQuantity = 1;
+export let basketLength = 0; 
+let deskId:number;
+let deskPrice;
 export const desk: ({ id: number; title: string; brand: string; category: string; description: string; price: number; discount: number; stock: number; size: string; color: string; images: string[]; } | { id: number; title: string; brand: string; category: string; description: string; price: number; stock: number; size: string; color: string; images: string[]; discount?: undefined; })[] = [];
 
  export let basketPrice = 0;
@@ -88,14 +91,17 @@ for(let i = 0;i<addcards.length;i++){
      if(!basket.has(ourId)){
       addToCarts[i].classList.add('svgActive');
       basket.set(ourId,1);
+      basketLength++;
       basketPrice+=Number(cat.mainCardImg[i].getAttribute('data-price'));
       console.log('здесь будет суммироваться прайс ')
      } else if(basket.has(ourId)){
       addToCarts[i].classList.remove('svgActive');
       basketPrice-=Number(cat.mainCardImg[i].getAttribute('data-price'));
       basket.delete(ourId);
+      basketLength--;
      }
-     cartProductsCount.innerHTML = String(basket.size);
+     basketValues();
+     cartProductsCount.innerHTML = String(basketLength);
      cartProductsValue.innerHTML = `$ ${basketPrice}`;
 
      console.log(basket);
@@ -107,7 +113,8 @@ for(let i = 0;i<addcards.length;i++){
     //console.log('it is')
     // console.log(cat.listCategory[i+(18*(+cdpvalue-1))]);
     console.log(cat.mainCardImg[i].getAttribute('data-id'));
-
+    deskId =  Number(cat.mainCardImg[i].getAttribute('data-id'));
+    deskPrice = cat.mainCardImg[i].getAttribute('data-price');
     desk.pop();
     main.classList.add('non');
     basketPage.classList.add('non');
@@ -183,7 +190,7 @@ const descripDetal = document.querySelector('.descrip-detal');
 function buildDescription(){
   // нужно удалить все что связано с елементом desk как заработает с basketDesc ============ you can do it ===================
   for(let i=0;i<cat.listCategory.length;i++){
-     console.log("basketDesc ",basketDesc);
+    //  console.log("basketDesc ",basketDesc);
     if(basketDesc===cat.listCategory[i].id){
       const way = document.querySelector('.way');
       deskMainImage.setAttribute('src',`${cat.listCategory[i].images[0]}`);
@@ -277,6 +284,17 @@ function buildBestDeck(){
 const descriptionButton = document.querySelector('.description-button');
 // добавление в типо карзину простое отоброжение 
 descriptionButton.addEventListener('click',function(){
+  basket.set(deskId,descrpiptQuantity);
+  if(basket.has(deskId)&&descrpiptQuantity>1){
+    // descrpiptQuantity--;
+  }
+  basketValues();
+  cartProductsCount.innerHTML= `${basketLength}`;
+  cartProductsValue.innerHTML = `$ ${basketPrice}`;
+  // console.log('work button of description');
+  // console.log(basketLength);
+  // console.log(descrpiptQuantity);
+
   // basket.set(idDeskCard.getAttribute('data-id'),+descBaseValue.innerHTML);
   // basket.set(desk[0].id, 1);
   // cartProductsCount.innerHTML = descrpiptQuantity + "";
@@ -357,6 +375,34 @@ baskDown.addEventListener('click', function(){
 
 // для оптимизации нужно добавлять не обьекты. а индексы
 
-// function baskPrice(){
+function basketValues(){
+  const otherArr = Array.from(basket).flat();
+  console.log(otherArr.flat());
+  basketLength = 0;
+  basketPrice = 0;
+  for(let i =0;i<otherArr.length;i++){
+    if(i%2!==0){
+      basketLength+=otherArr[i];
+    }
+  }
+  console.log(cat.listCategory);
+  for(let i = 0;i<cat.listCategory.length;i++){
+    //let count = 0;
+    for(let j = 0;j<otherArr.length;j++){
 
-// };
+      if(j%2==0){
+        if(cat.listCategory[i].id==otherArr[j]){
+          console.log('cat.listCategory[i].price', cat.listCategory[i].price);
+           console.log("count", +otherArr[j+1]);
+          console.log("count*cat.listCategory[i].price",otherArr[j+1]*cat.listCategory[i].price)
+        basketPrice+=otherArr[j+1]*cat.listCategory[i].price;
+      }
+      }
+      
+    }
+    
+  }
+  console.log("basketLength",basketLength)
+  console.log("basketPrice",basketPrice);
+
+}
