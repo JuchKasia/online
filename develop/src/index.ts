@@ -10,10 +10,12 @@ import {list} from '../list';
 import {sizeFilter,colorFilter} from './category';
 import {proso} from './modalPuchase';
 import {navBlog} from './blog';
+import {navHome} from './homePage';
 // import { fstat } from "fs";
 // import {} from './desc';
 console.log(proso);
 console.log(navBlog);
+console.log(navHome);
 const category = new Set<string>(["men","women"]);
 const size = new Set<string>([]);
 const color = new Set<string>([]);
@@ -423,8 +425,8 @@ showList.addEventListener('click', () => {
 
 
   // list category img -----------------------------------------------
-const listCategoryImg = ['https://img.freepik.com/free-photo/young-handsome-man-in-jacket-posing-in-the-street-in-winter-time_1303-30028.jpg?w=996&t=st=1673701238~exp=1673701838~hmac=4047426187f50c36fc3e5a82d0c5ff5de5cbeda06ca5b685985f35d74eefdb27', 'https://img.freepik.com/free-photo/sexy-guy-with-unbuttoned-fleece-shirt-posing-at-a-studio-isolated-on-a-dark-background_613910-21306.jpg?w=996&t=st=1673679617~exp=1673680217~hmac=9acd3d3b42b5f47a820ae42efae7bf1a663d833f36fe04f924a7ce578c263972', 'https://img.freepik.com/free-photo/handsome-confident-hipster-modelsexy-unshaven-man-dressed-summer-stylish-green-hoodie-jeans-clothes-fashion-male-with-curly-hairstyle-posing-studio-isolated-blue_158538-26582.jpg?w=1060&t=st=1673294250~exp=1673294850~hmac=c95ac2d51f54372698969fba827480816b14e4c2cdd93ed83466a786a393cc0b', 'https://img.freepik.com/free-photo/excited-white-girl-bright-stylish-glasses-posing-pink-dreamy-curly-woman-playing-with-her-ginger-hair-laughing_197531-11045.jpg?w=1060&t=st=1673294269~exp=1673294869~hmac=17ed82fb7efa83890f41a1e1c7756786a1df0a8840fa58348318f5cfcec673b4', 'https://img.freepik.com/free-photo/cute-young-girl-with-dark-wavy-hairstyle-bright-makeup-silk-dress-black-jacket-holding-sunglasses-hands-looking-away-against-beige-building-wall_197531-24462.jpg?w=1060&t=st=1673294271~exp=1673294871~hmac=9c114b52890ff1a1c7e1a914e66a1af5fc4b4bfe81aae4b1b5b45343fa470484', 'https://img.freepik.com/free-photo/stylish-european-brunette-woman-red-coat-black-hat-posing-white-wall_273443-4636.jpg?w=1060&t=st=1673294275~exp=1673294875~hmac=4f680379b04c021c9e5732c86dad1fe876fad7156491a1753bcc02fd48feb904',"https://img.freepik.com/free-photo/stylish-couple-in-love-sitting-in-street-on-romantic-trip_285396-9919.jpg?w=996&t=st=1673712712~exp=1673713312~hmac=4a6b99136bc243662dae01afb5683aae70f75f722beef80dd324a5f9bb0b438f"];
-const coverProduct = document.querySelector('.cover-product');
+export const listCategoryImg = ['https://img.freepik.com/free-photo/young-handsome-man-in-jacket-posing-in-the-street-in-winter-time_1303-30028.jpg?w=996&t=st=1673701238~exp=1673701838~hmac=4047426187f50c36fc3e5a82d0c5ff5de5cbeda06ca5b685985f35d74eefdb27', 'https://img.freepik.com/free-photo/sexy-guy-with-unbuttoned-fleece-shirt-posing-at-a-studio-isolated-on-a-dark-background_613910-21306.jpg?w=996&t=st=1673679617~exp=1673680217~hmac=9acd3d3b42b5f47a820ae42efae7bf1a663d833f36fe04f924a7ce578c263972', 'https://img.freepik.com/free-photo/handsome-confident-hipster-modelsexy-unshaven-man-dressed-summer-stylish-green-hoodie-jeans-clothes-fashion-male-with-curly-hairstyle-posing-studio-isolated-blue_158538-26582.jpg?w=1060&t=st=1673294250~exp=1673294850~hmac=c95ac2d51f54372698969fba827480816b14e4c2cdd93ed83466a786a393cc0b', 'https://img.freepik.com/free-photo/excited-white-girl-bright-stylish-glasses-posing-pink-dreamy-curly-woman-playing-with-her-ginger-hair-laughing_197531-11045.jpg?w=1060&t=st=1673294269~exp=1673294869~hmac=17ed82fb7efa83890f41a1e1c7756786a1df0a8840fa58348318f5cfcec673b4', 'https://img.freepik.com/free-photo/cute-young-girl-with-dark-wavy-hairstyle-bright-makeup-silk-dress-black-jacket-holding-sunglasses-hands-looking-away-against-beige-building-wall_197531-24462.jpg?w=1060&t=st=1673294271~exp=1673294871~hmac=9c114b52890ff1a1c7e1a914e66a1af5fc4b4bfe81aae4b1b5b45343fa470484', 'https://img.freepik.com/free-photo/stylish-european-brunette-woman-red-coat-black-hat-posing-white-wall_273443-4636.jpg?w=1060&t=st=1673294275~exp=1673294875~hmac=4f680379b04c021c9e5732c86dad1fe876fad7156491a1753bcc02fd48feb904',"https://img.freepik.com/free-photo/stylish-couple-in-love-sitting-in-street-on-romantic-trip_285396-9919.jpg?w=996&t=st=1673712712~exp=1673713312~hmac=4a6b99136bc243662dae01afb5683aae70f75f722beef80dd324a5f9bb0b438f"];
+export const coverProduct = document.querySelector('.cover-product');
 
 let forInterval = 0;
 coverProduct.setAttribute('src',`${listCategoryImg[listCategoryImg.length-1]}`);

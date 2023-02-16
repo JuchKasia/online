@@ -3,7 +3,7 @@ import '../index';
 
 export const navBlog = document.querySelector('.blog-link');
 // export const clothing = document.querySelector('.clothing-link');
-const clothing = document.querySelector('.clothing-link');
+export const clothing = document.querySelector('.clothing-link');
 const blogPage = document.querySelector('.blog-page');
 // const blogInfoPerson = document.querySelectorAll('.blog-info-person1');
 
