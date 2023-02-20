@@ -373,6 +373,7 @@ baskDown.addEventListener('click', function(){
 
 
 
+
 // для оптимизации нужно добавлять не обьекты. а индексы
 
 function basketValues(){
@@ -406,3 +407,6 @@ function basketValues(){
   // console.log("basketPrice",basketPrice);
 
 }
+
+// для оптимизации нужно добавлять не обьекты. а индексы
+

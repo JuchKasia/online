@@ -23,13 +23,13 @@
             <nav class="nav nav-menu" id="nav-menu">
                 <ul class="nav-list list">
                     <li class="list__item item">
-                        <a href="#clothing" class="item__link link">Clothing</a>
+                        <a href="#clothing" class="item__link link clothing-link">Clothing</a>
                     </li>
                     <li class="list__item item">
                         <a href="#contact" class="item__link link">Contact</a>
                     </li>
                     <li class="list__item item">
-                        <a href="#blog" class="item__link link">Blog</a>
+                        <a href="#blog" class="item__link link blog-link">Blog</a>
                     </li>
                 </ul>
             </nav>
@@ -242,7 +242,7 @@
             </div>
           </div>
         </div>
-      </section>
+    </section>
       <!-- finish basket page ----------------------------------------------- -->
 
     <!-- start description page -------------------------------------------- -->
@@ -346,22 +346,213 @@
         </div>
     </section>
        <!-- finish ------------------------------------------- description page -->
-    <section class="homePage" id="homePage">
+    <section class="homePage non" id="homePage">
         <div class="home-wrapper">
-            <div class="btn-carousel left" id="btn-carousel-left"></div>
-            <div class="carousel-wrapper" id="carousel-wrapper">
-                <div class="carousel" id="carousel">
-                    <div class="item" class="item-left"></div>
-                    <div class="item" class="item-active"></div>
-                    <div class="item" class="item-right"></div>
-                </div>
+            <!-- <div class="btn-carousel btn-carousel-prev" id="btn-carousel-left"> -->
+                <!-- <div class="arrow left">ggg</div> -->
             </div>
-            <div class="btn-carousel right" id="btn-carousel-right"></div>
+            <div class="carousel" id="carousel">
+                <!-- <div class="carousel" id="carousel"> -->
+                    <div class="carousel__item fade item-left">
+                        <img class="home-img" src="https://img.freepik.com/free-photo/young-handsome-man-in-jacket-posing-in-the-street-in-winter-time_1303-30028.jpg?w=996&t=st=1673701238~exp=1673701838~hmac=4047426187f50c36fc3e5a82d0c5ff5de5cbeda06ca5b685985f35d74eefdb27">
+                    </div>
+                    <div class="carousel__item fade">
+                        <img class="home-img" src="https://img.freepik.com/free-photo/sexy-guy-with-unbuttoned-fleece-shirt-posing-at-a-studio-isolated-on-a-dark-background_613910-21306.jpg?w=996&t=st=1673679617~exp=1673680217~hmac=9acd3d3b42b5f47a820ae42efae7bf1a663d833f36fe04f924a7ce578c263972">
+                    </div>
+                    <div class="carousel__item fade tem-right">
+                        <img class="home-img" src="https://img.freepik.com/free-photo/stylish-couple-in-love-sitting-in-street-on-romantic-trip_285396-9919.jpg?w=996&t=st=1673712712~exp=1673713312~hmac=4a6b99136bc243662dae01afb5683aae70f75f722beef80dd324a5f9bb0b438f">
+                    </div>
+
+                    <div class="btn-carousel btn-carousel-prev" id="btn-carousel-left"></div>
+                    <div class="btn-carousel btn-carousel-next" id="btn-carousel-right"></div>
+                    
+
+                <!-- </div> -->
+                
+            </div>
+            <div class="dots">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+            </div>
+            
+            <!-- <div class="control control-left">
+                <div class="arrow left">ggg</div>
+            </div>
+            <div class="control control-right">
+                <div class="arrow right">hhh</div>
+            </div> -->
+            <!-- <div class="btn-carousel btn-carousel-next" id="btn-carousel-right"> -->
+                <!-- <div class="arrow right">hhh</div> -->
+            </div>
         </div>
     </section>
     <section class="page404" id="page404">
         <div class="page404-container">
             <h1 class="page404-title">PAGE NOT FOUND (404)</h1>
+        </div>
+    </section>
+    <section class="blog-page non" id="blog">
+        <div class="blog-container container">
+            <h1 class="blog-title">Latest Blogs</h1>
+            <div class="block-person1 block-person">
+                <div class="blog-image img-pers1">
+                </div>
+                <div class="blog-content">
+                    <h2 class="blog-subtitle">Ihar Skavysh</h2>
+                </div>
+                <div class="blog-meta">
+                    <div class="blog-author">
+                        <div class="blog-author-svg"></div>Ihar Skavysh</div>
+                    <div class="blog-calendar">
+                        <div class="blog-calendar-svg"></div>December 18, 2022</div>
+                </div>
+                <div class="blog-content-info">
+                    <p class="blog-short-info blog-info-person1">Studying is always interesting, and now it is necessary.
+                         It's nice to realize that I discovered the frontend for myself...</p>
+                    <button class="blog-btn blog-btn-more">Read more</button>
+                    <button class="blog-btn blog-btn-less">Read less</button>
+                </div>
+                <div class="blog-cv blog-cv1" id="blog-cv1">
+                    <div class="col-left">
+                            <div class="block-skills">
+                                <h2 class="skills-title">Skills:</h2>
+                                <ul class="skills-list">
+                                    <li class="skills-item">HTML</li>
+                                    <li class="skills-item">CSS / SASS</li>
+                                    <li class="skills-item">JavaScript</li>
+                                    <li class="skills-item">Node.js Basic</li>
+                                    <li class="skills-item">Git, GitHub</li>
+                                    <li class="skills-item">React</li>
+                                    <li class="skills-item">Webpack</li>
+                                    <li class="skills-item">VSCode</li>
+                                    <li class="skills-item">Figma</li>
+                                </ul>
+                            </div>
+                            <div class="block-education">
+                                <h2 class="education-title">Education:</h2>
+                                <p class="education-item">Belarusian State University<br> of Informatics and Radioelectronics</в>
+                            </div>
+                    </div>
+                    <div class="col-right">
+                        <div class="block-profile">
+                            <h2 class="profile-title">Ihar Skavysh</h2>
+                            <p class="profile-item">Junior Front-end Developer</p>
+                        </div>
+                        <div class="block-summaru">
+                                <h3 class="summaru-title">About me:</h3>
+                                <p class="summary-item">Studying is always interesting, and now it is necessary. 
+                                    It's nice to realize that I discovered the frontend for myself, everything is good here,
+                                     from interaction with other people to a beautiful and working result, and you can also reward
+                                      yourself with solving interesting logical problems to make it all work. My principle is good where I am.
+                                </p>
+                        </div>
+                        <div class="block-languages">
+                                <h2 class="languages-title">Languages:</h2>
+                                <ul class="languages-list">
+                                    <li class="languages-item">English - Intermediate</li>
+                                    <li class="languages-item">Polish - Basic</li>
+                                    <li class="languages-item">Belarusian - Native</li>
+                                    <li class="languages-item">Russian - Native</li>
+                                </ul>
+                        </div>
+                        <div class="block-blog-contact">
+                                <h2 class="contact-title">Contacts:</h2>
+                                <ul class="contact-list">
+                                    <li class="contact-item">Location: Samarcande, Uzbekistan</li>
+                                    <li class="contact-item">Email:
+                                        <a href="mailto:juchkasia@gmail.com" class="section-link" id="email">igogoblin@gmail.com</a></li>
+                                    <li class="contact-item">GitHub:
+                                        <a href="https://github.com/Igogoblin" class="section-link">Igogoblin</a></li>
+                                    <li class="contact-item">Discord: igo-go.blin</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-person2 block-person">
+                <div class="blog-image img-pers2">
+                </div>
+                <div class="blog-content">
+                    <h2 class="blog-subtitle">Katarzyna Juchniewicz</h2>
+                </div>
+                <div class="blog-meta">
+                    <div class="blog-author">
+                        <div class="blog-author-svg"></div>Katarzyna Juchniewicz</div>
+                    <div class="blog-calendar">
+                        <div class="blog-calendar-svg"></div>December 18, 2022</div>
+                </div>
+                <div class="blog-content-info">
+                    <p class="blog-short-info blog-info-person2">I was born in Belarus. Since 2017 I`m live in Warsaw.
+                        I`ve been graduated the medical-prophylactic faculty of the Belarusian National Medical University...</p>
+                    <button class="blog-btn blog-btn-more">Read more</button>
+                    <button class="blog-btn blog-btn-less">Read less</button>
+                </div>
+                <div class="blog-cv blog-cv2" id="blog-cv2">
+                    <div class="col-left">
+                        <div class="block-skills">
+                            <h2 class="title">Skills:</h2>
+                            <ul class="skills-list">
+                                <li class="skills-item">HTML</li>
+                                <li class="skills-item">CSS / SASS</li>
+                                <li class="skills-item">JavaScript</li>
+                                <li class="skills-item">Node.js Basic</li>
+                                <li class="skills-item">Git, GitHub</li>
+                                <li class="skills-item">Webpack</li>
+                                <li class="skills-item">VSCode</li>
+                                <li class="skills-item">Figma</li>
+                                <li class="skills-item">Photoshop, Capture One</li>
+                            </ul>
+                        </div>
+                        <div class="block-education">
+                            <h2 class="title">Education:</h2>
+                            <div class="education-list">
+                                <p class="education-item">Belarusian State Medical University</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-right">
+                            <div class="block-profile">
+                                <h2 class="profile-title">Katarzyna Juchniewicz</h2>
+                                <p class="profile-item">Junior Front-end Developer</p>
+                            </div>
+                            <div class="block-summaru">
+                                <h3 class="summaru-title">About me:</h3>
+                                <p class="summary-item">I was born in Belarus. Since 2017 I`m live in Warsaw.
+                                    I`ve been graduated the medical-prophylactic faculty of the Belarusian National Medical University.
+                                    I am currently changing my carrier. I`m study to create websites and apps using web languages such as HTML, CSS and Java Script.
+                                    I like that front-end development is an area that is constantly evolving, introducing new technologies.
+                                    The demand and flexibility of this position allows you to constantly grow, develop, show your creativity and problem-solving skills and,
+                                     of course, there is field for career growth in various industries and places.
+                                     In my free time, I am a wife, mother of two wonderful sons and a photographer. 
+                                     I am interested in photography and retouching. I’m became an advanced photoshop user.  
+                                     I like to keep our emotions, memories and beautiful ones. My motto "You can't turn back time, but you can save memories."
+                                </p>
+                            </div>
+                            <div class="block-languages">
+                                <h2 class="title">Languages:</h2>
+                                <ul class="languages-list">
+                                    <li class="languages-item">English - Fluent</li>
+                                    <li class="languages-item">Polish - Fluent</li>
+                                    <li class="languages-item">Belarusian - Native</li>
+                                    <li class="languages-item">Russian - Native</li>
+                                </ul>
+                            </div>
+                            <div class="block-blog-contact">
+                                <h2 class="title">Contacts:</h2>
+                                <ul class="contact-list">
+                                    <li class="contact-item">Location: Warsaw, Poland</li>
+                                    <li class="contact-item">Email:
+                                        <a href="mailto:juchkasia@gmail.com" class="section-link" id="email">juchkasia@gmail.com</a></li>
+                                    <li class="contact-item">GitHub:
+                                        <a href="https://github.com/JuchKasia" class="section-link">JuchKasia</a></li>
+                                    <li class="contact-item">Discord: juchkasia</li>
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
         </div>
     </section>
     <main class="main" id="main">
@@ -370,7 +561,7 @@
                 <nav class="nav-main">
                     <ul class="nav-main-list list">
                         <li class="list__item item">
-                            <a href="#home" class="item__link link">Home</a>
+                            <a href="#home" class="item__link link home-link">Home</a>
                         </li>
                         <li class="list__item item">
                             <span>/</span>
