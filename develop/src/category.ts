@@ -377,7 +377,7 @@ baskDown.addEventListener('click', function(){
 
 function basketValues(){
   const otherArr = Array.from(basket).flat();
-  console.log(otherArr.flat());
+  // console.log(otherArr.flat());
   basketLength = 0;
   basketPrice = 0;
   for(let i =0;i<otherArr.length;i++){
@@ -385,16 +385,16 @@ function basketValues(){
       basketLength+=otherArr[i];
     }
   }
-  console.log(cat.listCategory);
+  // console.log(cat.listCategory);
   for(let i = 0;i<cat.listCategory.length;i++){
     //let count = 0;
     for(let j = 0;j<otherArr.length;j++){
 
       if(j%2==0){
         if(cat.listCategory[i].id==otherArr[j]){
-          console.log('cat.listCategory[i].price', cat.listCategory[i].price);
-           console.log("count", +otherArr[j+1]);
-          console.log("count*cat.listCategory[i].price",otherArr[j+1]*cat.listCategory[i].price)
+          // console.log('cat.listCategory[i].price', cat.listCategory[i].price);
+          //  console.log("count", +otherArr[j+1]);
+          // console.log("count*cat.listCategory[i].price",otherArr[j+1]*cat.listCategory[i].price)
         basketPrice+=otherArr[j+1]*cat.listCategory[i].price;
       }
       }
@@ -402,7 +402,7 @@ function basketValues(){
     }
     
   }
-  console.log("basketLength",basketLength)
-  console.log("basketPrice",basketPrice);
+  // console.log("basketLength",basketLength)
+  // console.log("basketPrice",basketPrice);
 
 }

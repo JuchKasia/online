@@ -1831,6 +1831,9 @@ input[type=number]::-webkit-outer-spin-button {
       width: 100%;
       border-radius: 1px solid brown;
   }
+  .basket-pair {
+    display: flex;
+  }
   .border-card {
     border: 1px solid #a1a1a1;
     border-radius: 2px;
@@ -1838,17 +1841,29 @@ input[type=number]::-webkit-outer-spin-button {
   .basket-page {
     width: 100%;
   }
-  
-  .basket-columns {
-    /* width: 100%; */
+  .basket-container {
     display: flex;
-    justify-content: space-between;
+    //flex-direction: row;
+    align-items: center;
+  }
+  .basket-columns {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-between;
     margin: 50px;
   }
   .basket-column-card {
     width: 60%;
     display: flex;
     flex-direction: column;
+  }
+
+  .cardBasket {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+
   }
   .basket-column-title {
     padding-left: 20px;
@@ -1863,6 +1878,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
   .basket-column-card__bask {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 10px;
