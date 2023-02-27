@@ -10,14 +10,15 @@ import {list} from '../list';
 import {sizeFilter,colorFilter,addToCarts, basket} from './category';
 import {proso} from './modalPuchase';
 
-import {bb} from './basketPage';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// import {buildBasket} from './basketPage';
 
 import {navBlog} from './blog';
 import {navHome} from './homePage';
 
 // import { fstat } from "fs";
 // import {} from './desc';
-console.log(bb);
+
 console.log(proso);
 console.log(navBlog);
 console.log(navHome);

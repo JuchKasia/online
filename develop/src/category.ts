@@ -4,6 +4,8 @@ import '../index';
 
 import { list } from '../list';
 import { count } from 'console';
+
+import {buildBasket, baskTotTotal} from './basketPage';
 // export const cat = 'category file work';
 // console.log('this is file category');
 // console.log("from category file "+cat.listCategory);
@@ -13,13 +15,13 @@ export let basketDesc:number;//index
 // export const basket = [1];//index 
 // basket.length = 0;
 export let descrpiptQuantity = 1;
-export let baskQuantity = 1;
+
 export let basketLength = 0; 
 let deskId:number;
 let deskPrice;
 export const desk: ({ id: number; title: string; brand: string; category: string; description: string; price: number; discount: number; stock: number; size: string; color: string; images: string[]; } | { id: number; title: string; brand: string; category: string; description: string; price: number; stock: number; size: string; color: string; images: string[]; discount?: undefined; })[] = [];
 
- export let basketPrice = 0;
+export let basketPrice = 0;
 export function sizeFilter(){
   const way = document.querySelector('.way');
   for (let i=0; i < cat.sizeLabel.length; i++) {
@@ -76,6 +78,7 @@ export const main = document.querySelector('.main');
 const pageDescription = document.querySelector('.pageDescription');
 const descriptionPage = document.querySelector('.description');
 export const addToCarts = document.querySelectorAll('.add-to-cart');
+export const baskTotValue = document.querySelector('.bask-tot-value');
 // const idDeskCard = document.querySelector('.idDeskCard');
 
 for(let i = 0;i<addcards.length;i++){
@@ -103,9 +106,10 @@ for(let i = 0;i<addcards.length;i++){
      basketValues();
      cartProductsCount.innerHTML = String(basketLength);
      cartProductsValue.innerHTML = `$ ${basketPrice}`;
-
+     baskTotValue.innerHTML = `$ ${basketPrice}`;
+     baskTotTotal.innerHTML = `$ ${basketPrice}`;
      console.log(basket);
-    //  showHeaderPrice();
+    
   });
   btnEyeCart[i].addEventListener('click',function(){
 
@@ -133,11 +137,6 @@ for(let i = 0;i<addcards.length;i++){
 }
 
 
-  //  setInterval(function(){
-  //   cartProductsCount.innerHTML = basket.length+"";
-  //   cartProductsValue.innerHTML = cpv+basketPrice;
-  //  },500)
-
 const containerCart = document.querySelector('.header-cart');
 export const basketPage = document.querySelector('.basket-page');
  
@@ -145,7 +144,8 @@ export const basketPage = document.querySelector('.basket-page');
 containerCart.addEventListener('click',function(){
   main.classList.add('non');
   basketPage.classList.remove('non');
-  //getshopCard();
+  document.querySelector('.basket-column-card__bask').innerHTML = '';
+  buildBasket();
 });
 
  const itemLink = document.querySelectorAll('.item__link')[0].addEventListener('click',function(){
@@ -285,59 +285,22 @@ const descriptionButton = document.querySelector('.description-button');
 // добавление в типо карзину простое отоброжение 
 descriptionButton.addEventListener('click',function(){
   basket.set(deskId,descrpiptQuantity);
-  if(basket.has(deskId)&&descrpiptQuantity>1){
-    // descrpiptQuantity--;
-  }
+  // if(basket.has(deskId)&&descrpiptQuantity>1){
+  //   // descrpiptQuantity--;
+  // }
   basketValues();
   cartProductsCount.innerHTML= `${basketLength}`;
   cartProductsValue.innerHTML = `$ ${basketPrice}`;
-  // console.log('work button of description');
-  // console.log(basketLength);
-  // console.log(descrpiptQuantity);
-
-  // basket.set(idDeskCard.getAttribute('data-id'),+descBaseValue.innerHTML);
-  // basket.set(desk[0].id, 1);
-  // cartProductsCount.innerHTML = descrpiptQuantity + "";
-  // cartProductsValue.innerHTML = cpv + desk[0].price * descrpiptQuantity;
 });
 
 
 
 // basket page --------------------------------------------------------------
-const baskImage = document.querySelector('.bask-image');
-const baskBlockValue = document.querySelector(".bask-block-value");
-const baskBlockVal = document.querySelector(".bask-block-val");
-const baskSize=document.querySelector(".bask-size");
-const baskColor = document.querySelector('.bask-color');
-const baskBaseValue=document.querySelector('.bask-base-value');
 
-const baskDellImg = document.querySelector('.bask-dell-img');
-const baskTotValue = document.querySelector('.bask-tot-value');
-const baskTot= document.querySelector('.bask-tot-total');
 document.querySelector('.back-start').addEventListener('click',function(){
   main.classList.remove('non');
   basketPage.classList.add('non');
 });
-
-// function getshopCard(){
-
-// baskDellImg.setAttribute('src',`../assets/svg/basket.svg`);//not work!!!!!!!
-
-//for(let i = 0;i<cat.listCategory.length;i++){
-// if(cat.listCategory[i].id==basket[0]){
-//   basket[0] = i;
-// }
-//}
-// baskImage.setAttribute('src',`${cat.listCategory[basket[0]].images[0]}`);
-// baskImage.classList.add('scale');
-// baskBlockValue.innerHTML = 'Cost : $ '+ cat.listCategory[basket[0]].price;
-// baskBlockVal.innerHTML = '$ '+ cat.listCategory[basket[0]].price;
-// baskSize.innerHTML = 'Size : '+ cat.listCategory[basket[0]].size;
-// baskColor.innerHTML = 'Color : '+ cat.listCategory[basket[0]].color;
-//  baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price;
-//  baskTot.innerHTML =""+cat.listCategory[basket[0]].price;
-// }
-
 
 const baskBlockDisk = document.querySelector('.bask-block-disk');
 const goodPrice = document.querySelector('.goodPrice');
@@ -348,31 +311,11 @@ document.querySelector('.bask-total-quest').addEventListener('click',function(){
 baskBlockDisk.classList.remove('non');
 goodPrice.classList.remove('non');
 basketTotalAll.classList.remove('non');
-// goodPrice.innerHTML= "-"+cat.listCategory[basket[0]].discount*baskQuantity+" %";
-// baskBlockDisk.innerHTML ="Discount : $ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
-// baskTotDiskaunt.innerHTML ="$ "+ cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity;
-// baskTot.innerHTML = "$ "+ (cat.listCategory[basket[0]].price*baskQuantity - cat.listCategory[basket[0]].price*cat.listCategory[basket[0]].discount/100*baskQuantity);
 });
 
-
-// bask-block-val   
-baskUp.addEventListener('click', function(){
-baskBaseValue.innerHTML = ++baskQuantity + "";
-// baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-// baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-// baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-});
-baskDown.addEventListener('click', function(){
-  if(baskQuantity>0){
-    baskBaseValue.innerHTML = --baskQuantity + "";
-  }
-  // baskTotValue.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-  // baskTot.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-  // baskBlockVal.innerHTML =""+cat.listCategory[basket[0]].price*baskQuantity;
-});
 function basketValues(){
   const otherArr = Array.from(basket).flat();
-  // console.log(otherArr.flat());
+  console.log("otherArr",otherArr);
   basketLength = 0;
   basketPrice = 0;
   for(let i =0;i<otherArr.length;i++){
@@ -380,26 +323,16 @@ function basketValues(){
       basketLength+=otherArr[i];
     }
   }
-  // console.log(cat.listCategory);
-  for(let i = 0;i<cat.listCategory.length;i++){
-    //let count = 0;
-    for(let j = 0;j<otherArr.length;j++){
 
+  for(let i = 0;i<cat.listCategory.length;i++){
+    for(let j = 0;j<otherArr.length;j++){
       if(j%2==0){
         if(cat.listCategory[i].id==otherArr[j]){
-          // console.log('cat.listCategory[i].price', cat.listCategory[i].price);
-          //  console.log("count", +otherArr[j+1]);
-          // console.log("count*cat.listCategory[i].price",otherArr[j+1]*cat.listCategory[i].price)
-        basketPrice+=otherArr[j+1]*cat.listCategory[i].price;
-      }
-      }
-      
+         basketPrice+=otherArr[j+1]*cat.listCategory[i].price;
+        }
+      } 
     }
-    
   }
-  // console.log("basketLength",basketLength)
-  // console.log("basketPrice",basketPrice);
-
 }
 
 
