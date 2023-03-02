@@ -2052,7 +2052,6 @@ img.desk-main-image {
   width: 100%;
   height: 700px;
   margin: 0 auto;
-  border: 1px solid blue;
   overflow: hidden;
 }
 
@@ -2095,7 +2094,6 @@ img.desk-main-image {
   cursor: pointer;
   -webkit-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
-  border: 3px solid #ab1c1c;
 }
 
 .btn-carousel-next {

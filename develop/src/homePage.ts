@@ -64,7 +64,7 @@ function showSlides() {
   }
   carouselItems[slideIndex-1].classList.remove('non');  
 
-  // dots[slideIndex-1].className += " active";
+  dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 3000); // Change image every 2 seconds
 }
 
@@ -96,17 +96,18 @@ function prevShowSlides(){
     carouselItems[i].classList.add('non');  
   }
   // slideIndex = carouselItems.length - 1;
-  // slideIndex++;
+  slideIndex--;
   if (slideIndex == 0) {
-    slideIndex = carouselItems.length - 1;
-  } else {
-    slideIndex--;
-  }
+    slideIndex = carouselItems.length;
+  } 
+  // else {
+  //   slideIndex--;
+  // }
   // } if (slideIndex > carouselItems.length) {
   //   slideIndex = 1
   // }
     // slideIndex = carouselItems.length;
-
+console.log(slideIndex);
     
   for (let i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
