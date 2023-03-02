@@ -9,10 +9,16 @@ import "../normalize.css";
 import {list} from '../list';
 import {sizeFilter,colorFilter,addToCarts, basket} from './category';
 import {proso} from './modalPuchase';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// import {buildBasket} from './basketPage';
+
 import {navBlog} from './blog';
 import {navHome} from './homePage';
+
 // import { fstat } from "fs";
 // import {} from './desc';
+
 console.log(proso);
 console.log(navBlog);
 console.log(navHome);
